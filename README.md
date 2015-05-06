@@ -28,8 +28,8 @@ You can also install the plugin directly in GATE Developer using the online plug
 7. Click OK.
 8. Click the "Apply All" button at the bottom.
 9. Click on the "Available to Install" tab.
-10. You should now see **Lang_Hungarian** in the list of plugins available to install. Enable the checkbox left to its name in column Install.
-11. Click on the "Apply All" to install the plugin. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
+10. You should now see **Lang_Hungarian** in the list of plugins available to install. Enable the checkbox left to its name in column "Install".
+11. Click on the "Apply All" button to install the plugin. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
 
 ##Contents
 
