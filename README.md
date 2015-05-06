@@ -15,6 +15,8 @@ If it's not there, check if your user plugin directory is set (see steps 2-4. be
 
 ###Method 2 (on any computer with internet access running GATE Developer):
 
+You can also install the plugin directly in GATE Developer using the online plugin repository hosted at corpus.nytud.hu:
+
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
 3. Click on the "Configuration" tab.
