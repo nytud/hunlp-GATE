@@ -58,13 +58,13 @@ To update the plugin repository hosted at corpus.nytud.hu/GATE:
 
 1. Edit Makefile to set your username on corpus.nytud.hu:
 
-```
-UPLOAD_USER=myusername
-```
+ ```
+ UPLOAD_USER=myusername
+ ```
 
 2. Type:
 
-```
-make upload
-```
+ ```
+ make upload
+ ```
 
