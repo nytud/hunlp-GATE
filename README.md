@@ -3,23 +3,17 @@
 Source files for the [GATE](http://gate.ac.uk/) plugin **Lang_Hungarian** containing Hungarian processing resources, 
 which are wrappers around already existing NLP tools in their original form (huntoken, hunmorph, hunpos, huntag3).
 
-Authors:
-* Márton Miháltz
-* Bálint Sass
-
 ##Installing under GATE Developer
 
-To install the Lang_Hungarian plugin under GATE Developer:
+*Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*
 
-(Optional: first build the plugin, see *Building the Lang_Hungarian plugin*, below, or just use the version already included in this repository.)
-
-##Method 1 (using a clone of this repository):
+###Method 1 (using a clone of this repository):
 
 Copy the whole directory Lang_Hungarian/ under ./build/ into your GATE user plugin directory. 
 Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
 If it's not there, check if your user plugin directory is set (see steps 2-4. below).
 
-##Method 2 (on any computer with internet access running GATE Developer):
+###Method 2 (on any computer with internet access running GATE Developer):
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
@@ -45,19 +39,27 @@ If it's not there, check if your user plugin directory is set (see steps 2-4. be
 
 ##Building the Lang_Hungarian plugin
 
-To build the GATE plugin from the Java sources and add the neccessarry metadat, Type:
+To build the GATE plugin from the Java sources and add the neccessarry metadat, type:
 
-`make build
+```
+make build
+```
 
 This will create files in the directory ./build/Lang_Hungarian.
 
-##Uploading the Lang_Hungarian GATE plugin to the plugin repository hosted at corpus.nytud.hu/GATE/
+##Udating the plugin repository
+
+To update the plugin repository hosted at corpus.nytud.hu/GATE:
 
 1. Edit Makefile to set your username on corpus.nytud.hu:
 
-`UPLOAD_USER=myusername
+```
+UPLOAD_USER=myusername
+```
 
 2. Type:
 
-`make upload
+```
+make upload
+```
 
