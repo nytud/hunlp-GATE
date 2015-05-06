@@ -33,8 +33,9 @@ You can also install the plugin directly in GATE Developer using the online plug
 
 ##Contents
 
-* DummyTokenizer: source files for dummy tokenizer processing resource Java project
-* TemplatePR: template for creating new processing resource classes
+* Lang_Hungarian: source directory tree for the Lang_Hungarian GATE plugin
+** DummyTokenizer: source files for dummy tokenizer processing resource
+** TemplatePR: template for creating new processing resource classes
 * creole: see creole/README.txt
 * build: the generated plugin will be created here (see *Building the Lang_Hungarian plugin*)
 * Makefile: various targets for building the plugin
@@ -48,6 +49,8 @@ make build
 ```
 
 This will create files in the directory ./build/Lang_Hungarian.
+
+TODO: build file for: compiling Java files; generating hungarian.jar
 
 ##Udating the plugin repository
 

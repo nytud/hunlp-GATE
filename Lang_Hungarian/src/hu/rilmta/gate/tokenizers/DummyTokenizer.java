@@ -1,4 +1,4 @@
-package hu.rilmta.gate;
+package hu.rilmta.gate.tokenizers;
 
 import gate.*;
 import gate.creole.*; 
