@@ -1,5 +1,5 @@
 # userid on corpus.nytud.hu used for uploading, see target "build"
-UPLOAD_USER=marci
+CORPUSUSER=yourusername
 
 .PHONY: build upload
 
@@ -9,9 +9,9 @@ build:
 	cp ./creole/creole.xml ./build/Lang_Hungarian
 
 # Upload the Lang_Hungarian plugin to the plugin repository at corpus.nytud.hu/GATE/
+# Invoke with your own username on corpus.nytud.hu: make upload CORPUSUSER=mylogin
 upload:
 	rm -f ./build/Lang_Hungarian.zip
 	cd ./build/ ; \
 	zip Lang_Hungarian.zip Lang_Hungarian/*
-	rsync -vR ./creole/./gate-update-site.xml ./build/./Lang_Hungarian.zip ./build/./Lang_Hungarian/* $(UPLOAD_USER)@corpus.nytud.hu:/var/www/GATE/
-#	rsync -vR ./build/./Lang_Hungarian/* $(UPDATE_USER)@corpus.nytud.hu:/var/www/GATE/
+	rsync -vR ./creole/./gate-update-site.xml ./build/./Lang_Hungarian.zip ./build/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
