@@ -42,7 +42,7 @@ You can also install the plugin directly in GATE Developer using the online plug
 
 ##Building the Lang_Hungarian plugin
 
-To build the GATE plugin from the Java sources and add the neccessarry metadat, type:
+To build the GATE plugin from the Java sources and add the neccessarry metadata, type:
 
 ```
 make build
@@ -54,17 +54,8 @@ TODO: build file for: compiling Java files; generating hungarian.jar
 
 ##Udating the plugin repository
 
-To update the plugin repository hosted at corpus.nytud.hu/GATE:
+To update the plugin repository hosted at corpus.nytud.hu/GATE, run make with specifying your user name on corpus.nytud.hu:
 
-1. Edit Makefile to set your username on corpus.nytud.hu:
-
- ```
- UPLOAD_USER=myusername
- ```
-
-2. Type:
-
- ```
- make upload
- ```
-
+```
+make upload CORPUSUSER=yourusername
+```
