@@ -75,6 +75,8 @@ public class DummyTokenizer extends AbstractLanguageAnalyser {
 	    List<String> tokenList = new ArrayList<String>();
 	    List<String> whiteList = new ArrayList<String>();
 
+      // -----
+      
 	    // na itt van a rendes tokenizálás helyett egy
 	    // "dummy", ami adott karakter mentén vág
 	    String separator = " "; // regex! :)
