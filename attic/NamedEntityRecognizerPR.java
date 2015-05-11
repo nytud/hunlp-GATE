@@ -28,7 +28,7 @@ import com.aliasi.util.AbstractExternalizable;
  * This PR is used for recognizing named entities such as location,
  * organizaiton etc. It uses the LingPipe models to achieve that.
  * 
- * @author niraj
+ * @author niraj + SB
  * 
  */
 public class NamedEntityRecognizerPR extends AbstractLanguageAnalyser implements

@@ -73,7 +73,7 @@
   <target name="dist" depends="compile"
 	  description="generate the distribution" >
     <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    <!--mkdir dir="${dist}/lib"/-->
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
     <jar jarfile="${jar.location}" basedir="${build}"/>
@@ -82,7 +82,7 @@
     <!-- XXX átmásolva a "clean.classes"-ból
          XXX minek is kellett a dist dir egyáltalán? -->
     <delete dir="${build}"/>
-    <delete dir="${dist}"/>
+    <!--delete dir="${dist}"/-->
   </target>
 
   <target name="clean.classes"

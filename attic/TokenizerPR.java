@@ -13,7 +13,7 @@ import com.aliasi.tokenizer.Tokenizer;
 /**
  * LingPipe Tokenizer PR.
  * 
- * @author Ekaterina Stambolieva
+ * @author Ekaterina Stambolieva + SB
  * 
  */
 public class TokenizerPR extends AbstractLanguageAnalyser implements

@@ -5,7 +5,7 @@
 
 # Package Files #
 *.jar
-!build/Lang_Hungarian/hungarian.jar
+!Lang_Hungarian/hungarian.jar
 *.war
 *.ear
 
