@@ -35,7 +35,8 @@ You can also install the plugin directly in GATE Developer using the online plug
 
 * Lang_Hungarian: directory tree for the Lang_Hungarian GATE plugin
  * DummyTokenizer.java: dummy tokenizer processing resource -- splits at space
- * DummyNER.java: dummy NER processing resource -- NER = 2 adjacent uppercase words
+ * DummyNER.java: dummy NER processing resource -- NE = 2 adjacent uppercase words
+ * hungarian.jar: precompiled GATE plugin containing DummyTokenizer + DummyNER
  * TemplatePR.java: template for creating new processing resource classes
 * update-site: see update-site/README.txt
 * Makefile: targets for building the plugin + uploading the plugin
@@ -49,6 +50,7 @@ make build
 ```
 
 This will create hungarian.jar in the directory Lang_Hungarian.
+(A precompiled hungarian.jar is accessible directly from the repository.)
 
 ##Udating the plugin repository
 
