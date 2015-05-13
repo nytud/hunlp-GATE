@@ -9,7 +9,7 @@ which are wrappers around already existing NLP tools in their original form (hun
 
 ###Method 1 (using a clone of this repository):
 
-Copy the whole directory Lang_Hungarian/ under ./build/ into your GATE user plugin directory. 
+Copy the whole directory Lang_Hungarian/ into your GATE user plugin directory. 
 Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
 If it's not there, check if your user plugin directory is set (see steps 2-4. below).
 
@@ -33,12 +33,12 @@ You can also install the plugin directly in GATE Developer using the online plug
 
 ##Contents
 
-* Lang_Hungarian: source directory tree for the Lang_Hungarian GATE plugin
- * DummyTokenizer.java: dummy tokenizer processing resource
+* Lang_Hungarian: directory tree for the Lang_Hungarian GATE plugin
+ * DummyTokenizer.java: dummy tokenizer processing resource -- splits at space
+ * DummyNER.java: dummy NER processing resource -- NER = 2 adjacent uppercase words
  * TemplatePR.java: template for creating new processing resource classes
-* creole: see creole/README.txt
-* build: the generated plugin will be created here (see *Building the Lang_Hungarian plugin*)
-* Makefile: various targets for building the plugin
+* update-site: see update-site/README.txt
+* Makefile: targets for building the plugin + uploading the plugin
 
 ##Building the Lang_Hungarian plugin
 
@@ -48,9 +48,7 @@ To build the GATE plugin from the Java sources and add the neccessarry metadata,
 make build
 ```
 
-This will create files in the directory ./build/Lang_Hungarian.
-
-TODO: build file for: compiling Java files; generating hungarian.jar
+This will create hungarian.jar in the directory Lang_Hungarian.
 
 ##Udating the plugin repository
 
