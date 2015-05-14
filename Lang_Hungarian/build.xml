@@ -3,6 +3,9 @@
     GATE Resources for Hungarian
   </description>
 
+  <!-- the 'gate.home' property should be set while calling ant like:
+       ant -Dgate.home=/home/joker/GATE_Developer_8.0 --> 
+
   <!-- Prevent Ant from warning about includeantruntime not being set -->
   <property name="build.sysclasspath" value="ignore" />
 
@@ -14,8 +17,6 @@
   <property name="doc.dir" location="doc" />
   <property name="javadoc.dir" location="${doc.dir}/javadoc" />
 
-  <!--property name="gate.home" location="../.." /-->
-  <property name="gate.home" location="/home/joker/GATE_Developer_8.0" /> <!-- XXX XXX -->
   <property name="gate.jar" location="${gate.home}/bin/gate.jar" />
   <property name="gate.lib" location="${gate.home}/lib" />
   <property name="gate.compile.maxwarnings" value="10000" />

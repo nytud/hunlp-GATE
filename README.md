@@ -43,18 +43,22 @@ You can also install the plugin directly in GATE Developer using the online plug
 
 ##Building the Lang_Hungarian plugin
 
-To build the GATE plugin from the Java sources and add the neccessary metadata, type:
+To build the GATE plugin from the Java sources
+(and add the neccessary metadata) run `make build`.
+A working GATE installation is necessary.
+The GATE installation directory should be given to `make` as `GATE_HOME`:
 
 ```
-make build
+make build GATE_HOME=/your/gate/installation/dir
 ```
 
-This will create `hungarian.jar` in the directory Lang_Hungarian.
-(A precompiled `hungarian.jar` is accessible directly from the repository.)
+This will create `hungarian.jar` in the directory `Lang_Hungarian`.
+(A precompiled `hungarian.jar` is also accessible directly from the repository.)
 
 ##Udating the plugin repository
 
-To update the plugin repository hosted at `http://corpus.nytud.hu/GATE`, run make with specifying your user name on `corpus.nytud.hu`:
+To update the plugin repository hosted at `http://corpus.nytud.hu/GATE`,
+run `make upload` with specifying your user name on `corpus.nytud.hu`:
 
 ```
 make upload CORPUSUSER=yourusername
