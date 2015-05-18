@@ -1,20 +1,34 @@
 JAVAPATH=/usr/jdk/
 
-test_tokenizer: test_tokenizer.c tokenizer.c
-	gcc test_tokenizer.c tokenizer.c -o test_tokenizer
+bin/test_tokenizer: test_tokenizer.c tokenizer.c
+	mkdir -p bin
+	gcc test_tokenizer.c tokenizer.c -o bin/test_tokenizer
 
 stub:
-	swig -java tokenizer.i
+	mkdir -p ./hu/rilmta/gate/tokenizers/dummyctokenizer/
+	swig -outdir ./hu/rilmta/gate/tokenizers/dummyctokenizer/ -java -package hu.rilmta.gate.tokenizers.dummyctokenizer tokenizer.i
 
-libtokenizer.so:
+lib:
+	mkdir -p lib
 	gcc -fPIC -c tokenizer.c tokenizer_wrap.c -I$(JAVAPATH)/include -I$(JAVAPATH)/include/linux
-	g++ -shared tokenizer.o tokenizer_wrap.o -Wl,-soname,libtokenizer.so -o libtokenizer.so
+	g++ -shared tokenizer.o tokenizer_wrap.o -Wl,-soname,libdummyctokenizer.so -o lib/libdummyctokenizer.so
 
 javatest:
-	javac -Xdiags:verbose *.java
-	java -Djava.library.path="." TestDummyCTokenizer
+	mkdir -p bin
+	javac -Xdiags:verbose -d bin/ ./hu/rilmta/gate/tokenizers/dummyctokenizer/*.java
+	javac -Xdiags:verbose -d bin/ -cp bin/ ./TestDummyCTokenizerWrapper.java
+	java -cp bin/ -Djava.library.path="./lib/" TestDummyCTokenizerWrapper
+
+jartest:
+	mkdir -p bin
+	mkdir -p lib
+	javac -Xdiags:verbose -d bin/ ./hu/rilmta/gate/tokenizers/dummyctokenizer/*.java
+	$(JAVAPATH)/bin/jar -cvf lib/dummyctokenizerwrapper.jar -C bin/ .
+	java  -Djava.library.path="lib/" -cp bin/:lib/dummyctokenizerwrapper.jar TestDummyCTokenizerWrapper
 
 clean:
+	rm -f -r bin/*
+	rm -f -r lib/*
 	rm -f *.o *.class *.so
-	rm -f DummyCTokenizer.java DummyCTokenizerJNI.java  OffsPairArray.java  OffsPair.java test_tokenizer
+	rm -f DummyCTokenizerWrapper.java DummyCTokenizerWrapperJNI.java  OffsPairArray.java  OffsPair.java test_tokenizer tokenizer_wrap.c
 

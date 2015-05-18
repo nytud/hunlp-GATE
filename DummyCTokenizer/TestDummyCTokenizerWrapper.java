@@ -1,10 +1,14 @@
-public class TestDummyCTokenizer {
+import hu.rilmta.gate.tokenizers.dummyctokenizer.*;
+
+public class TestDummyCTokenizerWrapper {
+
+    static {
+	System.loadLibrary("dummyctokenizer");
+    }
 
     public static void main(String argv[]) {
 
-	System.loadLibrary("tokenizer");
-
-	DummyCTokenizer tokenizer = new DummyCTokenizer();
+	DummyCTokenizerWrapper tokenizer = new DummyCTokenizerWrapper();
 
 	String text = " Ez egy mondat.  ";
 	int maxtoks = 1000;

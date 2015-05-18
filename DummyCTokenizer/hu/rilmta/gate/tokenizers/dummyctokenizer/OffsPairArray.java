@@ -6,6 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
+package hu.rilmta.gate.tokenizers.dummyctokenizer;
 
 public class OffsPairArray {
   private long swigCPtr;
@@ -28,31 +29,31 @@ public class OffsPairArray {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        DummyCTokenizerJNI.delete_OffsPairArray(swigCPtr);
+        DummyCTokenizerWrapperJNI.delete_OffsPairArray(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public OffsPairArray(int nelements) {
-    this(DummyCTokenizerJNI.new_OffsPairArray(nelements), true);
+    this(DummyCTokenizerWrapperJNI.new_OffsPairArray(nelements), true);
   }
 
   public OffsPair getitem(int index) {
-    return new OffsPair(DummyCTokenizerJNI.OffsPairArray_getitem(swigCPtr, this, index), true);
+    return new OffsPair(DummyCTokenizerWrapperJNI.OffsPairArray_getitem(swigCPtr, this, index), true);
   }
 
   public void setitem(int index, OffsPair value) {
-    DummyCTokenizerJNI.OffsPairArray_setitem(swigCPtr, this, index, OffsPair.getCPtr(value), value);
+    DummyCTokenizerWrapperJNI.OffsPairArray_setitem(swigCPtr, this, index, OffsPair.getCPtr(value), value);
   }
 
   public OffsPair cast() {
-    long cPtr = DummyCTokenizerJNI.OffsPairArray_cast(swigCPtr, this);
+    long cPtr = DummyCTokenizerWrapperJNI.OffsPairArray_cast(swigCPtr, this);
     return (cPtr == 0) ? null : new OffsPair(cPtr, false);
   }
 
   public static OffsPairArray frompointer(OffsPair t) {
-    long cPtr = DummyCTokenizerJNI.OffsPairArray_frompointer(OffsPair.getCPtr(t), t);
+    long cPtr = DummyCTokenizerWrapperJNI.OffsPairArray_frompointer(OffsPair.getCPtr(t), t);
     return (cPtr == 0) ? null : new OffsPairArray(cPtr, false);
   }
 

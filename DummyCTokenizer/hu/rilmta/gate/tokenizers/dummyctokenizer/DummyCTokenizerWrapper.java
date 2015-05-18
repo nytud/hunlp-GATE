@@ -6,10 +6,11 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
+package hu.rilmta.gate.tokenizers.dummyctokenizer;
 
-public class DummyCTokenizer {
+public class DummyCTokenizerWrapper {
   public static void tokenize(String text, OffsPair tokens, int[] ntokens, int maxtokens, OffsPair whites, int[] nwhites, int maxwhites) {
-    DummyCTokenizerJNI.tokenize(text, OffsPair.getCPtr(tokens), tokens, ntokens, maxtokens, OffsPair.getCPtr(whites), whites, nwhites, maxwhites);
+    DummyCTokenizerWrapperJNI.tokenize(text, OffsPair.getCPtr(tokens), tokens, ntokens, maxtokens, OffsPair.getCPtr(whites), whites, nwhites, maxwhites);
   }
 
 }

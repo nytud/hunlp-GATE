@@ -1,4 +1,4 @@
-%module DummyCTokenizer
+%module DummyCTokenizerWrapper
 
 %{
 /* Includes the header in the wrapper code */

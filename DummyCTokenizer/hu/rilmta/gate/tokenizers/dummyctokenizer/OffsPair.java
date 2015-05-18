@@ -6,6 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
+package hu.rilmta.gate.tokenizers.dummyctokenizer;
 
 public class OffsPair {
   private long swigCPtr;
@@ -28,30 +29,30 @@ public class OffsPair {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        DummyCTokenizerJNI.delete_OffsPair(swigCPtr);
+        DummyCTokenizerWrapperJNI.delete_OffsPair(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void setStart(int value) {
-    DummyCTokenizerJNI.OffsPair_start_set(swigCPtr, this, value);
+    DummyCTokenizerWrapperJNI.OffsPair_start_set(swigCPtr, this, value);
   }
 
   public int getStart() {
-    return DummyCTokenizerJNI.OffsPair_start_get(swigCPtr, this);
+    return DummyCTokenizerWrapperJNI.OffsPair_start_get(swigCPtr, this);
   }
 
   public void setEnd(int value) {
-    DummyCTokenizerJNI.OffsPair_end_set(swigCPtr, this, value);
+    DummyCTokenizerWrapperJNI.OffsPair_end_set(swigCPtr, this, value);
   }
 
   public int getEnd() {
-    return DummyCTokenizerJNI.OffsPair_end_get(swigCPtr, this);
+    return DummyCTokenizerWrapperJNI.OffsPair_end_get(swigCPtr, this);
   }
 
   public OffsPair() {
-    this(DummyCTokenizerJNI.new_OffsPair(), true);
+    this(DummyCTokenizerWrapperJNI.new_OffsPair(), true);
   }
 
 }

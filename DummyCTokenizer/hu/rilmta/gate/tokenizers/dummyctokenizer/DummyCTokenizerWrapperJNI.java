@@ -6,8 +6,9 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
+package hu.rilmta.gate.tokenizers.dummyctokenizer;
 
-public class DummyCTokenizerJNI {
+public class DummyCTokenizerWrapperJNI {
   public final static native long new_OffsPairArray(int jarg1);
   public final static native void delete_OffsPairArray(long jarg1);
   public final static native long OffsPairArray_getitem(long jarg1, OffsPairArray jarg1_, int jarg2);
