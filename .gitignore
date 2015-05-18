@@ -6,6 +6,7 @@
 # Package Files #
 *.jar
 !Lang_Hungarian/hungarian.jar
+!Lang_Hungarian/resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar
 *.war
 *.ear
 
