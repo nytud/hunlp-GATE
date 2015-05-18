@@ -1,5 +1,7 @@
 JAVAPATH=/usr/jdk/
 
+.PHONY: stub lib javatest jartest clean
+
 bin/test_tokenizer: test_tokenizer.c tokenizer.c
 	mkdir -p bin
 	gcc test_tokenizer.c tokenizer.c -o bin/test_tokenizer
@@ -24,11 +26,11 @@ jartest:
 	mkdir -p lib
 	javac -Xdiags:verbose -d bin/ ./hu/rilmta/gate/tokenizers/dummyctokenizer/*.java
 	$(JAVAPATH)/bin/jar -cvf lib/dummyctokenizerwrapper.jar -C bin/ .
+	javac -Xdiags:verbose -d bin/ -cp bin/ ./TestDummyCTokenizerWrapper.java
 	java  -Djava.library.path="lib/" -cp bin/:lib/dummyctokenizerwrapper.jar TestDummyCTokenizerWrapper
 
 clean:
 	rm -f -r bin/*
 	rm -f -r lib/*
-	rm -f *.o *.class *.so
-	rm -f DummyCTokenizerWrapper.java DummyCTokenizerWrapperJNI.java  OffsPairArray.java  OffsPair.java test_tokenizer tokenizer_wrap.c
+	rm -f *.o
 
