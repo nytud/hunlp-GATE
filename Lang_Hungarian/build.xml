@@ -3,15 +3,18 @@
     GATE Resources for Hungarian
   </description>
 
-  <!-- the 'gate.home' property should be set while calling ant like:
-       ant -Dgate.home=/home/joker/GATE_Developer_8.0 --> 
-
   <!-- Prevent Ant from warning about includeantruntime not being set -->
   <property name="build.sysclasspath" value="ignore" />
 
+  <!-- Use shell environment variables: ${env.USER} etc. -->
+  <property environment="env" />
+
+  <!-- set gate.home property from shell env var GATE_HOME: -->
+  <property name="gate.home" value="${env.GATE_HOME}" />
+
   <!-- set global properties for this build -->
   <property name="src" location="src"/>
-  <property name="build" location="build"/>
+  <property name="build" location="bin"/>
   <property name="dist"  location="dist"/>
   <property name="jar.location" location="hungarian.jar" />
   <property name="doc.dir" location="doc" />
@@ -77,12 +80,13 @@
     <!--mkdir dir="${dist}/lib"/-->
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${jar.location}" basedir="${build}"/>
+    <!-- ...but exclude TemplatePR.class -->
+    <jar jarfile="${jar.location}" basedir="${build}" excludes="**/TemplatePR.class"/>
 
     <!-- Delete the ${build} and ${dist} directory trees -->
     <!-- XXX átmásolva a "clean.classes"-ból
          XXX minek is kellett a dist dir egyáltalán? -->
-    <delete dir="${build}"/>
+    <!-- delete dir="${build}"/ -->
     <!--delete dir="${dist}"/-->
   </target>
 

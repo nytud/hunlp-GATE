@@ -1,5 +1,5 @@
 # GATE installation directory
-GATE_HOME=/home/$(USER)/GATE_Developer_8.0
+export GATE_HOME=/home/$(USER)/GATE_Developer_8.0
 
 # userid on corpus.nytud.hu used for uploading, see target "upload"
 CORPUSUSER=yourusername
@@ -8,7 +8,7 @@ CORPUSUSER=yourusername
 
 # Build the GATE CREOLE plugin "Lang_Hungarian" in ./Lang_Hungarian/
 build:
-	cd Lang_Hungarian ; ant -Dgate.home=$(GATE_HOME)
+	cd Lang_Hungarian ; ant
 
 # Upload the Lang_Hungarian plugin to the plugin repository at corpus.nytud.hu/GATE/
 # Invoke with your own username on corpus.nytud.hu:
