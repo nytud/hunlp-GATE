@@ -14,7 +14,7 @@ import java.util.*;
  *  class as a GATE Resource, and gives the information GATE needs 
  *  to configure the resource appropriately. 
  */ 
-@CreoleResource(name = "Hungarian DummyNER",
+@CreoleResource(name = "Hungarian Dummy NER",
 				comment = "Dummy NER = 2 adjacent uppercase words :)",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyNER") 

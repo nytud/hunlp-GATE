@@ -24,17 +24,20 @@
   <property name="gate.lib" location="${gate.home}/lib" />
   <property name="gate.compile.maxwarnings" value="10000" />
 
+  <property name="resources.dir" location="resources" />
+  <property name="dummyctokenizerwrapper.jar" location="${resources.dir}/dummyctokenizer/lib/dummyctokenizerwrapper.jar" />
+
   <path id="classpath">
     <pathelement location="${gate.jar}" />
     <fileset dir="${gate.lib}">
       <include name="**/*.jar" />
       <include name="**/*.zip" />
     </fileset>
+    <pathelement location="${dummyctokenizerwrapper.jar}" />
     <!--fileset dir="lib"> 
       <include name="*.jar"/>
     </fileset-->
   </path> 
-
 
   <target name="init">
     <!-- Create the time stamp -->

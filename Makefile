@@ -24,10 +24,13 @@ upload:
 
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
-GATE_USER_PLUGINS_DIR=`grep " gate.user.plugins=" ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
+GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
 local_install:
+	@echo "Your GATE user plugin directory appears to be: $(GATE_USER_PLUGINS_DIR)"
 	rm -rf "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian"
 	mkdir -p "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian"
 	cp Lang_Hungarian/hungarian.jar "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
 	cp Lang_Hungarian/creole.xml "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
-#	TODO: copy resources dir but without the sources
+	cp -r Lang_Hungarian/resources "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
+	rm -rf $(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/resources/dummyctokenizer/src/
+# TODO: delete (don't copy) all src files under resources

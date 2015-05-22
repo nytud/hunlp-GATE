@@ -54,3 +54,6 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+# Recommenders used by Eclipse (added by MM)
+.recommenders/
