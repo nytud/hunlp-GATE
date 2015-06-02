@@ -3,8 +3,13 @@ package hu.rilmta.gate.tokenizers;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Locale;
 
+import hu.rilmta.gate.util.*;
 import hu.rilmta.gate.tokenizers.dummyctokenizer.*;
 import gate.*;
 import gate.creole.*; 
@@ -20,6 +25,48 @@ import gate.util.*;
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyCTokenizer") 
 public class DummyCTokenizer extends AbstractLanguageAnalyser { 
  
+	static {
+		/* In the static block we load the native shared library
+		 * from ./resources/dummyctokenizer/lib/ relative to hungarian.jar 
+		 * (which should contain this class)
+		 * The name of the library file is platform-dependent:
+		 * - Linux: libdummyctokenizer.so
+		 * - Mac OS X: libdummyctokenizer.dylib ? (TODO)
+		 * - Windows: dummyctokenizer.dll ? (TODO)
+		 * We use the static block to make sure that the library does not
+		 * get reloaded when the plugin is reloaded in GATE (which would throw an exception).
+		 * We also check explicitly if it has not been loaded yet.
+		 */
+		
+		if (!DummyCTokenizer.isNativeLibraryLoaded()) { // exception1 when run after unload/load
+		//if (true) { // exception2 when new PR created after unload/load
+			try {
+				// Get the path of this jar file
+				File jarFile = new File(DummyCTokenizer.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+				String jarDir = jarFile.getParentFile().getPath();
+				// set library file name depending on OS
+				String libFileName = null;
+				String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+				if (osName.contains("linux")) {
+				    libFileName = "libdummyctokenizer.so";
+				}
+				else if (osName.contains("windows")) {
+				    libFileName = "dummyctokenizer.dll";
+				}
+				else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
+					libFileName = "libdummyctokenizer.dylib";
+				}
+				// load native library
+				Path libAbsFileName = Paths.get(jarDir, "resources", "dummyctokenizer", "lib", libFileName);
+				System.load(libAbsFileName.toString());
+				
+			} catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
     /**
 	 * (Generated, by Eclipse)
 	 */
@@ -46,6 +93,7 @@ public class DummyCTokenizer extends AbstractLanguageAnalyser {
         // mandatory parameters is not provided 
  
 		// Set the path to the C tokenizer's native library using the nativeLibPath CREOLE property:
+		/*
 		try {
 			DummyCTokenizer.addLibPath(nativeLibPath.getPath());
 		} catch (IOException e) {
@@ -57,6 +105,7 @@ public class DummyCTokenizer extends AbstractLanguageAnalyser {
 		// TODO:
 		// - bug: exception if class is loaded more than once (=> static block)
 		// - Mac OS X lib
+		*/
 		
         return this; 
 	}
@@ -123,7 +172,19 @@ public class DummyCTokenizer extends AbstractLanguageAnalyser {
 	        throw new ExecutionException(e);
 	    }
     		
-	} 
+	}
+	
+	/**
+	 * @return true if the native library is already loaded
+	 */
+	public static boolean isNativeLibraryLoaded() {
+		final String[] libraries = ClassScope.getLoadedLibraries(ClassLoader.getSystemClassLoader());
+		//final String[] libraries = ClassScope.getLoadedLibraries(DummyCTokenizer.class.getClassLoader());
+		for (int j=0; j<libraries.length; j++)
+			if (libraries[j].contains("dummyctokenizer"))
+				return true;
+		return false;
+	}
 
 	/**
 	 * Add a library path to load.library.path to be used by System.load()
@@ -172,6 +233,37 @@ public class DummyCTokenizer extends AbstractLanguageAnalyser {
 	}
 	public URL getNativeLibPath() {
 		return nativeLibPath;
+	}
+	
+	/* Run test if called from command line */
+	public static void main(String[] args) throws Exception {
+				
+		System.out.print("THIS is a test\n\n");
+
+		System.out.print("Loaded libraries:\n");
+		final String[] libraries = ClassScope.getLoadedLibraries(ClassLoader.getSystemClassLoader()); //MyClassName.class.getClassLoader()
+		for (int j=0; j<libraries.length; j++) {
+			System.out.print(libraries[j] + "\n");
+		}
+		
+		String text = " This is a sentence.  ";
+        int maxtoks = 1000;
+        OffsPairArray toks = new OffsPairArray(maxtoks);
+        int[] ntoks = {0};
+        int maxwhs = 1000;
+        OffsPairArray whs = new OffsPairArray(maxwhs);
+        int[] nwhs = {0};
+
+        DummyCTokenizerWrapper.tokenize(text, toks.cast(), ntoks, maxtoks, whs.cast(), nwhs, maxwhs);
+
+        System.out.format("\nText: '%s'\n", text);
+        System.out.println("Tokens:");
+        for (int i=0; i<ntoks[0]; i++)
+                System.out.format("(%d, %d)\n", toks.getitem(i).getStart(), toks.getitem(i).getEnd());
+        System.out.println("Whitespaces:");
+        for (int i=0; i<nwhs[0]; i++)
+                System.out.format("(%d, %d)\n", whs.getitem(i).getStart(), whs.getitem(i).getEnd());
+		
 	}
 	
 }
