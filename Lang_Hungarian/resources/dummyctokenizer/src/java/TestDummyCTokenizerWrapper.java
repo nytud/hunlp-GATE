@@ -1,9 +1,22 @@
+import java.util.Locale;
 import hu.rilmta.gate.tokenizers.dummyctokenizer.*;
 
 public class TestDummyCTokenizerWrapper {
 
     static {
-	System.loadLibrary("dummyctokenizer");
+	String libFileName = null;
+	String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+	if (osName.contains("linux")) {
+		libFileName = "libdummyctokenizer.so";
+	}
+	else if (osName.contains("windows")) {
+		libFileName = "cygdummyctokenizer32.dll";
+	}
+	else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
+		libFileName = "libdummyctokenizer.dylib";
+	}
+	System.load("C:\\Work\\Infra2\\hunlp-GATE\\Lang_Hungarian\\resources\\dummyctokenizer\\bin\\" + libFileName);
+	//System.loadLibrary("dummyctokenizer");
     }
 
     public static void main(String argv[]) {
