@@ -1,4 +1,5 @@
-// Read string, parse, reuse, write to stdout
+// Read string, parse, reuse, write to string
+// TODO!
 
 #include "reentrant2.h"
 
