@@ -6,3 +6,6 @@ reentrant2: lex.reentrant2.c reentrant2_main.c
 
 reentrant2b: lex.reentrant2.c reentrant2_main-b.c
 	gcc lex.reentrant2.c reentrant2_main-b.c -o reentrant2b
+
+reentrant2c: lex.reentrant2.c reentrant2_main-c.c
+	gcc lex.reentrant2.c reentrant2_main-c.c -o reentrant2c
