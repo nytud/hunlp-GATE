@@ -9,3 +9,7 @@ test_tokenizer: test_tokenizer.c tokenizer.c lex.tokens.c lex.sentences.c
 
 tokenizer_singleton: tokenizer_singleton.c lex.sentences.c lex.tokens.c
 	gcc tokenizer_singleton.c lex.sentences.c lex.tokens.c -o tokenizer_singleton
+
+test_strctest:
+	gcc -g strctest.c -o strctest
+	valgrind --tool=memcheck --leak-check=yes ./strctest
