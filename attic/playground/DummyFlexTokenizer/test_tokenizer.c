@@ -10,15 +10,12 @@ int main ( int argc, char * argv[] )
 
 	printf("Input='%s'\n", testinp);
 
-	printf("Initializing...\n");
-	
-	i = tokenizer_init(&mytokenizer);
-	
-	printf("Done: %d\n", i);
+	printf("Initializing...\n");	
+	i = tokenizer_init(mytokenizer);
+	printf("Done: %d  %p\n", i, mytokenizer);
 	
 	//tokenizer_tokenize(mytokenizer, testinp, output);
 	//printf("Output='%s'", testinp, output);
-	
 	//free(output);
 	
 	tokenizer_destroy(mytokenizer);

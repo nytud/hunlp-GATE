@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 
 #include "lex.tokens.h"
 #include "lex.sentences.h"
@@ -14,7 +15,7 @@ typedef struct t_tokenizer_internals {
 
 
 // Initialize tokenizer: allocate memory for internal variables
-// Return 1 if error, 0 othrewise
+// Return 1 if error, 0 otherwise
 int tokenizer_init( t_tokenizer t)
 {
 	// allocate, set to 0
@@ -25,12 +26,12 @@ int tokenizer_init( t_tokenizer t)
 	
 	// initialize scanners
 	t_tokenizer_internals* ptr = (t_tokenizer_internals*)t;
-    printf("%d\n", ptr->scantoks);
-    printf("%d\n", ptr->scansents);
+    printf("%p\n", ptr->scantoks);
+    printf("%p\n", ptr->scansents);
     tokenslex_init ( &(ptr->scantoks) );
     sentenceslex_init ( &(ptr->scansents) );
-    printf("%d\n", ptr->scantoks);
-    printf("%d\n", ptr->scansents);       
+    printf("%p\n", ptr->scantoks);
+    printf("%p\n", ptr->scansents);       
     
 	return 0;
 }
@@ -79,9 +80,9 @@ void tokenizer_tokenize( t_tokenizer t, char* input, char* output)
 // Free up dynamic objects allocated by tokenizer when not used any more
 void tokenizer_destroy(t_tokenizer t)
 {
-	t_tokenizer_internals* ptr = (t_tokenizer_internals*)t;
+	//t_tokenizer_internals* ptr = (t_tokenizer_internals*)t;
     //tokenslex_destroy(ptr->scantoks);
     //sentenceslex_destroy(ptr->scansents);
-    //free(t); // free(ptr) ???
-    //t = NULL;
+    free(t); // free(ptr) ???
+    t = NULL;
 }
