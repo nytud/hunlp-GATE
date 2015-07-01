@@ -9,10 +9,20 @@ typedef struct t_my {
 
 typedef void* t;
 
+void init(t* y)
+{
+	*y = (t)malloc(sizeof(t_my));
+	memset(*y, 0, sizeof(t_my));
+}
+
 int main(int argc, char* argv[])
 {
-	t x = (t)malloc(sizeof(t_my));
+	t x;
+/*
+	x = (t)malloc(sizeof(t_my));
 	memset(x, 0, sizeof(t_my));
+*/
+	init(&x);
 
 	t_my* p = (t_my*)x;
 	p->x = malloc(100);
@@ -29,4 +39,3 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-

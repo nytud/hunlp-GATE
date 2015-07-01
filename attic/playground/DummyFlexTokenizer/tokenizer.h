@@ -10,12 +10,13 @@ typedef void* t_tokenizer;
 
 // Initialize a new tokenizer
 // Return 1 if error, 0 othrewise
-int tokenizer_init( t_tokenizer tokenizer);
+int tokenizer_init( t_tokenizer* tokenizer);
 
 // Tokenize 0-terminated string input: set output to a new dynamically
 // allocated 0-terminated string that contains the results.
-// It is your responsibility to free up string output.
-void tokenizer_tokenize( t_tokenizer tokenizer, char* input, char* output);
+// The length of the output string (without the terminating \0-char) will be set to outsize.
+// It is your responsibility to free up pointer output.
+void tokenizer_tokenize( t_tokenizer tokenizer, char* input, char** output, int* outsize);
 
 // Free up dynamic objects allocated by tokenizer when not used any more
 void tokenizer_destroy( t_tokenizer tokenizer);

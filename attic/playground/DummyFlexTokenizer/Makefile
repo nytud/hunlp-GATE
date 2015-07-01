@@ -16,3 +16,8 @@ tokenizer_singleton: tokenizer_singleton.c lex.sentences.c lex.tokens.c
 test_strctest:
 	gcc -g strctest.c -o strctest
 	valgrind --tool=memcheck --leak-check=yes ./strctest
+
+test_ptrtest:
+	gcc -g ptrtest.c -o ptrtest
+	valgrind --tool=memcheck --leak-check=yes ./ptrtest
+	
