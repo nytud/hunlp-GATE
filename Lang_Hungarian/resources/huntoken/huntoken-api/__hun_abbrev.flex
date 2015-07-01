@@ -1,0 +1,197 @@
+%option reentrant
+/* AZ M4 FORRÁSBÓL ELOÁLLÍTOTT ÁLLOMÁNY, EZT NE MÓDOSÍTSD! */
+
+%option noyywrap
+
+/* hun_abbrev - mondatok összevonása a valószínûleg hibásan megállapított mondathatároknál */
+/* 2003 (c) Németh László <nemethl@gyorsposta.hu> */
+
+%s NUMBEGIN
+
+/* nagybetû és paragrafusjel */
+
+UPPER [A-ZÁÉÍÓÖÕÚÜÛ§¡£¥¦©ª«¬®¯ÀÂÃÄÅÆÇÈÊËÌÎÏÐÑÒÔØÙÝÞ]
+
+/* nem szókarakter */
+NONWORDCHAR ([^a-zA-ZáéíóöõúüûÁÉÍÓÖÕÚÜÛ\-.§%°0-9¡£¥¦©ª«¬®¯±³µ¶¹º»¼¾¿ÀÂÃÄÅÆÇÈÊËÌÎÏÐÑÒÔØÙÝÞßàâãäåæçèêëìîïðñòôøùýþ])
+
+/* szóköz, vagy új sor karakter */
+SPACE [ \n]
+
+/* mondathatár */
+BOUNDARY ".</s>"{SPACE}"<s>"
+
+WPL ".</s>"{SPACE}"<s>"
+
+/* rövidítések makró (külso állományból töltodik be) */
+
+ABBREV ("a"|"A"|"a."{SPACE}"m"|"A."{SPACE}"m"|"aug"|"Aug"|"bek"|"Bek"|"Bp"|"br"|"Br"|"B."{SPACE}"ú."{SPACE}"é."{SPACE}"k"|"bt"|"Bt"|"Btk"|"c"|"C"|"cca"|"Cca"|"Cs"|"csüt"|"Csüt"|"Ctv"|"dec"|"Dec"|"dk"|"Dk"|"dny"|"Dny"|"dr"|"Dr"|"du"|"Du"|"Dzs"|"em"|"Em"|"ev"|"Ev"|"f"|"F"|"febr"|"Febr"|"felv"|"Felv"|"ford"|"Ford"|"f."{SPACE}"é"|"F."{SPACE}"é"|"fszla"|"Fszla"|"fszt"|"Fszt"|"gimn"|"Gimn"|"gr"|"Gr"|"Gy"|"h"|"H"|"hg"|"Hg"|"hiv"|"Hiv"|"honv"|"Honv"|"hrsz"|"Hrsz"|"hsz"|"Hsz"|"htb"|"Htb"|"id"|"Id"|"ifj"|"Ifj"|"ig"|"Ig"|"igh"|"Igh"|"ill"|"Ill"|"ind"|"Ind"|"isk"|"Isk"|"i."{SPACE}"e"|"I."{SPACE}"e"|"i."{SPACE}"m"|"I."{SPACE}"m"|"i."{SPACE}"sz"|"I."{SPACE}"sz"|"izr"|"Izr"|"jan"|"Jan"|"jegyz"|"Jegyz"|"júl"|"Júl"|"jún"|"Jún"|"kb"|"Kb"|"ker"|"Ker"|"kft"|"Kft"|"kht"|"Kht"|"kk"|"Kk"|"kkt"|"Kkt"|"kp"|"Kp"|"Kr"|"Kr."{SPACE}"e"|"Kr."{SPACE}"u"|"krt"|"Krt"|"K."{SPACE}"m."{SPACE}"f"|"köv"|"Köv"|"luth"|"Luth"|"m"|"M"|"mb"|"Mb"|"megh"|"Megh"|"Mr"|"márc"|"Márc"|"m."{SPACE}"é"|"M."{SPACE}"é"|"NB"|"nov"|"Nov"|"ny"|"Ny"|"nyug"|"Nyug"|"o"|"O"|"okl"|"Okl"|"okt"|"Okt"|"olv"|"Olv"|"ov"|"Ov"|"ovh"|"Ovh"|"p"|"P"|"pf"|"Pf"|"pl"|"Pl"|"Pp"|"Ptk"|"pu"|"Pu"|"ref"|"Ref"|"rkp"|"Rkp"|"r."{SPACE}"k"|"R."{SPACE}"k"|"rt"|"Rt"|"röv"|"Röv"|"sgt"|"Sgt"|"s."{SPACE}"k"|"S."{SPACE}"k"|"St"|"sz"|"Sz"|"szept"|"Szept"|"szerk"|"Szerk"|"Szjt"|"Szt"|"t"|"T"|"tc"|"Tc"|"tkp"|"Tkp"|"törv"|"Törv"|"tvr"|"Tvr"|"Ty"|"u"|"U"|"ua"|"Ua"|"ui"|"Ui"|"uo"|"Uo"|"v"|"vö"|"V"|"Vö"|"vsz"|"Vsz"|"Zs"|"nyug.")
+%%
+
+	/* Sorszámok, ha mondatkezdõk */
+
+	/* BE: <s>25.</s> <s>Magyarország */
+
+	/* KI: <s>25. Magyarország */
+
+	/* BE: <s>25.</s> <s>§ */
+
+	/* KI: <s>25. § */
+
+"<s>"[0-9]+ { ECHO; BEGIN(NUMBEGIN); }
+
+<NUMBEGIN>{BOUNDARY}{UPPER} {
+	print_abbrev(yytext);
+}
+
+<NUMBEGIN>. {
+	ECHO;
+	BEGIN(INITIAL);
+}
+
+	/* zárójelezett dátum */
+	
+	/* BE: <s>A 2002.</s> <s>(IV. 25.)</s> <s> */
+
+	/* KI: <s>A 2002. (IV. 25.)  */
+
+[0-9]+{BOUNDARY}"("([VX]?"I"{1,3}|"I"?[VX])"."({SPACE}[0-9]+".")?")</s>"{SPACE}"<s>" {
+	print_abbrev(yytext);
+}
+
+	/* ügyiratszám + dátum */
+
+	/* BE: <s>A 25/2002.</s> <s>(IV.</s> <s>25.)</s> <s> */
+
+	/* KI: <s>A 25/2002. (IV. 25.)  */
+
+	/* BE: <s>A 25/2002.</s> <s>(IV. 25.)</s> <s> */
+
+	/* KI: <s>A 25/2002. (IV. 25.)  */
+
+{SPACE}[0-9]+"/"[0-9]+{BOUNDARY}"("([VX]?"I"{1,3}|"I"?[VX])".</s>"({SPACE}"<s>"[0-9]+".")?")</s>"{SPACE}"<s>" {
+ 	print_abbrev(yytext);
+}
+
+{SPACE}[0-9]+"/"[0-9]+{BOUNDARY}"("([VX]?"I"{1,3}|"I"?[VX])"."({SPACE}[0-9]+".")?")</s>"{SPACE}"<s>" {
+ 	print_abbrev(yytext);
+}
+
+	/* ügyiratszám + dátum II. */
+
+	/* BE: <s>A 25/2002.</s> <s>(IV.</s> <s>25.) */
+
+	/* KI: <s>A 25/2002. (IV. 25.) */
+
+{SPACE}[0-9]+"/"[0-9]+{BOUNDARY}"("([VX]?"I"{1,3}|"I"?[VX])".</s>"{SPACE}"<s>" {
+ 	print_abbrev(yytext);
+}
+
+	/* ügyiratszám + dátum III. */
+
+	/* BE: <s>A 25/2002.</s> <s>(IV.25.) */
+
+	/* KI: <s>A 25/2002. (IV.25.) */
+
+{SPACE}[0-9]+"/"[0-9]+{BOUNDARY}"("([VX]?"I"{1,3}|"I"?[VX])"."([0-9]+".")?")" {
+ 	print_abbrev(yytext);
+}
+
+	/* paragrafusjel, és sorszámot követo szám, vagy dátum római számmal */
+
+	/* BE: <s>A 25.</s> <s>§ szerint 2002.</s> <s>IV. havában. */
+
+	/* KI: <s>A 25. § szerint 2002. IV. havában. */
+
+[0-9]+{BOUNDARY}([§0-9]|[VX]?"I"{1,3}"."|"I"?[VX]".") {
+	print_abbrev(yytext);
+}
+
+[0-9]+{BOUNDARY}([VX]?"I"{1,3}|"I"?[VX]){BOUNDARY}[0-9] {
+	print_abbrev(yytext);
+}
+
+
+	/* Monogramok (B. Jenõ) */
+	
+	/* BE: B.</s> <s>Jenõ. */
+
+	/* KI: B. Jenõ. */
+
+	/* BE: A.</s> <s>E.</s> <s>X.</s> <s>Wilson. */
+
+	/* KI: A. E. X. Wilson. */
+
+{NONWORDCHAR}({ABBREV}{BOUNDARY}|{UPPER}{BOUNDARY})+ {
+	print_abbrev(yytext);
+}
+
+	/* Római számok (VI. Lajos), kivéve CD. */
+
+	/* BE: XIV.</s> <s>Lajos. */
+
+	/* KI: XIV. Lajos. */
+
+	/* BE: Ott a CD.</s> <s>Hallod? */
+
+	/* KI: Ott a CD.</s> <s>Hallod? */
+
+{NONWORDCHAR}"CD"{BOUNDARY} { ECHO; }  /* robusztus */
+
+{NONWORDCHAR}[IVXLCMD]+{BOUNDARY} { print_abbrev(yytext); }  /* robusztus */
+
+
+	/* Pl. esetében mindig megszüntetjük a mondathatárt. */
+
+	/* BE: Pl.</s> <s>Péter és Marcsa pl.</s> <s>25 fánkot is ehetne. */
+	
+	/* KI: Pl. Péter és Marcsa pl. 25 fánkot is ehetne. */
+
+{NONWORDCHAR}?[Pp]"l"{BOUNDARY} { print_abbrev(yytext); }  /* l., L. */
+
+	/* Gyakori rövidítések */
+
+	/* BE: Pl.</s> <s>Jani szerint ápr.</s> <s>Kati kedvenc hónapja. */
+	
+	/* KI: Pl. Jani szerint ápr. Kati kedvenc hónapja. */
+
+	/* {NONWORDCHAR}{ABBREV}{BOUNDARY} { print_abbrev(yytext); } */
+
+	/* ,,stb.'' esetében nem vonunk egybe. (A macska, kutya stb. Az elsõ... */
+
+	/* tokenizálás után mondatvégirövidítés-javítás */
+
+"<w>CD\n</w>\n<c>.</c>" {
+        ECHO;
+}
+
+"<w>"({ABBREV}|[A-Z]|[IVXLCMD]+)"\n</w>\n<c>.</c>" {
+	strcpy(yytext + (yyleng - 14), ".\n</w>");
+	fprintf(yyout, "%s", yytext);
+}
+
+	/* hun_sentclean kiegészítése */
+
+"\n\n</s>" {
+	fprintf(yyout, "\n</s>");
+}
+
+%%
+/* 
+ * <s> és </s> címkék törlése, és kiírás
+ */
+int print_abbrev(const char * s)
+{
+	char buff[8192];
+	int i, j = 0;
+	for (i = 0; i < strlen(s); i++) {
+		if (strncmp(s+i, "<s>", 3) == 0) i+=2;
+		else if (strncmp(s+i, "</s>", 4) == 0) i+=3;
+		else { 
+			buff[j] = s[i];
+			j++;
+		}
+	}
+	buff[j] = '\0';
+	fprintf(yyout, "%s",buff);
+}
