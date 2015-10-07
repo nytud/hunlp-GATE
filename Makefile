@@ -24,7 +24,8 @@ upload:
 
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
-GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
+#GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
+GATE_USER_PLUGINS_DIR=/home/mm/GATE_plugins
 local_install:
 	@echo "Your GATE user plugin directory appears to be: $(GATE_USER_PLUGINS_DIR)"
 	rm -rf "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian"
