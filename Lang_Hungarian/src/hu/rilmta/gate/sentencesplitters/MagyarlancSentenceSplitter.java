@@ -1,6 +1,4 @@
-package hu.rilmta.gate.tokenizers;
-
-import java.util.List;
+package hu.rilmta.gate.sentencesplitters;
 
 import gate.*;
 import gate.creole.*; 
@@ -9,18 +7,16 @@ import gate.util.InvalidOffsetException;
 import hu.u_szeged.splitter.HunSplitter;
 
 /** 
- * Hungarian sentence splitter and tokenizer processing resource using the HunSplitter class in Magyarlánc, 
+ * Hungarian sentence splitter processing resource using the HunSplitter class in Magyarlánc, 
  * which relies on Northwestern U.'s Morphadorner with some customizations.
  * Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
- * If you want both sentence splitting and tokenization, this PR is more efficient than sentence splitting and tokenizing separately.
  * Note: the sentence splitter seems to leave whitespace at the beginning of sentences, I left it as it was.
- * Author: Márton Miháltz
+ * @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Sentence Splitter And Tokenizer",
-				comment = "If you want both sentence splitting and tokenizations, this PR is more efficient than sentence splitting and tokenizing separately",
-				icon = "tokeniser",
-				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancSplitterTokenizer") 
-public class MagyarlancSplitterTokenizer extends AbstractLanguageAnalyser { 
+@CreoleResource(name = "Magyarlánc Hungarian Sentence Splitter",
+				icon = "sentence-splitter",
+				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancSentenceSplitter") 
+public class MagyarlancSentenceSplitter extends AbstractLanguageAnalyser { 
  
 
 	private static final long serialVersionUID = 1L;
@@ -57,8 +53,7 @@ public class MagyarlancSplitterTokenizer extends AbstractLanguageAnalyser {
 	} 
 		
 	/*
-	 * Add Sentence and Token offset (and length) annotations to the document.
-	 * This method mostly follows code from hu.u_szeged.splitter.HunSplitter.getTokenOffsets() 
+	 * Add Sentence annotations to the document.
 	 */ 
 	public void execute() throws ExecutionException { 
 
@@ -75,21 +70,13 @@ public class MagyarlancSplitterTokenizer extends AbstractLanguageAnalyser {
 
 	    String docContent = document.getContent().toString();
 
-		int[] tokOffs = null;
-		String sent = null;
-		int ss, se, ts, te;
+		int ss, se;
 		FeatureMap fm = null;
-		List<List<String>> splitted = hunSplitter.split(docContent);
 		int[] sentOffs = hunSplitter.getSentenceOffsets(docContent);
 		
-		// TODO: assert len(sentOffs) == len(splitted) ???
-		for (int i=0; i<splitted.size(); i++) {
-			
-			// sentence
+		for (int i=0; i<sentOffs.length-1; i++) {
 	        ss = sentOffs[i];
-	        // TODO: ss = start offset of first token in sentence?
 	        se = sentOffs[i+1];
-			sent = docContent.substring(ss, se);
 	        fm = Factory.newFeatureMap();
 	        fm.put("length", "" + (se - ss));
 	        try {
@@ -98,23 +85,8 @@ public class MagyarlancSplitterTokenizer extends AbstractLanguageAnalyser {
 		    catch(InvalidOffsetException e) {
 		    	throw new ExecutionException(e);
 			}	        
-
-	        // tokens
-			tokOffs = hunSplitter.getTokenizer().findWordOffsets(sent, splitted.get(i));
-			// TODO: assert len(splitted(i)) == len(tokOffs) ???
-			for (int j=0; j<splitted.get(i).size(); ++j) {
-				ts = sentOffs[i] + tokOffs[j];
-				te = ts + splitted.get(i).get(j).length();	
-		        fm = Factory.newFeatureMap();
-		        fm.put("length", "" + (te - ts));
-		        try {
-		        	as.add(new Long(ts), new Long(te), "Token", fm);
-		        }
-			    catch(InvalidOffsetException e) {
-			    	throw new ExecutionException(e);
-				}	        			
-			}				
 		}
+
 	} 
 
 	@RunTime
