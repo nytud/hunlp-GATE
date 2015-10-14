@@ -15,10 +15,9 @@ import gate.*;
 import gate.creole.*; 
 import gate.creole.metadata.*; 
 import gate.util.GateRuntimeException;
+import gate.util.InvalidOffsetException;
 import gate.util.OffsetComparator;
-
 import edu.stanford.nlp.tagger.maxent.SzteMaxentTagger;
-import hu.u_szeged.magyarlanc.resource.ResourceHolder;
 
 /** 
  *  Magyarlánc Hungarian POS-tagger and lemmatizer processing resource,
@@ -51,18 +50,6 @@ public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {
 	    	throw new ResourceInstantiationException(e);
 	    }
         
-        /*
-        ResourceHolder.initCorpus();
-        ResourceHolder.initFrequencies();
-        ResourceHolder.initMSDReducer();
-        ResourceHolder.initPunctations();
-        ResourceHolder.initRFSA();
-        ResourceHolder.initKRToMSD();
-        ResourceHolder.initMSDToCoNLLFeatures();
-        ResourceHolder.initCorrDic();
-        ResourceHolder.initMorPhonDir();
-        */
-
         return this; 
     }
    
@@ -139,22 +126,23 @@ public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {
 	    	Annotation currentSentence = sentencesIter.next();
 	        tokensInCurrentSentence.clear();
 	        sentenceForTagger.clear();
-	        // get tokens (forms, Annotation objects) in current sentence
+	        // get tokens (Annotation objects, surface forms) in current sentence
 	        while(currentToken != null
-	              &&
-	              currentToken.getEndNode().getOffset().compareTo(
-	            		  currentSentence.getEndNode().getOffset()) <= 0) {
-	          if (currentToken.withinSpanOf(currentSentence)) {
-	            tokensInCurrentSentence.add(currentToken);
-	            sentenceForTagger.add((String)currentToken.getFeatures().
-	                                get(TOKEN_STRING_FEATURE_NAME));
-	          }
-	          currentToken = (tokensIter.hasNext() ? tokensIter.next() : null);
+	        	  && currentToken.withinSpanOf(currentSentence)) {
+	        	tokensInCurrentSentence.add(currentToken);
+			    try {
+				    // surface form of current token
+				    String tok = document.getContent().getContent(
+						currentToken.getStartNode().getOffset(),
+						currentToken.getEndNode().getOffset()).toString();
+	                sentenceForTagger.add(tok);
+			    } catch (InvalidOffsetException e) {
+				    e.printStackTrace();
+			    }
+	            currentToken = (tokensIter.hasNext() ? tokensIter.next() : null);
 	        }
 	        //run the POS tagger
 	        String[] forms = sentenceForTagger.toArray(new String[sentenceForTagger.size()]);
-	        for (String f : sentenceForTagger)
-	        	System.err.format("-- '%s'\n", f);
 	        String[][] tags = tagger.morpSentence(forms);
 	        if (tags == null || tags.length != tokensInCurrentSentence.size())
 	        	throw new ExecutionException("MagyarlancPOSTaggerLemmatizer malfunction: " +
