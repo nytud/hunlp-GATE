@@ -20,7 +20,7 @@ import hu.u_szeged.splitter.HunSplitter;
 				comment = "If you want both sentence splitting and tokenizations, this PR is more efficient than sentence splitting and tokenizing separately",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancSplitterTokenizer") 
-public class MagyarlancSplitterTokenizer extends AbstractLanguageAnalyser { 
+public class MagyarlancSentenceSplitterTokenizer extends AbstractLanguageAnalyser { 
  
 
 	private static final long serialVersionUID = 1L;
