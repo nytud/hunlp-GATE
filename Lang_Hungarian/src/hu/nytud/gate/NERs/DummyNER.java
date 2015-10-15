@@ -1,4 +1,4 @@
-package hu.rilmta.gate.NERs;
+package hu.nytud.gate.NERs;
 
 import gate.*;
 import gate.creole.*; 

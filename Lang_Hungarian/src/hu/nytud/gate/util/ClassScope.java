@@ -1,4 +1,4 @@
-package hu.rilmta.gate.util;
+package hu.nytud.gate.util;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;

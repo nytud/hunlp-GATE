@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <CREOLE-DIRECTORY 
-  ID="hu.rilmta.gate.Lang_Hungarian"
+  ID="hu.nytud.gate.Lang_Hungarian"
   VERSION="0.0.4"
   DESCRIPTION="Hungarian language processing resources"
   HELPURL="http://corpus.nytud.hu/GATE/"

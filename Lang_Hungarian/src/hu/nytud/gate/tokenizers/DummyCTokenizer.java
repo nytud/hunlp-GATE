@@ -1,4 +1,4 @@
-package hu.rilmta.gate.tokenizers;
+package hu.nytud.gate.tokenizers;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,8 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Locale;
 
-import hu.rilmta.gate.util.*;
-import hu.rilmta.gate.tokenizers.dummyctokenizer.*;
+import hu.nytud.gate.tokenizers.dummyctokenizer.*;
+import hu.nytud.gate.util.*;
 import gate.*;
 import gate.creole.*; 
 import gate.creole.metadata.*; 

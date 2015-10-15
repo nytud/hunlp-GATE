@@ -1,4 +1,4 @@
-package hu.rilmta.gate.postaggers;
+package hu.nytud.gate.postaggers;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

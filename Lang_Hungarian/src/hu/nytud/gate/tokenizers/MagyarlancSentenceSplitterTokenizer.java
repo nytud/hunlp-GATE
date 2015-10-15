@@ -1,4 +1,4 @@
-package hu.rilmta.gate.tokenizers;
+package hu.nytud.gate.tokenizers;
 
 import java.util.List;
 

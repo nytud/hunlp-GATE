@@ -1,4 +1,4 @@
-package hu.rilmta.gate;
+package hu.nytud.gate;
 
 import gate.*;
 import gate.creole.*; 

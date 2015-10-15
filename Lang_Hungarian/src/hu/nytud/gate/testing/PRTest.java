@@ -1,4 +1,4 @@
-package hu.rilmta.gate.testing;
+package hu.nytud.gate.testing;
 
 import java.io.File;
 
@@ -36,13 +36,13 @@ public class PRTest {
 		
 			// Create a new MagyarlancSentenceSplitterTokenizer PR, apply it on the document
 			ProcessingResource tok = (ProcessingResource)Factory.createResource(
-					"hu.rilmta.gate.tokenizers.MagyarlancSentenceSplitterTokenizer");
+					"hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer");
 			tok.setParameterValue("document", doc);
 			tok.execute();
 			
 			// Create a new MagyarlancPOSTaggerLemmatizer PR, apply it on the document
 			ProcessingResource tagger = (ProcessingResource)Factory.createResource(
-					"hu.rilmta.gate.postaggers.MagyarlancPOSTaggerLemmatizer");
+					"hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer");
 			tagger.setParameterValue("document", doc);
 			tagger.execute();			
 			

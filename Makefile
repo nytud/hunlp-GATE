@@ -40,4 +40,4 @@ local_install:
 # Run command-line test
 RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
 runtest:
-	java -cp $(RTCP) hu.rilmta.gate.testing.PRTest
+	java -cp $(RTCP) hu.nytud.gate.testing.PRTest
