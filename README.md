@@ -1,7 +1,7 @@
 # hunlp-GATE
 
 Source files for the [GATE](http://gate.ac.uk/) plugin **Lang_Hungarian** containing Hungarian processing resources, 
-which are wrappers around already existing NLP tools in their original form (huntoken, hunmorph, hunpos, huntag3).
+which are wrappers around already existing NLP tools in their original form.
 
 ##Installing under GATE Developer
 
@@ -13,9 +13,9 @@ Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
 If it's not there, check if your user plugin directory is set (see steps 2-4. below).
 
-###Method 2 (on any computer with internet access running GATE Developer):
+###Method 2 (only GATE Developer & internet acces required):
 
-You can also install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
+Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
@@ -29,17 +29,19 @@ You can also install the plugin directly in GATE Developer using the online plug
 8. Click the "Apply All" button at the bottom.
 9. Click on the "Available to Install" tab.
 10. You should now see **Lang_Hungarian** in the list of plugins available to install. Enable the checkbox left to its name in column "Install".
-11. Click on the "Apply All" button to install the plugin. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
+11. Click on the "Apply All" button to install the plugin. 
+12. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
 
 ##Contents
 
 * `Lang_Hungarian`: directory tree for the Lang_Hungarian GATE plugin
- * `DummyTokenizer.java`: dummy tokenizer processing resource -- splits at space
- * `DummyNER.java`: dummy NER processing resource -- NE = 2 adjacent uppercase words
- * `hungarian.jar`: precompiled GATE plugin containing DummyTokenizer + DummyNER
- * `TemplatePR.java`: template for creating new processing resource classes
-* `update-site`: see `update-site/README.txt`
-* `Makefile`: targets for building the plugin + uploading the plugin
+ * `src`: Java sources of the included Processing Resources. See Javadocs for details.
+ * `resources`: non-Java binaries, sources and resources files for the included tools
+ * `hungarian.jar`: plugin Java binaries in a jar file
+ * `build.xml`: use this to build the jar from sources using Apache Ant
+ * `creole.xml`: this tells GATE how to use hungarian.jar as a CREOLE plugin
+ * `.classpath`, `.project`: use these to import project into Eclipse Java IDE
+* `Makefile`: use to rebuild, install etc. the plugin from command line
 
 ##Building the Lang_Hungarian plugin
 
@@ -55,11 +57,22 @@ make build GATE_HOME=/your/gate/installation/dir
 This will create `hungarian.jar` in the directory `Lang_Hungarian`.
 (A precompiled `hungarian.jar` is also accessible directly from the repository.)
 
+##Plugin command-line installation (developers)
+
+If you have rebuilt the plugin, it is also possible to install it to your GATE user plugin directory with the
+following command:
+
+```
+make local_install GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
+```
+
 ##Udating the plugin repository
 
-To update the plugin repository hosted at `http://corpus.nytud.hu/GATE`,
-run `make upload` with specifying your user name on `corpus.nytud.hu`:
+To update the plugin repository  hosted at `http://corpus.nytud.hu/GATE`,
+run `make upload` specifying your user name on `corpus.nytud.hu`:
 
 ```
 make upload CORPUSUSER=yourusername
 ```
+
+This will upload your local `hungarian.jar`, `creole.xml` and `resources` directory.
