@@ -34,6 +34,7 @@ local_install:
 	cp Lang_Hungarian/creole.xml "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
 	cp -r Lang_Hungarian/resources "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
 	rm -rf $(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/resources/dummyctokenizer/src/
+	echo INSTALLATION SUCCESSFUL
 # TODO: delete (don't copy) all src files under resources
 
 

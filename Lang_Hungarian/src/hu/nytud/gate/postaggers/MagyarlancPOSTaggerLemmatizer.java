@@ -103,8 +103,6 @@ public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {
 	    
 	    //prepare the input for the tagger
 	    List<String> sentenceForTagger = new ArrayList<String>();
-	    //List<List<String>> sentencesForTagger = new ArrayList<List<String>>(1);
-	    //sentencesForTagger.add(sentenceForTagger);
 
 	    //define a comparator for annotations by start offset
 	    Comparator<Annotation> offsetComparator = new OffsetComparator();
@@ -137,7 +135,7 @@ public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {
 						currentToken.getEndNode().getOffset()).toString();
 	                sentenceForTagger.add(tok);
 			    } catch (InvalidOffsetException e) {
-				    e.printStackTrace();
+				    throw new ExecutionException(e);
 			    }
 	            currentToken = (tokensIter.hasNext() ? tokensIter.next() : null);
 	        }
@@ -310,22 +308,7 @@ public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {
 		return failOnMissingInputAnnotations;
 	}
 	protected Boolean failOnMissingInputAnnotations = true;
-	  
-	/*
-	@RunTime
-	@Optional
-	@CreoleParameter(
-			comment = "Should all Tokens be POS tagged or just those within baseSentenceAnnotationType?",
-			defaultValue = "true")  
-	public void setPosTagAllTokens(Boolean allTokens) {
-		posTagAllTokens = allTokens;
-	}
-	public Boolean getPosTagAllTokens() {
-	    return posTagAllTokens;
-	}
-	protected Boolean posTagAllTokens = true;
-	*/
-	
+	  	
 	@RunTime
 	@CreoleParameter(
 			comment = "The name of the feature that will hold the MSD code morphological annotation on output annotation types (tokens)",

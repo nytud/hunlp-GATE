@@ -13,6 +13,11 @@ import gate.creole.metadata.*;
 				comment = "This is a template for developing GATE CREOLE Processing Resources.") 
 public class TemplatePR extends AbstractLanguageAnalyser { 
  
+	/**
+	 * Generated...
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/* 
 	 * this method gets called whenever an object of this 
 	 * class is created either from GATE Developer GUI or if 

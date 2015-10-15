@@ -32,9 +32,9 @@ class MLTestMorph {
 		}
 		
 		System.out.println("\nHunLemMor.getMorphologicalAnalyses():");
-		HunLemMor hlm = new HunLemMor();
+		//HunLemMor hlm = new HunLemMor();
 		for (int i=0; i<sent.length; i++) {
-			Set<MorAna> morAnas = hlm.getMorphologicalAnalyses(sent[i]);
+			Set<MorAna> morAnas = HunLemMor.getMorphologicalAnalyses(sent[i]);
 			System.out.format("%s:", sent[i]);
 			for (MorAna ana: morAnas) {
 				System.out.format(" %s", ana.toString());
