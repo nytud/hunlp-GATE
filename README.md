@@ -3,6 +3,8 @@
 Source files for the [GATE](http://gate.ac.uk/) plugin **Lang_Hungarian** containing Hungarian processing resources, 
 which are wrappers around already existing NLP tools in their original form.
 
+Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their status.
+
 ##Installing under GATE Developer
 
 *Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*
