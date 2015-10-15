@@ -1,5 +1,5 @@
-#JAVAPATH=/usr/jdk/
-JAVAPATH=/usr/
+JAVAPATH=/usr/jdk/
+#JAVAPATH=/usr/
 
 .PHONY: stub all so jar javatest ctest clean cleanall
 
@@ -7,8 +7,8 @@ all:
 
 # Generate C and JAVA files for JNI wrapping. Needs SWIG installed (version 3.0.5 was used)
 stub:
-	mkdir -p src/java/hu/rilmta/gate/tokenizers/dummyctokenizer
-	swig -outdir src/java/hu/rilmta/gate/tokenizers/dummyctokenizer -java -package hu.rilmta.gate.tokenizers.dummyctokenizer src/c/tokenizer.i
+	mkdir -p src/java/hu/nytud/gate/tokenizers/dummyctokenizer
+	swig -outdir src/java/hu/nytud/gate/tokenizers/dummyctokenizer -java -package hu.nytud.gate.tokenizers.dummyctokenizer src/c/tokenizer.i
 
 # Create shared library for embedding in JAVA via JNI
 so:
@@ -20,7 +20,7 @@ so:
 jar:
 	rm -f -r bin/*
 	mkdir -p bin
-	$(JAVAPATH)/bin/javac -d bin/ src/java/hu/rilmta/gate/tokenizers/dummyctokenizer/*.java
+	$(JAVAPATH)/bin/javac -d bin/ src/java/hu/nytud/gate/tokenizers/dummyctokenizer/*.java
 	$(JAVAPATH)/bin/jar -cvf lib/dummyctokenizerwrapper.jar -C bin/ .
 
 # Run JAVA test

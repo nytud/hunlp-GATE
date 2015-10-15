@@ -216,7 +216,7 @@ SWIGINTERN OffsPairArray *OffsPairArray_frompointer(OffsPair *t){
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_new_1OffsPairArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jlong JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_new_1OffsPairArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jlong jresult = 0 ;
   int arg1 ;
   OffsPairArray *result = 0 ;
@@ -230,7 +230,7 @@ SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTo
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_delete_1OffsPairArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_delete_1OffsPairArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   OffsPairArray *arg1 = (OffsPairArray *) 0 ;
   
   (void)jenv;
@@ -240,7 +240,7 @@ SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT jlong JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   jlong jresult = 0 ;
   OffsPairArray *arg1 = (OffsPairArray *) 0 ;
   int arg2 ;
@@ -261,7 +261,7 @@ SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTo
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jlong jarg3, jobject jarg3_) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2, jlong jarg3, jobject jarg3_) {
   OffsPairArray *arg1 = (OffsPairArray *) 0 ;
   int arg2 ;
   OffsPair arg3 ;
@@ -283,7 +283,7 @@ SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1cast(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1cast(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   OffsPairArray *arg1 = (OffsPairArray *) 0 ;
   OffsPair *result = 0 ;
@@ -298,7 +298,7 @@ SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTo
 }
 
 
-SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1frompointer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPairArray_1frompointer(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   OffsPair *arg1 = (OffsPair *) 0 ;
   OffsPairArray *result = 0 ;
@@ -313,7 +313,7 @@ SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTo
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1start_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1start_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   OffsPair *arg1 = (OffsPair *) 0 ;
   long arg2 ;
   
@@ -326,7 +326,7 @@ SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT jint JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1start_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1start_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   OffsPair *arg1 = (OffsPair *) 0 ;
   long result;
@@ -341,7 +341,7 @@ SWIGEXPORT jint JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1end_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1end_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   OffsPair *arg1 = (OffsPair *) 0 ;
   long arg2 ;
   
@@ -354,7 +354,7 @@ SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT jint JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1end_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_OffsPair_1end_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   OffsPair *arg1 = (OffsPair *) 0 ;
   long result;
@@ -369,7 +369,7 @@ SWIGEXPORT jint JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_new_1OffsPair(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_new_1OffsPair(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   OffsPair *result = 0 ;
   
@@ -381,7 +381,7 @@ SWIGEXPORT jlong JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTo
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_delete_1OffsPair(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_delete_1OffsPair(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   OffsPair *arg1 = (OffsPair *) 0 ;
   
   (void)jenv;
@@ -391,7 +391,7 @@ SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTok
 }
 
 
-SWIGEXPORT void JNICALL Java_hu_rilmta_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_tokenize(JNIEnv *jenv, jclass jcls, jstring jarg1, jlong jarg2, jobject jarg2_, jintArray jarg3, jint jarg4, jlong jarg5, jobject jarg5_, jintArray jarg6, jint jarg7) {
+SWIGEXPORT void JNICALL Java_hu_nytud_gate_tokenizers_dummyctokenizer_DummyCTokenizerWrapperJNI_tokenize(JNIEnv *jenv, jclass jcls, jstring jarg1, jlong jarg2, jobject jarg2_, jintArray jarg3, jint jarg4, jlong jarg5, jobject jarg5_, jintArray jarg6, jint jarg7) {
   char *arg1 = (char *) 0 ;
   OffsPair *arg2 = (OffsPair *) 0 ;
   int *arg3 = (int *) 0 ;

@@ -1,4 +1,4 @@
-import hu.rilmta.gate.tokenizers.dummyctokenizer.*;
+import hu.nytud.gate.tokenizers.dummyctokenizer.*;
 
 public class TestDummyCTokenizerWrapper {
 

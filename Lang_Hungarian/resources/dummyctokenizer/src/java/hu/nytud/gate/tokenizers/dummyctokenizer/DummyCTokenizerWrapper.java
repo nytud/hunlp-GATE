@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package hu.rilmta.gate.tokenizers.dummyctokenizer;
+package hu.nytud.gate.tokenizers.dummyctokenizer;
 
 public class DummyCTokenizerWrapper {
   public static void tokenize(String text, OffsPair tokens, int[] ntokens, int maxtokens, OffsPair whites, int[] nwhites, int maxwhites) {

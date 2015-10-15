@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package hu.rilmta.gate.tokenizers.dummyctokenizer;
+package hu.nytud.gate.tokenizers.dummyctokenizer;
 
 public class OffsPair {
   private long swigCPtr;
