@@ -35,3 +35,9 @@ local_install:
 	cp -r Lang_Hungarian/resources "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/"
 	rm -rf $(GATE_USER_PLUGINS_DIR)/Lang_Hungarian/resources/dummyctokenizer/src/
 # TODO: delete (don't copy) all src files under resources
+
+
+# Run command-line test
+RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
+runtest:
+	java -cp $(RTCP) hu.rilmta.gate.testing.PRTest
