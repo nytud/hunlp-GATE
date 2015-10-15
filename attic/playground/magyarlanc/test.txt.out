@@ -1,0 +1,38 @@
+1	A	a	Tf	T	SubPOS=f	3	DET	
+2	nagy	nagy	Afp-sn	A	SubPOS=f|Deg=p|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	3	ATT	
+3	kutya	kutya	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	5	SUBJ	
+4	gyorsan	gyors	Afp-sw	A	SubPOS=f|Deg=p|Num=s|Cas=w|NumP=none|PerP=none|NumPd=none	5	MODE	
+5	fut	fut	Vmip3s---n	V	SubPOS=m|Mood=i|Tense=p|Per=3|Num=s|Def=n	0	ROOT	
+6	és	és	Ccsp	C	SubPOS=c|Form=s|Coord=p	5	CONJ	
+7	szépen	szép	Afp-sw	A	SubPOS=f|Deg=p|Num=s|Cas=w|NumP=none|PerP=none|NumPd=none	8	MODE	
+8	szereti	szeret	Vmip3s---y	V	SubPOS=m|Mood=i|Tense=p|Per=3|Num=s|Def=y	6	COORD	
+9	Kati	Kati	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	10	ATT	
+10	vádliját	vádli	Nn-sa---s3	N	SubPOS=n|Num=s|Cas=a|NumP=s|PerP=3|NumPd=none	8	OBJ	
+11	.	.	.	.	_	0	PUNCT	
+
+1	Ez	ez	Pd3-sn	P	SubPOS=d|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
+2	pedig	pedig	Ccsp	C	SubPOS=c|Form=s|Coord=p	8	CONJ	
+3	egy	egy	Ti	T	SubPOS=i	5	DET	
+4	másik	másik	Pi3-sn	P	SubPOS=i|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	5	ATT	
+5	mondat	mondat	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
+6	,	,	,	,	_	8	PUNCT	
+7	te	te	Pp2-sn	P	SubPOS=p|Per=2|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
+8	fassz	fassz	Vmip3s---n	V	SubPOS=m|Mood=i|Tense=p|Per=3|Num=s|Def=n	0	ROOT	
+9	..	..	K	K	SubPOS=..	0	PUNCT	
+10	.	.	.	.	_	0	PUNCT	
+
+1	Na	na	Io	I	SubPOS=o	0	ROOT	
+2	és	és	Ccsw	C	SubPOS=c|Form=s|Coord=w	1	CONJ	
+3	a	a	Tf	T	SubPOS=f	4	DET	
+4	dr	dr	X	X	_	2	COORD	
+5	.	.	.	.	_	0	PUNCT	
+
+1	Senki	senki	Pg3-sn	P	SubPOS=g|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	0	ROOT	
+2	.	.	.	.	_	0	PUNCT	
+
+1	Ez	ez	Pd3-sn	P	SubPOS=d|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	4	SUBJ	
+2	meg	meg	Rp	R	SubPOS=p|Deg=none	4	PREVERB	
+3	az	az	Tf	T	SubPOS=f	4	DET	
+4	utolsó	utolsó	Afp-sn	A	SubPOS=f|Deg=p|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	0	ROOT	
+5	.	.	.	.	_	0	PUNCT	
+

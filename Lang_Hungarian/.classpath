@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar" sourcepath="/home/mm/NYTI/hunlp-GATE/Lang_Hungarian/resources/dummyctokenizer/src/java"/>
 	<classpathentry kind="lib" path="/home/mm/GATE_Developer_8.0/bin/gate.jar" sourcepath="/home/mm/GATE_Developer_8.0/src"/>
-	<classpathentry kind="lib" path="/home/mm/Infra2/magyarlanc/magyarlanc-2.0.jar" sourcepath="/home/mm/Infra2/magyarlanc/magyarlanc-2.0-src.jar"/>
+	<classpathentry kind="lib" path="/home/mm/Infra2/hunlp-GATE/Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.jar" sourcepath="/home/mm/Infra2/hunlp-GATE/attic/playground/magyarlanc/magyarlanc-2.0-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
