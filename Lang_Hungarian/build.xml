@@ -26,6 +26,8 @@
 
   <property name="resources.dir" location="resources" />
   <property name="dummyctokenizerwrapper.jar" location="${resources.dir}/dummyctokenizer/lib/dummyctokenizerwrapper.jar" />
+  <property name="magyarlanc-2.0.jar" location="${resources.dir}/magyarlanc/magyarlanc-2.0.jar" />
+
 
   <path id="classpath">
     <pathelement location="${gate.jar}" />
@@ -34,6 +36,7 @@
       <include name="**/*.zip" />
     </fileset>
     <pathelement location="${dummyctokenizerwrapper.jar}" />
+    <pathelement location="${magyarlanc-2.0.jar}" />
     <!--fileset dir="lib"> 
       <include name="*.jar"/>
     </fileset-->
