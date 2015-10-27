@@ -2,9 +2,9 @@ package hu.nytud.gate.morph;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -15,42 +15,43 @@ import gate.creole.metadata.*;
 import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
 
-import hu.u_szeged.magyarlanc.resource.ResourceHolder;
-import hu.u_szeged.magyarlanc.MorAna;
-import hu.u_szeged.magyarlanc.HunLemMor;
+import org.apache.ibatis.io.Resources;
+import rfsa.RFSA;
 
 /** 
- *  Magyarlánc Hungarian morphological analyzer and guesser.
- *  Uses hu.u_szeged.magyarlanc.HunLemMor.getMorphologicalAnalyses().
- *  Produces a list of alternative lemma + MSD code pairs.
+ *  Magyarlánc Hungarian Morphological Analyzer.
+ *  Uses rfsa.RFSA.analyse().
+ *  Produces a list of alternative lemma + KR code pairs.
+ *  It does not use the extra features that hu.u_szeged.magyarlanc.HunLemMor.getMorphologicalAnalyses() has (guessing etc.)
  *  Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)", 
-				comment = "Adds MSD code and lemma annotations (not disambiguated) to tokens"
+@CreoleResource(name = "Magyarlánc Hungarian Morphological Analyzer (KR)", 
+				comment = "Adds KR code and lemma annotations (not disambiguated) to tokens"
 				) // TODO icon?
-public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
+public class MagyarlancKRMorphAnalyzer extends AbstractLanguageAnalyser {
 
 
 	private static final long serialVersionUID = 1L;
 	
 	protected Logger logger = Logger.getLogger(this.getClass().getName());
+
+	private String RFS = "rfsa.txt";
+	private String ENCODING = "UTF-8";
+	private RFSA rfsa = null;
 	
 	public Resource init() throws ResourceInstantiationException {
-	    ResourceHolder.initCorpus();
-	    ResourceHolder.initFrequencies();
-	    ResourceHolder.initMSDReducer();
-	    ResourceHolder.initPunctations();
-	    ResourceHolder.initRFSA();
-	    ResourceHolder.initKRToMSD();
-	    ResourceHolder.initCorrDic();
-	    ResourceHolder.initMorPhonDir();
+		try {
+			rfsa = RFSA.read(Resources.getResourceAsStream(RFS), ENCODING);
+	    } catch (Exception e) {
+	        throw new ResourceInstantiationException(e);
+	    }	
 	    return this;
     }
 	
 	/** Requires token annotations (see baseTokenAnnotationType), 
 	 *  adds morphological analyzes with feature key outputAnasFeatureName,
-	 *  value is "lemma@msd" alternatives separated by outputAnasSeparator.
+	 *  value is "$lemma/KR" alternatives separated by outputAnasSeparator.
 	 *  Based on code from gate.creole.POSTagger.execute()
 	 */
 	public void execute() throws ExecutionException { 
@@ -110,9 +111,9 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 			    	throw new ExecutionException(e);
 			}
 	        //run the analyzer
-	    	if (tok != null) {
-	    		Set<MorAna> morAnas = HunLemMor.getMorphologicalAnalyses(tok);
-	    		addFeatures(currentToken, morAnas);
+	    	if (tok != null && rfsa != null) {
+	    		Collection<String> anas = rfsa.analyse(tok);
+	    		addFeatures(currentToken, anas);
 	    	}
 	    	currentToken = (tokensIter.hasNext() ? tokensIter.next() : null);
 	    	fireProgressChanged(++tokIdx * 100 / tokCnt);
@@ -130,13 +131,12 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	 * Add lemma+MSD code pairs to a token annotation.
 	 * Code from gate.creole.POSTagger.addFeatures()
 	 */
-	private void addFeatures(Annotation annot, Set<MorAna> morAnas) throws GateRuntimeException {
-		String[] anas = new String[morAnas.size()];
+	private void addFeatures(Annotation annot, Collection<String> anas2) throws GateRuntimeException {
+		String[] anas = new String[anas2.size()];
   	  	int j=0;
-  	  	for (MorAna ana: morAnas)
-  	  		anas[j++] = ana.toString();
+  	  	for (String ana: anas2)
+  	  		anas[j++] = ana;
   	  	String anastr = String.join(outputAnasSeparator, anas);
-  	  	//String[] anastr = anas;
 		
   	  	String tempIASN = inputASName == null ? "" : inputASName;
 	    String tempOASN = outputASName == null ? "" : outputASName;

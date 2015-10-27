@@ -127,14 +127,49 @@ public class PRTest {
 		}
 
 	}
-	
+		
+	/**
+	 * Create a Document, apply tokenizer, KR morphanalizer, dump annotations to stdout
+	 */
+	public void testMLKRMoraAna() {
+		
+		try {
+			
+			this.init();
+			
+			Document doc = PRTest.createDoc();
+									
+			loadLangHungarian();
+		
+			// Create a new MagyarlancSentenceSplitterTokenizer PR, apply it on the document
+			ProcessingResource tok = (ProcessingResource)Factory.createResource(
+					"hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer");
+			tok.setParameterValue("document", doc);
+			tok.execute();
+			
+			// Create a new MagyarlancKMorphAnalyzer PR, apply it on the document
+			ProcessingResource analyzer = (ProcessingResource)Factory.createResource(
+					"hu.nytud.gate.morph.MagyarlancKRMorphAnalyzer");
+			analyzer.setParameterValue("document", doc);
+			analyzer.execute();			
+			
+			// Dump document's annotations to stdout
+			System.out.println(doc.toString());
+			//System.out.println(doc.toXml());
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}	
 	
 	public static void main(String[] args) {
 		System.out.println("Hello, test");
 		PRTest t = new PRTest();
 		//t.testMLTokPOS();
 		//t.testFeats();
-		t.testMLMoraAna();
+		//t.testMLMoraAna();
+		t.testMLKRMoraAna();
 	}
 	
 }
