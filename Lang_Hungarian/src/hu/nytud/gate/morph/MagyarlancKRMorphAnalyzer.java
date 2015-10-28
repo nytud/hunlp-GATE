@@ -19,7 +19,7 @@ import org.apache.ibatis.io.Resources;
 import rfsa.RFSA;
 
 /** 
- *  Magyarlánc Hungarian Morphological Analyzer.
+ *  Magyarlánc Hungarian Morphological Analyzer that uses KR morphological codes.
  *  Uses rfsa.RFSA.analyse().
  *  Produces a list of alternative lemma + KR code pairs.
  *  It does not use the extra features that hu.u_szeged.magyarlanc.HunLemMor.getMorphologicalAnalyses() has (guessing etc.)
@@ -36,13 +36,11 @@ public class MagyarlancKRMorphAnalyzer extends AbstractLanguageAnalyser {
 	
 	protected Logger logger = Logger.getLogger(this.getClass().getName());
 
-	private String RFS = "rfsa.txt";
-	private String ENCODING = "UTF-8";
 	private RFSA rfsa = null;
 	
 	public Resource init() throws ResourceInstantiationException {
 		try {
-			rfsa = RFSA.read(Resources.getResourceAsStream(RFS), ENCODING);
+			rfsa = RFSA.read(Resources.getResourceAsStream(RFSAFile), RFSAFileEncoding);
 	    } catch (Exception e) {
 	        throw new ResourceInstantiationException(e);
 	    }	
@@ -189,7 +187,25 @@ public class MagyarlancKRMorphAnalyzer extends AbstractLanguageAnalyser {
 	    }
 	    
 	}
-	  
+
+	@CreoleParameter(comment="RFSA file name", defaultValue="rfsa.txt")
+	public void setRFSAFile(String f) {
+		RFSAFile = f;
+	}
+	public String getRFSAFile() {
+		return RFSAFile;
+	}
+	private String RFSAFile;	
+	
+	@CreoleParameter(comment="RFSA file character encoding", defaultValue="UTF-8")
+	public void setRFSAFileEncoding(String e) {
+		RFSAFileEncoding = e;
+	}
+	public String getRFSAFileEncoding() {
+		return RFSAFileEncoding;
+	}
+	private String RFSAFileEncoding;	
+	
     @RunTime
 	@Optional
 	@CreoleParameter(comment="The annotation set to be used as input that must contain 'Token' and 'Sentence' annotations")
