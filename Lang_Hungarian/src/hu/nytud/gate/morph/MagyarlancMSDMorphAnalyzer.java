@@ -50,7 +50,7 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	
 	/** Requires token annotations (see baseTokenAnnotationType), 
 	 *  adds morphological analyzes with feature key outputAnasFeatureName,
-	 *  value is "lemma@msd" alternatives separated by outputAnasSeparator.
+	 *  value is an ArrayList<String> of "lemma@msd" alternatives.
 	 *  Based on code from gate.creole.POSTagger.execute()
 	 */
 	public void execute() throws ExecutionException { 
@@ -131,18 +131,22 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	 * Code from gate.creole.POSTagger.addFeatures()
 	 */
 	private void addFeatures(Annotation annot, Set<MorAna> morAnas) throws GateRuntimeException {
+		/*
 		String[] anas = new String[morAnas.size()];
   	  	int j=0;
   	  	for (MorAna ana: morAnas)
   	  		anas[j++] = ana.toString();
   	  	String anastr = String.join(outputAnasSeparator, anas);
-  	  	//String[] anastr = anas;
+  	  	*/
+  	  	List<String> anas = new ArrayList<String>(morAnas.size());
+  	  	for (MorAna ana: morAnas)
+  	  		anas.add(ana.toString());
 		
   	  	String tempIASN = inputASName == null ? "" : inputASName;
 	    String tempOASN = outputASName == null ? "" : outputASName;
 	    
 	    if(outputAnnotationType.equals(baseTokenAnnotationType) && tempIASN.equals(tempOASN)) {
-	    	annot.getFeatures().put(outputAnasFeatureName, anastr);
+	    	annot.getFeatures().put(outputAnasFeatureName, anas);
 	        return;
 	    } else {
 	    	int start = annot.getStartNode().getOffset().intValue();
@@ -155,7 +159,7 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	        if(annotations == null || annotations.size() == 0) {
 	        	// add new annotation
 	            FeatureMap features = Factory.newFeatureMap();
-	            features.put(outputAnasFeatureName, anastr);
+	            features.put(outputAnasFeatureName, anas);
 	            try {
 	            	outputAS.add(new Long(start), new Long(end), outputAnnotationType, features);
 	            } catch(Exception e) {
@@ -170,7 +174,7 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	                if (annotation.getStartNode().getOffset().intValue() == start 
 	                    && annotation.getEndNode().getOffset().intValue() == end) {
 	                	// this is the one
-	        	        annot.getFeatures().put(outputAnasFeatureName, anastr);
+	        	        annot.getFeatures().put(outputAnasFeatureName, anas);
                         found = true;
 	                    break;
 	                }
@@ -178,7 +182,7 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	            if(!found) {
 	            	// add new annotation
 	                FeatureMap features = Factory.newFeatureMap();
-		            features.put(outputAnasFeatureName, anastr);
+		            features.put(outputAnasFeatureName, anas);
 	                try {
 	                	outputAS.add(new Long(start), new Long(end), outputAnnotationType, features);
 	                } catch(Exception e) {
@@ -248,18 +252,6 @@ public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {
 	    return outputAnasFeatureName;
 	}
 	protected String outputAnasFeatureName;
-
-	@RunTime
-	@CreoleParameter(
-			comment = "String separating 'lemma@msd' alternatives in OutputAnasFeatureName",
-			defaultValue = "||")  
-	public void setOutputAnasSeparator(String newOutputAnasSeparator) {
-		outputAnasSeparator = newOutputAnasSeparator;
-	}
-	public String getOutputAnasSeparator() {
-	    return outputAnasSeparator;
-	}
-	protected String outputAnasSeparator;
 
 	@RunTime
 	@Optional
