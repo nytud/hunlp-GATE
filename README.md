@@ -9,13 +9,7 @@ Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungari
 
 *Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*
 
-###Method 1 (using a clone of this repository):
-
-Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory. 
-Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
-If it's not there, check if your user plugin directory is set (see steps 2-4. below).
-
-###Method 2 (only GATE Developer & internet acces required):
+###Method 1 (only GATE Developer & internet acces required):
 
 Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
 
@@ -25,7 +19,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 4. If you haven't already done so, set your User Plugin Directory (e.g. `/home/username/My_GATE_plugins/`).
 5. Click the "+" sign button to the right of the Plugin Repositories list to add a new repository.
 6. Enter:
- * Name: RIL-MTA
+ * Name: `RIL-MTA`
  * URL: `http://corpus.nytud.hu/GATE/gate-update-site.xml`
 7. Click OK.
 8. Click the "Apply All" button at the bottom.
@@ -33,6 +27,14 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 10. You should now see **Lang_Hungarian** in the list of plugins available to install. Enable the checkbox left to its name in column "Install".
 11. Click on the "Apply All" button to install the plugin. 
 12. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
+
+###Method 2 (using a clone of this repository):
+
+1. Clone this git repository to your machine.
+2. See `Lang_Hungarian/resources/magyarlanc/README.md` for obtaining required binaries for Magyarlanc.
+3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
+4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
+   If it's not there, check if your user plugin directory is set (see steps 2-4. above).
 
 ##Contents
 
