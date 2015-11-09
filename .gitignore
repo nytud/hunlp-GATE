@@ -7,7 +7,6 @@
 *.jar
 !Lang_Hungarian/hungarian.jar
 !Lang_Hungarian/resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar
-!Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.jar
 *.war
 *.ear
 
