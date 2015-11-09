@@ -26,3 +26,10 @@ MLTestKRMorph.class: MLTestKRMorph.java
 
 run_MLTestKRMorph: MLTestKRMorph.class
 	java -cp .:magyarlanc-2.0.jar MLTestKRMorph
+
+
+MLTestParse.class: MLTestParse.java
+	javac -cp magyarlanc-2.0.jar MLTestParse.java
+
+run_MLTestParse: MLTestParse.class
+	java -Xmx1600M -cp .:magyarlanc-2.0.jar MLTestParse

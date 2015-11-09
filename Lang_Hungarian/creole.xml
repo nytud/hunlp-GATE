@@ -8,6 +8,6 @@
 
   <JAR SCAN="true">hungarian.jar</JAR>
   <JAR>resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar</JAR>
-  <JAR>resources/magyarlanc/magyarlanc-2.0.jar</JAR>
+  <JAR>resources/magyarlanc/magyarlanc-2.0.1.jar</JAR>
 
 </CREOLE-DIRECTORY>

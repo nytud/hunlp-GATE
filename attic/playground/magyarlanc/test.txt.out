@@ -10,25 +10,20 @@
 10	vádliját	vádli	Nn-sa---s3	N	SubPOS=n|Num=s|Cas=a|NumP=s|PerP=3|NumPd=none	8	OBJ	
 11	.	.	.	.	_	0	PUNCT	
 
-1	Ez	ez	Pd3-sn	P	SubPOS=d|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
-2	pedig	pedig	Ccsp	C	SubPOS=c|Form=s|Coord=p	8	CONJ	
+1	Ez	ez	Pd3-sn	P	SubPOS=d|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	5	SUBJ	
+2	pedig	pedig	Ccsp	C	SubPOS=c|Form=s|Coord=p	5	CONJ	
 3	egy	egy	Ti	T	SubPOS=i	5	DET	
 4	másik	másik	Pi3-sn	P	SubPOS=i|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	5	ATT	
-5	mondat	mondat	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
-6	,	,	,	,	_	8	PUNCT	
-7	te	te	Pp2-sn	P	SubPOS=p|Per=2|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	8	SUBJ	
-8	fassz	fassz	Vmip3s---n	V	SubPOS=m|Mood=i|Tense=p|Per=3|Num=s|Def=n	0	ROOT	
-9	..	..	K	K	SubPOS=..	0	PUNCT	
-10	.	.	.	.	_	0	PUNCT	
+5	mondat	mondat	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	0	ROOT	
+6	..	..	K	K	SubPOS=..	0	PUNCT	
+7	.	.	.	.	_	0	PUNCT	
 
 1	Na	na	Io	I	SubPOS=o	0	ROOT	
-2	és	és	Ccsw	C	SubPOS=c|Form=s|Coord=w	1	CONJ	
+2	és	és	Ccsp	C	SubPOS=c|Form=s|Coord=p	1	CONJ	
 3	a	a	Tf	T	SubPOS=f	4	DET	
-4	dr	dr	X	X	_	2	COORD	
-5	.	.	.	.	_	0	PUNCT	
-
-1	Senki	senki	Pg3-sn	P	SubPOS=g|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	0	ROOT	
-2	.	.	.	.	_	0	PUNCT	
+4	Dr.	Dr.	Nn-sn	N	SubPOS=n|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	2	SUBJ	
+5	Senki	senki	Pg3-sn	P	SubPOS=g|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	2	PRED	
+6	.	.	.	.	_	0	PUNCT	
 
 1	Ez	ez	Pd3-sn	P	SubPOS=d|Per=3|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none	4	SUBJ	
 2	meg	meg	Rp	R	SubPOS=p|Deg=none	4	PREVERB	
