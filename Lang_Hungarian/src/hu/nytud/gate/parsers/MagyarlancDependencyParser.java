@@ -2,7 +2,6 @@ package hu.nytud.gate.parsers;
 
 import java.text.NumberFormat;
 import java.util.List;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.apache.log4j.Level;
