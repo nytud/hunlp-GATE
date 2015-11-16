@@ -1,6 +1,6 @@
 # Lang_Hungarian
 
-Pre-release #1 (2015-11-12)
+Pre-release #1 (2015-11-16)
 
 This is a public pre-release of the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin developed by RIL-MTA.
 
