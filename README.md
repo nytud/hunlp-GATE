@@ -26,9 +26,18 @@ Development of more processing resources and ready made applications is under wa
 
 ##Installing under GATE Developer
 
-Tested with GATE Developer 8.0 and 8.1.
+**Requirements:**
 
-Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
+* Java runtime (JRE or JDK) version 1.8 or later
+* GATE Developer 8.0 or later
+* For best results (for safely loading the Magyarlánc Depparse application) you will need a **64-bit** operating system with 64-bit Java installed.
+  Use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+
+  ```
+  <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
+  ```
+
+**Installation:** follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
