@@ -1,8 +1,8 @@
-# hunlp-GATE
+# Lang_Hungarian
 
 Pre-release #1 (2015-11-12)
 
-This is a public pre-release of the **Lang_Hungarian** Hungarian [GATE](http://gate.ac.uk/) plugin developed by RIL-MTA.
+This is a public pre-release of the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin developed by RIL-MTA.
 
 The plugin contains the following GATE Processing Resources:
 
@@ -14,13 +14,12 @@ The plugin contains the following GATE Processing Resources:
 * Magyarlánc Hungarian POS Tagger and Lemmatizer
 * Magyarlánc Hungarian Dependency Parser
 
-In addition, you will also find the following ready made applications in GATE Developer (in the menu: File -> Ready Made Applications -> Hungarian,
- or right-click Applications in the GATE Resources tree).
+You will also find the following ready made applications in GATE Developer (to access, in the menu click *File* -> *Ready Made Applications* -> *Hungarian*, or right-click *Applications* in the GATE Resources tree):
 
 * Magyaránc Morphparse
 * Magyarlánc Depparse 
 
-Source files for all classes are included.
+Source files are included.
 
 Development of more processing resources and ready made applications is under way. For more information, see https://github.com/dlt-rilmta/hunlp-GATE
 
@@ -30,12 +29,11 @@ Development of more processing resources and ready made applications is under wa
 
 * Java runtime (JRE or JDK) version 1.8 or later
 * GATE Developer 8.0 or later
-* For best results (for safely loading the Magyarlánc Depparse application) you will need a **64-bit** operating system with 64-bit Java installed.
-  Use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+* For best results (safely loading the Magyarlánc Depparse application) you will need a **64-bit** operating system with 64-bit Java installed. Please use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
 
-  ```
-  <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
-  ```
+ ```
+ <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
+ ```
 
 **Installation:** follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
 
