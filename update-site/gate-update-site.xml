@@ -1,0 +1,4 @@
+<?xml version="1.0"?>  
+<UpdateSite>  
+   <CreolePlugin url="http://corpus.nytud.hu/GATE/Lang_Hungarian" downloadURL="http://corpus.nytud.hu/GATE/Lang_Hungarian.zip" />  
+</UpdateSite>
