@@ -25,8 +25,7 @@
   <property name="gate.compile.maxwarnings" value="10000" />
 
   <property name="resources.dir" location="resources" />
-  <property name="dummyctokenizerwrapper.jar" location="${resources.dir}/dummyctokenizer/lib/dummyctokenizerwrapper.jar" />
-  <property name="magyarlanc-2.0.jar" location="${resources.dir}/magyarlanc/magyarlanc-2.0.jar" />
+  <property name="magyarlanc-2.0.jar" location="${resources.dir}/magyarlanc/magyarlanc-2.0.1.jar" />
 
 
   <path id="classpath">
