@@ -36,7 +36,7 @@
               </localMap>
             </runtimeParams>
             <resourceType>hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer</resourceType>
-            <resourceName>Magyarlánc Hungarian Sentence Splitter And Tokenizer</resourceName>
+            <resourceName>Magyarlanc Hungarian Sentence Splitter And Tokenizer</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
@@ -98,7 +98,7 @@
               </localMap>
             </runtimeParams>
             <resourceType>hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer</resourceType>
-            <resourceName>Magyarlánc Hungarian POS Tagger and Lemmatizer</resourceName>
+            <resourceName>Magyarlanc Hungarian POS Tagger and Lemmatizer</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
@@ -169,7 +169,7 @@
               </localMap>
             </runtimeParams>
             <resourceType>hu.nytud.gate.parsers.MagyarlancDependencyParser</resourceType>
-            <resourceName>Magyarlánc Hungarian Dependency Parser</resourceName>
+            <resourceName>Magyarlanc Hungarian Dependency Parser</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
@@ -199,7 +199,7 @@
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
     <resourceType>gate.creole.ConditionalSerialAnalyserController</resourceType>
-    <resourceName>Magyarlánc Depparse</resourceName>
+    <resourceName>Magyarlanc Depparse</resourceName>
     <initParams class="gate.util.persistence.MapPersistence">
       <mapType>gate.util.SimpleFeatureMapImpl</mapType>
       <localMap/>
