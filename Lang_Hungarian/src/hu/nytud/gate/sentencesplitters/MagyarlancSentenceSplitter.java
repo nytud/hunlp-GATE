@@ -13,7 +13,7 @@ import hu.u_szeged.splitter.HunSplitter;
  * Note: the sentence splitter seems to leave whitespace at the beginning of sentences, I left it as it was.
  * @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Sentence Splitter",
+@CreoleResource(name = "Magyarlanc Hungarian Sentence Splitter",
 				icon = "sentence-splitter",
 				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancSentenceSplitter") 
 public class MagyarlancSentenceSplitter extends AbstractLanguageAnalyser { 

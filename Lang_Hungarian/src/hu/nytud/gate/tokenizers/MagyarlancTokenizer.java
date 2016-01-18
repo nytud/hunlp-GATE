@@ -14,7 +14,7 @@ import hu.u_szeged.splitter.HunSplitter;
  * Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  * Author: Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Tokenizer",
+@CreoleResource(name = "Magyarlanc Hungarian Tokenizer",
 				comment = "If you want both sentence splitting and tokenizations, MagyarlancSplitterTokenizer is more efficient",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancTokenizer") 

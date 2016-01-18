@@ -26,7 +26,7 @@ import hu.u_szeged.magyarlanc.HunLemMor;
  *  Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)", 
+@CreoleResource(name = "Magyarlanc Hungarian Morphological Analyzer And Guesser (MSD)", 
 				comment = "Adds MSD code and lemma annotations (not disambiguated) to tokens"
 				) // TODO icon?
 public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {

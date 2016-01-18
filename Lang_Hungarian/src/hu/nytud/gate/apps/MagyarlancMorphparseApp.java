@@ -10,7 +10,7 @@ import gate.creole.metadata.AutoInstanceParam;
  * @author Márton Miháltz
  *
  */
-@CreoleResource(name = "Magyarlánc Morphparse",
+@CreoleResource(name = "Magyarlanc Morphparse",
 	comment = "Hungarian sentencer & tokenizer & POS-tagger & lemmatizer",
 	autoinstances = @AutoInstance(parameters = {
 			@AutoInstanceParam(name="pipelineURL",

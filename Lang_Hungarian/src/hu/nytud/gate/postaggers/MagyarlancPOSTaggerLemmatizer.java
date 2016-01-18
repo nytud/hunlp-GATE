@@ -27,7 +27,7 @@ import edu.stanford.nlp.tagger.maxent.SzteMaxentTagger;
  *  Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian POS Tagger and Lemmatizer", 
+@CreoleResource(name = "Magyarlanc Hungarian POS Tagger and Lemmatizer", 
 				comment = "Adds MSD code and lemma annotations",
 				icon = "pos-tagger") 
 public class MagyarlancPOSTaggerLemmatizer extends AbstractLanguageAnalyser {

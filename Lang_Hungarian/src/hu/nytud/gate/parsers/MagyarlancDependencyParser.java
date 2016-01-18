@@ -29,7 +29,7 @@ import hu.nytud.gate.parsers.DependencyRelation;
  *  Tested with Magyarlánc "2.0.1" (2015-11-04 from J.Zs.)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlánc Hungarian Dependency Parser", 
+@CreoleResource(name = "Magyarlanc Hungarian Dependency Parser", 
 				comment = "Requires sentences and tokens with lemma and msd features"
 				)
 public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {
