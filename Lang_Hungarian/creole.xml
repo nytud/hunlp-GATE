@@ -9,5 +9,6 @@
   <JAR SCAN="true">hungarian.jar</JAR>
   <JAR>resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar</JAR>
   <JAR>resources/magyarlanc/magyarlanc-2.0.1.jar</JAR>
+  <JAR>resources/gate_plugins/Tagger_Framework/TaggerFramework.jar</JAR>
 
 </CREOLE-DIRECTORY>
