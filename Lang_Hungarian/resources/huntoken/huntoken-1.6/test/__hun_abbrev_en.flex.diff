@@ -1,0 +1,16 @@
+1,2c1,2
+< 	/* BE: <s>25. Magyarország */
+< 	/* BE: <s>25. § */
+---
+> 	/* KI: <s>25. Magyarország */
+> 	/* KI: <s>25. § */
+8,9c8,9
+< 	/* BE: <s>A 25. § szerint 2002. IV. havában. */
+< 	/* BE: B. Jenõ. */
+---
+> 	/* KI: <s>A 25. § szerint 2002. IV. havában. */
+> 	/* KI: B. Jenõ. */
+13c13
+< 	/* BE: Pl. Péter és Marcsa pl. 25 fánkot is ehetne. */
+---
+> 	/* KI: Pl. Péter és Marcsa pl. 25 fánkot is ehetne. */

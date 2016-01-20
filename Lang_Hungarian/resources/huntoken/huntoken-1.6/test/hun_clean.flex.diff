@@ -1,0 +1,102 @@
+1c1
+< /* BE: Bekezdéshatárok. A sorokban tabulátorok és szóközök: */
+---
+> 	/* KI: Bekezdéshatárok. A sorokban tabulátorok és szóközök: */
+3,7c3,7
+< /* BE: Vége. */
+< /* BE: Sortörés. Szóköz és tabulátor: */
+< /* BE: Itt is a sor elején. */
+< /* BE: Szóközsorozat. Több szóköz és tabulátor. */
+< /* BE: Nem törõ szóköz: Vége. */
+---
+> 	/* KI: Vége. */
+> 	/* KI: Sortörés. Szóköz és tabulátor: */
+> 	/* KI: Itt is a sor elején. */
+> 	/* KI: Szóközsorozat. Több szóköz és tabulátor. */
+> 	/* KI: Nem törõ szóköz: Vége. */
+9c9
+< (EEC) (EEC) k &lt; õ &#3456; &#2343235325;
+---
+> 	/* KI: (EEC) (EEC) k &lt; õ &#3456; &#2343235325; */
+13c13
+< á Á õ Õ û Û &ndash; &mdash;
+---
+> 	/* KI: á Á õ Õ û Û &ndash; &mdash; */
+15,52c15,52
+< °
+< ´
+< ¸
+< Á
+< Â
+< Ä
+< Ç
+< É
+< Ë
+< Í
+< Î
+< Ó
+< Ô
+< Õ
+< Ö
+< ×
+< Ú
+< Û
+< Ü
+< Ý
+< ß
+< á
+< â
+< ä
+< ç
+< é
+< ë
+< í
+< î
+< ó
+< ô
+< õ
+< ö
+< ÷
+< ú
+< û
+< ü
+< ý
+---
+> 	/* KI: ° */
+> 	/* KI: ´ */
+> 	/* KI: ¸ */
+> 	/* KI: Á */
+> 	/* KI: Â */
+> 	/* KI: Ä */
+> 	/* KI: Ç */
+> 	/* KI: É */
+> 	/* KI: Ë */
+> 	/* KI: Í */
+> 	/* KI: Î */
+> 	/* KI: Ó */
+> 	/* KI: Ô */
+> 	/* KI: Õ */
+> 	/* KI: Ö */
+> 	/* KI: × */
+> 	/* KI: Ú */
+> 	/* KI: Û */
+> 	/* KI: Ü */
+> 	/* KI: Ý */
+> 	/* KI: ß */
+> 	/* KI: á */
+> 	/* KI: â */
+> 	/* KI: ä */
+> 	/* KI: ç */
+> 	/* KI: é */
+> 	/* KI: ë */
+> 	/* KI: í */
+> 	/* KI: î */
+> 	/* KI: ó */
+> 	/* KI: ô */
+> 	/* KI: õ */
+> 	/* KI: ö */
+> 	/* KI: ÷ */
+> 	/* KI: ú */
+> 	/* KI: û */
+> 	/* KI: ü */
+> 	/* KI: ý */

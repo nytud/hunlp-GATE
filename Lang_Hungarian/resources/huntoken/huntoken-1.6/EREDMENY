@@ -1,0 +1,60 @@
+
+A mondatra bontás hibája:
+
+A táblázatban korrigált értékeket is tartalmaz, mivel
+a Szeged Korpusz jelölt szövege számos kisbetûvel kezdõdõ
+mondatot is tartalmaz. Ennek figyelembe vételével
+a mondatra bontó program 99%-os pontosságot ad
+a Szeged Korpuszon.
+
+TÁBLÁZAT (A ,,kisbetû'' feliratú oszlop tartalmazza
+az eredeti jelölt szövegben a kisbetûvel kezdõdõ
+mondatokat. Az eredeti jelöléshez képest hibásan
+felismert mondatok száma ezzel az értékkel van
+csökkentve a ,,k.hibás'' oszlopban, és ez alapján
+állt elõ az utolsó oszlop.
+
+állomány	mondat	hibás	pontos. kisbetû	k.hibás	pontosság
+10elb.xml	9592	227	97,63%	132	95	99,01%
+10erv.xml	7616	45	99,41%	21	24	99,68%
+1984.xml	6732	69	98,98%	60	9	99,87%
+8oelb-8.xml	4027	59	98,53%	9	50	98,76%
+cwszt.xml	6662	140	97,90%	19	121	98,18%
+gazdtar.xml	5702	196	96,56%	28	168	97,05%
+ hvg.xml	2370	17	99,28%	2	15	99,37%
+  mh.xml	2439	16	99,34%	2	14	99,43%
+  np.xml	4123	23	99,44%	13	10	99,76%
+  nv.xml	1301	3	99,77%	0	3	99,77%
+pfred.xml	6456	58	99,10%	4	54	99,16%
+szerzj.xml	3528	94	97,34%	46	48	98,64%
+utas.xml	5286	23	99,56%	0	23	99,56%
+win2000.xml	3107	103	96,68%	68	35	98,87%
+összesen	68941	1076	98,44%	404	672	99,03%
+
+A valódi hibáknak két oka van: egyrészt a program
+tévedései. Például a nem mondatkezdõ sorszámnév +
+tulajdonnév között történõ mondathatár-megállapítás
+tipikus hiba (25. Budapesti Nemzetközi Vásár), másrészt
+viszont a jelölt szöveg is tartalmaz hibás szöveget, illetve hibás
+mondathatárokat. Például a már említett kisbetûvel kezdõdõ
+mondatok mellett:
+
+nv.xml:
+
+<s id="Nepszava.39.6.1">A tárgyak még ma megtekinthetõk a Biblical
+World Galleryben, a Wesselényi u.
+<s id="Nepszava.39.6.2">13. szám alatt, az árverés pedig vasárnap
+délelõtt 10 órakor kezdõdik a Hotel Atrium Hyatt Kármán termében.
+
+(Ezt a hibát leszámítva itt 99,85% pontosságú volt a mondatra
+bontás, ami kiemelkedõen jó.)
+
+A hibaszázalék a 0,97%-nál lényegesen kisebb, mivel
+egyes állományok, mint a 10elb.xml, illetve a cwszt.xml,
+számos hibás mondatra bontást tartalmaznak, amelyek
+a mondatra bontó program segítségével megkereshetõk.
+
+A hibaarány kifinomultabb módszerekkel
+tovább javítható (l. Mikheev: Periods, Capitalized Words, etc.,
+Computational Linguistics, Vol. 28., 3., 2002, 289 o.).
+

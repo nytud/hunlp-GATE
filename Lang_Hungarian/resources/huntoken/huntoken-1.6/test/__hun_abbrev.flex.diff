@@ -1,0 +1,18 @@
+1,2c1,2
+< 	/* BE: <s>25. Magyarország */
+< 	/* BE: <s>25. § */
+---
+> 	/* KI: <s>25. Magyarország */
+> 	/* KI: <s>25. § */
+8,9c8,9
+< 	/* BE: <s>A 25. § szerint 2002. IV. havában. */
+< 	/* BE: B. Jenõ. */
+---
+> 	/* KI: <s>A 25. § szerint 2002. IV. havában. */
+> 	/* KI: B. Jenõ. */
+13,14c13,14
+< 	/* BE: Pl. Péter és Marcsa pl. 25 fánkot is ehetne. */
+< 	/* BE: Pl. Jani szerint ápr.</s> <s>Kati kedvenc hónapja. */
+---
+> 	/* KI: Pl. Péter és Marcsa pl. 25 fánkot is ehetne. */
+> 	/* KI: Pl. Jani szerint ápr. Kati kedvenc hónapja. */

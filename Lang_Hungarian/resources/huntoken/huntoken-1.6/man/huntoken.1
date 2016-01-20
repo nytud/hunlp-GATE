@@ -1,0 +1,41 @@
+.hla hu
+.TH huntoken 1 "2003. szeptember 4."
+.LO 1
+.SH NÉV
+huntoken \- (magyar) szövegeket tokenizáló program
+.SH ÁTTEKINTÉS
+huntoken [\-h | \-\-help | \-n | \-r | \-x | ] <bemenet >kimenet
+.SH LEÍRÁS
+A program szûrõsort indít a standard bemenetrõl érkezõ
+ISO-8859-2 kódolású egyszerû szöveges állományok tokenizálására.
+A mondatra
+és szóra bontás, valamint speciális tokenek felismerés
+után a kimenet XML-alapú (TEI.2) állomány, ami a
+Szeged Korpusz formátumának megfelelõ, és az egyes
+tokenekhez MSD kódokat is tartalmaz. Az <s> és <w> címkével
+kezdõdõ sorok a bemeneti állomány
+mondatait és szavait tartalmazzák a kimenetben.
+.SH KAPCSOLÓK
+.TP
+.B \-h, \-\-help
+Rövid leírás a program kapcsolóiról.
+.TP
+.B \-r
+Csak a mondathatárokat állapítja meg. A kimenet egyszerû szöveges
+állomány, ahol minden mondat <s> és </s> címkék között szerepel.
+.TP
+.B \-x
+Feldolgozás a rövidítések figyelembe vétele nélkül.
+Elsõsorban tesztelési célokat szolgál ez a kapcsoló.
+.TP
+.B \-n
+A kimeneti állomány XML fejlécének és láblécének elhagyása.
+Elsõsorban tesztelési célokat szolgál ez a kapcsoló.
+.TP
+.B \-v, \-\-version
+Változat száma.
+.SH LÁSD MÉG
+Huntoken dokumentáció.
+.SH SZERZÕ
+Németh László <nemethl@gyorsposta.hu>
+

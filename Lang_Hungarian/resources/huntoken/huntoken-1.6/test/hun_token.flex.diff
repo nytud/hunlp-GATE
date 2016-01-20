@@ -1,0 +1,350 @@
+1c1,25
+< 	/* BE: <s>-nak, -jaiért, -magyar, bel- */
+---
+> 	/* KI: <s>-nak, -jaiért, -magyar, bel- */
+> <w>-nak
+> <anav>
+> <msd><lemma></lemma><mscat>[Om--sg]</mscat></msd>
+> </anav>
+> </w>
+> <c>,</c>
+> 	/* KI: <w>-jaiért */
+> <anav>
+> <msd><lemma></lemma><mscat>[Om--pc---s3]</mscat></msd>
+> </anav>
+> </w>
+> <c>,</c>
+> <w>-magyar
+> <anav>
+> <msd><lemma>-magyar</lemma><mscat>[Oh]</mscat></msd>
+> </anav>
+> </w>
+> <c>,</c>
+> <w>bel-
+> <anav>
+> <msd><lemma>bel-</lemma><mscat>[Oh]</mscat></msd>
+> </anav>
+> </w>
+> 
+32,33c56,72
+< 	/* BE: <s>valami.comról */
+< 	/* BE: <s>valami.hu-ról */
+---
+> 	/* KI: <s>valami.comról */
+> 	/* KI: <w>valami.comról */
+> <anav>
+> 	/* KI: <msd><lemma>valami.comról</lemma><mscat>[Oep-??]</mscat></msd> */
+> </anav>
+> <anav>
+> 	/* KI: <msd><lemma>valami.comról</lemma><mscat>[Oew-??]</mscat></msd> */
+> </anav>
+> </w>
+> 
+> 	/* KI: <s>valami.hu-ról */
+> 	/* KI: <w>valami.hu-ról */
+> <anav>
+> <msd><lemma>valami.hu</lemma><mscat>[Oew-sh]</mscat></msd>
+> </anav>
+> </w>
+> 
+64,69c103,104
+< 	/* BE: <s>ftp://<w>127.
+< <anav>
+< <msd><lemma>127.</lemma><mscat>[Oi--sn]</mscat></msd>
+< </anav>
+< </w>
+< <w>0.0.1
+---
+> 	/* KI: <s>ftp://127.0.0.1:911/Próba/ez-is/macska.jpeg */
+> 	/* KI: <w>ftp://127.0.0.1:911/Próba/ez-is/macska.jpeg */
+71c106
+< <msd><lemma>0.0.1</lemma><mscat>[Ond-sn]</mscat></msd>
+---
+> 	/* KI: <msd><lemma>ftp://127.0.0.1:911/Próba/ez-is/macska.jpeg</lemma><mscat>[Oep-sn]</mscat></msd> */
+73,74d107
+< </w>
+< <w>:911/Próba/ez-is/macska.jpeg
+76c109
+< <msd><lemma>:911/Próba/ez-is/macska.jpeg</lemma><mscat>[Oep-sn]</mscat></msd>
+---
+> 	/* KI: <msd><lemma>ftp://127.0.0.1:911/Próba/ez-is/macska.jpeg</lemma><mscat>[Oew-sn]</mscat></msd> */
+79,82d111
+< <w>*
+< </w>
+< <w>/
+< </w>
+158c187,193
+< 	/* BE: <s>mailto:Macska.Kati@valahol.huról */
+---
+> 	/* KI: <s>mailto:Macska.Kati@valahol.huról */
+> 	/* KI: <w>mailto:Macska.Kati@valahol.huról */
+> <anav>
+> 	/* KI: <msd><lemma>mailto:Macska.Kati@valahol.huról</lemma><mscat>[Oem-??]</mscat></msd> */
+> </anav>
+> </w>
+> 
+360c395,396
+< 	/* BE: <s>1.1.2. 1.3.<w>128-ból
+---
+> 	/* KI: <s>1.1.2. 1.3.128-ból */
+> <w>1.1.2.
+362c398
+< <msd><lemma>128</lemma><mscat>[Oi--se]</mscat></msd>
+---
+> <msd><lemma>1.1.2.</lemma><mscat>[Oi--sn]</mscat></msd>
+365,367c401,404
+< <w>*
+< </w>
+< <w>/
+---
+> 	/* KI: <w>1.3.128-ból */
+> <anav>
+> <msd><lemma>1.3.128</lemma><mscat>[Oi--se]</mscat></msd>
+> </anav>
+409,412c446,447
+< 	/* BE: <s><w>2002-2003.
+< <anav>
+< <msd><lemma>2002-2003.</lemma><mscat>[Oi--sn]</mscat></msd>
+< </anav>
+---
+> 	/* KI: <s>2002-2003., 15.-rõl  */
+> <w>2002-2003.
+415,419c450
+< <w>15.-rõl
+< </w>
+< <w>*
+< </w>
+< <w>/
+---
+> 	/* KI: <w>15.-rõl */
+439c470,479
+< 	/* BE: <s>5°, °C */
+---
+> 	/* KI: <s>5°, °C */
+> 	/* KI: <w>5° */
+> <anav>
+> 	/* KI: <msd><lemma>5°</lemma><mscat>[Ong-sn]</mscat></msd> */
+> </anav>
+> </w>
+> <c>,</c>
+> 	/* KI: <w>°C */
+> </w>
+> 
+451c491,492
+< 	/* BE: <s><w>63
+---
+> 	/* KI: <s>63 millió, 23 ezerrõl, 3 ezret, 23 milliárdosnak, 1,5-2,5 milliót */
+> 	/* KI: <w>63 millió */
+453c494
+< <msd><lemma>63</lemma><mscat>[Oi--sn]</mscat></msd>
+---
+> 	/* KI: <msd><lemma>63 millió</lemma><mscat>[Mc--snd]</mscat></msd> */
+456,457d496
+< <w>millió
+< </w>
+459c498
+< <w>23 ezerrõl
+---
+> 	/* KI: <w>23 ezerrõl */
+473c512
+< <w>milliárdosnak
+---
+> 	/* KI: <w>milliárdosnak */
+476c515
+< <w>1,5-2,5 milliót
+---
+> 	/* KI: <w>1,5-2,5 milliót */
+478c517
+< <msd><lemma>1,5-2,5 millió</lemma><mscat>[Mc--sad]</mscat></msd>
+---
+> 	/* KI: <msd><lemma>1,5-2,5 millió</lemma><mscat>[Mc--sad]</mscat></msd> */
+481,484d519
+< <w>*
+< </w>
+< <w>/
+< </w>
+536c571,572
+< 	/* BE: <s><w>5/4
+---
+> 	/* KI: <s>5/4, 5/4-ét */
+> <w>5/4
+545c581
+< <w>5/4-ét
+---
+> 	/* KI: <w>5/4-ét */
+553,556d588
+< <w>*
+< </w>
+< <w>/
+< </w>
+607c639,640
+< 	/* BE: <s><w>2000/45.-rõl
+---
+> 	/* KI: <s>2000/45.-rõl */
+> 	/* KI: <w>2000/45.-rõl */
+612,615d644
+< <w>*
+< </w>
+< <w>/
+< </w>
+617,622c646,647
+< 	/* BE: <s><w>06
+< <anav>
+< <msd><lemma>06</lemma><mscat>[Oi--sn]</mscat></msd>
+< </anav>
+< </w>
+< <w>(20) 477-4917
+---
+> 	/* KI: <s>06 (20) 477-4917, 47-55-45/25-rõl */
+> <w>06 (20) 477-4917
+624c649
+< <msd><lemma>(20) 477-4917</lemma><mscat>[Oi--sn]</mscat></msd>
+---
+> <msd><lemma>06 (20) 477-4917</lemma><mscat>[Oi--sn]</mscat></msd>
+628c653
+< <w>47-55-45/25-rõl
+---
+> 	/* KI: <w>47-55-45/25-rõl */
+633,636d657
+< <w>*
+< </w>
+< <w>/
+< </w>
+745c766,774
+< 	/* BE: <s>Az "Íme, hát megleltem hazámat"-ban írta. */
+---
+> 	/* KI: <s>Az "Íme, hát megleltem hazámat"-ban írta. */
+> <w>Az
+> </w>
+> 	/* KI: <w>"Íme, hát megleltem hazámat"-ban */
+> </w>
+> 	/* KI: <w>írta */
+> </w>
+> <c>.</c>
+> 
+779c808,815
+< 	/* BE: <s>Jó... Is.... */
+---
+> 	/* KI: <s>Jó... Is.... */
+> 	/* KI: <w>Jó */
+> </w>
+> <c>...</c>
+> <w>Is.
+> </w>
+> <c>...</c>
+> 
+812,815c848,864
+< 	/* BE: <s>§-sal */
+< 	/* BE: <s>Moli&egrave;re-rõl beszélj! */
+< 	/* BE: <s>CD-ROM-okról */
+< 	/* BE: <s>X.<w>25-rõl
+---
+> 	/* KI: <s>§-sal */
+> 	/* KI: <w>§-sal */
+> </w>
+> 
+> 	/* KI: <s>Moli&egrave;re-rõl beszélj! */
+> 	/* KI: <w>Moli&egrave;re-rõl */
+> </w>
+> 	/* KI: <w>beszélj */
+> </w>
+> <c>!</c>
+> 
+> 	/* KI: <s>CD-ROM-okról */
+> 	/* KI: <w>CD-ROM-okról */
+> </w>
+> 
+> 	/* KI: <s>X.25-rõl */
+> 	/* KI: <w>X.25-rõl */
+817c866
+< <msd><lemma>25</lemma><mscat>[Oi--sh]</mscat></msd>
+---
+> <msd><lemma>X.25</lemma><mscat>[Oi--sh]</mscat></msd>
+820c869,871
+< <w>*
+---
+> 
+> 	/* KI: <s>(Ki)adós fizess(en) könyv(ek)et? */
+> 	/* KI: <w>(Ki)adós */
+822c873
+< <w>/
+---
+> <w>fizess(en)
+823a875,877
+> 	/* KI: <w>könyv(ek)et */
+> </w>
+> <c>?</c>
+825d878
+< 	/* BE: <s>(Ki)adós fizess(en) könyv(ek)et? */
+834c887,888
+< 	/* BE: <s>A-<w>B100
+---
+> 	/* KI: <s>A-B100, A-B100-ról */
+> <w>A-B100
+836c890
+< <msd><lemma>B100</lemma><mscat>[Oi--sn]</mscat></msd>
+---
+> <msd><lemma>A-B100</lemma><mscat>[Oi--sn]</mscat></msd>
+840c894
+< <w>A-B100-ról
+---
+> 	/* KI: <w>A-B100-ról */
+842c896
+< <msd><lemma>A-B100-ról</lemma><mscat>[Oi--??]</mscat></msd>
+---
+> 	/* KI: <msd><lemma>A-B100-ról</lemma><mscat>[Oi--??]</mscat></msd> */
+845,848d898
+< <w>*
+< </w>
+< <w>/
+< </w>
+863c913,959
+< 	/* BE: <s>.hu-ról .hu-i .hu-iról .hu-nkról .hu-inkról .hu-éról .hu-éiról .hu-inkéról .hu-inkéiról */
+---
+> 	/* KI: <s>.hu-ról .hu-i .hu-iról .hu-nkról .hu-inkról .hu-éról .hu-éiról .hu-inkéról .hu-inkéiról */
+> 	/* KI: <w>.hu-ról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-sh]</mscat></msd>
+> </anav>
+> </w>
+> <w>.hu-i
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-pn---s3]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-iról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-ph---s3]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-nkról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-sh---p1]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-inkról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-ph---p1]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-éról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-sh-----s]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-éiról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-sh-----p]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-inkéról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-ph---p1s]</mscat></msd>
+> </anav>
+> </w>
+> 	/* KI: <w>.hu-inkéiról */
+> <anav>
+> <msd><lemma>.hu</lemma><mscat>[Oeo-ph---p1p]</mscat></msd>
+> </anav>
+> </w>
+> 

@@ -1,0 +1,52 @@
+/* BE: Bekezdéshatárok. A sorokban tabulátorok és szóközök: */
+
+/* BE: Vége. */
+/* BE: Sortörés. Szóköz és tabulátor: */
+/* BE: Itt is a sor elején. */
+/* BE: Szóközsorozat. Több szóköz és tabulátor. */
+/* BE: Nem törõ szóköz: Vége. */
+&lt;&gt;
+(EEC) (EEC) k &lt; õ &#3456; &#2343235325;
+&#xF456 &#Xabc; &#xABCDEF;
+...
+&ldquor;
+á Á õ Õ û Û &ndash; &mdash;
+
+°
+´
+¸
+Á
+Â
+Ä
+Ç
+É
+Ë
+Í
+Î
+Ó
+Ô
+Õ
+Ö
+×
+Ú
+Û
+Ü
+Ý
+ß
+á
+â
+ä
+ç
+é
+ë
+í
+î
+ó
+ô
+õ
+ö
+÷
+ú
+û
+ü
+ý

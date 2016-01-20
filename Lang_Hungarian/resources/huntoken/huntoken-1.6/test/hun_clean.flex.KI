@@ -1,0 +1,52 @@
+	/* KI: Bekezdéshatárok. A sorokban tabulátorok és szóközök: */
+
+	/* KI: Vége. */
+	/* KI: Sortörés. Szóköz és tabulátor: */
+	/* KI: Itt is a sor elején. */
+	/* KI: Szóközsorozat. Több szóköz és tabulátor. */
+	/* KI: Nem törõ szóköz: Vége. */
+&lt;&gt;
+	/* KI: (EEC) (EEC) k &lt; õ &#3456; &#2343235325; */
+&#xF456 &#Xabc; &#xABCDEF;
+...
+&ldquor;
+	/* KI: á Á õ Õ û Û &ndash; &mdash; */
+
+	/* KI: ° */
+	/* KI: ´ */
+	/* KI: ¸ */
+	/* KI: Á */
+	/* KI: Â */
+	/* KI: Ä */
+	/* KI: Ç */
+	/* KI: É */
+	/* KI: Ë */
+	/* KI: Í */
+	/* KI: Î */
+	/* KI: Ó */
+	/* KI: Ô */
+	/* KI: Õ */
+	/* KI: Ö */
+	/* KI: × */
+	/* KI: Ú */
+	/* KI: Û */
+	/* KI: Ü */
+	/* KI: Ý */
+	/* KI: ß */
+	/* KI: á */
+	/* KI: â */
+	/* KI: ä */
+	/* KI: ç */
+	/* KI: é */
+	/* KI: ë */
+	/* KI: í */
+	/* KI: î */
+	/* KI: ó */
+	/* KI: ô */
+	/* KI: õ */
+	/* KI: ö */
+	/* KI: ÷ */
+	/* KI: ú */
+	/* KI: û */
+	/* KI: ü */
+	/* KI: ý */
