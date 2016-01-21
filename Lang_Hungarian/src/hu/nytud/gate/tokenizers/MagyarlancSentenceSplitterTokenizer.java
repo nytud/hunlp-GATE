@@ -107,6 +107,7 @@ public class MagyarlancSentenceSplitterTokenizer extends AbstractLanguageAnalyse
 				te = ts + splitted.get(i).get(j).length();	
 		        fm = Factory.newFeatureMap();
 		        fm.put("length", "" + (te - ts));
+		        fm.put("string", splitted.get(i).get(j));
 		        try {
 		        	as.add(new Long(ts), new Long(te), "Token", fm);
 		        }
