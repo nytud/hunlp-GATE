@@ -1,0 +1,328 @@
+@node Command-line Control, Resource Specification, Bootstrapping, Top
+@chapter Command-line Control
+
+This chapter describes how to use ocamorph on the command line.
+
+@menu
+* Invoking ocamorph::           
+* Options::                     
+* Man page::                    
+@end menu
+
+@node Invoking ocamorph, Options, Command-line Control, Command-line Control
+@section Invoking ocamorph 
+@cpindex ocamorph, command line 
+
+ocamorph can be invoked by typing @command{ocamorph} on the command line (in a
+shell, terminal). On windows platforms the name of the executable is
+@command{ocamorph.exe}. 
+
+If you install ocamorph from the source distribution, then two
+executables are created (see @pxref{Installation}): 
+
+@itemize
+@item @command{ocamorph_debug}, and
+@item @command{ocamorph_noassert}
+@end itemize
+
+@command{ocamorph_debug} can be used for debugging by setting the
+command-line option @option{debug_level}. @command{ocamorph} is a symbolic
+link to @command{ocamorph_noassert}, which cannot be used for debugging.
+@command{ocamorph_noassert} is faster than @command{ocamorph_debug}, but apart
+from debugging, the two executables are functionally equivalent. 
+The usage of ocamorph is the same with both of these executables.
+
+@node Options, Man page, Invoking ocamorph, Command-line Control
+@section Options
+
+All command line options are preceded by '--'. Only resource options are
+mandatory, the rest have default values. 
+Some options take arguments which are described in detail below. 
+Options can be given in any order.
+
+@menu     
+* Resource Options::            
+* Algorithmic options::         
+* Input and output options::    
+* Generic options::             
+@end menu
+
+@node Resource Options, Algorithmic options, Options, Options
+@subsection Resource Options
+
+Ocamorph reads ispell-type resources, i.e., an affix and
+a dictionary file. The specification of these language resources are
+described in @ref{Resource Specification}.
+ 
+@vrindex aff
+@deffn Option @code{--aff} {affix file}
+@var{affix file} is the path to the affix file. 
+This option should be used together with the @code{--dic} option.
+@end deffn
+
+@vrindex dic
+@deffn Option @code{--dic} {dictionary file}
+@var{affix file} is the path to the dictionary file. 
+This option should be used together with the @code{--aff} option.
+@end deffn
+
+Typical usage of ocamorph with the @code{-aff} and @code{--dic} options
+is 
+
+@example
+$ ocamorph --aff ./morphdb_en.aff --dic ./morphdb_en.dic
+@end example
+
+@vrindex bin
+
+@deffn Option @code{--bin} {binary file}
+where @var{binary-file} is the ocamorph native format resource.
+If used together with the @code{-aff} and @code{--dic} options, 
+ocamorph compiles the native format resource and writes it to 
+@var{binary-file}. 
+
+If the @code{--bin} option is given without the @code{-aff} and
+@code{--dic} options, then @var{binary-file} is read.
+
+@end deffn 
+
+The ocamorph native resource format is a dump of the internal data
+structures that ocamorph uses for the analysis. This means that 
+there is no initialization overhead if ocamorph is used with the native
+resource.
+
+The native resource format is actually a memory dump of the internal
+data structure performed by the @code{ocaml} @code{Marshal} module. 
+The native format therefore is portable between platforms but not
+necessarily portable between versions of ocamorph compiled with a
+different version of the ocaml compiler (since the implementation of the
+Marshal module is not guaranteed to be stable). If there is a problem 
+with reading a native format resource that was created with an
+incompatible version of ocamorph, the program exits with an error.   
+In such a case, you have to make sure you either have the appropriate version
+of the resource or you have the fully portable text format aff and dic
+files and create the native format yourself with your version ocamorph.
+Typing
+
+@example
+$ echo | ocamorph --aff ./morphdb_en.aff --dic ./morphdb_en.dic --bin ./morphdb_en.bin 
+@end example
+
+reads in the aff and dic files and creates the native format writing it
+to @code{./morphdb_en.bin}. 
+Once the compatible native format resource is available, ocamorph should
+be started with it. This makes ocamorph start up immediately. 
+
+A typical interactive use of ocamorph looks like this:
+@example
+$ ocamorph --bin ./morphdb_hu.bin
+szeretlek
+> szeretlek
+szeret/VERB<PERS<OBJ<2>>>
+@end example
+
+@vrindex minimize
+
+@deffn Option @code{--minimize}
+If this option is given the native format resource ocamorph generates 
+is minimized. 
+
+This option should be used together with the @code{-aff}, @code{--dic}
+and @code{--bin} options (when native format resources are generated
+from the aff and dic files). 
+@end deffn
+
+Ocamorph uses a coupled trie (a tree-like data-structure where the branches are
+labelled with characters) to store the lexicon and affix rules. If the
+@code{--minimize} option is given this trie is minimized by collapsing
+identical subtries basically resulting in a finite automaton. 
+
+This minimization is computationally intensive and therefore may take a
+very long time to perform (Minimizing the Hungarian morphological
+database on my MacOS X 10.4 (1.67GHz, 2Gb RAM) takes 15 minutes).
+Although minimized tries give slightly better runtime perfomance, their
+major virtue is that the resulting resource takes less space as well as
+less memory space when loaded.
+
+The exact performance effects of minimization is not fully clear to me
+yet.
+
+@node Algorithmic options, Input and output options, Resource Options, Options
+@subsection Algorithmic options
+
+These options influence the behaviour of the analysis algorithm.
+@vrindex saf
+
+@deffn Option @code{--saf} 
+If the @code{--saf} (@i{s}top @i{a}t @i{f}irst analysis) option is
+given, the algorithm does not enumerate all the alternative analyses
+of a token, but stops after the first one is found. 
+@end deffn 
+
+Typically, this option is used when ocamorph is used for stemming in
+document indexing or if postprocessing of alternatives would be too expensive.
+
+@vrindex compounds
+
+@deffn Option @code{--compounds}
+If the @code{--compounds} option is given the algorithm also gives back 
+compound analyses. 
+@end deffn
+
+Only compounds that are licenced in the resource file are
+possible. This option serves to enable the compounds that are ligitimated 
+in the lexical resources. 
+@vrindex blocking
+
+@deffn Option @code{--blocking}
+If the @code{--blocking} option is given the algorithm gives back 
+less analyses. A lexical (non-affixed) partial analysis always blocks
+one that involves affixation. Out of two partial analyses, only ones
+that are not equivalent are kept. 
+@end deffn
+
+Blocking is typically used if language resources are redundant in that 
+they contain entries which are also productively analized by affixation
+or compounding but the two are considered equivalent. Blocking
+effectively implements the idea that productive generation of an item 
+by affixation or compounding is a fallback option in case the item is 
+not found lexicalized.
+
+Blocking is done directly in the
+algorithm (as opposed to post-processing), 
+therefore gives better runtime performance than full analysis without
+blocking. 
+
+The @code{blocking} and @code{compounds} options can be used alongside
+in which case blocking also suppresses a compound analysis if the
+compound is entered as a lexical item. 
+
+@node Input and output options, Generic options, Algorithmic options, Options
+@subsection Input and output options
+
+@vrindex in
+
+@deffn Option @code{--in} @var{input_file}
+the tokens to be analysed are read from @var{input_file}. By default
+input is read from standard input.   
+@end deffn
+
+The default file format has one token
+per line. Alternatively one can use the @code{--field} option.
+@vrindex field
+
+@deffn Option @code{--field} @var{field_num}
+the input is assumed to contain lines with tabulator delimited
+fields. Only the string in column @var{field_num} is considered a token to be
+analysed. Columns start from 1. Somewhat in the spirit of awk, 0 means
+the whole line which is the default behaviour.
+@end deffn
+
+A common use of the @code{--field} option is when we want to enrich a
+file with record fields with morphological analysis. A typical such
+situation is a frequency dictionary. 
+
+@vrindex out
+
+@deffn Option @code{--out} @var{output_file}
+the output is written to @var{output_file}. By default
+ocamorph uses the standard output.   
+@end deffn
+ 
+The format of the output is @*
+@var{tag_preamble} + @var{input_line} + @var{no_of_analyses} + @var{analyses} 
+
+where @var{analyses} is the sequence of analyses delimited by
+@var{tag_sep}.
+
+@var{tag_preamble} and @var{tag_sep} can be changed via options:
+@vrindex tag_preamble
+
+@deffn Option @code{--tab_preamble} @var{tag_preamble}
+specifies the tag preamble. By default the preamble string is "> ". 
+@end deffn
+@vrindex tag_sep
+
+@deffn Option @code{--tab_sep} @var{tag_preamble}
+specifies the tag separator. By default the delimiter string is a newline. 
+@end deffn
+
+Additionally we can output the number of analyses:
+@vrindex count_analyses
+
+@deffn Option @code{--count_analyses} 
+If the @code{--count_analyses} option is given 
+the number of analyses is prepended to
+the array of analyses (delimited by @var{tag_sep}).
+By default the number of analyses is not output.
+Note that using this with the @code{--saf} (stop at first analysis)
+option does not make much sense.
+@end deffn
+
+A typical use of these input/output options is illustrated with the
+following command line:
+
+@example 
+$ cat text|tr -s ' ' '\n' | sort | uniq -c | sed 's/^ *//' | tr ' ' '\t' |\
+ ocamorph --bin ./morphdb_en.bin --field 2 --tag_sep ' ' --tag_preamble '' \
+--count_analyses > text.analysed.freq 
+@end example
+
+@node Generic options,  , Input and output options, Options
+@subsection Generic options
+@vrindex debug_level
+@cpindex debugging ocamorph
+@cpindex verbosity
+@cpindex warnings
+
+@quindex How can I debug ocamorph?
+
+@deffn Option @code{--debug_level} @var{debug_level}
+@var{debug_level} is an integer that specifies the debug level, virtually the verbosity of ocamorph. 
+The higher the number the more verbose.
+@end deffn
+
+Ocamorph writes messages to the standard error. 
+
+Debug levels have the following effects:
+@itemize
+@item 0: 
+the default value. Only error messages are written to standard
+error
+@item 1: 
+Basic messages and warnings
+@item 2-6: 
+more and more logs used for debugging. Only available with 
+@command{ocamorph_debug} 
+@item <0: 
+completely silent. Even error messages are suppressed. Errors
+throw exceptions and you only see them the way the ocaml runtime system
+verbalizes them.
+@end itemize
+
+@vrindex help
+@deffn Option @code{--help} 
+displays the list of options and quits
+@end deffn
+
+@vrindex version
+@deffn Option @code{--version} 
+displays the version number and quits
+@end deffn
+
+@node Man page,  , Options, Command-line Control
+@section Man page
+@quindex Can I use ocamorph from a shell?
+@quindex Can I use ocamorph on the command-line?
+@cpindex man page
+
+This last section is a verbatim include of the ocamorph manpage
+(which is automatically generated by @command{help2man}).
+Please be suspicious if it seems inconsistent with the previous section.
+
+@verbatiminclude ocamorph.man
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

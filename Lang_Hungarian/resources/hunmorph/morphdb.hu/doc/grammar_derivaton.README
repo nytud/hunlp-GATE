@@ -1,0 +1,135 @@
+Derivation readme:
+
+Decisions made after 8th June 2005
+
+GAT:
+
+Some epenthetic verbs with 2 syllables has their synthetic form with 1 syllable after the V_STEM_VARIANT_FACTORY
+filter like kotor/kotr. We want them to be counted with 2 syllables that we would have the forms kotorgat but not
+kotrogat. We should put the verbs like söpröget to the lexicon. We have to determine the gat forms of the following verbs in the lexicon:
+
+alkuszik, esküszik, jön, megy, van, lesz, tesz, vesz, hisz, visz, lesz, nyugszik, fekszik, alszik
+
+The filter which determines which verb is onesyl or manysyl should be before  V_STEM_VARIANT_FACTORY
+
+TAT:
+
+We have to know whether some verb was ik_verb and epenthetic because with tat 
+they behave in a different way.
+
+We want to have at non ik_verb epenthetic verbs the longer form like
+söpörtet but not söpret while at ik_verbs which are epenthetic we
+want both: ugortat and ugrat. At this stage ugor and ugr will be manysyl
+but ugr will be synthetic while ugor analytic so we add the tat at manysyl
+to the analytic form and at to the synthetic.
+
+Ó:
+
+It can join to synthetic_derivation and synthetic_inflection forms to
+make equally képezõ and képzõ. Because of thet we refer here to the
+epenthetic or sz-d-v feature that we wouldn't have twice this forms for
+non_epenthetic and non_sz_d_v verbs like olvas. The actual solution could
+be problematic if there is any verb which epenthetic and sz-d-v_stem in the same
+time because this verbs would have again two forms. sz-d-v_stem has
+this form only with their d form like cselekedõ but not cselekszõ
+
+Based on the correspondence with Viktor Trón we simplified again this morphem
+képezõ should be in the lexicon.
+
+TT:
+
+We don't change the actual morpheme but we have to notice that some
+TT forms have to be in the dictionary like állott contrary to the normal
+past form állt.
+
+KODIK:
+
+We lefr KODIK independent from the UL morpheme altough they have something
+in common but this could be problemeatic so we left it for further investigations
+
+SÁG:
+
+We handle only the forms which derivated from adjectives
+
+NÉ:
+
+we allowed just the forms like Cápáné and Cápané not which is not bad but maybe it
+is not too popular.
+
+S: output just adjective input noun and adjective at this moment altough we can
+make productively noun forms as well like kenyeres ('person who sells breads)
+but at this point we think wiser to put words like that into the dictionary.
+
+I: it made for all of the letters with usage qualifiers
+
+TALAN_NOUN: should be revised based on Struma the Rebrus part
+
+
+MENTES and FÉLE: should be only front
+
+NKÉNT: the anként form was missing
+
+NTA: we should put the word havonta to the dictionary
+
+ESS: Rebrus advised to put into the inflection section
+
+Z: we will have forms with ik but we need also the ikless forms because of some
+forms with preverbs: bénáz/bénázik ---> lebénáz 
+
+L:
+
+some strange forms we have to put to the dictionary like hegedül
+
+BB:
+
+irregular forms lik szebb, nagyobb, több, jobb must be in the dictionary
+
+LEGBBIK and LEGESBBIK are created now with the unput features
+of LEGBB, LEGESBB and with the output features of BBIK
+
+Irregular forms like legszélsõ, leghátsó, legelsõ should be in the
+lexicon
+
+I also put these morphemes to the morph.conf files with the
+number 1 and I changed the 2 to 1 at comparative forms.
+
+AN:
+
+With adjectives ending in g or k (vakon, gazdagon), we prefer the forms of on and ön. Ön doesn't
+makes big difference because in the actual dictionary we just have török, görög as adjectives and we
+can not make the forms törökön or görögön with the POS category adv but I put this allomorph toá
+the grammar as a theoretical possibility.
+
+We also make a morphophonological feature which allows that other words could have their forms with
+on or ön which I named middle_an. Words like szabad will get this feature to have their An form like: szabadon
+
+UL:
+the allomorphs regarding the word ending with a/e is deleted
+they should be in the lexicon because it is a closed group (like colours: barnul, sárgul etc. and others: hülyül). We put here the sul/sül allomorph
+for V ending words.
+
+ÍT:
+
+We have done the same as at UL. Exceptional cases like sárgít or barnít
+should be in the lexicon. Lila is an exception: lilul/*lilít.
+There are some other differen irregular forms as well: bézsesít.
+They should be also in the lexicon.
+
+D/DIK/DIKA:
+
+Irregular forms like: egyed, egyedik, ketted (other forms as well:
+ketten, kettes) should be in the lexicon
+
+This morpheme attaches in synthetic manner:
+
+négy negyed
+három harmad
+
+but this is not the regular synthetic form!
+
+négyek and hármak vs. ló lovak for example
+
+after V has an "epenthetic" vowel which based
+on phonetic formsy: alfáad, péed
+
+

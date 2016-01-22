@@ -1,0 +1,43 @@
+\initial {A}
+\entry {Are there any Hunlex resources available for any language?}{18}
+\entry {Are there software with similar functionality?}{18}
+\initial {C}
+\entry {Can I sell ocamorph, or a product that relies on it to people for money? Yes.}{3}
+\entry {Can I use ocamorph from a shell?}{14}
+\entry {Can I use ocamorph in a commercial product? Yes.}{3}
+\entry {Can I use ocamorph on the command-line?}{14}
+\entry {Can you recommend a morphological analyzer?}{18}
+\entry {Can you recommend a spellchecker?}{18}
+\entry {Can you recommend a stemmer?}{18}
+\initial {H}
+\entry {How can I change the installation target directories?}{7}
+\entry {How can I contact you?}{5}
+\entry {How can I debug ocamorph?}{14}
+\entry {How do I reinstall ocamorph?}{8}
+\entry {How do I uninstall ocamorph?}{8}
+\entry {How do I upgrade ocamorph?}{8}
+\entry {How to install ocamorph?}{6, 7}
+\initial {I}
+\entry {I am a keen hacker/stupid user with sleepless nights/long afternoons at work to be wasted/spent usefully. How can I contribute to your work?}{4}
+\entry {I am using ocamorph, but desparately lacking a feature X. Can I request it?}{4}
+\entry {I found a bug/strange feature. What should I do?}{4}
+\entry {I found ocamorph cool/useful/useless. How can I let the authors know?}{4}
+\entry {I used ocamorph and report it in a paper. What reference do I use?}{4}
+\initial {U}
+\entry {Under what copyright restrictions can I distribute linguistic resources compiled or to be compiled with hunlex?}{3}
+\entry {Under what copyright restrictions can I redistribute this software?}{3}
+\entry {Under what restrictions can I modify this software?}{3}
+\entry {Under what restrictions can I use this software?}{3}
+\initial {W}
+\entry {What are the prerequisites for compiling the documentation of ocamorph?}{6}
+\entry {What are the prerequisites for the C library version of ocamorph?}{6}
+\entry {What do I need if I want to install ocamorph from source?}{6}
+\entry {What files and directories are installed when I install ocamorph?}{8}
+\entry {What is ocamorph?}{6}
+\entry {What is Ocamorph?}{1}
+\entry {What is the License of this software?}{3}
+\entry {What platforms are supported by ocamorph?}{6}
+\entry {What version of ocaml do I need to compile ocamorph?}{6}
+\entry {Where can I find the sources?}{6}
+\entry {Which softwares can use the output of Hunlex?}{18}
+\entry {Who are you?}{4}

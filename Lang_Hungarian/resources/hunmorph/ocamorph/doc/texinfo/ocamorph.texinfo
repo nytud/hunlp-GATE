@@ -1,0 +1,133 @@
+\input texinfo @c -*-texinfo-*-
+@c %**start of header
+@setfilename hunlex
+@settitle Ocamorph -- Reference Manual
+@set frontcontents
+@ifset publish
+@afourpaper
+@set frontcontents
+@setchapternewpage odd
+@end ifset
+@paragraphindent none
+@c @firstparagraphindent none 
+@documentlanguage en
+@documentencoding ISO-8859-2
+@c %**end of header
+
+@tex
+\tolerance=2000000
+\vbadness=10000
+\hbadness=1000000
+@end tex
+
+@dircategory Ocamorph
+@direntry
+* texinfo: (Ocamorph)                  Ocamorph Reference Manual
+@end direntry
+
+               
+@set OCAMORPH @i{the Ocamorph morphological analyser}
+@set VERSION 0.1
+@set EDITION draft for version @value{VERSION}
+@set MOKKWEB @uref{http://mokk.bme.hu}
+@set OCAMORPHWEB @uref{http://mokk.bme.hu/tools/ocamorph}
+@set MYEMAIL @email{v.tron@@ed.ac.uk}
+                        
+@ignore                             
+@copying
+Copyright @copyright{} 2005 Viktor Tr@'on
+
+This document is licensed under the @i{Creative Commons Attribution License}. To
+view a copy of this license, visit
+@uref{http://creativecommons.org/licenses/by/2.0/} or send a letter to
+Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305,
+USA.
+
+@ifclear publish
+Printed copies of this manual can be purchased from the MOKK Lab
+at@* @value{MOKKWEB}
+@end ifclear
+@end copying
+@end ignore
+
+@titlepage
+@title Ocamorph
+@subtitle Morphological analyser 
+@subtitle Reference Manual
+@subtitle Edition @value{EDITION}
+                                                                                
+@author Viktor Tr@'on
+IGK, Language Technology and Cognitive Systems. Universities of Edinburgh & Saarbrücken.
+MOKK Lab, Budapest Intitute of Technology. Budapest.
+@value{MYEMAIL}
+@sp 1
+                                                                              
+This file documents @value{OCAMORPH} (Ocamorph). It corresponds to release
+@value{VERSION} of the Ocamorph distribution.
+                                                                                
+More information about Ocamorph can be found at the MOKK Lab homepage,
+@value{MOKKWEB}.
+
+@page
+@vskip 0pt plus 1filll
+@c @insertcopying
+@end titlepage
+
+@c @ifset frontcontents
+@contents
+@c @end ifset
+                                                                                
+@ifnottex
+@node Top, Introduction, (dir), (dir)
+@top Ocamorph Reference Manual
+@c @insertcopying
+@end ifnottex
+
+@c define indices 
+@c keywords
+@defindex kw
+@c files
+@defindex fi
+@c questions for the FAQ
+@defindex qu
+
+@menu
+* Introduction::                
+* License::                     
+* About::                       
+* Installation::                
+* Bootstrapping::               
+* Command-line Control::        
+* Resource Specification::        
+* Related Software and Resources:: 
+* Concept Index::               
+* Files Index::  
+* Options Index::  
+* Control Flags Index::                
+* Frequently Asked Questions::  
+@end menu
+
+@include introduction.texi
+@include license.texi
+@include about.texi
+@include installation.texi
+@include bootstrapping.texi
+@include command-line_control.texi
+@include resource_specification.texi
+@include related_software.texi
+
+@include cpindex.texi
+@include fiindex.texi
+@include vrindex.texi
+@include kwindex.texi
+@include quindex.texi
+
+@ifclear frontcontents
+@comment Use @setchapternewpage odd to ensure that the contents starts
+@comment on an odd page so that it can always be moved to the front when
+@comment printing two-up.
+@setchapternewpage odd
+@contents
+@end ifclear
+
+@bye

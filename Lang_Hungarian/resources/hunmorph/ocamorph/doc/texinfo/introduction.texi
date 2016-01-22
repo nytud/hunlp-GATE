@@ -1,0 +1,116 @@
+@node Introduction, License, Top, Top
+@chapter Introduction
+
+This document presents @value{OCAMORPH} which is being developed as part
+of the Budapest Institute of Technology Media Education and Research
+Center's HunTool Natural Language Processing Toolkit.
+@value{MOKKWEB}
+
+@menu
+* Ocamorph::                    
+* Motivation::                  
+@end menu
+
+@node Ocamorph, Motivation, Introduction, Introduction
+@section Ocamorph: A Short Description
+
+@quindex What is Ocamorph?
+ 
+Ocamorph is a morphological analyser. It is an implementation of the 
+online layer of the Hunmorph morphological analysis architecture. 
+
+@cindex ocamorph
+@cindex hunmorph
+@cindex morphological analysis
+@cindex morphological analyser
+@cindex stemming stemmer
+@cindex spellchecking
+@cindex spellchecker
+
+Ocamorph is language independent. It reads 
+@dfn{ispell-type} language resources and can analyse text based on the
+resources. Ocamorph implements various word analysis routines such as 
+morphological analysis and lemmatization.
+
+@quotation Note
+This document is not intended to describe how to create the language 
+resources that feed the analyer with language dependent knowledge.
+See @ref{Resource Specification} for a specification of the input 
+resources. The format described there is not intended to be edited
+manually. Hunlex, a resource compilation tool provides a convenient
+description language in which you can describe morphologies and can
+compile the @dfn{ispell-type} resources needed by ocamorph based on
+various configuration options.
+@end quotation
+
+In particular, this document provides you with:
+@enumerate
+
+@item 
+The compulsory tedium about @ref{License}, @ref{Authors}, @ref{Contact}, @ref{Submitting a Bug Report}, etc.  @xref{About}.
+
+@item 
+The indispensable but trivial Installation notes, @pxref{Installation}.
+
+@item 
+How to use ocamorph and @ref{Command-line Control}.
+
+@item 
+The detailed exposition of the input language dependent resource format
+(@pxref{Resource Specification});
+
+@item
+Information about @ref{Related Software and Resources}.
+
+@end enumerate
+
+@node Motivation,  , Ocamorph, Introduction
+@section Motivation
+
+The motivation behind HunLex came from two opposing types of
+requirements @dfn{lexical resources} are supposed to fulfill: 
+
+@enumerate
+@item (i) scalability, maintainability, extensibility; and
+@item (ii) optimized format for the application. 
+@end enumerate
+
+The constraints in (i) favour @i{one central, redundancy-free, abstract,
+but transparent} specification, while the ones in (ii) require
+@i{possibly multiple application-specific, potentially redundant,
+optimized formats}. 
+
+In order to reconcile these two opposing requirements, HunLex introduces
+an offline layer into the word-analysis workflow, which mediates between
+two levels of resources: 
+
+@enumerate
+@item 
+a central database conforming to (i) (also primary resource, input resource), 
+@item 
+various application-specific formats conforming to (ii) (also secondary or output resource)
+@end enumerate
+
+The primary resources are supposed to reasonably designed to help human maintanance, 
+and the secondary ones are supposed to optimize very different things ranging
+from file size, performance with the tool that uses it, coverage, robustness, 
+verbosity, normative strictness depending on who uses it for what purpose.
+
+HunLex is used to @dfn{compile} the primary resources into a particular
+application-specific format. This resource
+compilation phase is an offline process which is highly configurable so
+that users can fine-tune the output resources according to their needs.
+
+By introducing this layer of offline resource compilation, maintenance,
+extendability, portability of lexical resources is possible without
+compromising your performance on specific word-analysis tasks.  
+
+Providing the environment for a sensible primary resource specification
+framework and managing the offline precompilation process are the
+@i{raison d'@^etre} behind Hunlex.
+
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

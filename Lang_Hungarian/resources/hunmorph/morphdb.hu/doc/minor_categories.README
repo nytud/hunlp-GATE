@@ -1,0 +1,111 @@
+conjunctions, utterence-words, adverbials, interjections etc.
+
+sentence-words and interjections from elekfi are merged and the following is 
+considered:
+
+words that can be properly inflected (izé, hókuszpókusz, zuhé,
+dínomdánom, hacacáré, hejehuja) but ones that have clearly
+performative functions are still kept ambiguous (matt, patt, sakk) or
+clearly different function (tempó, hajrá) 
+
+words that exist in a range of inflected forms (however performative)
+are not included: köszönöm (but kösz, köszi), tessen 
+
+
+words that can be used to modify sentences (bizisten, becsszó,
+egykettõ, hipp-hopp, újra, ukmukkfukk) are also included under ADV
+cause their uses are clearly parallel to non-utterance uses
+(egykettõ=gyorsan, bizisten=I tell you)
+
+words used to link sentences are reconsidered as conjunctions (apropó,
+nos, hagyján, nemhiába, nohát (ambiguous), ugyebár) but if functions
+are very different they are kept separate (persze, ugyan)
+
+onometapoiae are tagged separately
+
+greetings are tagged separately (but some are ambiguous, like szevasz)
+
+adverbials
+
+ones derived from demonstratives (erre arra, ezúttal, ezúton) are pronominals...
+
+problem with ide, oda amide amoda etc. innét, idejövet, etc. 
+these are not treated as pronominal.
+
+preverbs are treated as preverbs even if they can appear without a verb  
+problem with alá, belül, kívül, fel, le, bele
+
+adverbials restricted to certain verbs are indicated. Ones that behave as preverbs are tagged with G, eg. (zokon PREV G: vesz, váltig C G: állít G: hangoztat G: mond)
+
+Various adverbials are tagged with the following categories:
+
+T temporal
+
+S spatial
+
+ST spatial temporal (lemenet) this might not be needed...
+
+Q quantification, relating to the quantity and or granularity of participants
+(egyedül, négyszemközt, bõved, dögivel, mind)
+
+A aspectual, related to completion, or extend to which it succeeded
+(szinte, kurvára, nagyon, meglehetõsen, abszolút)
+
+E epistemic, relating to source of knowledge, attitude of speaker, 
+(sajna, biztosan, tudvalevõleg, hallhatóan, érdekesmód, remélhetõleg)
+
+V veridical relating to the truth of statement
+(semmiképpen, dehogyisnem, igenis, sem)
+
+M manner 
+(generally productively derived adverbs, bérmentve, interurbán)
+
+C circumstantial, relating to a state before during or
+resulting after the eventuality 
+(akaratlanul, gyanútlan, véletlenül, önszántából, hasztalan)
+
+C and M might be conflated with manner due to problems
+
+QA hard to tell apart quantificational from aspectual 
+(csordultig, degeszre) QA are
+the ones which by making quantificational make the verb perfective
+
+I intensifier for adjectival modification (kept ambiguous if used as
+intensifier (A) for sentential modification (eléggé) but not if not
+(elég)
+adverbs not marked with I in general cannot 'modify' nonverbs
+
+N numeral modification (mindössze, legalább, minimum)
+
+ambiguities across categories are indicated (egyenesen S or E, egyszer
+Q or T, egyszerre M T)
+
+R restrictional (only, especially, also)
+(is, szintúgy, csupán, fõleg, kiváltképpen, nemcsak)
+
+
+CONJUNCTIONS
+conjunctions are much much more numerous than in any previous 
+categorization. 
+We tagged a word as a conjunction if it has a function to link pieces of discourse
+relating to name 
+
+rethorical relations, like opposition
+(ellenben, azonban, ugyanakkor, pediglen)
+
+listing
+(elsõsorban, másodszor, másrészt, elöljáróban, végezetül)
+
+summarizing, all elaborating, alternatives
+(egyszóval, jelesül, speciel, történetesen, részint, akár, vagy)
+
+paraphrasing or empty linkers
+(mindazonáltal, végülis, voltaképpen, vagyis, másszóval, kvázi)
+
+making temporal links
+(ahogy, aminthogy, alighogy, amíg)
+
+particle-like elements relating to sentence types
+(hadd, hagy, vajh, vajon, bárcsak)
+
+

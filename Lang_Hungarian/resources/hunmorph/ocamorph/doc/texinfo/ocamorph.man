@@ -1,0 +1,79 @@
+OCAMORPH(1)			 User Commands			   OCAMORPH(1)
+
+
+
+NAME
+       ocamorph - manual page for ocamorph 0.1
+
+SYNOPSIS
+       <command> <options>
+
+OPTIONS
+       option description (default settings)
+
+       ------------------------------------------
+
+       --aff  input affix file (affix.aff)
+
+       --dic  input dictionary file (dictionary.dic)
+
+       --bin  binary format (no)
+
+       ALGORITHMIC OPTIONS
+
+       --minimize
+	      minimize	the  trie  [gives better performance, saves space, but
+	      takes long to build] (no)
+
+       --saf  stop at first analysis (no)
+
+       --compounds
+	      allow compounds (no)
+
+       --blocking
+	      blocking by lexicalized relative stems (no)
+
+       INPUT OPTIONS
+
+       --in   input from file (stdin)
+
+       --out  output to file (stdout)
+
+       --field
+	      analyse only this field (0 = whole line)
+
+       OUTPUT OPTIONS
+
+       --count_analyses
+	      outputs the number of analyses (no)
+
+       --tag_preamble
+	      preamble string ("> ")
+
+       --tag_sep
+	      tag separator (newline)
+
+       GENERIC OPTIONS
+
+       --debug_level
+	      debug level (0)
+
+       --help display this list of options and quits
+
+       --version
+	      displays version info and quits
+
+       -help  Display this list of options
+
+SEE ALSO
+       The full documentation for ocamorph is maintained as a Texinfo  manual.
+       If  the info and ocamorph programs are properly installed at your site,
+       the command
+
+	      info ocamorph
+
+       should give you access to the complete manual.
+
+
+
+ocamorph 0.1			 December 2005			   OCAMORPH(1)

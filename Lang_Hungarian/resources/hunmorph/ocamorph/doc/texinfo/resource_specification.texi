@@ -1,0 +1,4 @@
+@node Resource Specification, Related Software and Resources, Command-line Control, Top
+@chapter Resource Specification
+
+

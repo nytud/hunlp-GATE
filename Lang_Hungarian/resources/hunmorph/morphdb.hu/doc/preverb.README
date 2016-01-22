@@ -1,0 +1,53 @@
+tron@krusovice:~/Work/lexicons/morphdb.hu $ cat tmp/elekfi_preverb_hapax_verbs 
+alul@exponál    VERB trans   ,;
+alul@marad      VERB preverb   ,;
+cserben@hagy    VERB trans preverb   ,;
+egyet@ért       VERB preverb   ,;
+együtt@mûködik  VERB preverb   ,;
+ellent@mond     VERB preverb   ,;
+föl@ül  VERB preverb   ,;
+helyben@hagy    VERB trans preverb   ,;
+helyt@áll       VERB preverb   ,;
+jót@áll VERB preverb   ,;
+karban@tart     VERB trans preverb   ,;
+közben@jár      VERB preverb   ,;
+közé@vág        VERB preverb   ,;
+közzé@tesz      VERB trans preverb   ,;
+lea@lacsonyít   VERB trans preverb   ,;
+nyilván@tart    VERB trans preverb   ,;
+odább@áll       VERB preverb   ,;
+rendre@utasít   VERB trans preverb   ,;
+síkra@száll     VERB preverb   ,;
+szörnyet@hal    VERB preverb   ,;
+ujjá@szervez    VERB trans preverb   ,;
+útba@igazít     VERB trans preverb   ,;
+utol@ér VERB trans preverb   ,;
+véghez@visz     VERB trans preverb   ,;
+végre@hajt      VERB trans preverb   ,;
+
+közé, odább, föl nyilván produktívak is
+lea@lacsonyít vicces bug és 
+szerintem ujjá is (van 10 másik újjá)
+
+
+adverbs never occurring without a governing verb and clearly 
+preverb like and prone to be written in one verb are preverbs 
+(zokon vesz, hoppon marad, zöldágra vergõdik, szabadjára enged, óva int)
+
+some more obviously adverb-like constructions are not left as preverbs 
+(degeszre eszi magát, zavarólag hat, váltig állít, kér alássan)
+
+(spuriously?) ambiguous ones iclude kölcsön
+?nyugton
+
+somewhat not traditionally, ones that are never spellt in two words can then still 
+be preverbs
+(észre tér, békén hagy, helyt ad, odébb lép, mellém lépett)
+
+In fact, proper ambiguities between preverb and adverbial uses are very difficult to find.
+Moreover, examples exist which are traditionally handled as adverbs anyway:
+'kint ragadtak' 
+therefore I see little reason for a POS-level separation of preverbs and adverbials 
+treating preverbs with subcat-like feature allows a very elegant reduction of 
+completely spurious POS ambiguities 
+(esp. with be, oda, benn, oda ..., also vissza, viszont, tele, újra, etc) 

@@ -1,0 +1,49 @@
+@node License, About, Introduction, Top
+@chapter License
+
+@quindex Under what restrictions can I use this software?
+@quindex Under what restrictions can I modify this software?
+
+@cindex license
+@cindex Creative Commons Attribution License
+
+Ocamorph is free software.
+
+@quindex What is the License of this software?
+
+It is licensed under the @strong{Creative Commons Attribution License}. 
+To view a copy of this license, visit
+@uref{http://creativecommons.org/licenses/by/2.5/}
+or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+There are @i{no restrictions on downloading} it other than 
+your bandwidth and our slothful ways of making things available.
+
+There are @i{no restrictions on use} either other than its deficiencies,
+clumsy features and bugs. However, this can be amended,
+because there are @i{no restrictions on modifying} it either.
+See also @ref{Contribution}.
+
+@quindex Under what copyright restrictions can I distribute linguistic resources compiled or to be compiled with hunlex?
+
+Freedom of use implies that any product (analysed text) that you created using 
+ocamorph is yours and you hold the right to distribute it
+in any way. Consider letting us know that you used ocamorph, though; see @ref{Contact}.
+
+@quindex Under what copyright restrictions can I redistribute this software?
+
+What is more, there are @i{no restrictions on redistributing} this software or
+modified versions of it.
+
+@c Creative Commons.
+
+@c @quotation 
+@c @strong{Todo:}
+@c Shall we not include the License?
+@c @end quotation
+@c @ref{Creative Commons}.
+
+@quindex Can I use ocamorph in a commercial product? Yes.
+
+@quindex Can I sell ocamorph, or a product that relies on it to people for money? Yes.
+

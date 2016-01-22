@@ -1,0 +1,54 @@
+BASIC USE
+
+In order to compile the morphdb.hu primary resources with hunlex
+you just type 
+
+ make 
+
+in the toplevel directory. 
+In order for this to work, you obviously need to have Hunlex installed
+systemwide.
+
+NON-STANDARD HUNLEX INSTALLATION
+
+If the hunlex executable is not in your path, use HUNLEX=/your/path/to/hunlex.
+
+The local Makefile just invokes Hunlex's Makefile which is by default 
+installed under /usr/local/lib/HunlexMakefile. 
+If your HunlexMakefile resides somewhere else, use HUNLEXMAKEFILE=/your/path/to/HunlexMakefile
+
+So with alternative hunlex installations, you will use:
+
+ make HUNLEX=/home/derek/bin/hunlex HUNLEXMAKEFILE=/home/derek/lib/HunlexMakefile
+
+or if these locations are stable, you should enter/update these variables 
+in the toplevel Makefile.
+
+GRAMMAR DEVELOPMENT 
+
+To debug the grammar, it is advisable to use some alternative lexicon
+and one or more of the various debug options of hunlex.
+Typically you would use
+
+ make LEXICON=in/test.lexicon DEBUG_LEVEL=3 GRAMMAR_DEBUG=true FS_DEBUG=true 2>test.log
+
+This redirects hunlex compilation log written on the standard error to the file 'test.log', which you can analyze. 
+GRAMMAR_DEBUG set to some value will cause all morphs ouput by any rule to be written in the dictionary output with information on the rules it applied to. 
+Looking into dictionary.dic then can be useful to figure out where your items
+'get stuck' in case you use sophisticated chains of rules and filters.
+
+FS_DEBUG set to some value causes the feature structure tag to be written as
+the third column in the dictionary file. With this you can debug if 
+your rules put together the tag-chunks correctly. It only makes sense to 
+the resources use KR-type feature structure tags.
+
+More on debug and hunlex compilation options, consult the hunlex documentation.
+In case of standard hunlex installation, just type 
+ 
+ info hunlex
+
+RESOURCE BUGS
+
+If you find errors and bugs in the resources or have suggestions for 
+additions and corrections, please contact the maintainers. 
+See the AUTHORS file.

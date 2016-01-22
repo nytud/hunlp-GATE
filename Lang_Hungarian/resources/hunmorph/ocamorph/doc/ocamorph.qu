@@ -1,0 +1,39 @@
+\entry{What is Ocamorph?}{1}{What is Ocamorph?}
+\entry{Under what restrictions can I use this software?}{3}{Under what restrictions can I use this software?}
+\entry{Under what restrictions can I modify this software?}{3}{Under what restrictions can I modify this software?}
+\entry{What is the License of this software?}{3}{What is the License of this software?}
+\entry{Under what copyright restrictions can I distribute linguistic resources compiled or to be compiled with hunlex?}{3}{Under what copyright restrictions can I distribute linguistic resources compiled or to be compiled with hunlex?}
+\entry{Under what copyright restrictions can I redistribute this software?}{3}{Under what copyright restrictions can I redistribute this software?}
+\entry{Can I use ocamorph in a commercial product? Yes.}{3}{Can I use ocamorph in a commercial product? Yes.}
+\entry{Can I sell ocamorph, or a product that relies on it to people for money? Yes.}{3}{Can I sell ocamorph, or a product that relies on it to people for money? Yes.}
+\entry{I found a bug/strange feature. What should I do?}{4}{I found a bug/strange feature. What should I do?}
+\entry{I am using ocamorph, but desparately lacking a feature X. Can I request it?}{4}{I am using ocamorph, but desparately lacking a feature X. Can I request it?}
+\entry{I found ocamorph cool/useful/useless. How can I let the authors know?}{4}{I found ocamorph cool/useful/useless. How can I let the authors know?}
+\entry{I am a keen hacker/stupid user with sleepless nights/long afternoons at work to be wasted/spent usefully. How can I contribute to your work?}{4}{I am a keen hacker/stupid user with sleepless nights/long afternoons at work to be wasted/spent usefully. How can I contribute to your work?}
+\entry{I used ocamorph and report it in a paper. What reference do I use?}{4}{I used ocamorph and report it in a paper. What reference do I use?}
+\entry{Who are you?}{4}{Who are you?}
+\entry{How can I contact you?}{5}{How can I contact you?}
+\entry{How to install ocamorph?}{6}{How to install ocamorph?}
+\entry{What is ocamorph?}{6}{What is ocamorph?}
+\entry{Where can I find the sources?}{6}{Where can I find the sources?}
+\entry{What platforms are supported by ocamorph?}{6}{What platforms are supported by ocamorph?}
+\entry{What do I need if I want to install ocamorph from source?}{6}{What do I need if I want to install ocamorph from source?}
+\entry{What version of ocaml do I need to compile ocamorph?}{6}{What version of ocaml do I need to compile ocamorph?}
+\entry{What are the prerequisites for the C library version of ocamorph?}{6}{What are the prerequisites for the C library version of ocamorph?}
+\entry{What are the prerequisites for compiling the documentation of ocamorph?}{6}{What are the prerequisites for compiling the documentation of ocamorph?}
+\entry{How to install ocamorph?}{7}{How to install ocamorph?}
+\entry{How can I change the installation target directories?}{7}{How can I change the installation target directories?}
+\entry{How do I uninstall ocamorph?}{8}{How do I uninstall ocamorph?}
+\entry{How do I upgrade ocamorph?}{8}{How do I upgrade ocamorph?}
+\entry{How do I reinstall ocamorph?}{8}{How do I reinstall ocamorph?}
+\entry{What files and directories are installed when I install ocamorph?}{8}{What files and directories are installed when I install ocamorph?}
+\entry{How can I debug ocamorph?}{14}{How can I debug ocamorph?}
+\entry{Can I use ocamorph from a shell?}{14}{Can I use ocamorph from a shell?}
+\entry{Can I use ocamorph on the command-line?}{14}{Can I use ocamorph on the command-line?}
+\entry{Which softwares can use the output of Hunlex?}{18}{Which softwares can use the output of Hunlex?}
+\entry{Can you recommend a spellchecker?}{18}{Can you recommend a spellchecker?}
+\entry{Can you recommend a stemmer?}{18}{Can you recommend a stemmer?}
+\entry{Can you recommend a morphological analyzer?}{18}{Can you recommend a morphological analyzer?}
+\entry{Can you recommend a morphological analyzer?}{18}{Can you recommend a morphological analyzer?}
+\entry{Are there any Hunlex resources available for any language?}{18}{Are there any Hunlex resources available for any language?}
+\entry{Are there software with similar functionality?}{18}{Are there software with similar functionality?}

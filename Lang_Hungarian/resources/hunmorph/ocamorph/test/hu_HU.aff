@@ -1,0 +1,800 @@
+SFX C Y 5
+SFX C 0 öttünk . <PAST><PERS<1>><PLUR>>  
+SFX C 0 öttem . <PAST><PERS<1>>>  
+SFX C 0 öttetek . <PAST><PERS<2>><PLUR>>  
+SFX C 0 öttél . <PAST><PERS<2>>>  
+SFX C 0 öttek . <PAST><PLUR>>  
+
+SFX J Y 1
+SFX J 0 ötök . <PERS<2>><PLUR>>  
+
+SFX M Y 142
+SFX M 0 jél [^sztj] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 jjem [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 jem [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 sem [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M t ssem [aeioöuü]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M z dzem dz <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M zt szem szt <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 sem s <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 jek j <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 sek s <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 jek [^sztj] <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 zenek [^sd]z <SUBJUNC-IMP><PLUR>>  
+SFX M 0 jön j <SUBJUNC-IMP>>  
+SFX M 0 sön s <SUBJUNC-IMP>>  
+SFX M 0 jük [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 jön [^sztj] <SUBJUNC-IMP>>  
+SFX M 0 jjed [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 jed [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 sed [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M t ssed [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M z dzed dz <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M zt szed szt <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 sed s <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 ze [^sd]z <SUBJUNC-IMP><DEF>>  
+SFX M 0 zétek [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 zek [^sd]z <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 jjetek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 setek [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M t ssetek [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M z dzetek dz <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M zt szetek szt <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 jjenek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR>>  
+SFX M 0 senek [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PLUR>>  
+SFX M t ssenek [aeioöuü]t <SUBJUNC-IMP><PLUR>>  
+SFX M z dzenek dz <SUBJUNC-IMP><PLUR>>  
+SFX M zt szenek szt <SUBJUNC-IMP><PLUR>>  
+SFX M 0 jenek j <SUBJUNC-IMP><PLUR>>  
+SFX M 0 senek s <SUBJUNC-IMP><PLUR>>  
+SFX M 0 je [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><DEF>>  
+SFX M 0 zön [^sd]z <SUBJUNC-IMP>>  
+SFX M 0 dd [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M t sd [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M z zd dz <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M zt zd szt <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M 0 d s <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M 0 jék [^sztj] <SUBJUNC-IMP>>formal  
+SFX M 0 jjek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 jék j <SUBJUNC-IMP>>formal  
+SFX M 0 sék s <SUBJUNC-IMP>>formal  
+SFX M 0 sek [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<1>>>  
+SFX M t ssek [aeioöuü]t <SUBJUNC-IMP><PERS<1>>>  
+SFX M z dzek dz <SUBJUNC-IMP><PERS<1>>>  
+SFX M zt szek szt <SUBJUNC-IMP><PERS<1>>>  
+SFX M 0 sék s <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 jjön [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>  
+SFX M 0 sön [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP>>  
+SFX M t ssön [aeioöuü]t <SUBJUNC-IMP>>  
+SFX M z dzön dz <SUBJUNC-IMP>>  
+SFX M zt szön szt <SUBJUNC-IMP>>  
+SFX M 0 zék [^sd]z <SUBJUNC-IMP>>formal  
+SFX M 0 jél j <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 sél s <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 zed [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 jétek [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 zünk [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 zem [^sd]z <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 jed [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX M 0 jj [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 s [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M t ss [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M z dz dz <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M zt sz szt <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 jjünk [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 j j <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 sünk [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M t ssünk [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M z dzünk dz <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M zt szünk szt <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 s s <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 jünk j <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 sünk s <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 jem [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX M 0 jjék [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>formal  
+SFX M 0 sék [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP>>formal  
+SFX M t ssék [aeioöuü]t <SUBJUNC-IMP>>formal  
+SFX M z dzék dz <SUBJUNC-IMP>>formal  
+SFX M zt szék szt <SUBJUNC-IMP>>formal  
+SFX M 0 jetek [^sztj] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 jjék [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 jék [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 sék [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M t ssék [aeioöuü]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M z dzék dz <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M zt szék szt <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 zük [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 zék [^sd]z <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 jje [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX M 0 je [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX M 0 se [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><DEF>>  
+SFX M t sse [aeioöuü]t <SUBJUNC-IMP><DEF>>  
+SFX M z dze dz <SUBJUNC-IMP><DEF>>  
+SFX M zt sze szt <SUBJUNC-IMP><DEF>>  
+SFX M 0 se s <SUBJUNC-IMP><DEF>>  
+SFX M 0 jünk [^sztj] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX M 0 d [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M 0 zelek [^sd]z <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 j [^sztj] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 jék [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX M 0 zetek [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 d [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX M 0 jjél [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 zél [^sd]z <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 jelek [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 sél [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M t ssél [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M z dzél dz <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M zt szél szt <SUBJUNC-IMP><PERS<2>>>long form  
+SFX M 0 jjük [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 jük [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 sük [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M t ssük [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M z dzük dz <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M zt szük szt <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 sük s <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX M 0 jetek j <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 setek s <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX M 0 jjelek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 jelek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 selek [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M t sselek [aeioöuü]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M z dzelek dz <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M zt szelek szt <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 jjétek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 jétek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 sétek [bcdfghjklmnpqrtvwxyû]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M t ssétek [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M z dzétek dz <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M zt szétek szt <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 selek s <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX M 0 sétek s <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX M 0 z [^sd]z <SUBJUNC-IMP><PERS<2>>>short form  
+SFX M 0 jenek [^sztj] <SUBJUNC-IMP><PLUR>>  
+
+SFX G Y 2
+SFX G 0 öd . <PERS<2>><DEF>>  
+SFX G 0 öm . <PERS<1>><DEF>>  
+
+SFX z Y 7
+SFX z 0 telek . <PAST><PERS<1<OBJ<2>>>>>  
+SFX z 0 tétek . <PAST><PERS<2>><PLUR><DEF>>  
+SFX z 0 tem . <PAST><PERS<1>><DEF>>  
+SFX z 0 ted . <PAST><PERS<2>><DEF>>  
+SFX z 0 te . <PAST><DEF>>  
+SFX z 0 ték . <PAST><PLUR><DEF>>  
+SFX z 0 tük . <PAST><PERS<1>><PLUR><DEF>>  
+
+SFX w Y 7
+SFX w 0 tad . <PAST><PERS<2>><DEF>>  
+SFX w 0 tuk . <PAST><PERS<1>><PLUR><DEF>>  
+SFX w 0 tátok . <PAST><PERS<2>><PLUR><DEF>>  
+SFX w 0 ta . <PAST><DEF>>  
+SFX w 0 ták . <PAST><PLUR><DEF>>  
+SFX w 0 tam . <PAST><PERS<1>><DEF>>  
+SFX w 0 talak . <PAST><PERS<1<OBJ<2>>>>>  
+
+SFX o Y 10
+SFX o 0 nók . <COND><PERS<1>><PLUR><DEF>>formal  
+SFX o 0 nátok . <COND><PERS<2>><PLUR><DEF>>  
+SFX o 0 nám . <COND><PERS<1>><DEF>>  
+SFX o 0 nánk . <COND><PERS<1>><PLUR><DEF>>  
+SFX o 0 lak [^l]. <PERS<1<OBJ<2>>>>>  
+SFX o 0 nád . <COND><PERS<2>><DEF>>  
+SFX o 0 nálak . <COND><PERS<1<OBJ<2>>>>>  
+SFX o 0 nák . <COND><PLUR><DEF>>  
+SFX o 0 ná . <COND><DEF>>  
+SFX o 0 lak l[^l] <PERS<1<OBJ<2>>>>>  
+
+SFX j Y 1
+SFX j 0 ok . <PERS<1>>>  
+
+SFX g Y 8
+SFX g 0 tok . <PERS<2>><PLUR>>  
+SFX g 0 nak . <PLUR>>  
+SFX g 0 nátok . <COND><PERS<2>><PLUR>>  
+SFX g 0 nák . <COND><PERS<1>>>  
+SFX g 0 nál . <COND><PERS<2>>>  
+SFX g 0 na . <COND>>  
+SFX g 0 nánk . <COND><PERS<1>><PLUR>>  
+SFX g 0 nának . <COND><PLUR>>  
+
+SFX k Y 5
+SFX k 0 tunk . <PAST><PERS<1>><PLUR>>  
+SFX k 0 tak . <PAST><PLUR>>  
+SFX k 0 tatok . <PAST><PERS<2>><PLUR>>  
+SFX k 0 tam . <PAST><PERS<1>>>  
+SFX k 0 tál . <PAST><PERS<2>>>  
+
+SFX f Y 1
+SFX f 0 ök . <PERS<1>>>  
+
+SFX H Y 1
+SFX H 0 tök . <PERS<2>><PLUR>>  
+
+SFX l Y 3
+SFX l 0 öl [sz] <PERS<2>>>  
+SFX l 0 öm . <PERS<1>>>  
+SFX l 0 ök . <PERS<1>>>informal  
+
+SFX d Y 5
+SFX d 0 tem . <PAST><PERS<1>>>  
+SFX d 0 tetek . <PAST><PERS<2>><PLUR>>  
+SFX d 0 tél . <PAST><PERS<2>>>  
+SFX d 0 tünk . <PAST><PERS<1>><PLUR>>  
+SFX d 0 tek . <PAST><PLUR>>  
+
+SFX c Y 9
+SFX c 0 ttatok [aáeéiíoóöõuúüû] <PAST><PERS<2>><PLUR>>  
+SFX c 0 ttál [aáeéiíoóöõuúüû] <PAST><PERS<2>>>  
+SFX c 0 ol [sz] <PERS<2>>>  
+SFX c 0 unk . <PERS<1>><PLUR>>  
+SFX c 0 ok . <PERS<1>>>informal  
+SFX c 0 ttunk [aáeéiíoóöõuúüû] <PAST><PERS<1>><PLUR>>  
+SFX c 0 ttam [aáeéiíoóöõuúüû] <PAST><PERS<1>>>  
+SFX c 0 ttak [aáeéiíoóöõuúüû] <PAST><PLUR>>  
+SFX c 0 om . <PERS<1>>>  
+
+SFX q Y 5
+SFX q 0 ottunk . <PAST><PERS<1>><PLUR>>  
+SFX q 0 ottam . <PAST><PERS<1>>>  
+SFX q 0 ottál . <PAST><PERS<2>>>  
+SFX q 0 ottak . <PAST><PLUR>>  
+SFX q 0 ottatok . <PAST><PERS<2>><PLUR>>  
+
+SFX O Y 10
+SFX O 0 ana . <COND>>  
+SFX O 0 anának . <COND><PLUR>>  
+SFX O 0 anék . <COND><PERS<1>>>  
+SFX O 0 anánk . <COND><PERS<1>><PLUR>>  
+SFX O 0 anak . <PLUR>>  
+SFX O 0 anák . <COND><PERS<1>>>  
+SFX O 0 otok . <PERS<2>><PLUR>>  
+SFX O 0 anátok . <COND><PERS<2>><PLUR>>  
+SFX O 0 anál . <COND><PERS<2>>>  
+SFX O 0 asz [^sz] <PERS<2>>>  
+
+SFX i Y 9
+SFX i 0 od . <PERS<2>><DEF>>  
+SFX i 0 ttátok [aáeéiíoóöõuúüû] <PAST><PERS<2>><PLUR><DEF>>  
+SFX i 0 ttad [aáeéiíoóöõuúüû] <PAST><PERS<2>><DEF>>  
+SFX i 0 ttam [aáeéiíoóöõuúüû] <PAST><PERS<1>><DEF>>  
+SFX i 0 ttalak [aáeéiíoóöõuúüû] <PAST><PERS<1<OBJ<2>>>>>  
+SFX i 0 om . <PERS<1>><DEF>>  
+SFX i 0 ttuk [aáeéiíoóöõuúüû] <PAST><PERS<1>><PLUR><DEF>>  
+SFX i 0 tták [aáeéiíoóöõuúüû] <PAST><PLUR><DEF>>  
+SFX i 0 tta [aáeéiíoóöõuúüû] <PAST><DEF>>  
+
+SFX p Y 7
+SFX p 0 otta . <PAST><DEF>>  
+SFX p 0 ottuk . <PAST><PERS<1>><PLUR><DEF>>  
+SFX p 0 ottam . <PAST><PERS<1>><DEF>>  
+SFX p 0 ottad . <PAST><PERS<2>><DEF>>  
+SFX p 0 ották . <PAST><PLUR><DEF>>  
+SFX p 0 ottalak . <PAST><PERS<1<OBJ<2>>>>>  
+SFX p 0 ottátok . <PAST><PERS<2>><PLUR><DEF>>  
+
+SFX N Y 10
+SFX N 0 anád . <COND><PERS<2>><DEF>>  
+SFX N 0 anám . <COND><PERS<1>><DEF>>  
+SFX N 0 anák . <COND><PLUR><DEF>>  
+SFX N 0 alak . <PERS<1<OBJ<2>>>>>  
+SFX N 0 anánk . <COND><PERS<1>><PLUR><DEF>>  
+SFX N 0 análak . <COND><PERS<1<OBJ<2>>>>>  
+SFX N 0 anók . <COND><PERS<1>><PLUR><DEF>>formal  
+SFX N 0 anátok . <COND><PERS<2>><PLUR><DEF>>  
+SFX N 0 aná . <COND><DEF>>  
+SFX N 0 ak ll <PERS<1<OBJ<2>>>>>  
+
+SFX a Y 1
+SFX a 0 tt [aáeéiíoóöõuúüû] <PAST>>  
+
+SFX b Y 2
+SFX b 0 nék . <COND><PERS<1>>>  
+SFX b 0 sz [^sz] <PERS<2>>>  
+
+SFX r Y 6
+SFX r 0 nénk . <COND><PERS<1>><PLUR>>  
+SFX r 0 nél . <COND><PERS<2>>>  
+SFX r 0 nek . <PLUR>>  
+SFX r 0 nének . <COND><PLUR>>  
+SFX r 0 ne . <COND>>  
+SFX r 0 nétek . <COND><PERS<2>><PLUR>>  
+
+SFX h Y 6
+SFX h 0 ttetek [aáeéiíoóöõuúüû] <PAST><PERS<2>><PLUR>>  
+SFX h 0 ttél [aáeéiíoóöõuúüû] <PAST><PERS<2>>>  
+SFX h 0 ttünk [aáeéiíoóöõuúüû] <PAST><PERS<1>><PLUR>>  
+SFX h 0 ttem [aáeéiíoóöõuúüû] <PAST><PERS<1>>>  
+SFX h 0 ttek [aáeéiíoóöõuúüû] <PAST><PLUR>>  
+SFX h 0 ünk . <PERS<1>><PLUR>>  
+
+SFX x Y 5
+SFX x z dzük dz <PERS<1>><PLUR><DEF>>  
+SFX x z szük sz <PERS<1>><PLUR><DEF>>  
+SFX x 0 sük s <PERS<1>><PLUR><DEF>>  
+SFX x 0 jük [^sz] <PERS<1>><PLUR><DEF>>  
+SFX x 0 zük [^ds]z <PERS<1>><PLUR><DEF>>  
+
+SFX B Y 174
+SFX B 0 jél [^sztj] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 jjem [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 jem [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B t sem fest <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 sem [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B t ssem [aeioöuü]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B z dzem dz <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B z szem sz <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B zt szem szt <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 sem s <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 jek j <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 sek s <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 jek [^sztj] <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 zenek [^sd]z <SUBJUNC-IMP><PLUR>>  
+SFX B 0 jen j <SUBJUNC-IMP>>  
+SFX B 0 sen s <SUBJUNC-IMP>>  
+SFX B 0 jük [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 jen [^sztj] <SUBJUNC-IMP>>  
+SFX B 0 jjed [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 jed [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B t sed fest <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 sed [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B t ssed [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B z dzed dz <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B z szed sz <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B zt szed szt <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 sed s <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 ze [^sd]z <SUBJUNC-IMP><DEF>>  
+SFX B 0 zétek [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 zek [^sd]z <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 jjetek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B t setek fest <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 setek [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B t ssetek [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B z dzetek dz <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B z szetek sz <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B zt szetek szt <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 jjenek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR>>  
+SFX B t senek fest <SUBJUNC-IMP><PLUR>>  
+SFX B 0 senek [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PLUR>>  
+SFX B t ssenek [aeioöuü]t <SUBJUNC-IMP><PLUR>>  
+SFX B z dzenek dz <SUBJUNC-IMP><PLUR>>  
+SFX B z szenek sz <SUBJUNC-IMP><PLUR>>  
+SFX B zt szenek szt <SUBJUNC-IMP><PLUR>>  
+SFX B 0 jenek j <SUBJUNC-IMP><PLUR>>  
+SFX B 0 senek s <SUBJUNC-IMP><PLUR>>  
+SFX B 0 je [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><DEF>>  
+SFX B 0 zen [^sd]z <SUBJUNC-IMP>>  
+SFX B 0 dd [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B t d fest <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B t sd [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B z zd dz <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B z zd sz <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B zt zd szt <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B 0 d s <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B 0 jék [^sztj] <SUBJUNC-IMP>>formal  
+SFX B 0 jjek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 jék j <SUBJUNC-IMP>>formal  
+SFX B 0 sék s <SUBJUNC-IMP>>formal  
+SFX B t sek fest <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 sek [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<1>>>  
+SFX B t ssek [aeioöuü]t <SUBJUNC-IMP><PERS<1>>>  
+SFX B z dzek dz <SUBJUNC-IMP><PERS<1>>>  
+SFX B z szek sz <SUBJUNC-IMP><PERS<1>>>  
+SFX B zt szek szt <SUBJUNC-IMP><PERS<1>>>  
+SFX B 0 sék s <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 jjen [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>  
+SFX B t sen fest <SUBJUNC-IMP>>  
+SFX B 0 sen [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP>>  
+SFX B t ssen [aeioöuü]t <SUBJUNC-IMP>>  
+SFX B z dzen dz <SUBJUNC-IMP>>  
+SFX B z szen sz <SUBJUNC-IMP>>  
+SFX B zt szen szt <SUBJUNC-IMP>>  
+SFX B 0 zék [^sd]z <SUBJUNC-IMP>>formal  
+SFX B 0 jél j <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 sél s <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 zed [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 jétek [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 zünk [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 zem [^sd]z <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 jed [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX B 0 jj [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B t s fest <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B 0 s [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B t ss [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B z dz dz <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B z sz sz <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B zt sz szt <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B 0 jjünk [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 j j <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B 0 s s <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B t sünk fest <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 sünk [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B t ssünk [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B z dzünk dz <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B z szünk sz <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B zt szünk szt <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 jünk j <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 sünk s <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 jem [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX B 0 jjék [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>formal  
+SFX B t sék fest <SUBJUNC-IMP>>formal  
+SFX B 0 sék [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP>>formal  
+SFX B t ssék [aeioöuü]t <SUBJUNC-IMP>>formal  
+SFX B z dzék dz <SUBJUNC-IMP>>formal  
+SFX B z szék sz <SUBJUNC-IMP>>formal  
+SFX B zt szék szt <SUBJUNC-IMP>>formal  
+SFX B 0 jetek [^sztj] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 jjék [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 jék [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B t sék fest <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 sék [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B t ssék [aeioöuü]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B z dzék dz <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B z szék sz <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B zt szék szt <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 zük [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 zék [^sd]z <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 jje [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX B 0 je [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX B t se fest <SUBJUNC-IMP><DEF>>  
+SFX B 0 se [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><DEF>>  
+SFX B t sse [aeioöuü]t <SUBJUNC-IMP><DEF>>  
+SFX B z dze dz <SUBJUNC-IMP><DEF>>  
+SFX B z sze sz <SUBJUNC-IMP><DEF>>  
+SFX B zt sze szt <SUBJUNC-IMP><DEF>>  
+SFX B 0 se s <SUBJUNC-IMP><DEF>>  
+SFX B 0 jünk [^sztj] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX B 0 d [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B 0 zelek [^sd]z <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B 0 j [^sztj] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B 0 jék [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX B 0 zetek [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 d [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX B 0 jjél [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 zél [^sd]z <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B t sél fest <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 sél [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B t ssél [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 jelek [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B z dzél dz <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B z szél sz <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B zt szél szt <SUBJUNC-IMP><PERS<2>>>long form  
+SFX B 0 jjük [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 jük [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B t sük fest <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 sük [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B t ssük [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B z dzük dz <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B z szük sz <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B zt szük szt <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 sük s <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX B 0 jetek j <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 setek s <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX B 0 jjelek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B 0 jelek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B t selek fest <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B 0 selek [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B t sselek [aeioöuü]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B z dzelek dz <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B z szelek sz <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B zt szelek szt <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B 0 jjétek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 jétek [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B t sétek fest <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 sétek [bcdfghjklmnpqrtvwxyéí]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B t ssétek [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B z dzétek dz <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B z szétek sz <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B zt szétek szt <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 selek s <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX B 0 sétek s <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX B 0 z [^sd]z <SUBJUNC-IMP><PERS<2>>>short form  
+SFX B 0 jenek [^sztj] <SUBJUNC-IMP><PLUR>>  
+
+SFX s Y 1
+SFX s 0 ik . >  
+
+SFX y Y 10
+SFX y 0 lek [^l]. <PERS<1<OBJ<2>>>>>  
+SFX y 0 nélek . <COND><PERS<1<OBJ<2>>>>>  
+SFX y 0 néd . <COND><PERS<2>><DEF>>  
+SFX y 0 nék . <COND><PLUR><DEF>>  
+SFX y 0 nénk . <COND><PERS<1>><PLUR><DEF>>  
+SFX y 0 nõk . <COND><PERS<1>><PLUR><DEF>>formal  
+SFX y 0 nétek . <COND><PERS<2>><PLUR><DEF>>  
+SFX y 0 lek l[^l] <PERS<1<OBJ<2>>>>>  
+SFX y 0 né . <COND><DEF>>  
+SFX y 0 ném . <COND><PERS<1>><DEF>>  
+
+SFX u Y 1
+SFX u 0 0 . >  
+
+SFX m Y 10
+SFX m 0 i . <DEF>>  
+SFX m 0 ttétek [aáeéiíoóöõuúüû] <PAST><PERS<2>><PLUR><DEF>>  
+SFX m 0 tted [aáeéiíoóöõuúüû] <PAST><PERS<2>><DEF>>  
+SFX m 0 ttem [aáeéiíoóöõuúüû] <PAST><PERS<1>><DEF>>  
+SFX m 0 ttelek [aáeéiíoóöõuúüû] <PAST><PERS<1<OBJ<2>>>>>  
+SFX m 0 ttük [aáeéiíoóöõuúüû] <PAST><PERS<1>><PLUR><DEF>>  
+SFX m 0 tték [aáeéiíoóöõuúüû] <PAST><PLUR><DEF>>  
+SFX m 0 itek . <PERS<2>><PLUR><DEF>>  
+SFX m 0 ik . <PLUR><DEF>>  
+SFX m 0 tte [aáeéiíoóöõuúüû] <PAST><DEF>>  
+
+SFX L Y 7
+SFX L 0 etted . <PAST><PERS<2>><DEF>>  
+SFX L 0 ettétek . <PAST><PERS<2>><PLUR><DEF>>  
+SFX L 0 ette . <PAST><DEF>>  
+SFX L 0 ettelek . <PAST><PERS<1<OBJ<2>>>>>  
+SFX L 0 ették . <PAST><PLUR><DEF>>  
+SFX L 0 ettük . <PAST><PERS<1>><PLUR><DEF>>  
+SFX L 0 ettem . <PAST><PERS<1>><DEF>>  
+
+SFX F Y 2
+SFX F 0 ed . <PERS<2>><DEF>>  
+SFX F 0 em . <PERS<1>><DEF>>  
+
+SFX A Y 10
+SFX A 0 enõk . <COND><PERS<1>><PLUR><DEF>>formal  
+SFX A 0 ené . <COND><DEF>>  
+SFX A 0 enéd . <COND><PERS<2>><DEF>>  
+SFX A 0 eném . <COND><PERS<1>><DEF>>  
+SFX A 0 enénk . <COND><PERS<1>><PLUR><DEF>>  
+SFX A 0 elek . <PERS<1<OBJ<2>>>>>  
+SFX A 0 enélek . <COND><PERS<1<OBJ<2>>>>>  
+SFX A 0 enék . <COND><PLUR><DEF>>  
+SFX A 0 ek ll <PERS<1<OBJ<2>>>>>  
+SFX A 0 enétek . <COND><PERS<2>><PLUR><DEF>>  
+
+SFX n Y 1
+SFX n 0 ek . <PERS<1>>>  
+
+SFX t Y 1
+SFX t 0 tek . <PERS<2>><PLUR>>  
+
+SFX e Y 8
+SFX e 0 enék . <COND><PERS<1>>>  
+SFX e 0 enének . <COND><PLUR>>  
+SFX e 0 ene . <COND>>  
+SFX e 0 enél . <COND><PERS<2>>>  
+SFX e 0 enénk . <COND><PERS<1>><PLUR>>  
+SFX e 0 enek . <PLUR>>  
+SFX e 0 enétek . <COND><PERS<2>><PLUR>>  
+SFX e 0 esz [^sz] <PERS<2>>>  
+
+SFX K Y 5
+SFX K 0 ettünk . <PAST><PERS<1>><PLUR>>  
+SFX K 0 ettél . <PAST><PERS<2>>>  
+SFX K 0 ettek . <PAST><PLUR>>  
+SFX K 0 ettetek . <PAST><PERS<2>><PLUR>>  
+SFX K 0 ettem . <PAST><PERS<1>>>  
+
+SFX D Y 3
+SFX D 0 el [sz] <PERS<2>>>  
+SFX D 0 em . <PERS<1>>>  
+SFX D 0 ek . <PERS<1>>>informal  
+
+SFX I Y 1
+SFX I 0 etek . <PERS<2>><PLUR>>  
+
+SFX v Y 209
+SFX v 0 juk [^sz] <PERS<1>><PLUR><DEF>>  
+SFX v 0 zák [^ds]z <PLUR><DEF>>  
+SFX v 0 jál [^sztj] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 jjam [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 jam [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 sam tát <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 sam [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v t ssam [aeioöuü]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v z dzam dz <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v z szam sz <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v zt szam szt <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 sam s <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 jak j <SUBJUNC-IMP><PERS<1>>>  
+SFX v 0 sak s <SUBJUNC-IMP><PERS<1>>>  
+SFX v t ssa [ls][áó]t <SUBJUNC-IMP><DEF>>  
+SFX v 0 jak [^sztj] <SUBJUNC-IMP><PERS<1>>>  
+SFX v z dzuk dz <PERS<1>><PLUR><DEF>>  
+SFX v z szuk sz <PERS<1>><PLUR><DEF>>  
+SFX v 0 zanak [^sd]z <SUBJUNC-IMP><PLUR>>  
+SFX v 0 suk s <PERS<1>><PLUR><DEF>>  
+SFX v 0 jon j <SUBJUNC-IMP>>  
+SFX v 0 son s <SUBJUNC-IMP>>  
+SFX v z dzátok dz <PERS<2>><PLUR><DEF>>  
+SFX v z szátok sz <PERS<2>><PLUR><DEF>>  
+SFX v 0 sátok s <PERS<2>><PLUR><DEF>>  
+SFX v 0 juk [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 zuk [^ds]z <PERS<1>><PLUR><DEF>>  
+SFX v 0 jon [^sztj] <SUBJUNC-IMP>>  
+SFX v 0 jjad [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 jad [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 sad tát <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 sad [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v t ssad [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v z dzad dz <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v z szad sz <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v zt szad szt <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 sad s <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 za [^sd]z <SUBJUNC-IMP><DEF>>  
+SFX v 0 zátok [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v t ssuk [ls][áó]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 zak [^sd]z <SUBJUNC-IMP><PERS<1>>>  
+SFX v t ssatok [ls][áó]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 jjatok [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 satok tát <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 satok [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v t ssatok [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v z dzatok dz <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v z szatok sz <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v t ssalak [ls][áó]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v zt szatok szt <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 jjanak [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR>>  
+SFX v 0 sanak tát <SUBJUNC-IMP><PLUR>>  
+SFX v 0 sanak [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PLUR>>  
+SFX v t ssanak [aeioöuü]t <SUBJUNC-IMP><PLUR>>  
+SFX v z dzanak dz <SUBJUNC-IMP><PLUR>>  
+SFX v z szanak sz <SUBJUNC-IMP><PLUR>>  
+SFX v zt szanak szt <SUBJUNC-IMP><PLUR>>  
+SFX v t ssátok [ls][áó]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 za [^ds]z <DEF>>  
+SFX v 0 janak j <SUBJUNC-IMP><PLUR>>  
+SFX v 0 sanak s <SUBJUNC-IMP><PLUR>>  
+SFX v 0 ja [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><DEF>>  
+SFX v t sd [ls][áó]t <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v 0 zon [^sd]z <SUBJUNC-IMP>>  
+SFX v 0 dd [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v t sd [aeioöuü]t <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v z zd dz <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v z zd sz <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v zt zd szt <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v 0 d s <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v 0 jék [^sztj] <SUBJUNC-IMP>>formal  
+SFX v z dza dz <DEF>>  
+SFX v z sza sz <DEF>>  
+SFX v t ssam [ls][áó]t <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v t ssak [ls][áó]t <SUBJUNC-IMP><PERS<1>>>  
+SFX v 0 jjak [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>>>  
+SFX v 0 jék j <SUBJUNC-IMP>>formal  
+SFX v 0 sék s <SUBJUNC-IMP>>formal  
+SFX v 0 sak tát <SUBJUNC-IMP><PERS<1>>>  
+SFX v 0 sak [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<1>>>  
+SFX v t ssak [aeioöuü]t <SUBJUNC-IMP><PERS<1>>>  
+SFX v z dzak dz <SUBJUNC-IMP><PERS<1>>>  
+SFX v z szak sz <SUBJUNC-IMP><PERS<1>>>  
+SFX v zt szak szt <SUBJUNC-IMP><PERS<1>>>  
+SFX v 0 sák s <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v t sson [ls][áó]t <SUBJUNC-IMP>>  
+SFX v 0 jjon [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>  
+SFX v 0 son tát <SUBJUNC-IMP>>  
+SFX v 0 son [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP>>  
+SFX v t sson [aeioöuü]t <SUBJUNC-IMP>>  
+SFX v z dzon dz <SUBJUNC-IMP>>  
+SFX v z szon sz <SUBJUNC-IMP>>  
+SFX v zt szon szt <SUBJUNC-IMP>>  
+SFX v t ssad [ls][áó]t <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 zék [^sd]z <SUBJUNC-IMP>>formal  
+SFX v 0 játok [^sz] <PERS<2>><PLUR><DEF>>  
+SFX v t ssanak [ls][áó]t <SUBJUNC-IMP><PLUR>>  
+SFX v 0 jál j <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 sál s <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 zad [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 játok [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 zunk [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 zam [^sd]z <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 ják [^sz] <PLUR><DEF>>  
+SFX v 0 zátok [^ds]z <PERS<2>><PLUR><DEF>>  
+SFX v 0 jad [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>long form  
+SFX v 0 jj [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 s tát <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 s [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v t ssunk [ls][áó]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v t ss [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v z dz dz <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v z sz sz <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v zt sz szt <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 jjunk [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 j j <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 s s <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 sunk tát <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 sunk [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v t ssunk [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v z dzunk dz <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v z szunk sz <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v zt szunk szt <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v z dzák dz <PLUR><DEF>>  
+SFX v z szák sz <PLUR><DEF>>  
+SFX v 0 junk j <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 sunk s <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 jam [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1>><DEF>>  
+SFX v 0 sák s <PLUR><DEF>>  
+SFX v t ssék [ls][áó]t <SUBJUNC-IMP>>formal  
+SFX v 0 jjék [aáeéiíoóöõuúüû] <SUBJUNC-IMP>>formal  
+SFX v 0 sék tát <SUBJUNC-IMP>>formal  
+SFX v 0 sék [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP>>formal  
+SFX v t ssék [aeioöuü]t <SUBJUNC-IMP>>formal  
+SFX v z dzék dz <SUBJUNC-IMP>>formal  
+SFX v z szék sz <SUBJUNC-IMP>>formal  
+SFX v zt szék szt <SUBJUNC-IMP>>formal  
+SFX v 0 sa [^z]s <DEF>>  
+SFX v 0 jatok [^sztj] <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v t ssák [ls][áó]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 jják [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 ják [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 sák tát <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 sák [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v t ssák [aeioöuü]t <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v z dzák dz <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v z szák sz <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v zt szák szt <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 zuk [^sd]z <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 zák [^sd]z <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 jja [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX v 0 ja [aáeéiíoóöõuúüû] <SUBJUNC-IMP><DEF>>  
+SFX v 0 sa tát <SUBJUNC-IMP><DEF>>  
+SFX v 0 sa [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><DEF>>  
+SFX v t ssa [aeioöuü]t <SUBJUNC-IMP><DEF>>  
+SFX v z dza dz <SUBJUNC-IMP><DEF>>  
+SFX v z sza sz <SUBJUNC-IMP><DEF>>  
+SFX v zt sza szt <SUBJUNC-IMP><DEF>>  
+SFX v 0 sa s <SUBJUNC-IMP><DEF>>  
+SFX v 0 junk [^sztj] <SUBJUNC-IMP><PERS<1>><PLUR>>  
+SFX v 0 d [^sd]z <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v 0 zalak [^sd]z <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 ja [^sz] <DEF>>  
+SFX v 0 j [^sztj] <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 ják [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PLUR><DEF>>  
+SFX v 0 zatok [^sd]z <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 d [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<2>><DEF>>  
+SFX v t ssál [ls][áó]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 jjál [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 zál [^sd]z <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 sál tát <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 sál [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v t ssál [aeioöuü]t <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v z dzál dz <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 jalak [^aáeéiíoóöõuúüûszt] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v z szál sz <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v zt szál szt <SUBJUNC-IMP><PERS<2>>>long form  
+SFX v 0 jjuk [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 juk [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 suk tát <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 suk [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v t ssuk [aeioöuü]t <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v z dzuk dz <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v z szuk sz <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v zt szuk szt <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 suk s <SUBJUNC-IMP><PERS<1>><PLUR><DEF>>  
+SFX v 0 jatok j <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 satok s <SUBJUNC-IMP><PERS<2>><PLUR>>  
+SFX v 0 jjalak [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 jalak [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 salak tát <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 salak [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v t ssalak [aeioöuü]t <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v z dzalak dz <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v z szalak sz <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v zt szalak szt <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 jjátok [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 játok [aáeéiíoóöõuúüû] <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 sátok tát <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 sátok [bcdfghjklmnpqrtvwxyí]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v t ssátok [aeioöuü]t <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v z dzátok dz <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v z szátok sz <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v zt szátok szt <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 salak s <SUBJUNC-IMP><PERS<1<OBJ<2>>>>>  
+SFX v 0 sátok s <SUBJUNC-IMP><PERS<2>><PLUR><DEF>>  
+SFX v 0 z [^sd]z <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v t ss [ls][áó]t <SUBJUNC-IMP><PERS<2>>>short form  
+SFX v 0 janak [^sztj] <SUBJUNC-IMP><PLUR>>  
+
+SFX E Y 7
+SFX E 0 ötték . <PAST><PLUR><DEF>>  
+SFX E 0 ötte . <PAST><DEF>>  
+SFX E 0 öttük . <PAST><PERS<1>><PLUR><DEF>>  
+SFX E 0 öttelek . <PAST><PERS<1<OBJ<2>>>>>  
+SFX E 0 öttem . <PAST><PERS<1>><DEF>>  
+SFX E 0 ötted . <PAST><PERS<2>><DEF>>  
+SFX E 0 öttétek . <PAST><PERS<2>><PLUR><DEF>>  
+

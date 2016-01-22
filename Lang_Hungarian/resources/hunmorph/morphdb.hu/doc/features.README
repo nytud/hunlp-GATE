@@ -1,0 +1,44 @@
+jegy neve	magyarázat	példa 
+non_epenthetic 	nem hangkivetõ tõ	fut, ház 
+epenthetic	hangkivetõ tõ	ugrik, bokor
+shortening	rövidülõ tõ	madár, lõ 
+non_shortening	nem rövidülõ tõ	határ, ír 
+sz-d_stem	sz-d váltakozást mutató tõ	telepedik 
+non_sz-d_stem	sz-d váltakozást nem mutató tõ	fest 
+sz-d-v_stem	sz-d-v váltakozást mutató tõ	fekszik 
+non_sz-d-v_stem	sz-d-v váltakozást nem mutató tõ	fest 
+t_final_past	múlt idõ személyben t toldalékot kap	ragad 
+t_nonfinal_past	múlt idõ többi személyében t toldalékot kap	enged 
+Vtt_final_past	múlt idõ E/3-ban személyben kötõhang + t toldalékot kap	enged 
+Vtt_nonfinal_past	múlt idõ többi személyében kötõhang + t toldalékot kap	fut 
+ik_basic	jelen idõ E/3.ban ikes alak	alszik 
+zero_basic	jelen idõ E/3.ban ikes alak	fut 
+back	hátul képzett	alma 
+front	elöl képzett	ember 
+non_round	nem ajakkerekítéses	ember 
+round	ajakkerekítéses	gyök 
+trans	tárgyas ige	üt
+monosyllabic	egyszótagú	üt 
+polisyllabic	többszótagú	dobol 
+defective_derivation	defektív képzésû	- 
+defective_inflection	defektív ragozású	csuklik 
+low	nyitótõ	ház 
+non_low	nem nyitótõ	gáz 
+poss_sg_jA	birtokos E/3-ban ja,je	 tiszt 
+poss_sg_A	birtokos E/3-ban a,e	szünet 
+poss_pl_jA	birtokos T/3-ban ja,je	tiszt 
+poss_pl_A	birtokos T/3-ban a,e	szünet 
+bareT	tárgyeset t-je kötõhang nélkül	kombájn 
+non_bareT	tárgyeset t-je kötõhanggal	szünet 
+v_stem	v-vel bõvülõ tõ	fû 
+non_v_stem	nem v-vel bõvülõ tõ	hal 
+oa_stem	birtokosnál mgh-minõséget váltó tõ	ajtó 
+non_oa_stem	birtokosnál mgh-minõséget nem váltó tõ	hajó 
+u_stem	u-törlõ tõ	daru (madár) 
+non_u_stem	nem u-törlõ tõ	daru (gép) 
+proper_noun	tulajdonnév	Pál 
+hyphen	kötõjellel ragozandó szó	AIDS 
+preverb	igekötõs ige	megvesz 
+acro	betûszó	kft 
+abbr	rövidítés	Dr 
+

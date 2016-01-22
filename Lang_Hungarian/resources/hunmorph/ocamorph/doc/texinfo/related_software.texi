@@ -1,0 +1,84 @@
+@node Related Software and Resources, Concept Index, Resource Specification, Top
+@chapter Related Software and Resources
+
+@menu
+* Software that can use the output of Hunlex as input::  
+* Available resources::         
+* Hunlex's relatives::          
+@end menu
+
+@node Software that can use the output of Hunlex as input, Available resources, Related Software and Resources, Related Software and Resources
+@section Software that can use the output of Hunlex as input
+
+@quindex Which softwares can use the output of Hunlex?
+
+@menu
+* Huntools::                    
+* Myspell::                     
+* Jmorph::                      
+* Ispell::                      
+@end menu
+
+@node Huntools, Myspell, Software that can use the output of Hunlex as input, Software that can use the output of Hunlex as input
+@subsection Huntools
+
+@quindex Can you recommend a spellchecker?
+@quindex Can you recommend a stemmer?
+@quindex Can you recommend a morphological analyzer?
+
+@node Myspell, Jmorph, Huntools, Software that can use the output of Hunlex as input
+@subsection Myspell
+
+@node Jmorph, Ispell, Myspell, Software that can use the output of Hunlex as input
+@subsection Jmorph
+
+@quindex Can you recommend a morphological analyzer?
+
+@node Ispell,  , Jmorph, Software that can use the output of Hunlex as input
+@subsection Ispell
+
+
+@node Available resources, Hunlex's relatives, Software that can use the output of Hunlex as input, Related Software and Resources
+@section Available resources
+
+@quindex Are there any Hunlex resources available for any language?
+
+@menu
+* The Hungarian Morphdb Project::  
+* The English Morphdb Project::  
+@end menu
+
+@node The Hungarian Morphdb Project, The English Morphdb Project, Available resources, Available resources
+@subsection The Hungarian Morphdb Project
+
+@node The English Morphdb Project,  , The Hungarian Morphdb Project, Available resources
+@subsection The English Morphdb Project
+
+
+@node Hunlex's relatives,  , Available resources, Related Software and Resources
+@section Hunlex's relatives
+
+@menu
+* XFST etc.::                   
+@end menu
+
+
+@node XFST etc.,  , Hunlex's relatives, Hunlex's relatives
+@subsection XFST, TWOLC, LEXC
+
+@quindex Are there software with similar functionality?
+
+For @code{xfst, twolc, lexc}, see 
+
+@uref{http://www.xrce.xerox.com/competencies/content-analysis/fst/home.en.html}
+
+or
+
+@uref{http://www.stanford.edu/~laurik/fsmbook/home.html}
+
+
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

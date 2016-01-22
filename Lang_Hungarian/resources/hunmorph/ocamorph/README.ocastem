@@ -1,0 +1,15 @@
+Ocastem információ visszakeresõ rendszerekhez használható tövezõ, lemmatizáló. Az ocamorph kimenetébõl, 
+a lehetséges elemzések közül kiválaszt egy elemzést és visszaadja az elemzés szerinti töveket. Nem
+végez egyértelmûsítést, mert mérések szerint ez nem javítja a visszakeresés hatékonyságát.
+
+A bemeneten szóalakokat vár, egy sorban pontosan egy szót ISO-8859-2 kódolásban. A kimenetre kiírja a szót
+és TAB után a töveit. Összetettszavak esetén a komponenseket külön tõként adja vissza.
+
+Default paraméterei adják feltehetõleg a legjobb keresési pontosságot, de azért meghagytuk a kapcsolókat.
+
+Egy az ocamorph által elõállított nyelvi erõforrásfájlt vár. A tövezõ csak a morphdb.hu adatbázissal használható,
+mert annak jelöléseire támaszkodik.
+
+Teszteléshez
+
+cat ocastem_test.txt | ./ocastem

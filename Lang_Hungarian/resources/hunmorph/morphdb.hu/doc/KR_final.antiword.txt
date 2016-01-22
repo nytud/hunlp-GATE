@@ -1,0 +1,1451 @@
+
+A K&R-annotáció végleges változata
+
+
+Rebrus Péter
+
+
+
+0. Az annotáció formalizmusa
+................................
+
+
+
+
+1. A névszók egységes kezelése
+
+
+1.1.  Névszói inflexiók
+
+1.1.0. Névszói kategóriák
+
+A három névszói kategória (f?név, melléknév, számnév) megmarad. Mivel
+inflexiós szempontból egészen hasonló toldalékokat vehetnek fel, ezért KR-
+jegyeik AZONOSAK lesznek. Tehát az inflexiós fáik gyökere különbözõ, de az
+ezek alatti csomópontok ugyanazok. Ez a KR-kódokban nem okoz változást,
+hiszen egy nem-gyökér csomópont eddig is ugyanazt a nevet kapta mindhárom
+szófaj esetén. Pl. (a teljes inflexiós fa leírása a függelékben):
+
+emberebbjeinkéit  < NOUN <COMPAR> <PLUR> <POSS<1><PLUR>> <ANP<PLUR>>
+<CASE<ACC>> >
+blõdebbjeinkéit   < ADJ  <COMPAR> <PLUR> <POSS<1><PLUR>> <ANP<PLUR>>
+<CASE<ACC>> >
+kevesebbjeinkéit  < NUM  <COMPAR> <PLUR> <POSS<1><PLUR>> <ANP<PLUR>>
+<CASE<ACC>> >
+
+Természetesen az ehhez hasonló inflexiósan maximális alakok nem minden
+lemmánál léteznek. Pl. a legtöbb számnévnek és bizonyos mellékneveknek
+nincs közép/fels?foka, a fôneveknél a közép/fels?fok csak speciális
+konstrukciókban áll elô; vagy a többes számon kívül a többi inflexiós jegy
+(birtokosok, esetek) ritkán járul melléknévhez és számnévhez. A fenti
+megoldással viszont elkerüljük, hogy a szótári ambiguitáson felül (amibôl
+úgyis elég sok van, hiszen nagyon sok melléknévi és számnévi lemma fônév
+is), újabb ambiguitások keletkezzenek (pl. úgy, ha a fenti inflexiókkal
+ellátott alakokat mind fônévként IS felvennénk). Ráadásul a
+fõnéviség/melléknéviség kritériumai néha igen homályosak és sok tényezõtõl
+függnek.
+
+
+1.1.1. Egyszófajú melléknevek
+
+Ambiguitási szempontból kétféle melléknevet (és számnevet)
+különböztethetünk meg:
+
+(i)  CSAK melléknév (pl. kapzsi, kiváncsi)
+(ii) melléknév és fõnév is (kettõs szófajú, pl. kék, osztrák, szép, hülye)
+
+A kapzsi pl. melléknév marad az összes inflektált alakjában, még akkor is,
+ha az adott inflexió megakadályozza, hogy a melléknév a legtipikusabb
+pozícióban, a JELZÕ+JELZETT FÕNÉV szerkezet elsõ tagjában álljon. Ez
+történik a birtokosoknál (POSS, ill. ANP: pl. kapzsim, ill. kapzsié) és az
+esetek (CASE) többségénél (kapzsit, kapzsin, kapzsiból stb.). Ezek az
+alakok ELLIPTIKUS helyzetben állnak, mivel a melléknév ugyan jelzõi
+funkciójú, de utána a fõnév el van hagyva, pl. "A te adakozó barátod és az
+én kapzsim", A könyv azé a kapzsié", "Végre megszégyenítették azt a
+kapzsit", "Egy kapzsinak a szülei is azok" stb.
+
+A melléknév többes száma (PLUR) ebbõl a szempontból speciális: nem állhat
+jelzõi helyzetben, de állhat egy másik gyakori melléknévi szerepben, az
+ÁLLÍTMÁNYIBAN, ahol az alannyal számban egyeztetni kell, pl. "A munkatársai
+mind kapzsik (voltak)". Azonban állhat az elõzõ elliptikus helyzetben is,
+pl. "A kapzsik a végén rajtavesztenek", vagy "Kitapasztaltam a kapzsik
+összes szokását". Egyes szám alanyesetben (<ADJ>) viszont a melléknevek
+mindhárom pozícióban állhatnak: jelzõi ("a kapzsi Kovács"), állítmányi ("a
+Kovács kapzsi (lehet)") és elliptikus ("a Kovácsné férje, az a kapzsi").
+
+A melléknevek egyéb pozíciókban is elõfordulnak, ezek egyike az, amelyben
+az esetragos alak egy ige VONZATA, pl. "kapzsinak tartottam", "kapzsivá
+változtatta" "kapzsiként viselkedett". Ezen (vagy más) igék vonzataként
+egyéb névszók is állhatnak, pl. "orvosnak/soknak tartottam", "orvossá
+változtatta" "orvosként viselkedett". A vonzatos igék azonban nagyon
+sokszor elõírják a vonzat szintaktikai/szemantikai tulajdonságait
+(szubkategorizáció), így az is elõfordul, hogy az adott igénél a vonzat
+vagy csak fõnévi (pl. "odaadtam az orvosnak", "orvosnak ment", "bízott az
+orvosban"), vagy csak melléknévi lehet (pl. "kapzsinak éreztem", "kapzsivá
+vált", "laposra kalapáltuk", "csíkosra festette").
+
+A melléknevek további fõnévi használata idézetekben, meghatározásokban
+fordul elõ, pl. "a zsugori melléknév" "a zsugoriban három szótag van"
+"Láttad Molière-tõl a Zsugorit?" "a zsugori jelentése a következõ", vö. még
+a "a zsugori alak" kifejezésben a kétféle funkciót (jelzõ: 'a fösvény
+személy', idézet: 'a zsugori mint szóalak'). Ezekben a metanyelvi jellegû
+funkciókban a releváns alak gyakran -- de nem mindig -- tipográfiailag
+(betûtípussal, idézõjelekkel, kötõjellel) ki van emelve, és bármilyen
+szófajú lehet (pl. ige, ragozhatatlan szó is).
+.............................
+
+
+1.1.2. A melléknév--fõnevek
+
+A kettõs szófajúság definiálásának összetett problémáját itt csak érintjük.
+
+
+
+(eltekintve az egyedi poliszémiától alakoktól, pl. szar, király, gáz)
+
+
+Ezeket a szintaktikai/szemantikai funkciókat teljesen felesleges az
+inflexiós (KR-) annotációban jelölni
+
+
+
+
+A vas kalapácsot
+Az ács barátomatAz orvos
+
+
+1.2.  Névszói képz?k
+
+Minden más denominális toldalék képzô lesz. Az adott képz?nél
+megkülönböztetjük azt, hogy melyik névszói kategóriából melyikbe képez
+(azaz melyik gyökércsomópontból melyikbe men? függvény). Pl. (nem teljes
+lista):
+
+f?név-->f?név:          házacska manócska  <NOUN[kA]NOUN> vagy
+<NOUN[DIMIN]NOUN>
+melléknév-->melléknév:  kékecske szépecske <ADJ[kA]ADJ>   vagy
+<ADJ[DIMIN]ADJ>
+
+f?név-->melléknév:      házas manós        <NOUN[s]ADJ>   vagy
+<NOUN[ATTRIB]ADJ>
+melléknév-->melléknév:  kékes franciás     <ADJ[s]ADJ>
+
+melléknév-->f?név:      kékség franciaság  <ADJ[sÁg]NOUN> vagy
+<ADJ[ABSTR]NOUN>
+
+
+1.3 Melléknév és számnév
+
+
+1.3.0. Elhatárolás
+
+A melléknevek és a számnevek tipikus szintaktikai pozíciója a jelzõi (az NP-
+n belül a fõnév elõtt, pl. "kiváncsi ember", ill. "sok pénz"). Mindkét
+kategórián belül vannak olyan elemek, amelyek állhatnak állítmányi
+pozícióban "Az ember kiváncsi (volt)" vagy "A pénz sok (lesz)". A másik
+jellemzõ pozíció az állítmányi, azonban a melléknevek/számnevek között is
+vannak olyanok, amelyek nem állhatnak állítmányi helyzetben, pl. "*az
+idõjárás várható", ill. "*a forint öt", annak ellenére, hogy a jelzõs
+szerkezetek léteznek: "a várható idõjárás", ill. "öt forint".
+
+A tõszámnevek mindig fõnevek is, és így állhatnak determinánssal/jelzõvel
+vagy anélkül alanyi, bõvítményi vagy állítmányi pozícióban, pl. az alábbi
+mondatokban: "A kedvenc számom (a) nyolc", "A népmesei hét sok kultúrában
+megtalálható", A végeredmény kétszáz", "A kettõ a legkisebb prím", "Az ötök
+megállapodtak", "Kétszer kettõ hat".
+
+egy öt n 111             <NOUN>
+                         <NUM>
+
+Ez a jelenség a mellékneveknél is elõáll, pl. a színnevek és a népnevek
+fõnevek is, pl. az alábbi mondatokban: "A zöld meleg szín", Megpillantotta
+az ég kékjét", "A baszk nem rokon nyelv", "Jönnek az oroszok".
+
+
+A számnevek elhatárolására a szokásos teszteket alkalmazhatjuk, ezek nagy
+vonalakban:
+
+-- szintaktikai disztribúciós: az NP-n belül a determináns(ok) után és a
+melléknévi jelzõ(k) elõtt állnak, pl. "ez a két/sok/kevés szép antik váza",
+"a/egy/minden második piros autó".
+-- speciális szintaktikai konstrukciókban csak számnév állhat, pl. a
+mennyiséget kifejezõ szerkezetekben: "három/fél/sok/harmad vödör/liter/kiló
+víz", "a/egy/minden negyedik szál/darab tulipán".
+-- bizonyos képzõk csak számnevekhez járulhatnak, pl. sorszámnévi,
+törtszámnévi, számjegyet, a dátumot, az ismétlõdést és a minõséget kifejezõ
+képzõk (amint az alábbi példák mutatják a számjegyekel és betûkkel leírt
+számok is a többi számnévhez hasonlóan toldalékolhatók, ezért teljes jogú
+számneveknek tekinthetõk):
+
+elsõ harmadik sokadik x-edik 9.  <NUM[dik]NUM>  vagy  <NUM[ORDINAL]NUM>
+
+ketted harmad n-ed 16-od         <NUM[d]NUM>    vagy  <NUM[FRACTION]NUM>
+
+De ez utóbbi alakok kötötten (fõleg összetételekben és továbbképzett
+alakokban) sorszámnévként is funkcionálnak, pl. elsõrangú, másodfajú, n-
+edrendû, %harmadfél, negyedszer:
+
+harmadfél      <NUM[d_BOUND]NUM+NUM>    vagy
+<NUM[ORDINAL_BOUND]NUM+NUM>
+másodrendû     <NUM[d_BOUND]NUM+NOUN[Ú]ADJ> vagy
+
+<NUM[ORDINAL_BOUND]NUM+NOUN[ATTRIB_BOUND]ADJ>
+
+A denumerális -s képzõk kimenete kétféle kategóriájú: lehet melléknév vagy
+fõnév, pl.:
+
+kettes hármas                    <NUM[s]ADJ>    vagy  <NUM[ATTRIB]ADJ>
+(pl. "kettes számrendszer/szoba/felosztás/busz")
+kettes hármas                    <NUM[s]NOUN>   vagy  <NUM[CIPHER]NOUN>
+(tkp. ='(szám)jegy')
+
+További határozószó-képzõk:
+
+egyedül ketten sokan kevesen     <NUM[An]ADV>  vagy  <NUM[MANNER]ADV>
+egyszer sokszor alfaszor 5-ször  <NUM[szOr]ADV> vagy <NUM[ITERATE]ADV>
+
+
+A -szor képzõs alakok ambiguusak: vagy az [ITERATE] ismétlést kifejezõ,
+vagy a [MULTIPLIC] szorzást/intenzitást kifejezõ képzõvel képzett
+adverbiumok:
+
+egyszer n-szer 5-ször sokszor   <NUM[szOr]ADV> vagy <NUM[ITERATE]ADV>
+(értsd: ennyi alkalommal ismételve)
+egyszer n-szer 5-ször sokszor   <NUM[szOr]ADV> vagy <NUM[MULTIPLIC]ADV>
+(értsd: ennyivel szorozva / ekkora mértékben jobban)
+
+Azt, hogy a -szOr képzõnek a fenti két értelme van a "háromszori
+alkalommal" vs. "háromszoros erõsséggel" alakok mintája mutatja, az elõbbi
+a cselekvés ismétlõdésére, míg az utóbbi az intenzitásra utal.
+Legegyszerûbb kódolásuk két különbözõ számnév --> melléknév képzõbokorral
+történhet:
+
+egyszeri háromszori             <NUM[szOri]ADJ>     vagy
+<NUM[ITERATE]ADJ>
+egyszeres háromszoros           <NUM[szOrOs]ADJ>    vagy
+<NUM[MULTIPLIC]ADJ>
+
+Sõt az elõször, másodszor, sokadszor stb. alakok is csak az iteratív
+jelentést mutatják:
+
+elõször harmadszor              <NUM[d_BOUND]NUM[szOr]ADV>  vagy
+
+<NUM[ORDINAL_BOUND]NUM[ITERATE]ADV>
+
+
+A képzés máskor is lehet többszörös, pl.:
+
+kétszeresen sokszorosan <NUM[szOrOs]ADJ[An]ADV>  vagy
+<NUM[MULTIPLIC]ADJ[MANNER]ADV>
+elsõs ötödikes          <NUM[dik]NUM[s]ADJ>    vagy
+<NUM[ORDINAL]NUM[ATTRIB]ADJ>
+
+
+1.3.1. Inflexiók
+
+A melléknevek és számnevek névszói módon inflektálhatók. Esettel és
+birtokosokkal ellátva a számnevek is gyakran fõnévi használatot kapnak, pl.
+"Megettem hármat", "A harmadikkal értett egyet", "Ötbe vágta", "Az én két
+barátom és a te hármad", "A verseny negyedikje is örült". Ez utóbbi
+birtokosjelölõs esetet meg kell különböztetni a dátumban szereplõ
+hasonlóktól (pl. elsõje vs. elseje, negyedikje vs. negyedike), míg az elsõ
+inflexiós jegy, addig a második limitált használata miatt képzõ:
+
+elsõje negyedikje               < NUM[ORDINAL]NUM <POSS   >             >
+elseje negyedike      < NUM[ORDINAL]NUM[DATE]NOUN                       >
+
+
+Hasonlóan, egyes képzett és inflektált alakok szinonímak, mások nem, pl.
+hármad vs. harmad, ötöd vs. ötöd, de ötödöt vs. ötödet:
+
+hármadat ötödet kilencedet                 < NUM  <POSS<2>> <CASE<ACC>> >
+harmadot ötödöt kilencedet    < NUM[FRACTION]NUM            <CASE<ACC>> >
+
+Illetve:
+
+kettõn hármon négyen ötön sokon            < NUM            <CASE<SUE>> >
+ketten hárman négyen öten sokan < NUM[MANNER]ADV                        >
+
+
+A többes "birtokosú" személyragozott számneveknek gyakori használatuk az,
+amelynek jelentése kb. 'annyian abból a csoportból', pl. kettõtök, hármunk,
+sokuk. Ezek alanyi helyzetben mindig E/3 személyben egyeztetôdnek, pl.
+"Ötünk elment(*ünk) sörért" vs. "(Mi) Öten elment*(ünk) sörért", "kettõjük
+közül" vs. "ketten közülük". Elemzésük a PERS jeggyel történhet (ld. késôbb
+a személyes névmásoknál):
+
+kettõnk hármunk %hármónk ötünk sokunk         < NUM  <PERS> <POSS<1><PLUR>>
+>
+kettõtök hármatok %hármotok %hármótok ötötök  < NUM  <PERS> <POSS<2><PLUR>>
+>
+kettõjük kettejük %hármuk hármójuk ötük sokuk < NUM  <PERS> <POSS   <PLUR>>
+>
+
+(NB. a fenti alakok némelyike (hármónk, hármótok, kettejük stb.) nem lehet
+"sima" birtokosjelölõs alak, pl. "Ez a mi két almánk, az az õ
+kettõjük/*kettejük")
+
+
+1.3.2. Fokozás
+
+A közép-, felsõ- és túlzófok inflexió. Tipikusan a legtöbb melléknévhez, és
+egyes (nem tõ)számnevekhez járul, speciális esetekben fõnevekhez is.
+Annotációjuk a fõkategória (ADJ, NUM vagy NOUN) alatti COMPAR, ill.
+SUPERLAT jegyekkel történik, pl.:
+
+szebb jobb zöldebb                < ADJ <COMPAR> >
+kevesebb több                     < NUM <COMPAR> >
+
+legszebb legjobb legzöldebb       < ADJ <SUPERLAT> >
+legkevesebb legtöbb               < NUM <SUPERLAT> >
+
+Vannak alakok, amelyeknek van felsõfokuk, de nincs középfokuk (ezért
+érdemes a két inflexiós kategóriát független csomópontokként felvenni) ,
+pl.
+
+legelsõ leghátsó legkülsõ         < ADJ <SUPERLAT> >
+
+A túlzófok a SUPERLAT alatti újabb SUPERLAT jegyet követel meg:
+
+legeslegszebb legeslegelsõ        < ADJ <SUPERLAT<SUPERLAT>> >
+legeslegtöbb                      < NUM <SUPERLAT<SUPERLAT>> >
+
+Az -ik "kijelölõ" toldalék a fokozott alakok esetén jelenhet meg, az ilyen
+alakok elemzése a COMPAR, ill. SUPERLAT jegy alatti DESIGNATE jeggyel
+történik, pl.:
+
+szebbik jobbik zöldebbik          < ADJ <COMPAR<DESIGNATE>> >
+legszebbik legjobbik legzöldebbik < ADJ <SUPERLAT<DESIGNATE>> >
+
+A fokozott melléknevek tovább inflektálhatók. Egy speciális használatuk a
+többes birtokos személyragozott alak, amikor jelzõi funkciójuk megszûnik,
+pl. jobbjaink, legszebbõtök/jeitek, a diákok okosabbja(i) ). Elemzésük a
+szokásos POSS jeggyel történik:
+
+legjobbunk              < ADJ <SUPERLAT>        <POSS<1><PLUR>> >
+jobbjaink               < ADJ <COMPAR>   <PLUR> <POSS<1><PLUR>> >
+stb.)
+
+
+Az -An [MANNER] "módhatározói" képzõ formailag a fokozott alakhoz járul. Ez
+lehetetlen elemzést adna, mivel a fokozást mint inflexiót nem követhet
+képzés. A probléma megoldható úgy, hogy a fokozást bevezetjük a
+határozószók körében is, pl.:
+
+jól szépen zölden gyorsan             < ADJ[MANNER]ADV >
+sokan kevesen                         < NUM[MANNER]ADV >
+
+jobban szebben zöldebben gyorsabban   < ADJ[MANNER]ADV <COMPAR> >
+többen kevesebben                     < NUM[MANNER]ADV <COMPAR> >
+stb.
+
+(A határozószók fokozhatóvá tételére egyébként is szükség van, hiszen egyes
+"mutató névmási" adverbiumoknak is van középfoka: oda -- odébb, erre --
+errébb stb.)
+
+A fenti módszer használható a denumerális képzett alakok fokozásának
+elmzésére is, pl.:
+
+sokszor kevésszer                           < NUM[ITERATE]ADV            >
+többször kevesebbszer                       < NUM[ITERATE]ADV <COMPAR>   >
+többszörösen kevesebbszeresen    < NUM[ITERATE]ADJ[MANNER]ADV <COMPAR>   >
+stb.
+
+(NB. a többség, többszöröz stb. alakok nem ellenpéldák, ezekben vagy önálló
+szótári tételek, vagy bennük a több nem fokozott melléknév, vö. a hasonló:
+kisebbség, ill. a nem létezõ *kevesebbség, *szebbség, *kevesebbszerez
+alakokkal.)
+
+
+2. Névmások
+
+
+2.1. A személyes és más f?névi névmások
+
+
+2.1.1. Személyes névmások
+
+A névmás NEM külön szófaj. A névmások beoszthatók a 3 névszó + határozószó
+kategóriákba. Így pl. a személyes névmások f?nevek, azzal a különbséggel,
+hogy a NOUN alatti PERS jegyük pozitív. Pl.
+
+?                     < NOUN <PERS   >                                >
+?k                    < NOUN <PERS   > <PLUR>                         >
+én                    < NOUN <PERS<1>>                                >
+ti                    < NOUN <PERS<2>> <PLUR>                         >
+
+A személyes névmások inflexiós paradigmája hiányos, nem vesznek fel +COMPAR
+(*énebb) +POSS (*énem, *éned stb.) értékeket és bizonyos eseteket (*?ig,
+*?ként, *?vé), de mást igen:
+
+?t %?tet              < NOUN <PERS   >                    <CASE<ACC>> >
+engem %engemet        < NOUN <PERS<1>>                    <CASE<ACC>> >
+titeket benneteket    < NOUN <PERS<2>> <PLUR>             <CASE<ACC>> >
+
+
+2.1.2. A "birtokos névmások"
+
+A birtokos névmás morfoszintaktikailag olyan személyes névmás (azaz
+személlyel rendelkezô f?név), amelynek anaforikus birtokos (ANP) jegye van,
+ami lehet egyes vagy többes számú. Pl.:
+
+övé                   < NOUN <PERS   >        <ANP      >             >
+övék                  < NOUN <PERS   > <PLUR> <ANP      >             >
+övéi                  < NOUN <PERS   >        <ANP<PLUR>>             >
+övéik                 < NOUN <PERS   > <PLUR> <ANP<PLUR>>             >
+
+enyémek enyéim%enyémék< NOUN <PERS<1>>        <ANP<PLUR>>             >
+tieid %tiedék %tiédek < NOUN <PERS<2>>        <ANP<PLUR>>             >
+
+A birtokos névmás is felvehet eseteket, pl.:
+
+mienket %miénket      < NOUN <PERS<1>> <PLUR> <ANP      > <CASE<ACC>> >
+tieiteket %tieitekét  < NOUN <PERS<2>> <PLUR> <ANP<PLUR>> <CASE<ACC>> >
+
+A birtokos névmások toldalékolása mutatja a legjobban, hogy az anaforikus
+birtokos ismételhet?. Az enyémé, tiedé, mienké stb. alakok egyfel?l
+szubsztandard alakjai a "rendes" birtokos névmásoknak, másfel?l ezek
+további ANP-vel ellátott alakjai, pl. az "Itt a te kutyád nyakörve, ott meg
+az enyémé" mondatban (ha éppen nem az én nyakörvemr?l, hanem az én kutyám
+nyakörvér?l van szó). Az ilyen alakok kódolása úgy történik, hogy az ANP
+csomópont alá egy újabb ANP csomópontot veszünk fel (és természetesen ez
+alá egy újabb PLUR-t, hiszen ennek is lehet többes száma). Pl.:
+
+enyémé                < NOUN <PERS<1>>        <ANP      <ANP      >>
+     >
+enyéimé               < NOUN <PERS<1>>        <ANP<PLUR><ANP      >>
+     >
+enyéméi               < NOUN <PERS<1>>        <ANP      <ANP<PLUR>>>
+     >
+stb.
+
+mienkéi               < NOUN <PERS<1>> <PLUR> <ANP      <ANP<PLUR>>>
+     >
+övéié                 < NOUN <PERS   >        <ANP<PLUR><ANP      >>
+     >
+övéké                 < NOUN <PERS<1>> <PLUR> <ANP      <ANP      >>
+     >
+
+(NB. a többszörös anaforikus birtokos marginálisan nem névmási tövekkel is
+el?fordul, pl.
+
+Páléié                < NOUN                  <ANP<PLUR><ANP      >>
+     > stb.)
+
+
+2.1.3. Személyes névmások familiáris többese
+
+Egyes formailag többes birtokos névmási alakok jelentése: az én/te/?
+hozzátartozói. Pl. a "Végre az enyéim/tieid/övéi között lehet(ek)"
+mondatban. Ezek valójában familiáris többesek, jelölésük a <PLUR<FAM>>
+jeggyel történik, pl.
+
+enyéim %enyémek       < NOUN <PERS<1>> <PLUR<FAM>>
+     >
+tieid %tiédek         < NOUN <PERS<2>> <PLUR<FAM>>
+     >
+övéi %övéké ?övéik    < NOUN <PERS   > <PLUR<FAM>>
+     >
+
+Minden f?névi inflexiós alakjuk (ANP, ANP<PLUR>, CAS<X>) megvan, kivéve
+POSS, pl. "Az enyéimet megfenyegették" vagy "Meghalt az övéiért".
+
+enyéimet %enyémeket   < NOUN <PERS<1>> <PLUR<FAM>>
+<CASE<ACC>> >
+övéit                 < NOUN <PERS   > <PLUR<FAM>>
+<CASE<ACC>> >
+
+
+2.1.4. Formailag 3. személy? személyes névmások
+
+A "magázás" személyes névmásai szintén +PERS értékkel rendelkez? f?nevek,
+amelyek formailag (pl. az állítmánnyal való egyeztetésben) 3. személy?ek:
+
+maga ön Ön            < NOUN <PERS   >                                >
+maguk önök Önök       < NOUN <PERS   > <PLUR>                         >
+
+Ezek inflexiós paradigmája hasonló a többi 3. személy? személyes
+névmáséhoz, pl.:
+
+magáét önét           < NOUN <PERS   >        <ANP      > <CASE<ACC>> >
+magukét önökét        < NOUN <PERS   > <PLUR> <ANP      > <CASE<ACC>> >
+magáéit önéit         < NOUN <PERS   >        <ANP<PLUR>> <CASE<ACC>> >
+magukéit önökéit      < NOUN <PERS   > <PLUR> <ANP<PLUR>> <CASE<ACC>> >
+
+(NB.: a (ön)maga/(ön)magam stb. alakok és tovább inflektált alakjaik
+ambiguusak: lehetnek visszaható névmások (ld. lentebb) és határozószók is,
+pl. "(Pál) (ön)maga írta a levelet", "(Én) magam írtam a levelet".
+
+
+2.1.5. Mutató névmások
+
+Az ún. mutató névmás (ez az emez amaz ugyanez ugyanaz stb.) ugyanúgy f?név,
+mint a személyes névmások, de esetükben PERS jegy értéke -, azaz a
+kimenetben nem szerepel:
+
+ez az                 < NOUN >
+
+A birtokos névmások paradigmája teljesebb, mint a személyes névmásoké,
+minden esete megvan (pl. addig, ekként, azzá), pl.
+
+ezekéit               < NOUN           <PLUR> <ANP<PLUR>> <CASE<ACC>> >
+
+
+És marginálisan van birtokos alakjuk is, pl. "Nekem van ezem, neked meg
+azod."
+
+ezem                  < NOUN <POSS<1>> >
+
+(NB.: a fenti mutató névmások lehetnek determinánsok is még egyes
+inflektált alakjaikban is! Pl. "ezekben a házakban", "ezeké a házaké")
+
+
+
+2.2. A névmások alkategóriái
+
+
+2.2.0. Szubkategória-jegyek
+
+A névmásoknál szükség lehet olyan alkategóriák megjelenítésére, amelyek nem
+tartoznak a sz?kebb értelemben vett inflexiós morfológiához. (Azaz nem
+mutatnak nagyobb alaki osztályokon fennálló és visszatér? paradigmatikus
+mintázatokat.) Nem lenne el?nyös ezek kódolását beépíteni a KR-rendszerbe,
+hiszen a KR a morfológiailag gyakran és visszatérõen megjelen? szintaktikai
+információkról szól. Ezért a kategória neve (a gyökércsomópont) el?tt adjuk
+meg ?ket []-ek között. A következõkben bemutatott formalizmus egyel?re
+jegyeket és ezek konjunkcióját alkalmazza (space-szel elválasztva), de ez
+bármikor strukturáltabbá tehet? az igényeknek megfelel?en.
+Az alkategorizációs jegyek segítségével az adott szófajt (itt pl. a f?nevek
+osztályát) további részekre oszthatjuk szintaktikai/szemantikai
+meggondolások alapján.
+
+Hangsúlyozni kell, hogy a szubkategorizációs jegyrendszer
+
+(i)   bôvíthetô, ha pl. a magasabb szint? elemzôben szintaktikai /
+szemantikai okokból erre szükség van;
+
+(ii)  nem része a morfológiai inflexiós (KR) annotációnak, annak egy
+kiegészítése;
+
+(iii) lehetnek általános jegyei, amelyek nem csak egy szófajt
+szubkategorizálnak (pl. a NEG vagy a vonzat esetét mutató jegyek (ld.
+lentebb), de egyedi viselkedés? lemmáknál maga a lemma is szerepelhet mint
+egy (egyelem? osztályt megadó) jegy.
+
+
+2.2.1. Visszaható névmás
+
+A maga/magam stb. visszaható névmás az olyan mondatokban, ahol antecedense
+valamely vele egyeztetett (kitett v. nem kitett) f?név: pl. "(Pál) szereti
+magát", "(Mi) igazat adunk magunknak", "(A szül?k) a magukéiként nevelték a
+gyerekeket", "Mindenki a maga ura" stb. Morfológiai szempontból -- a
+COMPAR, a POSS és a PLUR<FAM> hiányától eltekintve -- megegyezik a
+f?nevekkel, viszont a személyes névmásokhoz hasonlóan személy-jeggyel
+(PERS) rendelkezik. Speciális szintaktikai és szemantikai viselkedése
+viszont indokolja, hogy visszaható tulajdonsága jelölve legyen. Erre a REFL
+jegy alkalmas. Pl.
+
+maga            < [REFL]NOUN <PERS   >                                >
+maguk           < [REFL]NOUN <PERS   > <PLUR>                         >
+magam           < [REFL]NOUN <PERS<1>>                                >
+magatok         < [REFL]NOUN <PERS<2>> <PLUR>                         >
+
+Inflektálva:
+
+magunkéit       < [REFL]NOUN <PERS<1>> <PLUR> <ANP<PLUR>> <CASE<ACC>> >
+
+
+2.2.2. Kölcsönös névmás
+
+A fentihez egészen hasonló a kölcsönös névmás; ennek speciális
+tulajdonsága, hogy antecedense (szemantikailag) többes számú: pl. "A
+fiúk/Péter és Pál irigyelték egymást" vagy Minden fiú/Két fiú/Péter és Pál
+irigyelte egymást", "(Mi) irigyeltük egymást". Nincs számban és személyben
+egyeztetve, ezért a NOUN alatti PERS és PLUR inflexiós jegyek az
+annotációban nem szerepelhetnek.
+
+egymás          <  [REC]NOUN                                          >
+egymáséit       <  [REC]NOUN                  <ANP<PLUR>> <CASE<ACC>> >
+
+
+
+2.2.3. Tagadó névmások
+
+Mondattani szempontból lényeges a tagadó névmások alkategóriája (hiszen
+ezek a szórendet és a mondatban szerepl? más (pl. tagadó) elemek
+megjelenését is befolyásolják), itt ezt a NEG jegy mutatja (a [HUM] 'human'
+jegy is a NOUN osztályt szubkategorizálja, ennek használata szintén
+fakultatív):
+
+semmi                 <       [NEG]NOUN >
+senki                 <   [NEG HUM]NOUN >
+
+Ezek a f?nevekhez hasonlóan felvehetnek inflexiós jegyeket:
+
+semminket             <     [NEG]NOUN        <POSS<1><PLUR>>
+<CASE<ACC>> >
+senkijeitekét         < [NEG HUM]NOUN <PLUR> <POSS<2><PLUR>> <ANP>
+<CASE<ACC>> >
+
+
+2.2.4.Vonatkozó névmások
+
+A tagmondat élén állnak és általában kitett antecedensük van, jelölésük
+REL:
+
+ami                   <       [REL]NOUN >
+amely mely            <       [REL]NOUN >
+aki                   <   [REL HUM]NOUN >
+
+
+2.2.5. Kérdô névmások
+
+mi micsoda            <        [WH]NOUN >
+ki kicsoda            <    [WH HUM]NOUN >
+
+
+2.2.6 Általános névmások
+
+minden mind           <       [UNI]NOUN >
+mindenki              <   [UNI HUM]NOUN >
+
+
+2.2.7. Határozatlan névmások
+
+valami akármi bármi   <       [EXI]NOUN >
+valaki akárki bárki   <   [EXI HUM]NOUN >
+
+A f?névi névmások az inflexiós toldalékolás szempontjából a lexikális
+f?nevekhez egészen hasonlóan viselkednek, pl.:
+
+valakijeitekét        <   [EXI HUM]NOUN <PLUR> <POSS<2><PLUR>> <ANP>
+<CASE<ACC>> >
+
+NB. a semmi, mi(csoda), valami, akármi, bármi nemcsak fõnévként, hanem
+fõnévi módosítóként (jelzõi helyzetben) is állhat, ekkor melléknévi
+névmásként is felvehetõ lenne, tkp. semmilyen, milyen/mennyi
+vala/akár/bármilyen értelemben (pl.: "Semmi megoldást nem látok", "Micsoda
+nõt láttam", "Mi pénzt elkölt egy nap", "Valami édességet kívánt"). Ezt
+azonban nem tesszük, mivel melléknévként való felvételük sok ambiguitást
+szülne. A minden alakot viszont, ambiguusnak érdemes tekinteni, mivel
+mindkét használatában gyakori: "Minden múlandó" vagy "Mindenüket elhagyták"
+(fõnév) vs. "Minden ember halandó" (determináns). Hasonlóan a mind alak
+határozói névmás (pl. "Pál megette (azt) mind", "Pál mind megette (azt)")
+és fõnévi névmás is (pl. "Pál megette mindet").
+
+
+
+2.3. Nem f?névi névmások
+
+
+2.3.0. A névmások elkülönítése
+
+A névmások elkülönítésére csak kis mértékben használható a morfológia
+(hiszen ezek inflexiós paradigmája sokszor hiányos, a határozószóknak meg
+felettébb redukált). Ami segíthet, az a szintaktikai (els?sorban a formai
+disztribúciós) viselkedés megfigyelése. Pl. a f?névi névmások magukban
+állhatnak olyan környezetben (pl. alanyi, tárgyi, vonzat-pozícióban), amely
+a f?neveknél prototipikus. Ezt persze tovább korlátozhatják az
+alkategoriális jegyek vagy más szemantikai jelleg? megszorítások (pl. az,
+hogy a f?névi névmások el?tt általában nem áll melléknév/számnév vagy
+determináns). A melléknevek prototipikus pozíciója a f?név el?tti (jelz?i)
+és emellett gyakori a segédigés (állítmányi). Ez utóbbit azonban sok
+melléknévnél (és melléknévi névmásnál) nem találjuk. Külön probléma az,
+hogy egyes elemek ambiguusak: egyik szótári tételük névmás, a másik nem
+(pl. a minden ez/az, ill. a maga, mind alakok fõnévi névmások és
+determinánsok, ill. határozószói névmások is).
+
+A melléknévi névmások disztribúciója eltér a nem névmási melléknevektõl:
+jelzõként általában a fõnévi csoport elején állnak (gyakran a számnevek
+elõtt is), és szinte sohasem áll elõttük determináns, pl. "(*a/egy)
+valamilyen/valamelyik három piros labda", illetve egyes névmások (pl. a
+vonatkozók) a tagmondatok elején állnak, mások (pl. a kérdõk) közvetlenül a
+véges ige elõtt, pl. "Aki tegnap látott engem", "Tegnap ki látott engem?").
+
+
+
+2.3.1. Melléknévi névmások
+
+ilyen olyan ekkora akkora ilyesmi ilyesféle stb.  <      ADJ >
+semmilyen semekkora semmiféle                     < [NEG]ADJ >
+amilyen amekkora                                  < [REL]ADJ >
+milyen %mely mekkora miféle                       <  [WH]ADJ >
+mindenféle                                        < [UNI]ADJ >
+vala/akár/bár-milyen/mely/miféle némely némi      < [EXI]ADJ >
+stb.
+
+A melléknévi névmások gyakran vesznek fel névszói inflexiókat. Néhány pl.
+(az alkategoriális jegyek nélkül):
+
+ilyenek amilyenek mekkorák némelyek stb.     < ADJ <PLUR> >
+ilyet %ilyent melyiket stb.                  < ADJ <CASE<ACC>> >
+olyanom amilyenem semmilyenem stb.           < ADJ <POSS<1>> >
+olyanabb milyenebb                           < ADJ <COMPAR> >
+milyené amilyené                             < ADJ <ANP> >
+
+(NB. a fenti inflexiók némelyike a melléknevek mondattani disztribúcióját
+is megváltoztatja, pl. az eset és a birtokosok a melléknevet
+disztribúciósan "fõnévivé" teszik, pl. ilyet, milyennel, ill. olyanom,
+amilyené. Ez a nem névmási alakoknál is általában így van (pl. "Ezt a piros
+labdát kérem, és nem azt a kéket", "a te kék labdád és az én pirosam"),
+ezért az annotáció ezt külön nem jelöli.
+
+
+2.3.2. A "kijelölõ" névmások
+
+Külön eset a "kijelölõ" névmásoké. Ezek mondattani disztribúciója
+elsõsorban a melléknévi névmásokéval egyezik, azaz jelzõi vagy állítmányi
+helyzetben állnak. (A többi melléknévi névmáshoz hasonlóan persze fõnévként
+is viselkedhetnek). Szubkategória-jegyük a [DESIG] 'designate':
+
+semelyik                            < [NEG DESIG]ADJ >
+amelyik                             < [REL DESIG]ADJ >
+melyik                              <  [WH DESIG]ADJ >
+mindegyik                           < [UNI DESIG]ADJ >
+vala/akár/bár/némelyik egyik másik  < [EXI DESIG]ADJ >
+
+A fenti névmások személyragozhatók, és ekkor néha két értelmezésük lehet.
+Az elsõ az, amelyik a birtokos szám/személyjelölõvel ellátott névmások
+mintájára a jelzõvel módosított fõnév nélkül utal a dologra (pl. "Ez a
+pirosam, az a kékem"). Ez a használat eléggé marginális, pl. "Az egyik
+táskám örökre elveszett, a másikam megkerült". Elemzésük a POSS jeggyel
+történik, pl.
+
+egyikem                             < [EXI DESIG]ADJ        <POSS<1>      >
+>
+másikunk                            < [EXI DESIG]ADJ        <POSS<1><PLUR>>
+>
+
+A többes számú személyragozott névmásoknak van azonban egy gyakoribb
+használatuk, amely a "birtokos" által meghatározott csoportra vonatkozik
+(pl. semelyikünk = 'semelyik (mi)közülünk', melyikõtök = 'melyik
+(ti)közületek'). Speciális tulajdonságuk ezeknek, hogy a "birtokos" csak
+többes számú lehet (*semelyikem, *valamelyiked, *a/egy fiú bármelyike),
+viszont ha alanyok, akkor az igét E/3. személyben kell egyeztetni velük
+(pl. "Mindegyikünk/-õtök/-ük elment"). Elemzésük a POSS jegyekkel történik,
+és így mint a többi birtokos inflexióval ellátott melléknév (pl. pirosam)
+jelzõi pozícióban már nem állhatnak, "fõnévivé" válnak. Önmagukban
+alanyként funkcionálhatnak, és ekkor más alanyt nem is lehet kitenni (pl.
+"(*mi) egyikünk elment(*ünk)", "(*ôk) egyikük elment(*ek)").
+Annotációjukban a POSS jegy és ennek aljegyei a morfológiára, a folytatás
+nélküli PERS jegy a speciális személyes névmási használatra és az E/3.
+egyeztetésre utalnak, pl.
+
+egyikünk %egyikõnk                  < [EXI DESIG]ADJ <PERS> <POSS<1><PLUR>>
+>
+egyiketek egyikõtök %egyiktek       < [EXI DESIG]ADJ <PERS> <POSS<2><PLUR>>
+>
+egyikük egyikõjük                   < [EXI DESIG]ADJ <PERS> <POSS   <PLUR>>
+>
+
+(NB. az -õnk, -õtök, -õjük opcionális személyvégzõdések mutatják, hogy ezek
+a fenti elemek még formailag sem teljesen azonosak a "sima" személyragozott
+melléknévi kijelölõ névmásokkal, ahol a végzõdés kötelezõen a szabályos
+-ünk, -etek, ill. -ük. Ld. még ugyanezt a jelenséget a számnévi
+névmásoknál, lentebb.)
+
+A (rövid) birtokos szerkezet egyedi tulajdonsága, hogy T/3 birtokos esetén
+a birtokos inflexió E/3 (azaz PLUR nélküli), pl. "A fiúk(nak a) labdája".
+Ez itt is fennáll ("A fiúk valamelyike", "Egyike a gyanúsítottaknak"),
+ezért a fenti névmási típusból az egyedüli egyes számú az E/3 alak:
+
+melyike %melyikõje                  < [EXI DESIG]ADJ <PERS> <POSS         >
+>
+
+
+2.3.3. Számnévi névmások
+
+ennyi annyi stb.                        <      NUM >
+semennyi sehány                         < [NEG]NUM >
+amennyi ahány mindahány                 < [REL]NUM >
+mennyi hány                             <  [WH]NUM >
+vala/akár/bár-mennyi/hány néhány        < [EXI]NUM >
+valamennyi mindahány                    < [UNI]NUM >
+stb.
+
+(NB. a valamennyi alak határozatlan és általános értelemben is szerepelhet,
+pl. a "Valamennyien megcsinálták" mondat (írásban, intonáció nélkül)
+ambiguus.)
+
+
+A számnévi névmások a melléknéviekhez hasonlóan személyragozhatók, a két
+értelmezés különbségét itt is a PERS jegy kódolja. Elõször a "sima"
+birtokos alakok:
+
+mennyink sehányunk valamennyink              < NUM       <POSS<1><PLUR>> >
+
+mennyitek sehányatok valamennyitek           < NUM       <POSS<2><PLUR>> >
+mennyijük sehányuk valamennyijük             < NUM       <POSS   <PLUR>> >
+
+A csoportra vonatkozó alakok némely névmásnál hiányoznak (pl. mennyi-),
+néha pedig nem azonos végzõdést vesznek fel (vö.: "Van valamennyink" vs.
+Itt van valamennyiünk"):
+
+sehányunk valamennyiünk                     < NUM <PERS> <POSS<1><PLUR>> >
+
+sehányotok valamennyietek %valamennyiõtök   < NUM <PERS> <POSS<2><PLUR>> >
+sehányuk valamennyiük %valamennyiõjük       < NUM <PERS> <POSS   <PLUR>> >
+
+
+Általában a névmások nem vethet?k alá képzésnek kevés kivétellel (pl.
+magácska (szem. nm.), micsodás, olyanos, milyenség, valamicske, ekkorácska
+stb.). A denumerális képz?k azonban állhatnak névmásokkal, pl. (itt a fenti
+alkategoriális jegyek nélkül).
+
+annyiad ahányad hányad stb.             < NUM[FRACTION]NUM >
+ennyiedik hányadik semennyiedik stb.    < NUM[ORDINAL]NUM >
+hányas ahányas valahányas sehányas stb. < NUM[ATTRIB]NOUN >
+                                        < NUM[ATTRIB]ADJ >
+annyian hányan mindannyian néhányan     < NUM[MANNER]ADV >
+hányszor valamennyiszer néhányszor      < NUM[ITERATE]ADV >
+                                        < NUM[MULTIPLIC]ADV >
+
+
+2.3.4. Határozószói névmások
+
+A határozói névmások szükség esetén tovább osztályozhatók szemantikai
+alapon (pl. mód, id?, hely), itt csak az eddig említett jegyekre áll néhány
+pl.:
+
+így úgy emígy amúgy itt ott ide stb.    <      ADV >
+sehogy sehol semmikor soha stb.         < [NEG]ADV >
+ahogy ahol amikor stb.                  < [REL]ADV >
+hogy miért hol mikor merre meddig stb.  < [ WH]ADV >
+mindenhogy mindenhol mindig stb.        < [UNI]ADV >
+valahogy valahol valamikor stb.         < [EXI]ADV >
+
+3. Névutók
+
+
+3.0. Névutók és esetragok
+
+A névutók (posztpozíciók) az esetragokhoz hasonlóan viselkednek több
+szempontból is:
+(i)   közvetlenül az inflektált f?név után állnak, de
+        -- rag: egybe írva (pl.: asztalomon)
+        -- névutó: space-szel elválasztva (pl. asztalom alatt)
+(ii)  lehetnek
+        -- szabad határozók (pl. helyre, id?re utalók, vagy absztraktak)
+        -- igei vonzatok (pl. "bízom Pálban", "vágyakozik Pál után"),
+      de csak a névutóknak lehet kötelez? vonzatuk
+      (pl. asztalon át, asztallal szemben)
+(iii) a legtöbbjük személyes névmásokkal (sz.n.) formailag egy szóalakot
+alkot
+      (pl. rajtatok, ill. utánatok)
+(iv)  némelyik ilyen személyes névmási alak igeköt?vé vállhat (pl. rááll,
+ill. eléáll)
+
+A fentiek közül (iii) és (iv) a morfológiai annotáció számára problémát
+jelent.
+
+3.1. A névutóval ellátott személyes névmások
+
+A két szóból álló névutós kifejezésekben a névutó kategóriája POSTP, pl.:
+
+után alá óta át          POSTP
+
+A fenti 4 alak a névmások 4 típusát adja meg: az els? kett? alkothat
+személyes névmással egy kifejezést (pl. utána, alám), a második kett? nem
+(pl. *ótám alak nincs, ill. a rajtam keresztül nem egy szó). Az esettel
+rendelkez? sz.n.-ok (pl. rajtam, t?lem) a többi esetragos f?névhez (pl.
+asztalon, asztaltól) hasonlóan annotálható: CASE csomóponttal megadott NOUN-
+ok (ld. korábban). Ez a párhuzam azonban nem áll a névutós szerkezetekre,
+hiszen csak a sz.n.-ok alkothatnak egy szót a névutóval, a többi f?név nem
+(asztal után vs. utánam). Mivel nem szeretnénk a POSTP kategóriát
+inflektálhatóvá tenni, ezért a sz.n.-ok névutós alakjait az esetragos
+f?nevekhez hasonlón jelöljük: a NOUN alá bevezetjük a POSTP csomópontot,
+pl. (összehasonlításként az utolsó sorban megadunk esettel ellátott sz.n.-t
+is):
+
+utána alá %alája      < NOUN <PERS   >        <POSTP> >
+utánuk alájuk         < NOUN <PERS   > <PLUR> <POSTP> >
+utánad alád           < NOUN <PERS<2>>        <POSTP> >
+utánunk alánk         < NOUN <PERS<1>> <PLUR> <POSTP> >
+
+ránk                  < NOUN <PERS<1>> <PLUR> <CASE<SBL> >
+
+A névutós sz.n.-ok nagyon fontos egyedi vonásai az esettel ellátottakhoz
+képest:
+
+(i)   a POSTP csomópont nincs tovább specifikálva az adott névutó kódjával,
+hiszen sok ilyen jegyet kellene bevezetni, és mindegyik jegy csak a 6 db
+sz.n.-i alakot fedné le.
+(ii)  a <POSTP> jegy nem állhat együtt a COMPARE, SUPERLAT (*utánadabb), a
+POSS (*utánamotok), az ANP (*utánamé) és a CASE (*utánammal) jegyekkel.
+Azaz a fenti 4. T/1 alak egy maximális annotáció.
+(iii) egyes névutók esetében (pl. alá, fölé, mellé, közé stb.) a "sima"
+POSTP és az E/3 sz.n.-i alak megegyezik (azaz ezek ambiguusak), másoknál
+különböz? (pl. után vs. utána, alól vs. alóla).
+
+
+3.2. Névutók vonzatai
+
+A nem nominativusi vonzatú névutók ilyetén tulajdonságát alkategoriális
+jeggyel jelölhetjük a POSTP kategória el?tt, pl.
+
+át keresztül belül túl  [SUE]POSTP      (superessivus, pl. vmin át, vmin
+túl)
+szemben együtt          [INS]POSTP      (instrumentalis, pl. vmivel
+szemben)
+képest                  [ALL]POSTP      (allativus, pl. vmihez képest)
+nézve                   [SBL]POSTP      (sublativus, pl. vmire nézve)
+fogva                   [ADE]POSTP      (adessivus, pl. vminél fogva)
+
+(NB. az ilyen vonzatos névutók sz.n.-sal nem alkothatnak egy szót (pl.
+rajtam át, velem szemben stb.), ezért ezeknek az alkategóriákat csak a
+POSTP kategóriánál használjuk, a névutós sz.n.-oknál (azaz a NOUN esetében)
+nem.
+A vonzatos névutós szerkezetek speciális vonása, hogy a fõnév és a névutó
+nem feltétlenül szomszédos és sorrendjük sem kötött, pl. "át a hídon", "a
+házzal félig szemben".
+
+
+3.3. Igeköt?k és ragozott/névutós sz.n.-ok
+
+Egyes GOAL-szerep? (hova?-értelm?) névutók és esetragok sz.n.-i alakjai
+mondattanilag az igeköt?kre hasonlítanak. Pl. ráül, belehajt, nekimegy,
+ill. alááll, utánarúg, melléesik stb. Ezeknek a szerkezeteknek a
+specialitása, hogy az igeköt?s igét általában vonzattal látják el: ez a
+vonzat ragok esetén a rag által kifejezett eset (pl. ráül vmire, belehajt
+vmibe stb.), névutó esetén pedig dativus (alááll vminek, utánarúg vkinek
+stb.). Kódolásuk a többi igeköt?s igéhez hasonló: összetett szavak
+(PREV+VERB). Néhány pl. (a + jel az összetétel jele, az alkategóriák a
+vonzat esetére utalnak):
+
+ráül                  < [SBL]PREV+VERB >
+belehajt              < [ILL]PREV+VERB >
+stb.
+alááll utánarúg stb.  < [DAT]PREV+VERB >
+
+3.4. Ige el?tti ragos/névutós kifejezések
+
+Az ilyen igék vonzata azonban kifejez?dhet az ige el?tti pozícióban
+(igeviv?ként) is, ekkor az mindig azonos az esettel/névutóval, pl.
+
+az asztalra ült, az árokba hajtott, a kerítésnek ment
+a fa ALÁ ült, a csatár UTÁN rúgott, az asztal MELLÉ esett
+
+Abban az esetben, ha a fenti szerkezetekben a f?neveket sz.n.-sal
+helyettesítjük, az alábbi szerkezeteket kapjuk:
+
+rám ült, beléd hajtott, nektek ment
+alájuk ült, utánunk rúgott, melléd esett
+
+Ha a sz.n. E/3, akkor az igeköt?s igékhez hasonló szerkezeteket kapunk:
+
+rá ült, bele hajtott, neki ment
+ALÁ ült, UTÁNA rúgott, MELLÉ esett
+
+Azaz a fenti külön írt példákban NEM igeköt? van, hanem esetragos/névutós
+sz.n. (azaz NOUN).
+(NB. a helyesírási szabályzat szerint ekkor a különírás ekkor kötelez?.
+Sokan ezt nem tartják be, és a fenti sz. n.-i alakokat is egybe írják!)
+
+
+3.5. Ambiguitások
+
+Mivel az igeköt?k az igét?l mindig elválhatnak, ezért a morfológiai
+elemz?nek képesnek kell lennie az önállóan álló igeköt?ket annotálni. A
+fentiek fényében kódolási szempontból az alábbi ambiguitási helyzetek
+állhatnak el?:
+
+-- csak igeköt?:
+       meg le fel ki össze stb.     PREV
+-- csak határozószó(i névmás):
+       felfelé azután ott stb.              <ADV>
+-- igeköt? és határozószó(i névmás):
+       oda                          PREV    <ADV>
+-- hat.szói és esetragos f?névi névmás:
+       arra                                 <ADV>    <NOUN<CAS<SBL>>>
+-- igeköt? és esetragos E/3 sz.n.:
+       rá bele neki stb.            PREV
+<NOUN<PERS><CAS<SBL/ILL/DAT>>>
+-- csak esetragos E/3 sz.n.:
+       rajta nála stb.
+<NOUN<PERS><CAS<SUE/ADE>>>
+-- igeköt?, ADV és névutós E/3 sz.n.:
+       utána                        PREV    <ADV>    <NOUN<PERS><POSTP>>
+-- igeköt?, névutó és névutós E/3 sz.n.:
+       alá mögé stb.                PREV    POSTP    <NOUN<PERS><POSTP>>
+-- csak névutós E/3 sz.n.:
+       alóla el?tte körülötte stb.                   <NOUN<PERS><POSTP>>
+-- igeköt? és névutó:
+       körül át túl                 PREV    POSTP
+-- csak névutó
+       alól mögött után óta stb.            POSTP
+stb.
+
+
+3.6. Egyéb névutós névmások
+
+A fõnévi mutató névmások a névutókkal gyakran egy szóalakban jelennek meg.
+Elemzésük PERS jegy nélküli POSTP-s fõnév:
+
+emellett amögé azután akörül         < NOUN     <POSTP> >
+
+(NB. gyakran kötõszavak és adverbiumok is.)
+
+
+3.7. Névutók képzése
+
+Egyes névutók elláthatók az -i melléknévkképzõvel, pl. "ajtó mögötti",
+"vacsora utáni" (a "személyragozott" névutók már nem: pl. *utánami). Mivel
+ez olyan képzés, hogy a bemeneti és a kimeneti fõkategória ugyancsak
+névutó, ezért kódolásuk:
+
+alóli alatti elõtti körüli      POSTP[ATTRIB]POSTP
+
+
+Mivel nem akarjuk a névutó kategóriáját inflektálhatóvá tenni, ezért azokat
+a szórványos eseteket, ahol a névutók esetraggal vannak ellátva (pl.
+utántól, elõttrõl) stb.) külön névutókként kezeljük, és esetleg a szubkat.
+jegyek hivatkoznak az adott esetragra, pl (a + jel itt a vonzatos névutók
+kódolásától való megkülönböztet'sre szolgál):
+
+utánra elõttre            [+SBL]POSTP
+
+Ugyanez a szubkat. jegy használható a (nem névutó) adverbiumoknál is, ha
+bennük az esetrag funkcionális információt hordoz, pl:
+
+alulra fentre félre       [+SBL]ADV
+
+
+
+
+4. Igék
+
+
+4.1. Az igei inflexiós jegyek
+
+Infinitivust inflexiónak tekintjük, a melléknévi és határozói igeneveket
+nem. Az infinitivus kódolása:
+
+csinálni         < VERB <INF> >
+
+A "személyragozott" infinitivus az igei PRES jeggyel van kifejezve, az
+igékhez képest  azzal a különbséggel, hogy a 3. személyûek +PERS
+jegyértéket kapnak, pl.
+
+csinálnia         < VERB <INF> <PERS   >        >
+csinálniuk        < VERB <INF> <PERS   > <PLUR> >
+
+csinálnom         < VERB <INF> <PERS<1>>        >
+csinálnotok       < VERB <INF> <PERS<2>> <PLUR> >
+
+
+
+4.2. Kopulák
+
+A létige olyan inflektált alakjait, amelyek az igei paradigmába
+illeszkednek, a szokásos módon adjuk meg, alkategorizációs jegye a COP,
+pl.:
+
+van          < [COP]VERB                         >
+vannak       < [COP]VERB                  <PLUR> >
+vagytok      < [COP]VERB        <PERS<2>> <PLUR> >
+
+volt         < [COP]VERB <PAST>                  >
+volna lenne  < [COP]VERB <COND>                  >
+legyen       < [COP]VERB <SUBJUNC_IMP>           >
+lehet        < [COP]VERB <MODAL>                 >
+
+A létige néhány alakja több funkcióban is szerepelhet, pl. a múlt idejû
+feltételes módú alakokban (csinált volna) a volna "segédszó". Ez azonban
+tovább nem toldalékolható (*csinált volnék), kódolása (XXX itt egy adhoc
+"egyéb" kategória):
+
+volna          [PASTCOND COP]XXX
+
+
+Hasonlóan problémás a jövõ idejû kopula (lesz). Hiszen jövõ idõt más
+igéknél a morfológia nem jelöl. Ezért a FUT nem inflexiós, hanem szubkat
+jegy lesz, pl.
+
+lesz         < [FUT COP]VERB                         >
+leszünk      < [FUT COP]VERB        <PERS<1>> <PLUR> >
+
+Ezek az alakok azonban megegyezhetnek a lesz 'válik vmivé' nem kopula ige
+alakjaival, ezt ambiguus kódolásuk is tükrözi, azaz a fentiek:
+
+lesz         < VERB                         >
+leszünk      < VERB        <PERS<1>> <PLUR> >
+
+A lesz ige múlt idejû alaka önmagában már nem ambiguus (kopula nem lehet,
+pl. *"Ott lett az állomáson"), de a "lett volna" összetett alak miatt ezt
+az alakot is fel kell venni ambiguusként, hiszen így már állhat kopulaként
+(vö.: "Ott lett volna az állomáson"), pl.:
+
+lett         < [FUT COP]VERB                         >
+lettünk      < [FUT COP]VERB <PAST> <PERS<1>> <PLUR> >
+
+
+Problémásak a többi lesz-bõl képzett alakok (lenne, legyen, lehet). Ezeknél
+nem világos, hogy funkciójukban jelen vagy jövõ idejûek. Á legegyszerûbb
+megoldás, ezek mindkettõként való felvétele, pl.:
+
+lenne        <     [COP]VERB <COND>                  >
+             < [FUT COP]VERB <COND>                  >
+legyen       <     [COP]VERB <SUBJUNC_IMP>           >
+             < [FUT COP]VERB <SUBJUNC_IMP>           >
+lehet        <     [COP]VERB <MODAL>                 >
+             < [FUT COP]VERB <MODAL>                 >
+
+
+Megj.-1: a lehet segédige (AUX) is, olyan, amelyiknek csak E/3 alakja van
+nincs (pl. "el lehet menni"). Azaz van egy harmadik kódolása:
+
+lehet        < [SG3 AUX]VERB <MODAL>                 >
+lehetett
+lehetne
+
+Hasonló segédige a kell:
+
+kell        < [SG3 AUX]VERB                          >
+kellett
+kellene
+kellhet
+
+(Természetesen a szubkat.-ok között a segédige modális volta vagy a
+modalitás típusa is szerepelhet.)
+
+
+Megj.-2: a FUT jegy a jövõ idõ szokásos segédigéjében is szerepel, azaz:
+
+fog         < [FUT AUX]VERB                         >
+fogok
+fogsz
+stb.
+
+Ennek megvannak a személyragozott alakjai, más igei alakja viszont nincs
+(*fogott, *fogna, ?*fogjon, *fogni).
+
+
+
+4.3. Egyéb igei alkategóriák
+
+Ezek kódolása is a szubkat jeggyel történhet.
+
+Ide tartoznak:
+-- esetvonzatok (alanytalan, intranzitív, tranzitív, ferde esetek)
+-- infinitivusi vonzatok (hol állhat az inf.: segédige, hangsúlykerülõ,
+hangsúlyváró)
+-- morfológiailag hiányos paradigmájú (csak E/3 szám/személye van)
+-- tematikus szerepek (ágensi alany stb.)
+-- aspektus
+
+5. Változások problemak
+
+melyik?tök/-ünk/ük formailag E/3-as egyeztetés, de jelentésileg nem
+kett?tök hármótok
+né/bár/semelyikünk, -?tök, -ük, sot: a gyerekek semelyike sem!
+
+Essivus-formalis (barátomul) eset-e
+találkozásunkkor
+éve, perce stb.
+
+-ék problémái:
+?sógorunkék, ?-otokék, ?-ukék
+mieink, ?tieitek, övéik
+
+
+Ritkán használatosak, de léteznek a fõnévi személyes névmásokból
+levezethetõ "melléknévi személyes névmások", ezeknek van személyragozatlan
+és személyragozott alakjuk. Ezek PERS jeggyel ellátott melléknevek:
+
+õféle õfajta           < ADJ <PERS   >                       >
+teféle tefajta         < ADJ <PERS<2>>                       >
+tiféle tifajta         < ADJ <PERS<2>> <PLUR>                >
+
+A személyragozott alakok POSS jegyet vesznek fel, és a többi ilyen
+melléknévhez hasonlóan "fõnévivé" válnak (pl. "A tefajtád nem szeret
+dolgozni"), a PERS jegy E/3, a szám/személyt itt a POSS alatt jelöljük:
+
+õféle õfajta           < ADJ <PERS   >        <POSS         > >
+teféléd tefajtád       < ADJ <PERS   >        <POSS<1>      > >
+mifélénk mifajtánk     < ADJ <PERS   >        <POSS<1><PLUR>> >
+
+
+
+A szemely jegyek nem teljesen egysegesek.
+
+
+
+
+
+
+Appendix
+A.1. Inflektálható kategória
+
+A.1.1.      Névszó
+
+A.1.1.1. F?név
+
+<NOUN                      ember
+   <COMPAR                  emberebb
+      <DESIG>                emberebbik
+   >
+   <SUPERLAT                legemberebb       ~ <COMPAR> <SUPERLAT>
+      <SUPERLAT>             legeslegemberebb
+      <DESIG>                legemberebbik
+   >
+   <PERS                    ?                 ~ <PERS>
+<COMPAR>|<SUPERLAT>|<POSS>
+      <1>                    én
+      <2>                    te               ~ <1> <2>
+   >
+   <PLUR                    emberek
+      <FAM>                  emberék
+   >
+   <POSS                    embere
+      <1>                    emberem
+      <2>                    embered
+      <PLUR>                 emberei
+   >
+   <ANP                     emberé
+      <PLUR>                 emberéi
+      <ANP>                  emberéé enyémé
+         <PLUR>              emberééi enyémék
+      >
+   >
+   <CAS                     --                ~ <CAS>
+      <ACC>                 embert
+      <DAT>
+....................
+
+
+
+
+
+   >
+   <POSTP>                  alatta   ~
+<COMPAR>|<SUPERLAT>|<POSS>|<CAS<...>>|<ANP> <POSTP>
+>
+
+
+A.1.1.2. Melléknév
+
+
+A.1.1.3. Számnév
+
+
+A.1.2. Ige
+
+<VERB                      vár
+   <INF>                    várni     ~ <INF>
+<MODAL>|<PAST>|<COND>|<SUBJUNC-IMP>|<DEF>
+   <MODAL>                  várhat
+   <PAST>                   várt      ~ <PAST> <COND>|<SUBJUNC-IMP>
+   <COND>                   várna     ~ <COND> <PAST>|<SUBJUNC-IMP>
+   <SUBJUNC-IMP>            várjon    ~ <SUBJUNC-IMP> <PAST>|<COND>
+   <PERS                    -- várnia        ...........
+      <1>                    várok várnom
+         <OBJ2                várlak         ~ <PERS<1<OBJ2>> <PLUR>|<INF>
+      >
+      <2>                    vársz várnod    ~ <1> <2>
+   >
+   <PLUR>                   várnak
+   <DEF>                    várja
+>
+
+
+A.1.3. Határozószó
+
+<ADV                       jól arra
+   <COMPAR>                 jobban arrébb
+   <SUPERLAT>               legjobban legarrébb    ~ <COMPAR> <SUPERLAT>
+      <SUPERLAT>             legeslegjobban
+   >
+>
+
+
+A.1.4. Determináns
+
+<DET                       ez a
+   <PLUR>                   ezek
+   <ANP>                    ezé
+   <CAS                     --                ~ <CAS>
+      <ACC>                 ezt
+      <DAT>
+....................
+
+   >
+>
+
+A.2. Nem inflektálható kategóriák
+
+
+A.2.1. Névutó
+
+POSTP
+
+A.2.2. Igeköt?
+
+PREV
+
+A.2.3.
+
+...............................
+
+
+B. Példák egyeztetésre
+(itt a tranzitív igék az ACC, a segédigék az INF szubkat. jeggyel
+szerepelnek!)
+
+
+B.1. Mondat (szám személy definitség eset infinitivus)
+
+
+B.1.1. alany + ige
+
+Pál fut.            Fiúk      futnak.
+<N> <V>             <N<PLUR>> <V<PLUR>>
+
+(?)       fut.    (Én)         futok.          (Ti)               futtok.
+<N<PERS>> <V>     <N<PERS<1>>> <V<PERS<1>>>    <N<PERS<2>><PLUR>>
+<V<PERS<2>><PLUR>>
+
+
+B.1.2. tárgyas ige + tárgy
+
+Lát      valamit.                     Látja         azt.
+
+<[ACC]V> <N<CASE<ACC>>>               <[ACC]V<DEF>> <[DEF]N<CASE<ACC>>>
+
+
+Lát      (engem).                     Látlak                  (téged).
+<[ACC]V> <N<PERS<1>><CASE<ACC>>>      <[ACC]V<PERS<1<OBJ2>>>>
+<N<PERS<2>><CASE<ACC>>>
+
+
+B.1.3. alany + infinitivus + segédige
+
+Pál futni    akar.              (Mi)               futni    akarunk.
+<N> <V<INF>> <[INF]V>           <N<PERS<1>><PLUR>> <V<INF>>
+<[INF]V<PERS<1>><PLUR>>
+
+
+B.1.4. alany + tárgyas infinitivus + segédige + tárgy
+
+Pál látni         akarja         azt.
+<N> <[ACC]V<INF>> <[INF]V<DEF>   <[DEF]N<CASE<ACC>>>
+
+
+B.1.5. "alany" + infinitivus + alanytalan segédige
+
+Pálnak         futnia         kell.
+<N<CASE<DAT>>> <V<INF<PERS>>> <[DAT INF]V>
+
+(Nekünk)                      futnunk                 kell.
+<N<PERS<1>><PLUR><CASE<DAT>>> <V<INF><PERS<1>><PLUR>> <[DAT INF]V>
+
+
+B.1.6. alany + névszó (+ létige)
+
+Pál kényes (volt).                              Fiúk      kényesek.
+
+<N> <A>    <[COP]V<PAST>>                       <N<PLUR>> <A<PLUR>>
+
+(Mi)               kényesek  vagyunk.
+<N<PERS<1>><PLUR>> <A<PLUR>> <[COP]V<PERS<1>><PLUR>>
+
+
+B.1.7. alany + segédigei névszó + (létige) + infinitivus
+
+Pál képes    (volt)         futni.              Fiúk      képesek
+futni.
+<N> <[INF]A> <[COP]V<PAST>> <V<INF>>            <N<PLUR>> <[INF]A<PLUR>>
+<V<INF>>
+
+(Mi)               képesek         vagyunk                 futni.
+<N<PERS<1>><PLUR>> <[INF]A<PLUR>>  <[COP]V<PERS<1>><PLUR>> <V<INF>>
+
+
+B.1.8. alany + alanytalan segédigei névszó + (létige) + infinitivus
+
+Pálnak         szabad       (volt)          futnia.
+<N<CASE<DAT>>> <[DAT INF]A> <[COP]V<PAST>>  <V<INF<PERS>>>
+
+(Nekünk)                      szabad             (volt)         futnunk.
+<N<PERS<1>><PLUR><CASE<DAT>>> <[DAT INF]A<PLUR>> <[COP]V<PAST>>
+<V<INF<PERS<1>><PLUR>>
+
+
+B.2. Birtokos szerkezet (szám személy)
+
+
+B.2.1.
+Péter háza                            Péternek       a/egy háza
+<N>   <N<POSS>>                       <N<CASE<DAT>>> DET   <N<POSS>>
+
+(te)         házad                    nekem                     a/egy házam
+<N<PERS<2>>> <N<POSS<2>>              <N<PERS<2>><CASE<DAT>>>...DET
+<N<POSS<2>>>
+
+(mi)              házunk              nekünk                       a
+házunk
+<N<PERS<1>><PLUR>><N<POSS<1>><PLUR>>>
+<N<PERS<1>><PLUR><CASE<DAT>>>DET<N<POSS<1><PLUR>>>
+
+(?)         háza                      neki                 a/egy háza
+<N<PERS>> <N<POSS>>                   <N<PERS><CASE<DAT>>> DET   <N<POSS>>
+
+(?k)            háza                  nekik                      a/egy
+házuk
+<N<PERS><PLUR>> <N<POSS>>             <N<PERS><PLUR><CASE<DAT>>> DET
+<N<POSS><PLUR>>>
+
+
+B.3. Névutós és ragos és igeköt?s szerkezetek
+
+
+B.3.1. Ragos és névutós f?névi szerkezet (eset)
+
+házban                                ház mögött
+<N<CASE<INE>>>                        <N> POSTP
+
+bennem                                mögöttem
+<N<PERS<1>><CASE<INE>>>               <N<PERS<1>><POSTP>>
+
+
+B.3.2. Vonzatos névutós szerkezet
+
+--                                    házon          át
+                                      <N<CASE<SUE>>> <[SUE]POSTP>
+
+--                                    rajtam                  át
+                                      <N<PERS<1>><CASE<SUE>>> <[SUE]POSTP>
+
+
+B.3.3. Vonzatos igeköt?s ige
+
+Ráül          a   székre.             Aláesik       a    széknek.
+<[SBL]PREV+V> DET <N<CASE<SBL>>>      <[DAT]PREV+V> DET  <N<CASE<DAT>>>
+
+
+Ráül          (arra).                 Aláesik       (annak).
+<[SBL]PREV+V> <N<CASE<SBL>>>          <[DAT]PREV+V> <N<CASE<DAT>>>
+
+
+B.3.4. Ragos és névutós szabad határozó
+
+A   székre         ül.                A   szék alá   esik.
+DET <N<CASE<SBL>>> <V>                DET <N>  POSTP <V>
+
+(?)rá                ül.              (?)alá(ja)       esik.
+<N<PERS><CASE<SBL>>> <V>              <N<PERS><POSTP>> <V>
+
+Rám                     ül.           Alám                esik.
+<N<PERS<1>><CASE<SBL>>> <V>           <N<PERS<1>><POSTP>> <V>
+
+
+
+
+
+
+
+
+
+Ötleteikért, kritikus megjegyzéseikért köszönettel tartozom Bababarczy
+Annának, Trón Viktornak, Kornai Andrásnak, Rung Andrásnak, Halácsy
+Péternek, Kálmán Lászlónak, Komlósy Andrásnak és Bartos Hubának (és Shepard
+bácsi is segített).

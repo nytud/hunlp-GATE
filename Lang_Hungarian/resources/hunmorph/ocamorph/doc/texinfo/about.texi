@@ -1,0 +1,131 @@
+@node About, Installation, License, Top
+@chapter Authors, Contact, Bugs
+
+@menu
+* LicenseExtra::                
+* Submitting a Bug Report ::    
+* Requesting a New Feature::    
+* Praises::                     
+* Contribution::                
+* Reference::                   
+* Authors::                     
+* Acknowledgements::            
+* Contact::                     
+@end menu
+
+@node LicenseExtra, Submitting a Bug Report , About, About
+@section License? What license?
+
+@xref{License}.
+
+@quindex I found a bug/strange feature. What should I do?
+
+@node Submitting a Bug Report , Requesting a New Feature, LicenseExtra, About
+@section Submitting a Bug Report 
+
+If you find a bug or an undesireable feature or anything that is worth a
+couple of lines ranting at the authors, please go ahead and
+send a bugreport on the MOKK Lab bugzilla page at @value{MOKKWEB}
+or send a mail to me (@pxref{Contact}).
+
+@node Requesting a New Feature, Praises, Submitting a Bug Report , About
+@section Requesting a New Feature
+
+@quindex I am using ocamorph, but desparately lacking a feature X. Can I request it?
+
+So you are using hunlex and find yourself realizing that you would need
+a certain feature desparately but it happens not to be implemented. 
+Go ahead and request it from the authors (@pxref{Contact}) or sit silently and hope!
+
+@node Praises, Contribution, Requesting a New Feature, About
+@section Praises
+
+@quindex I found ocamorph cool/useful/useless. How can I let the authors know?
+
+If you have an opinion about ocamorph and would like the authors to
+hear about it. @xref{Contact}.
+
+@node Contribution, Reference, Praises, About
+@section Contribution
+
+@quindex I am a keen hacker/stupid user with sleepless nights/long afternoons at work to be wasted/spent usefully. How can I contribute to your work?
+
+Ocamorph is open source development, so developpers are welcome to
+contribute to make it better in any imaginable way. Contact us
+(@pxref{Contact}) to work out the details of how and what you would want
+to contribute to Ocamorph.
+
+@node Reference, Authors, Contribution, About
+@section Reference 
+
+@quindex I used ocamorph and report it in a paper. What reference do I use?
+
+For the context of the whole huntools kit, use
+
+@verbatim
+@InProceedings{tron:etal:05,
+  author =       {Viktor Tr\'on and Gy\''orgy Gyepesi and P\'eter Hal\'acsy and Andr\'as Kornai and L\'aszl\'o N\'emeth and D\'aniel Varga},
+  title =        {Hunmorph: open source word analysis},
+  booktitle =    {Proceedings of the ACL 2005 Workshop on Software},
+  year =         2005
+}
+@end verbatim
+
+These and other papers can be downloaded from the MOKK Lab publications page at 
+@value{MOKKWEB}
+
+@node Authors, Acknowledgements, Reference, About
+@section Authors
+
+@quindex Who are you? 
+
+The author of ocamorph and this document is @i{Viktor Trón}. He can be mailed to on @*
+@value{MYEMAIL}
+@*
+Hopefully more can be found on MOKK Lab's pages at @value{MOKKWEB}.
+
+Viktor Trón and Péter Halácsy wrote the C binding for ocamorph.
+
+Péter Halácsy is the author of the MacOS package of the ocamorph
+executable.
+
+Attila Balogh made the MS Windows executable.
+
+@node Acknowledgements, Contact, Authors, About
+@section Acknowledgements
+
+Thanks to Péter Halácsy, Dániel Varga and András Kornai who contributed various
+ideas and design suggestions during the development of ocamorph.
+
+Thanks to Chrisoph Filliatre, whose ocaml modules implementing
+bitvectors and tries are the basis for the respective ocamorph components.
+
+Special thanks to Dániel Varga and Péter Halácsy for extensive testing
+ of ocamorh. 
+
+@node Contact,  , Acknowledgements, About
+@section Contact
+
+@quindex How can I contact you?
+
+We can get in contact if you
+@enumerate
+@item 
+Mail to @i{Viktor Trón} on @*
+@value{MYEMAIL}
+
+@item
+Join the forums on @value{MOKKWEB}
+
+@item
+Submit a bug report (@pxref{Submitting a Bug Report}) or feature request (@pxref{Requesting a New Feature}).
+
+@end enumerate
+
+
+
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

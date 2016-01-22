@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" ==  "--help" ];then `ocamorph --help 2> ocamorph.tmp`; cat ocamorph.tmp; fi
+if [ "$1" == "--version" ]; then `ocamorph --version 2> ocamorph.tmp`; cat ocamorph.tmp; fi
+ 
+
+

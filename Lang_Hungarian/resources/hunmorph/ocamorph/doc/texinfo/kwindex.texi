@@ -1,0 +1,9 @@
+@node Control Flags Index, Frequently Asked Questions, Options Index, Top
+@unnumbered Control Flags Index
+
+@printindex kw
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

@@ -1,0 +1,38 @@
+Morphdb.hu is an open source morphological resource for Hungarian.
+
+Morphdb.hu comprises of an extensive lexicon and a morphological grammar.
+
+Resources use the description language HunLex morphological resource specification framework.
+
+The resources are meant to be used with the HunLex preprocessor which produces resource formats that are read by the HunMorph word-analysis tools, such as spell-checker, stemmer, morphological analyzer/generator. 
+
+Morphdb.hu is an attempt to reuse and unify various existing morphological
+resources representing several decades of labour by linguists.
+The base lexicon is a result of compiling the words of three existing dictionaries:
+ - the Hungarian ispell/myspell (Magyar Ispell) dictionary, 
+ - L.Elekfi's 'Dictionary of Hungarian Inflections' (this contains the words in Éksz.) 
+ - Füredi-Kelemen-Papp Dictionary as compiled by Andras Kornai
+
+Each of these dictionaries contained morphological information about 
+their entries, however coded in different ways using rather different
+concepts of morphological information. The main difficulty in merging
+these resources was to harmonize and revise their information content 
+as relevant to our morphological grammar with minimal information loss.
+
+The morphdb.hu morphological grammar is an entirely original product of 
+the project.
+
+The morphdb.hu project is an ongoing development of these resources, 
+make sure you visit mokk.bme.hu/resources for the latest update
+
+FURTHER DOCUMENTATION
+                                                                                
+On how to compile this resource with HunLex, see doc/README.hunlex
+                                                                                
+On how to use the compiled resources with HunMorph, see doc/README.hunmorph
+                                                                                
+More on the contents and creation of the basic resource, see doc/README.morphdb
+
+
+
+

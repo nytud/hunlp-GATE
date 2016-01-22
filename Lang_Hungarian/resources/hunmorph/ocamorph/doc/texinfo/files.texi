@@ -1,0 +1,422 @@
+@node Files, Command-line Control, Description Language, Top
+@chapter Files
+
+@quindex What files are relevant for hunlex?
+
+There are various files that hunlex processes. Input as well as Output
+files are described in this chapter. The file names used in this section
+are just nicknames (which happen to be the default filenames assumed)
+and can be changed at will with setting toplevel option
+(@pxref{Options}).
+
+@menu
+* Input Resources::             
+* Output Resources::            
+@end menu
+
+
+@node Input Resources
+@section Input Resources
+
+@quindex What files are the input for hunlex?
+
+There are several types of files hunlex considers and they will all be
+discussed in turn.
+
+Lexicon and grammar are the two files which are considered the
+@dfn{primary resources}. These files contain the description of the
+language's morphology with all the rules for affixation, lexical
+entries, specifying morphological output annotation (tags), etc.,
+@pxref{Primary Resources}.
+@cindex resources, input
+
+Secondly, there are @dfn{configuration files}, which declare the
+morphemes and features that are considered active by hunlex for a
+particular compilation.  By choosing and adjusting parameters of these
+features, one can manipulate under- and over-generation of the analyzer
+(@pxref{Resource Compilation Options}) and, most importantly, regulate
+which affixes are merged together to yield the affix-cluster rules
+dumped into the affix file. The way affixes are merged is crucial for
+the efficiency of real-time analyzers (@pxref{Levels}). These files are
+also described below (@pxref{Configuration Files}).
+
+
+@menu
+* Primary Resources::           
+* Configuration Files::         
+* Morpheme Configuration File::  
+* Feature Configuration File::  
+* Usage Configuration File::    
+@end menu
+
+@node Primary Resources
+@subsection Primary Resources
+
+@cindex resource, primary
+@fiindex primary resource files
+@quindex What are the primary resources for hunlex?
+@quindex Which files actually describe the language?
+
+Primary resources are the files that you are supposed to develop,
+maintain, extend and that describe your morphology (@pxref{Motivation}).
+There are two primary resources: the grammar and the lexicon.  These
+files are described below.
+
+@menu
+* Lexicon::                     
+* Grammar::                     
+@end menu
+
+@node Lexicon
+@subsubsection Lexicon 
+@fiindex lexicon file
+@cindex lexicon
+@quindex What is the lexicon file?
+@quindex What is in the lexicon file?
+@quindex How do you specify the words of the language?
+
+The lexicon file (the file name of which is @samp{lexicon} by default,
+but can be set through options, @pxref{Input File Options}) is the
+repository of lexical entries, containing information about:
+
+@itemize
+@item lemmas
+@item stem-allomorphs (variants) belonging to the lemma's paradigm
+@item suppletive forms expressing some paradigmatic slot of the lemma
+@item morphological output annotation (tag) of the lemma (and the variants)
+@item sense indices (arbitrary tag to distinguish identical lemmas)
+@item the morphosyntactic and morphophonological features which 
+characterize variants (or lemmas), and which determine its morphological
+combinations (i.e., which rules apply to it and how).  
+@item usage qualifiers of the variants (or lemmas), such as register, usage domain, 
+normative status, formality, etc.
+@end itemize
+
+The syntax of the lexicon file is basically the same as that of the
+grammar, except that it cannot contain macro definitions
+(@pxref{Macros}). This syntax of describing morphology is explained in
+detail in another chapter (@pxref{Description Language}).
+
+@c On how to bootstrap your lexicon file, see Bootstrapping.
+
+For examples of lexicons, have a look at the zillion examples in the
+Examples directory that comes with the distribution (@pxref{Installed
+Files}).
+
+@node Grammar
+@subsubsection Grammar
+
+@fiindex grammar file
+@cindex grammar
+@quindex What is the grammar file?
+@quindex What is in the grammar file?
+@quindex How do I specify the morphology of the language?
+
+The grammar file is the other primary resource and also absolutely
+necessary to describe the morphology of your language.  Its name is
+@samp{grammar} by default but can be changed by setting toplevel options
+(@pxref{Input File Options}). The grammar file specifies:
+
+@itemize
+@item affix morphemes
+@item affix-allomorphs (variants) belonging to the same morpheme
+@item morphological output annotation (tag) of the affix morpheme (and its variants)
+@item the morphosyntactic and morphophonological features which 
+characterize variants (or morphemes) and which determine its morphological
+combinations (which rules apply to it and how).
+@item usage features of the variants (or affixes), such as register, usage
+domain, normative status, formality, etc.
+@item possibly special pseudo affixes, so called @dfn{filters} which assign (default) features to variants based on their form (orthographic patterns) or other features.
+@end itemize
+
+The syntax of the grammar file is the same as the one used for the
+lexicon except that the grammar file can contain macro definitions
+(@pxref{Macros}). The syntax and semantics of this description language
+is explained in detail in another chapter, @pxref{Description Language}.
+
+@c On how to bootstrap your grammar file, see Bootstrapping.
+
+For examples of grammar files, have a look at the zillion examples in
+the Examples directory that comes with the distribution
+(@pxref{Installed Files}).
+
+@node Configuration Files
+@subsection Configuration Files
+
+@quindex What are the configuration files?
+@quindex How can I configure resource compilation?
+@fiindex configuration files
+@cindex configuration of resource compilation
+@cindex resource compilation, configuration of
+
+Configuration files are the files which mediate between primary
+resources describing a language and a particular resource created for a
+particular method, routine, application. 
+
+There are three configuration files which tell hunlex which units and
+features should be included into the output resource from among the ones
+mentioned in the primary resources. The units (morphemes, features) not
+declared in these configuration files are considered ineffective by
+hunlex while reading the primary resources.
+
+The format of these three definition files are the same, each declaring
+a unit each line (with some parameters) and accept comments starting
+with '#' lasting till the end of the line.
+
+They are discussed in turn below.
+
+@menu
+* Morpheme Configuration File::  
+* Feature Configuration File::  
+* Usage Configuration File::    
+@end menu
+
+@node Morpheme Configuration File
+@subsection Morpheme Configuration File
+
+@fiindex morph.conf
+@cindex morphemes, configuring
+@quindex What is the morph.conf file?
+@quindex How can I select which morphemes are included in the output?
+
+The @samp{morph.conf} file is one of the compilation configuration files
+that determine how hunlex compiles its output resources (aff and dic,
+@pxref{Output Resources}) from the primary resources (lexicon and
+grammar, @pxref{Primary Resources}).
+
+It declares the affix morphemes and the filters that are to be used from
+among the ones that are in the grammar.
+
+@quotation
+@strong{Warning:} the affix morphemes not listed (or commented out) in
+this file are ineffective for the compilation (as if they were not in
+the grammar).
+@end quotation
+
+@cindex levels, settings the level of a morpheme
+@cindex affix clusters
+@cindex affix rules (in the affix file)
+
+Each line in this file contains the affix morpheme's name and optionally
+a second field, which gives the @dfn{level} of the morpheme. If no level
+is given, the affix is assumed to be of level @var{maximum_level} (the
+value of the option @env{MAX_LEVEL}, @pxref{Resource Compilation
+Options}). Very briefly, levels regulate which affixes will be merged
+with which other affixes to yield the @dfn{affix clusters} that are
+dumped as affix rules into the affix file. The odds and ends of levels
+are described in detail in another chapter (@pxref{Levels}).
+
+@c On how to bootstrap your include files, see Bootstrapping.
+
+For examples of the rather dull @samp{morph.conf} files, browse the
+examples in the @samp{Examples} directory that comes with the
+distribution (@pxref{Installed Files}).
+
+If you have a grammar and you want to declare all the (undeclared) morphs defined in 
+it by including them in the morph.conf. All you do is type 
+
+@example
+make DEBUG_LEVEL=1 new resources 2>&1 | grep '(morph skipped)' | cut -d' ' -f1 >> in/morph.conf
+@end example
+
+in the directory where your local Makefile resides. This will append all
+the undeclared morphs (one per line) to the morph.conf file. Note, the
+morphs so declared will be of level @var{maximum_level} (see above).
+
+@node Feature Configuration File
+@subsection Feature Configuration File
+
+@quindex What is the phono.conf file?
+@fiindex phono.conf
+
+The @samp{phono.conf} file is one of the compilation configuration files
+that determine how hunlex compiles the output resources (aff and dic,
+@pxref{Output Resources}) from the primary resources (lexicon and
+grammar, @pxref{Primary Resources}).
+
+The @samp{phono.conf} file is the file simply listing all the
+@dfn{features} that we want used from among the ones used in the grammar
+and the lexicon. Very briefly, features are attributes of affixes and
+lexical entries the presence or absence of which can be a condition on
+applying an affix rule.
+
+@cindex condition
+@cindex feature, declaring features for compilation
+@cindex affix rules, conditioning the application of
+
+@quotation 
+@strong{Warning:} Features used in the grammar but not mentioned (or
+commented out) in the @samp{phono.conf} file will be ignored (as if they
+were never there) for the present compilation by hunlex when reading the
+primary resources.
+@end quotation
+
+@quotation 
+@strong{Warning:} Features mentioned in @samp{phono.conf} but never used in
+the grammar or the lexicon are allowed and maybe should generate a
+warning, but they don't. This may cause a lot of trouble.
+@end quotation
+
+So, @samp{phon.conf} simply declares the features one on each line and
+allows the usual comments (with a '#').
+
+@c On how to bootstrap your phono.include file, see Bootstrapping.
+
+For examples of @samp{phono.conf} files, browse the examples in the
+@samp{Examples} directory that comes with the distribution
+(@pxref{Installed Files}).
+
+If you have a grammar and you want to declare all the (undeclared)
+features referred to in the grammar in conditions by including them in
+the phono.conf. All you do is type
+
+@example
+make DEBUG_LEVEL=1 new resources 2>&1 | grep '(feature skipped)' | cut -d' ' -f1 | sort -u >> in/phono.conf
+@end example
+
+
+
+@node Usage Configuration File
+@subsection Usage Configuration 
+-- 
+@cindex usage configuration 
+@fiindex usage configuration file 
+@fiindex usage.conf
+@quindex What is the usage.conf file? 
+@quindex How can I configure usage qualifiers?
+
+The @samp{usage.conf} file is is one of the compilation configuration
+files that determine how hunlex compiles the output resources (aff and
+dic, @pxref{Output Resources}) from the primary resources (lexicon and
+grammar, @pxref{Primary Resources}).
+
+@cindex usage qualifiers, declaring
+@samp{usage.conf} in particular determines which @dfn{usage qualifiers}
+are allowed for the input units (lexical entries, affixes, filters and
+the variants thereof) that are included into the resource to be
+compiled. Units having a usage qualifier that is not listed in this file
+are ignored for the compilation (as if they were not there).
+
+@quotation
+@strong{NB:} Usage qualifiers are not first class features. They can
+not be @i{negated} or used as conditions on rule application. They are
+simply used to categorize rules (affixes and stems) in certain
+dimensions such as etymology, register, usage domain, normative status,
+formality, etc.
+@end quotation
+
+In addition to declaring allowed usage qualifiers, this file has another
+function as well. Each line containing the usage qualifier may contain a
+second field which is a @i{tag} associated with that usage feature. If
+this field is missing, the name of the usage qualifier string is assumed
+to be its tag. Usage qualifier tags can be output by the analyzer if
+they are compiled into the resources by hunlex.
+
+This can be configured with the output info option (@pxref{Resource
+Compilation Options}).
+
+@quotation
+@strong{Warning:}
+This option is not implemented yet.
+@end quotation
+
+@quotation
+@strong{Todo:} This is not implemented yet. I don't even know if this is
+fine like this.  The problem is that they cannot really be just
+intermixed with the ordinary morphological tags.
+@end quotation
+
+Various dimensions of usage information can be made effective by
+introducing expressions with arbitrary @dfn{leading keywords}
+(@pxref{Description Language}).  Redefining each of the wanted usage
+dimensions in the @samp{parsing_common.ml} file will result in making
+any one or more of them effective as usage qualifiers.  The point is
+that you can keep a lot of information in the same lexical
+database. When the keywords it contains are @i{hunlex-ineffective}, the
+expressions they lead are simply ignored.
+
+@quotation
+@strong{Caveat:} At the moment, for these alternatives, you have to
+recompile hunlex, with the new keyword associations, @pxref{Description Language}.
+@end quotation
+
+@quotation
+@strong{Todo:}
+This could be done online but has very low priority. 
+@end quotation
+
+@quindex What is the difference between features and usage qualifiers?
+@quindex What are usage qualifiers?
+@quindex How can I declare usage qualifiers?
+@quindex How can I reset which usage qualifier dimension do I want in the output?
+@quindex How can I associate tags with usage qualifiers?
+
+
+@c On how to bootstrap your usage.include file, see Bootstrapping.
+
+For examples of @samp{usage.conf} files, browse the examples, in the
+@samp{Examples} directory that comes with the distribution
+(@pxref{Installed Files}).
+
+@node Output Resources
+@section Output Resources
+
+@quindex What output files does hunlex create?
+@cindex resources, output
+@cindex output resources
+
+@c @node Affix File
+@c @subsection Affix File
+@fiindex affix file
+@quindex What is an affix file?
+
+@c @node Dictionary File
+@c @subsection Dictionary File
+@fiindex dictionary file
+@quindex What is a dictionary file?
+
+
+The output of a hunlex resource compilation is an @dfn{affix file} and a
+dictionary file.  In brief, the affix file contains the description of
+the affix (cluster) rules of the language we analyze, while the
+dictionary contains the stems the affix rules can apply to. They have
+more or less the same role as the grammar and lexicon files, the primary
+resources of hunlex (@pxref{Primary Resources}).  But the affix and
+dictionary files are resources that are used by real-time word-analysis
+routines (such as morphbase, myspell or jmorph, 
+@c
+@pxref{Related Software and Resources}).  They share commonalities of
+format with minor idiosyncrasies, some of which are still in the
+changing.
+
+Hunlex reads a transparent human-maintainable non-redundant
+morphological grammar description with the lexicon of a language and
+creates affix and dictionary files tailored to your needs
+(@pxref{Introduction}). The ultimate purpose of hunlex is that these
+output resource files could at last be considered a @dfn{binary-like}
+secondary (automatically compiled) format, not a primary (maintained)
+lexical resource.
+
+Therefore the technical specification of these output formats should
+only concern you here if you want to compile affix and dictionary files
+for your own (or modifief versions of our own) word-analysis software
+which also reads the aff/dic files. In such a case, however, you know
+that format better than I do. All I can say is that the parameters along
+which the format can be manipulated is supposed to conform with the
+format of the software listed in @pxref{Software that can use the output
+of Hunlex as input}. If you develop some such stuff as well and 
+would like your format to be supported, take a deep breath and 
+consider requesting a feature from the authors @pxref{Requesting a New Feature}.
+
+In sum, the format of these output resource files are not detailed.
+Anyway, they are (probably) well documented elsewhere (e.g., myspell
+manual page). See especially the documentation of @samp{huntools} and
+the @samp{morphbase} library (@pxref{Huntools}).
+
+@ignore
+Parameters which tell whether the output is optimized for real-time
+performance (algorithmic efficiency, file size, memory use, etc.) and
+for application domain (coverage, robustness, etc.) are taken into
+consideration
+@end ignore
+

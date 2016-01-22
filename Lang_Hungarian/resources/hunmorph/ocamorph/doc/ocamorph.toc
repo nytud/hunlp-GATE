@@ -1,0 +1,49 @@
+@numchapentry{Introduction}{1}{Introduction}{1}
+@numsecentry{Ocamorph: A Short Description}{1.1}{Ocamorph}{1}
+@numsecentry{Motivation}{1.2}{Motivation}{1}
+@numchapentry{License}{2}{License}{3}
+@numchapentry{Authors, Contact, Bugs}{3}{About}{4}
+@numsecentry{License? What license?}{3.1}{LicenseExtra}{4}
+@numsecentry{Submitting a Bug Report}{3.2}{Submitting a Bug Report}{4}
+@numsecentry{Requesting a New Feature}{3.3}{Requesting a New Feature}{4}
+@numsecentry{Praises}{3.4}{Praises}{4}
+@numsecentry{Contribution}{3.5}{Contribution}{4}
+@numsecentry{Reference}{3.6}{Reference}{4}
+@numsecentry{Authors}{3.7}{Authors}{4}
+@numsecentry{Acknowledgements}{3.8}{Acknowledgements}{5}
+@numsecentry{Contact}{3.9}{Contact}{5}
+@numchapentry{Installation}{4}{Installation}{6}
+@numsecentry{Download}{4.1}{Download}{6}
+@numsecentry{Supported Platforms}{4.2}{Supported Platforms}{6}
+@numsecentry{Prerequisites}{4.3}{Prerequisites}{6}
+@numsecentry{Install}{4.4}{Install}{7}
+@numsecentry{Advanced Install}{4.5}{Installation in more detail}{7}
+@numsecentry{Uninstall and Reinstall}{4.6}{Uninstall and Reinstall}{8}
+@numsecentry{Installed Files and Directories}{4.7}{Installed Files and Directories}{8}
+@numsecentry{Documentation}{4.8}{Documentation}{9}
+@numchapentry{Bootstrapping}{5}{Bootstrapping}{10}
+@numchapentry{Command-line Control}{6}{Command-line Control}{11}
+@numsecentry{Invoking ocamorph}{6.1}{Invoking ocamorph}{11}
+@numsecentry{Options}{6.2}{Options}{11}
+@numsubsecentry{Resource Options}{6.2.1}{Resource Options}{11}
+@numsubsecentry{Algorithmic options}{6.2.2}{Algorithmic options}{12}
+@numsubsecentry{Input and output options}{6.2.3}{Input and output options}{13}
+@numsubsecentry{Generic options}{6.2.4}{Generic options}{14}
+@numsecentry{Man page}{6.3}{Man page}{14}
+@numchapentry{Resource Specification}{7}{Resource Specification}{17}
+@numchapentry{Related Software and Resources}{8}{Related Software and Resources}{18}
+@numsecentry{Software that can use the output of Hunlex as input}{8.1}{Software that can use the output of Hunlex as input}{18}
+@numsubsecentry{Huntools}{8.1.1}{Huntools}{18}
+@numsubsecentry{Myspell}{8.1.2}{Myspell}{18}
+@numsubsecentry{Jmorph}{8.1.3}{Jmorph}{18}
+@numsubsecentry{Ispell}{8.1.4}{Ispell}{18}
+@numsecentry{Available resources}{8.2}{Available resources}{18}
+@numsubsecentry{The Hungarian Morphdb Project}{8.2.1}{The Hungarian Morphdb Project}{18}
+@numsubsecentry{The English Morphdb Project}{8.2.2}{The English Morphdb Project}{18}
+@numsecentry{Hunlex's relatives}{8.3}{Hunlex's relatives}{18}
+@numsubsecentry{XFST, TWOLC, LEXC}{8.3.1}{XFST etc.}{18}
+@unnchapentry{Concept Index}{10001}{Concept Index}{19}
+@unnchapentry{Files Index}{10002}{Files Index}{20}
+@unnchapentry{Variables and Options Index}{10003}{Options Index}{21}
+@unnchapentry{Control Flags Index}{10004}{Control Flags Index}{22}
+@unnchapentry{Frequently Asked Questions}{10005}{Frequently Asked Questions}{23}

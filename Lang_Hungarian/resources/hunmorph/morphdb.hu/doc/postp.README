@@ -1,0 +1,203 @@
+Karinthy Frigyes
+A költ?
+
+Rólam keresztelték el a világot,
+Nekem zenélnek a Hét Csillagok,
+Velem harcol az ördög, isten ellen
+Hozzám sietnek a szép kisdedek.
+
+Bennem feszül a kéj, fehéren izzó,
+Bel?lem buggyan aztán langyosan,
+Rajtam cikázik át az úr haragja,
+Teherben t?lem duzzadnak a fák.
+
+Engem idéz, ki sóhajt itt e földön,
+Felém rohan a parttalan dagály,
+Miattam ránt kardot a büszke Bosszú
+Mögöttem b?zl? véres b?nökért.
+
+El?ttem köd, helyettem senki, semmi,
+Köröttem fény, utánam néma csönd -
+És mégis minden nélkülem lesz és volt
+És semmi nem történik általam.on@krusovice:~ $ less /home/peeta/munka/elekfi/nevuto.elekfi
+tron@krusovice:~ $ cat /home/peeta/munka/elekfi/nevuto.elekfi
+alá
+alatt
+alól
+által
+alul
+át
+átellen
+átellenben
+belül
+bévül
+dacára
+együtt
+elé
+elébe
+ellen
+ellenében
+ellenére
+elõl
+elõtt
+fejében
+fele
+felé
+felett
+felibe
+felõl
+felõl
+felül
+fogva
+fogvást
+folyamán
+folytán
+fölé
+fölébe
+fölibe
+fölött
+fölül
+fölül
+gyanánt
+hegyibe
+helyett
+hosszat
+innen
+innét
+iránt
+képest
+keresztül
+kifolyólag
+kívül
+köré
+körött
+körül
+közben
+közé
+közepett
+közepette
+között
+közül
+létére
+mellé
+mellett
+mellõl
+miá
+mián
+miatt
+mögé
+mögött
+mögül
+múlta
+múlva
+múlván
+nélkül
+nézve
+nézvést
+óta
+részére
+révén
+számára
+számba
+számra
+szembe
+szemben
+szemközt
+szerint
+telve
+túl
+túlnan
+után
+útján
+végett
+
+
+tron@krusovice:~ $ grep ' p ' Work/FKP2hunlex/src/szo1ta1r |cut -d' '  -f1
+a1ltal
+ala1
+alapja1n
+alatt
+alo1l
+daca1ra
+e1rdeke1ben
+egyetemben
+ele1
+ele1be
+ellen
+ellene1be
+ellene1ben
+ellene1re
+elo3l
+elo3tt
+elo3tte
+esete1n
+ezelo3tt
+feje1ben
+fele1
+felett
+felo3l
+fo2le1
+fo2lo2tt
+fo2lu2l
+fogva
+fogva1st
+folyama1n
+folyta1n
+gyana1nt
+helyett
+hi1ja1n
+hossza1ban
+hosszat
+i1zben
+illeto3leg
+innen
+ira1nt
+jo1volta1bo1l
+kapcsa1n
+ke1pest
+ke1so3bb
+kezdve
+ki1vu2l
+kifolyo1lag
+ko2re1
+ko2ro2tt
+ko2ru2l
+ko2ru2lo2tt
+ko2vetkezte1ben
+ko2ze1
+ko2zel
+ko2zepett
+ko2zepette
+ko2zo2tt
+ko2zu2l
+ku2l
+melle1
+mellett
+mello3l
+mente1n
+mia1
+mia1n
+miatt
+mo2ge1
+mo2go2tt
+mo2gu2l
+mu1lta1n
+mu1lva
+mu1lva1n
+ne1lku2l
+ne1zve
+ne1zve1st
+nyoma1n
+o1ta
+re1sze1re
+re1sze1ro3l
+re1ve1n
+sora1n
+sza1ma1ra
+szemben
+szemko2zt
+szerint
+ta1ja1n
+u1tja1n
+uta1n
+ve1gett

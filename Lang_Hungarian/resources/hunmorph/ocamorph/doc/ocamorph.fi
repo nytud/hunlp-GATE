@@ -1,0 +1,11 @@
+\entry{install_prefix}{8}{install_prefix}
+\entry{ocamorph_debug}{8}{ocamorph_debug}
+\entry{ocamorph_noassert}{8}{ocamorph_noassert}
+\entry{ocamorph}{8}{ocamorph}
+\entry{ocamorph (library directory, lib/ocamorph)}{8}{ocamorph (library directory, \file {lib/ocamorph})}
+\entry{ocamorph.cmxa}{8}{ocamorph.cmxa}
+\entry{ocamorph.cmi}{8}{ocamorph.cmi}
+\entry{libocamorph.a}{8}{libocamorph.a}
+\entry{ocamorph.h}{8}{ocamorph.h}
+\entry{ocamorph (documentation directory, share/doc/ocamorph)}{8}{ocamorph (documentation directory, \file {share/doc/ocamorph})}
+\entry{ocamorph.1}{9}{ocamorph.1}

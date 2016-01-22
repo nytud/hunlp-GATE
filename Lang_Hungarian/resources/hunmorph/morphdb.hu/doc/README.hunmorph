@@ -1,0 +1,29 @@
+Once you have the secondary resources compiled by hunlex, i.e., 
+out/dictionary.dic and out/affix.aff, then you are ready to 
+run any realtime analysis software with there resources. 
+
+In case hunspell, hustem, hunmorph is in your path you simply
+supply the dic and aff files as their commandline arguments. 
+For instance: 
+
+ hunmorph out/affix.aff out/dictionary.dic /dev/stdin
+
+Here the third argument is the input file. If you say 
+/dev/stdin on linux, the input is read in from your 
+terminal, so you can use it for some spontaneous testing.
+
+For further huntools options, consult the manuals 
+
+ man hunmorph
+ man hunspell 
+ 
+or visit mokk.bme.hu for further documentation on the HunTools
+word-analysis toolkit.
+
+Note that the version of hunlex always produces output for a particular
+version of huntools. Although the format is in general stable, there might
+be minor changes or further features added. This means that incompatible 
+hunlex and hunmorph versions may cause incorrect analysis.
+In order to avoid that, make sure to use the latest updates.
+To download, visit mokk.bme.hu/resources
+

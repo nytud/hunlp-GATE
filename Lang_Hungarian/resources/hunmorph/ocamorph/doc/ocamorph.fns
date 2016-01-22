@@ -1,0 +1,25 @@
+\initial {-}
+\entry {\code {\code {--aff}}}{11}
+\entry {\code {\code {--bin}}}{11}
+\entry {\code {\code {--blocking}}}{13}
+\entry {\code {\code {--compounds}}}{13}
+\entry {\code {\code {--count_analyses}}}{14}
+\entry {\code {\code {--debug_level}}}{14}
+\entry {\code {\code {--dic}}}{11}
+\entry {\code {\code {--field}}}{13}
+\entry {\code {\code {--help}}}{14}
+\entry {\code {\code {--in}}}{13}
+\entry {\code {\code {--minimize}}}{12}
+\entry {\code {\code {--out}}}{13}
+\entry {\code {\code {--saf}}}{12}
+\entry {\code {\code {--tab_preamble}}}{13}
+\entry {\code {\code {--tab_sep}}}{14}
+\entry {\code {\code {--version}}}{14}
+\initial {C}
+\entry {\code {C library}}{6}
+\initial {D}
+\entry {\code {Documentation}}{6}
+\initial {M}
+\entry {\code {make}}{6}
+\initial {O}
+\entry {\code {ocaml}}{6}

@@ -1,0 +1,4 @@
+@node Options Index, Control Flags Index, Files Index, Top
+@unnumbered Variables and Options Index
+
+@printindex vr

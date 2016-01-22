@@ -1,0 +1,219 @@
+# mivolta
+mivolt	NOUN defective poss
+látt	NOUN defective poss
+# hóna
+hón
+kilét
+sza (száj) NOUN defective poss sing
+száj       NOUN defective poss number
+
+# tobbes
+küzeledt
+veszt
+mersz
+tudt
+ottjárt
+ittjárt
+járt
+nyugt
+elest
+érkezt
+készült
+
+beállta/UÒÏ     be[PREF]+állta[noun]{+[NOM]}
+olvasta/UÒÏX    [noun]{+[NOM]}
+szakadta/UÒÏX   [noun]{+[NOM]}
+kihalta/UÒÏX    ki[PREF]+halta[noun]{+[NOM]}
+lezárulta/UÒÏ   le[PREF]+zárulta[noun]{+[NOM]}
+befejezte/VÓÐ   be[PREF]+fejezte[noun]{+[NOM]}
+eltelte/VÓÐ     el[PREF]+telte[noun]{+[NOM]}
+letelte/VÓÐ     le[PREF]+telte[noun]{+[NOM]}
+indulta/UÒÏ     indulta[noun]{+[NOM]}
+
+
+# tobbes
+#  furcsa többesszámok átnézni majd
+üzelmek 
+
+
+magamfajta/forma/szõrû
+egymaga NOUN
+jómagam
+tenmagad
+
+# viszontlat
+viszontlát 
+
+# semmise
+semmise 
+semmisem
+# also
+semmitse
+semmitsem
+
+# kotoljon
+# kotlik hangbetoldós alakjai
+# csukoljon
+# csuklik hangbetoldós alakjai
+
+# csekelyli
+# kivetõs ragozott alakjai
+csekélyli 
+# kicsinyell
+# kivetõs alakjai
+# kétell, kevesell
+
+# kell
+# ragozása
+
+# megesz
+# also lélegez!! felesz, megesz, stb
+
+# alulbecsli
+# alulbecsül kivetõs alakjai
+
+
+# kisért
+# a kisért tiltása a kísért miatt
+# ue
+# egyûvé tiltott (vö együvé)
+
+# d
+# milliomod, negyed stb képzõ
+
+# egyeben
+# egyeben mint egyéb ragozott alakja, ez az egy szó!
+
+# ferfi
+# magas ragokkal??
+
+# szabad mint ige
+szabad
+szabadott
+szabadna
+
+# izzik
+# néhány ragozott alakja
+
+# sal
+# sált, holda, teliholda?
+
+# nagyothall
+# ragozott alakjai
+
+# barat
+# barátai, de *baráta
+
+# tiltott
+#  egy szó:
+# össze-vissza 
+
+# van, van_meg van_hatra van_ki van_oda
+# a létige ragozott alakjai
+
+# megy_tonkre
+# tönkremegy ragozott alakjai
+
+# ff
+# ff végû szavak mint blöff nem tudom miért van külön
+# nem kivételes 
+
+# a másít, más mára tövezésének megszüntetése
+ma/-á-Ã
+
+# okosít
+ok/-á-Ã
+
+# *leszándékozik
+szándék/-á-Ã
+
+#orr 
+# tárgyrag kivételek
+# allah, orr, *hely
+
+# pisil
+# pisil pukedlizik
+
+# nemzet 
+# ez mi?
+magyaran/w
+olaszan/w
+oroszan/w
+ukránan/w
+
+
+# legzik
+# hiányos paradigma
+légz VERB 
+
+# jon
+# a létrejön (sic) alak ragozása
+
+# sz_tesz_*
+# jóvátesz, tönkretesz észrevesz véghezvisz közzétesz
+# ragozása
+
+# lot-fut
+# a lót-fut ragozása
+
+# kulbel
+vissz #ISPELL
+vissz-  [noun] #MYSPELL
+fesz #ISPELL
+fesz-   [noun] #MYSPELL
+kül #ISPELL
+kül-    [noun] #MYSPELL
+bel #ISPELL
+bel-    [noun] #MYSPELL
+al #ISPELL
+al-     [noun] #MYSPELL
+pót #ISPELL
+pót-    [noun] #MYSPELL
+
+# h
+h végûek 
+juhhal/w # összetett szóként
+éhhel   éh[noun]+[INSTR]
+éhhé    éh[noun]+[TRANS]
+éhvel #MYSPELL TILTOTT
+éhvé #MYSPELL TILTOTT
+kehhel  keh[noun]+[INSTR]
+kehhé   keh[noun]+[TRANS]
+kehvel #MYSPELL TILTOTT
+kehvé #MYSPELL TILTOTT
+
+# szik.2.m4
+szándékszik (should be like igyekszik, emlékszik)
+
+# szemet ????
+szemete/VÐÕÓ    szemét[noun]+[POSS_SG_3]{+[NOM]}
+szemetei/VÐÕÓ   szemét[noun]+[PLUR]+[POSS_SG_3]{+[NOM]}
+szemetük/VÝÕÓ   szemét[noun]+[PLUR]+[POSS_SG_3]{+[NOM]}
+
+# melleknevek ????
+# csomó melléknév (és határozó)
+
+# miert
+# miértje
+miértek/VÓ×n    miért[noun]+[PLUR]{+[NOM]}
+miértje/VÐÓÕ    miért[noun]+[POSS_SG_3]{+[NOM]}
+miértjei/VÐÓÕ   miért[noun]+[PLUR]+[POSS_SG_3]{+[NOM]}
+miértre miért[noun]+[SBL]
+miértrõl        miért[noun]+[DEL]
+
+# jokor
+jókor   [adv]
+jókora/UÒÕÏ     [adj]
+jókorák/UÒÙm    jókora[adj]
+
+# annyi
+Xíziglen
+Xízben
+Xedannyi
+??Xedennyi?
+
+# elejeveleje
+# hátulj, belsej, stb..fú
+
+# nevmasok
+# és sok határozó is plusz bensõ, utolsó, stb.

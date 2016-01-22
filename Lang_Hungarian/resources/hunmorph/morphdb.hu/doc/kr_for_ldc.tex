@@ -1,0 +1,667 @@
+\documentclass[a4paper]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{qtree}
+
+%\newcommand{\phrase}[1]{\textit{#1}}
+
+\setlength{\hoffset}{-.5in}
+
+
+\begin{document}
+\title{The annotation system of HunMorph}
+
+\maketitle
+
+\section{Introduction}
+
+The annotation system for Hungarian morphology was designed to satisfy at
+least three, sometimes contradictory, conditions. The annotation has to be
+
+\begin{itemize}
+\item informative: it has to reflect the morphological information of a
+given word-form,
+
+\item adequate: it should use linguistically adequate categories, and
+
+\item simple: easily processable by machines and humans as well.
+
+\end{itemize}
+
+These conditions are difficult to fulfill simultaneously. Being simple is
+opposed to both being adequate and informative, on the other hand the
+conditions mostly depend on the users' aim, whether they use the
+annotation system for spell-checking, stemming, syntactic analysis or
+statistical research. 
+
+\section{Representing inflectional information as trees}
+%\section{Inflexiók}
+
+The morphological description of a word has to include every inflectional
+feature of a given word-form. Most inflectional features play a
+role in syntactic analysis. Such morphosyntactic features are usually
+represented in an attribute-value-structure (AVS) \cite{tron2002}. An AVS
+is independent of both the the surface form of the word and the formal
+features of the morphosyntactic properties.
+
+In attempting to align the above conditions we chose not to make a decision in
+the question of morphological segmentation. Whether we treat a morph as a
+whole or segment it into as many parts as the number of the morphemes it
+represents is a question of the chosen morphological framework. E.g. the
+morph '\textit{-jaim}', though corresponds to more than one morphological
+property (1st person, singular possessor and plural possessed), these
+properties cannot be unambiguously associated with separate parts of the
+morph. Therefore, our annotation system does not employ the notion of
+segmentation in the case of suffixes. This way the annotation
+could be both theory neutral and modular, furthermore, it remains independent
+of the surface form of the word.
+
+The morphological features of a word-form have two important properties
+with regard to the annotation system. The features are 
+\begin{itemize}
+\item hierarchical, i.e. certain features require the presence of other
+features,
+
+\item asymmetrical, i.e. certain values of a feature are considered marked,
+while others unmarked. 
+\end{itemize}
+
+These properties are best expressed by labelled trees. The roots of the
+trees represent the equivalence classes of lexical entries with regard to
+inflection (these correspond to part-of-speech categories) and the
+vertices are the inflectional features. The vertices in the graph define a
+path with the positive values of the features. This means that the graph
+is capable of encoding a binary attribute-value-structure where a vertex
+can have a daughter only if it has positive value
+\cite{kornai1989}\footnote{This is a
+special interpretation of markedness.}. The labelled tree satisfies all three
+conditions. It is
+
+\begin{itemize}
+\item informative, as it represents morphological information in an AVS,
+
+\item adequate, as it captures morphological markedness and the
+hierarchical nature of inflectional information, and
+
+\item simple, as it can be automatically transformed into an AVS,
+furthermore, it can easily be linearized.
+
+\end{itemize}
+
+
+\section{POS categories of HunMorph}
+
+The valid POS categories ar listed in Table \ref{pos_list}. Inflectable
+categories are: ADJ, NOUN, NUM and VERB. The following categories
+cannot be inflected: ADV, DET, ART, UTT-INT, CONJ, PREV, ONO, PUNCT and PREP.
+For postpositions see Section \ref{postp}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Tag & POS category \\
+\hline
+ADJ & adjective \\
+ADV & adverb \\
+ART & article \\
+CONJ & conjunction \\
+DET & determiner \\
+NOUN & noun \\
+NUM & numeral \\
+ONO & onomatopoeic \\
+POSTP & postposition \\
+PREP & preposition \\
+PREV & preverb \\
+PUNCT & punctuation \\
+UTT-INT & utterance/interjection \\
+VERB & verb \\
+% & \\
+\hline
+\end{tabular}
+\end{center}
+\caption{POS categories of HunMorph}
+\label{pos_list}
+\end{table}
+
+\section{Encoding inflectional information of nouns and nominal
+categories}
+
+An actual feature set was designed following the above considerations for
+the morphological analysis of Hungarian. 
+
+In the case of a noun four binary features have to be
+specified. They are $\pm PLUR $ (number), $\pm POSS$ (possessor), $\pm ANP$
+(possessed) and $\pm CASE$\footnote{There are two more morphosyntactic
+features that are in fact part of this tree. These are $\pm PERS $ 
+and $\pm POSTP $, which are discussed in sections \ref{pronouns} and
+\ref{postp} respectively.}. All of these can be continued as specified in
+Figure 
+%\ref{noun_tree} 
+% vmiért ez a szám nemjó
+1.~and in Table \ref{noun_infl}. Adjectives and numerals
+can take the same set of inflections as nouns.
+
+The following restrictions apply to the combination of the features:
+
+\begin{itemize}
+\item the $\pm CASE$ feature has to be continued by one of 16 cases,
+\item the $\pm PLUR $, $\pm POSS$ and $\pm ANP$ features can be contitued or
+can appear on their own,
+\item the features $ \pm 1$ and $ \pm 2$ exclude each other,
+\item if the $\pm PLUR $ feature of $\pm POSS$ is positive, then the $\pm
+FAM$ feature cannot be positive,
+\item if the $\pm PLUR $ and the $\pm POSS$ feature are positive
+simultaneously, then the $\pm FAM$ feature cannot be positive.
+
+\end{itemize}
+
+\begin{figure}
+
+\Tree [.NOUN  [.PLUR  FAM  ]  [.POSS 1 2 PLUR ]  [.ANP PLUR ] [.CAS ACC
+DAT INS  ... ] ]
+
+\caption{ The signature of the graphs originating from the root node
+$NOUN $ }
+\end{figure}
+\label{noun_tree}
+
+The morphosyntactic annotation of an inflected word-form is represented by
+a sub-tree of the above tree. The paths originate from the root and they
+encode the positive values of the attribute-value matrix. The
+negative values of the signature are not present in the tree.
+The tree is thus equivalent to an AVS encoding the inflectional
+properties of a word-form, however, it is free of redundancy and can
+be easily linearized by bracketing the nodes of the tree. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|l|l}
+\hline
+
+number:	& singular & ({\em sógor}) & \verb#<-PLUR># \\
+
+ & plural & & \\
+ & & ,,simple" ({\em sógor-ok}) & \verb#<+PLUR<-FAM>># \\
+ & & familiáris birtokos ({\em sógor-ék}) & \verb#<+PLUR<+FAM>># \\
+
+\hline
+
+possessor: & none & & \verb#<-POSS>#\\
+ & overt possessor & & \\
+ & & person: & \\
+ & & 1st ({\em sógor-om}) & \verb#<+POSS<+1><-2>># \\
+ & & 2nd ({\em sógor-od}) & \verb#<+POSS<-1><+2>># \\
+ & & 3rd ({\em sógor-a}) & \verb#<+POSS<-1><-2>># \\
+
+ & & number: & \\
+ & & singular ({\em sógor-ai}) & \verb#<+POSS<-PLUR>># \\
+ & & plural ({\em sógor-uk}) & \verb#<+POSS<+PLUR>># \\
+
+\hline
+
+possessed: & none & & \verb#<-ANP># \\
+ & overt possessed & number & \\
+ & & singular ({\em sógor-é}) & \verb#<+ANP<-PLUR>># \\
+ & & plural ({\em sógor-éi}) & \verb#<+ANP<+PLUR>># \\ 
+
+\hline
+case: & ,,none'' & NOM ( {\em sógor}) & \verb#<-CAS># \\
+
+ & overt, one of 16 cases: & ACC ( {\em sógort})& \verb#<+CAS<+ACC>># \\
+ & & DAT ({\em sógor-nak}) & \verb#<+CAS<+DAT>># \\
+ & & INS ({\em sógor-ral}) & \verb#<+CAS<+INS>># \\
+ & & CAU ({\em sógor-ért}) & \verb#<+CAS<+CAU>># \\
+ & & TRA ({\em sógor-rá}) & \verb#<+CAS<+TRA>># \\
+ & & SUE ({\em sógor-on}) & \verb#<+CAS<+SUE>># \\
+ & & SBL ({\em sógor-ra}) & \verb#<+CAS<+SBL>># \\
+ & & DEL ({\em sógor-ról}) & \verb#<+CAS<+DEL>># \\
+ & & INE ({\em sógor-ban}) & \verb#<+CAS<+INE>># \\
+ & & ELA ({\em sógor-ból}) & \verb#<+CAS<+EAL>># \\
+ & & ILL ({\em sógor-ba}) & \verb#<+CAS<+ILL>># \\
+ & & ADE ({\em sógor-nál}) & \verb#<+CAS<+ADE>># \\
+ & & ALL ({\em sógor-hoz}) & \verb#<+CAS<+ALL>># \\
+ & & ABL ({\em sógor-tól}) & \verb#<+CAS<+ABL>># \\
+ & & TER ({\em sógor-ig}) & \verb#<+CAS<+TER>># \\
+ & & FOR ({\em sógor-ként}) & \verb#<+CAS<+FOR>># \\
+\hline
+
+\end{tabular}
+\end{center}
+\label{noun_infl}
+\caption{Inflectional features of nouns}
+\end{table}
+
+
+
+We present some examples with their full inflectional specification as an
+AVS and the linearization of their (sub)tree as it appears in the analysis
+where the outermost brackets and the \verb|+| signs are omitted and the POS
+category is preceded by a slash and the lemma of the word-form.
+%Az alábbi példák a szóalak teljes inflexiós specifikációját mutatják
+%jegy--érték-struktúrával, valamint a linearizált fagráfos kódolással.
+
+
+%\begin{tabular}{ll}
+
+%\begin{enumerate}%[a.]
+\begin{tabbing}
+abit\=\kill
+{\it kutya} 'dog' \\
+ \> \verb|<NOUN<-PLUR><-POSS><-ANP><-CAS>>|\\
+ \> \verb|kutya/NOUN| \\
+\textit{kutyának} 'for/to the dog' \\
+ \> \verb|<NOUN<-PLUR><-POSS><-ANP><+CAS<+DAT>>>| \\
+ \> \verb|kutya/NOUN<CAS<DAT>>| \\
+{\it kutyáink} 'our dogs' \\
+\> \verb|<NOUN<+PLUR<-FAM>><+POSS<+1><-2><+PLUR>><-ANP><-CAS>>|\\
+\> \verb|kutya/NOUN<PLUR><POSS<1><PLUR>>| \\
+{\it kutyáéi} 'those things of the dog' \\
+\> \verb|<NOUN<-PLUR><-POSS><+ANP<+PLUR>><-CAS>>|\\
+\> \verb|kutya/NOUN<ANP<PLUR>>|\\
+{\it kutyáikéit} 'those things of their dogs.{\sc ACC}' \\
+\>
+\verb|<NOUN<+PLUR<-FAM>><+POSS<-1><-2><+PLUR>><+ANP<+PLUR>><+CAS<+ACC>>>|
+\\
+\> \verb|kutya/NOUN<PLUR><POSS<PLUR>><ANP<PLUR>><CAS<ACC>>|\\
+\end{tabbing}
+
+
+\section{Encoding inflectional information for verbs}
+
+A maximal verbal word-form has to have several properties specified. The
+properties are specified in Figure 
+%\ref{verb_tree}.
+2.\footnote{The tree has been
+cut into two parts for reasons of clarity.} and in Table
+\ref{verb_infl}. The following restrictions apply to the combination of the
+features:
+
+\begin{itemize}
+\item only one of $ \pm SUBJUNC $ and $ \pm COND $ can be positive
+simultaneously,
+\item the feature $ \pm PAST $ can only be positive if both $ \pm SUBJUNC $
+and $ \pm COND $ are negative,
+\item if the feature $ \pm OBJ $ is positive than its daughter feature has to
+positive as well,
+\item the feature $ \pm INF $ can only combine with the feature $ \pm PERSON
+$ $ \pm PLUR$ and $ \pm MODAL $.
+\end{itemize}
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|l|l|l|l|l}
+\hline
+modality: & none & & \verb#< -MODAL># \\
+ & & modal ({\em futhat}) & \verb#< +MODAL># \\
+\hline
+mood: & conjunctive & & \verb#<-SUBJUNC><-COND># \\
+ & & subjunctive/imperative & \\
+ & & (no tense) & \verb#< +SUBJUNC># \\
+ & & conditional & \verb#<+COND># \\
+\hline
+tense: & present & & \verb#<-PAST><-FUT>#\\
+ & past \footnotemark & & \verb#<+PAST># \\
+ & future & & \\
+ & (only for the copula '\textit{van}') & & \verb#<+FUT># \\
+\hline
+number/person: & subject person & & \\
+ & & 1st ({\em futok}) & \verb#<+PERS<+1><-2>># \\
+ & & 1st ({\em várlak}) & \\
+ & & with 2nd person object & \verb#<+PERS<+1<+OBJ<+2><-2>># \\
+ & & 2nd ({\em futsz}) & \verb#<+PERS<-1><+2>># \\
+ & & 3rd ({\em fut}) & \verb#<+PERS<-1><-2>># \\
+ & subject number & & \\
+ & & singular ({\em fut}) & \verb#<-PLUR># \\
+ & & plural ({\em futnak}) & \verb#<+PLUR># \\
+\hline
+ definiteness & indefinite & ( {\em lát}) & \verb#<-DEF># \\
+ & definite & ( {\em látja}) & \verb#<+DEF># \\
+\hline
+\end{tabular}
+\footnotetext{not a single word-form in conditional}
+\end{center}
+\label{verb_infl}
+\caption{Inflectional features of verbs}
+\end{table}
+
+\begin{figure}[hb]
+
+\Tree [.VERB  MODAL SUBJUNC COND PAST INF ]
+
+%\end{figure}
+%\label{verb_tree}
+%\begin{figure}
+
+\Tree [.VERB  PLUR [.PERS  [.1 [.OBJ 2 ] ] 2  ] DEF ]
+
+\vspace{.5cm}
+
+%\caption{ The signature of the graphs originating from the root node
+%\texttt{VERB} (contd.)}
+\caption{ The signature of the graphs originating from the root node
+$VERB $}
+\end{figure}
+\label{verb_tree}
+
+% no PAST if COND or SUBJUNC
+% OBJ 2 only together
+% 
+The annotation of verbs with inflectional suffixes is similar to that of
+nouns. Examples are:
+%Az igei infelexióval ellátott alakok kimeneti kódja hasonló a
+%fõnéviekhez. Két példa a teljes és egyszerûsített kódra:
+
+\begin{tabbing}
+abit\=\kill
+%{\it kutya} \\
+% \> \verb|<+NOUN<-PLUR><-POSS><-ANP><-CAS>>|\\
+% \> \verb|<NOUN>| \\
+{\em lát} 'he sees' \\
+ \> \verb|<VERB<-INF><-MODAL><-PAST><-COND><-SUBJ-IMP><-PERS><-PLUR><-DEF>>|
+\\
+ \> \verb|lát/VERB| \\
+{\em láttál} 'you saw' \\
+ \>
+\verb|<VERB<-INF><-MODAL><+PAST><-COND><-SUBJ-IMP><+PERS<+2>><-PLUR><-DEF>>|
+\\
+ \> \verb|lát/VERB<PAST><PERS<2>>| \\
+%\item
+ {\em láthassátok} 'that you may see it' \\
+ \>
+\verb|<VERB<-INF><+MODAL><-PAST><-COND><+SUBJ-IMP><+PERS<+2>><+PLUR><+DEF>>|
+\\ 
+ \> \verb|lát/VERB<MODAL><SUBJUNC><PERS<2>><PLUR><DEF>| \\
+\end{tabbing}
+
+\section{Derivation and compunding}
+
+\subsection{Representing derivational information}
+
+The above tree structure is not directly suited to decribe derivation.
+However, a derivational suffix can be treated as a relation between two
+lexical entries. This way we can extend the tree structure by representing
+derivation as a directed edge between nodes of inflectional categories
+(roots of trees). Derivation can change or leave intact the POS category of
+a word. The POS category of the resulting word is the output category of
+the last derivational suffix, and the derivated word can undergo further
+inflectional suffixing. Inflected forms, however, cannot be subjected to
+derivation. Consider the following examples:
+
+\begin{tabbing}
+faxolások \=  <[fax]NOUN[l]VERB[gAt]VERB[Ás]NOUN> \= faxing \kill
+{\em fax}   \>   \verb+fax/NOUN+ \> 'fax'\\
+{\em faxol} \>    \verb+fax/NOUN[ACT]/VERB+ \> 'to send a fax' \\
+{\em faxolás} \>   \verb+fax/NOUN[ACT]VERB[GERUND]/NOUN+ \>
+'faxing' \\
+\end{tabbing}
+
+
+%Az eddigi megfontolásokból automatikusan adódik, hogy sem az
+%inflektált alakok, sem a részben specifikált (azaz nem gyökér)
+%``tantumok'' nem vethetõk alá képzésnek.
+%% hogy ez következik-e? 
+
+\subsection{Annotation of compounds}
+
+Compounding is encoded in the annotation by use of a \verb|+| sign. A preverb
+followed by a verb is treated as a compound in this respect, as well as a
+$NOUN$\verb|+|$NOUN$ or an $ADJ$\verb|+|$NOUN$ compound. Compounding is
+similar to derivation in
+that only the last part of the word can be subjected to inflectional
+suffixing and that the output category of the compound is determined by the
+last component. E.g.: 
+
+\begin{tabbing}
+abit\=\kill
+\textit{rákkoktél} 'shrimp coctail' \\
+ \> \verb|rák/NOUN+koktél/NOUN|  \\
+\textit{keresztüllövi} 'he shoots it through' \\
+ \> \verb|keresztül/PREV+lõ/VERB<DEF>| \\
+\end{tabbing}
+
+\section{Pronouns and postpositions}
+
+\subsection{Pronouns} \label{pronouns}
+
+
+In Hungarian a pronoun can substitute for any noun, adjective or numeral,
+as well as for adverbs. The inflection of pronouns, where applicable,
+conforms to the restrictions imposed by the inflectional features
+and the tree-structure discussed above. This enables us to avoid the use of
+'pronoun' as a POS category, and use instead the category which the pronouns
+stand for.
+
+Personal pronouns are nouns, but they are subject to the following
+restrictions: their $POSS$ feature must be negative and their 
+$ PERS $ feature has to be specified. Otherwise, the $ PERS $
+feature can combine with any other features ($ PLUR$, $ANP$, $CAS$). E.g.:
+
+\begin{tabbing}
+abit\=\kill
+{\it ti} 'you.{\sc PL}' \\
+ \> \verb|ti/NOUN<PERS<2>><PLUR>|\\
+{\it titeket} 'you.{\sc PL}.{\sc ACC}' \\
+ \> \verb|ti/NOUN<PERS<2>><PLUR><CAS<ACC>>|\\
+\end{tabbing}
+
+Possessive pronouns are personal pronouns with a possessed feature, thus they
+carry the \verb+ANP+ feature as well. Examples include:
+
+\begin{tabbing}
+abit\=\kill
+{\it tiétek} 'yours' \\
+ \> \verb|ti/NOUN<PERS<2>><PLUR><ANP>| \\
+{\it tieteknek} 'to/for yours' \\
+ \> \verb|ti/NOUN<PERS<2>><PLUR><ANP><CAS<DAT>>| \\
+\end{tabbing}
+
+The anaphoric possessive can be repeated as shown in the next example:
+\begin{tabbing}
+abit\=\kill
+{\it enyémé} 'that of my something' \\
+ \> \verb|én/NOUN<PERS<1>><ANP<ANP>>| \\
+\end{tabbing}
+
+The above properties are shared by other pronouns including demonstrative,
+reflexive, relative, interrogative pronouns. The inflection of adjectival
+and numeral pronouns resemble to that of adjectives and numerals
+respectively, i.e. they are tagged as \verb|ADJ| and \verb|NUM| and take the
+usual inflections.
+
+\subsection{Postpositions} \label{postp}
+
+The function of postpositions is the same as that of case-suffixes, although
+some differences have to be noted. One major difference is that postpositions
+are separate words and, as such, have their own annotation. Furthermore, a
+number of postpositions can take the $PERS $ feature and as their syntactic
+distribution (function) is the same as that of personal pronouns, these 
+inflected postpositons will be annotated as nouns. In this case the
+$POSTP$ feature of the tree also takes the positive value and the name of
+the relevant postposition has to be specified in the annotation as
+well\footnote{The full list of tags that can be dominated by a $POSTP$ tag can
+be seen in Table \ref{postp_list}.}:
+
+\begin{tabbing}
+abit\=\kill
+\textit{mellettetek} 'next to you.{\sc PL}' \\
+ \> \verb|ti/NOUN<POSTP<MELLETT>><PERS<2>><PLUR>| \\
+\end{tabbing}
+
+If the  $POSTP$ feature is positive, the $CAS$, $ANP$ and $FAM$ features have
+to be negative. Uninflected postpositions have the characteristics of a main
+POS category in that they can, for example, undergo derivation. Examples
+are:
+
+\begin{tabbing}
+abit\=\kill
+mellett 'next to' \\
+ \> \verb|mellett/POSTP| \\
+mellettetek next to you.{\sc PL} \\
+ \> \verb|ti/NOUN<POSTP<MELLETT>><PERS<2>><PLUR>| \\
+mellettiekben 'in those that are next to' \\
+ \> \verb|mellett/POSTP[ATTRIB]/ADJ<PLUR><CAS<INE>>| \\
+\end{tabbing}
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{ll}
+ALÁ & (to) under X 	 \\
+ALATT & under X 	 \\
+ALÓL & from under X 	 \\
+ÁLTAL & by X, by way of X 	 \\
+ELÉ & before X, in front of X 	 \\
+ELÉB & before X, in front of X (archaic) \\
+ELLEN & against X 	 \\
+ELLEN & contrary to X 	 \\
+ELÕL & from (in front of) X 	 \\
+ELÕTT & before X, in front of X 	 \\
+FELÉ & towards X 	 \\
+FELETT & above X, over X 	 \\
+FELÕL & from (the direction of) X, as for X 	 \\
+FELÜL & from (above/over) X 	 \\
+FÖLÉ & above X, over X 	 \\
+FÖLIBE & above X, over X (archaic) \\
+FÖLÖTT & above X, over X 	 \\
+FÖLÜL & from (above/over) X 	 \\
+HELYETT & instead of X 	 \\
+IRÁNT & person marking with infixing \\
+KÖRÉ & (to) around X 	 \\
+KÖRÖTT & around X 	 \\
+KÖRÜL & around X 	 \\
+KÖRÜLÖTT & around X 	 \\
+KÖZÉ & to (between many, among many) X 	 \\
+KÖZIBÉ & to (between many, among many) (archaic) \\
+KÖZÖTT & between X, among X 	 \\
+KÖZT & between X, among X 	 \\
+KÖZÜL & out of X, from among X 	 \\
+LÉT & these can have inflected demostrative forms \\
+MELLÉ & to somewhere near X 	 \\
+MELLETT & beside X, by X, (somewhere) near X 	 \\
+MELLÕL & from somewhere near X 	 \\
+MIATT & because of X 	 \\
+MÖGÉ & (to) behind X 	 \\
+MÖGÖTT & behind X 	 \\
+MÖGÜL & from (behind) X 	 \\
+NÉLKÜL & without X 	 \\
+RÉSZ & as concerns X 	 \\
+RÉSZ & for X 	 \\
+SZÁM & for X (recipient) 	 \\
+SZERINT & according to X 	 \\
+UTÁN & after X 	 \\
+
+\end{tabular}
+\end{center}
+\label{postp_list}
+\caption{List of features that can combine with the feature $ PERS$ }
+\end{table}
+
+\section{Derivational morphemes} \label{derivmorpheme}
+
+The full list of derivational morphemes can be seen in Table
+\ref{deriv_all}. The output tag is followed by an (approximate) English name
+of the suffix and an allomorph. The input and output categories of the suffix
+are also indicated.
+
+%\thispagestyle{empty}
+% ahova a tablazat kerul, oda nem kene oldalszam. nemtom hogy kell
+\begin{table}[h]
+\caption{Derivational morphemes}
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Tag & explanation & example & POS \\
+\hline \hline
+FREQ & frequentative & gat  & VERB $\rightarrow$ VERB \\
+MEDIAL & medial & ódik  & VERB $\rightarrow$ VERB \\
+CAUS & causative & tat  & VERB $\rightarrow$ VERB \\
+PART & adverbial participle & va  & VERB $\rightarrow$ ADV \\
+PERF\_PART & perfect adverbial participle & ván  & VERB $\rightarrow$ ADV \\
+IMPERF\_PART & imperfect adjectival participle & ó  & VERB $\rightarrow$ ADJ
+\\
+FUT\_PART & future adjectival participle & andó  & VERB $\rightarrow$ ADJ \\
+PERF\_PART & perfect adjectival participle & ott  & VERB $\rightarrow$ ADJ \\
+NEG\_PERF\_PART & negative perfect adjectival participle & atlan  & VERB
+$\rightarrow$ ADJ \\
+GERUND & gerund & ás  & VERB $\rightarrow$ NOUN \\
+NEG\_MODAL\_PART & negative modal adjectival participle & hatatlan  & VERB
+$\rightarrow$ ADJ \\
+MODAL\_PART & modal adjectival participle & ható  & VERB $\rightarrow$ ADJ \\
+\hline 
+REG\_ACT & regular activity & kodik  & NOUN $\rightarrow$ VERB \\
+ABSTRACT & abstract & ság  & NOUN $\rightarrow$ NOUN \\
+MRS & mrs & né  & NOUN $\rightarrow$ NOUN \\
+DIMIN & diminutive & ka  & NOUN $\rightarrow$ NOUN \\
+%DIGIT & digit & ? & ? \\
+ATTRIB & attributive & s  & NOUN $\rightarrow$ ADJ \\
+MET\_ATTRIB & metonymical attributive & i  & NOUN $\rightarrow$ ADJ \\
+INAL\_ATTRIB & inalienable attributive & jú  & NOUN $\rightarrow$ ADJ \\
+NEG\_ATTRIB & negative attributive & talan  & NOUN $\rightarrow$ ADJ \\
+TYPE1 & type1 & szeru  & NOUN $\rightarrow$ ADJ \\
+TYPE2 & type2 & féle  & NOUN $\rightarrow$ ADJ \\
+TYPE3 & type3 & nemu  & NOUN $\rightarrow$ ADJ \\
+TYPE\_RANK & type rank & rangú  & NOUN $\rightarrow$ ADJ \\
+NEG\_ATTRIB2 & negative attributive2 & mentes  & NOUN $\rightarrow$ ADJ \\
+TYPE4 & type4 & fajta  & NOUN $\rightarrow$ ADJ \\
+LOC\_INE & locative inessive & beli  & NOUN $\rightarrow$ ADJ \\
+QUANTITY & quantity & nyi  & NOUN $\rightarrow$ NUM \\
+ESS\_FOR & essivus formalis & képpen  & NOUN $\rightarrow$ ADV \\
+COM & comitative & stul  & NOUN $\rightarrow$ ADV \\
+PERIOD1 & period1 & anként  & NOUN $\rightarrow$ ADV \\
+PERIOD2 & period2 & onta  & NOUN $\rightarrow$ ADV \\
+ACT & activity & oz  & NOUN $\rightarrow$ VERB \\
+ACT2 & activity2 & ol  & NOUN $\rightarrow$ VERB \\
+\hline 
+COMPAR & comparative & bb  & ADJ $\rightarrow$ ADJ \\
+SUPERLAT & superlative & leg-bb & ADJ  $\rightarrow$ ADJ \\
+SUPERSUPERLAT & supersuperlative & legesleg-bb  & ADJ  $\rightarrow$ ADJ \\
+COMPAR\_DESIGN & comparative designative & bbik & ADJ  $\rightarrow$ ADJ \\
+SUPERLAT\_DESIGN & superlative designative & leg-bbik & ADJ  $\rightarrow$ ADJ
+\\
+SUPERSUPERLAT\_DESIGN & supersuperlative designative & legesleg-bbik  & ADJ 
+$\rightarrow$ ADJ \\
+MANNER & manner & lag  & ADJ $\rightarrow$ ADV \\
+MANNER & manner & an  & ADJ $\rightarrow$ ADV \\
+INTRANS\_RESULT & intransitive resultative & odik/ul  & ADJ $\rightarrow$ VERB
+\\
+TRANS\_RESULT & transitive resultative & ít  & ADJ $\rightarrow$ VERB \\
+\hline
+MULTIPL-ITER & multiplicative iterative & szor  & NUM $\rightarrow$ ADV \\
+MULTIPL-ITER & multiplicative iterative & szoroz  & NUM $\rightarrow$ VERB \\
+ITER\_ATTRIB & iterative attributive & szori  & NUM $\rightarrow$ ADJ \\
+MULTIPL\_ATTRIB & multiplicative attributive & szoros  & NUM $\rightarrow$ ADJ
+\\
+MULTIPL & multiplicative & szorta  & NUM $\rightarrow$ ADV \\
+AGGREG & aggregative & an  & NUM $\rightarrow$ ADV \\
+FRACT & fractional & ad  & NUM $\rightarrow$ NUM \\
+ORD & ordinal & odik  & NUM $\rightarrow$ NUM \\
+DATE & date & odika  & NUM $\rightarrow$ NOUN \\
+\hline
+ATTRIB & attributive & i & POSTP $\rightarrow$ ADJ\\
+\hline
+\end{tabular}
+\end{center}
+\label{deriv_all}
+\end{table}
+
+\section{Comparison with other systems}
+
+The annotation system described in this document is independent of the
+implementation and the technical details of the morphological analysis. As
+such it is especially suitable to act as a common ground when comparing
+different formalisms. 
+
+While designng our system we examined the MSD coding system\cite{erjavec1997},
+which is positional, i.e. it has fixed positions for each morphosyntactic
+property and these positions can be either filled in or left empty. An MSD
+code is not suited to describe derivations, it deals only with inflectional
+suffixing. The mapping between the two systems is ambiguous, but we designed
+our annotation system in a way that it should contain at least as much
+information as the MSD system.
+
+\bibliographystyle{plain}
+\bibliography{all_bib,our_publications}
+
+\end{document}

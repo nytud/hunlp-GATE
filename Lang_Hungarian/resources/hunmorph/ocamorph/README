@@ -1,0 +1,28 @@
+Ocamorph
+
+Morphological analyzer, guesser
+
+An efficient ocaml implementation of the hunmorph word-analysis architecture
+real time layer
+
+Installation
+
+to compile install the software, type
+
+   make 
+   sudo make install
+
+to compile and install documentation, type
+
+   make 
+   sudo make install
+
+Documentation
+
+an as yet rather impoverished manual comes with the package
+more can be found online under mokk.bme.hu/hunmorph
+
+Enjoy!
+
+Viktor Tron
+v.tron@ed.ac.uk

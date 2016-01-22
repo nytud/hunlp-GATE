@@ -1,0 +1,9 @@
+@node Files Index, Options Index, Concept Index, Top
+@unnumbered Files Index
+
+@printindex fi
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 

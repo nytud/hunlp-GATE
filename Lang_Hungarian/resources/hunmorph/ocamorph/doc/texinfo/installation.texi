@@ -1,0 +1,353 @@
+@node Installation, Bootstrapping, About, Top
+@chapter Installation 
+
+@quindex How to install ocamorph?
+
+So you want to install ocamorph (@pxref{Introduction}) from
+the source distribution.  This document describes what and how
+you can install with this distribution.
+
+@quindex What is ocamorph?
+
+@menu
+* Download::                    
+* Supported Platforms::         
+* Prerequisites::               
+* Install::                     
+* Installation in more detail::  
+* Uninstall and Reinstall::     
+* Installed Files and Directories::  
+* Documentation ::              
+@end menu
+
+@node Download, Supported Platforms, Installation, Installation
+@section Download
+
+@quindex Where can I find the sources?
+
+The latest version of the ocamorph source distribution is always available
+from the MOKK LAB website at @value{OCAMORPHWEB} or, if all else fails, by
+mailing to Viktor Trón @value{MYEMAIL}.
+
+@node Supported Platforms, Prerequisites, Download, Installation
+@section Supported Platforms
+
+@quindex What platforms are supported by ocamorph?
+
+Ocamorph can be compiled on any platform for which there
+is an @code{ocaml} compiler (@pxref{Prerequisites}). This includes
+all Linuxes, unices, MacOSX, MS Windows. There are binary packages for 
+these platforms on the MOKK LAB website at @value{OCAMORPHWEB}.
+
+@node Prerequisites, Install, Supported Platforms, Installation
+@section Prerequisites
+
+@quindex What do I need if I want to install ocamorph from source?
+If you install ocamorph from the source package you need to have 
+some other software installed on your system.
+
+@deffn Prerequisite {ocaml}
+@cindex ocaml
+
+Ocamorph is written in the @dfn{ocaml} programming language
+@uref{http://www.ocaml.org/}.  OCaml compilers are available for
+virtually all platforms in various 
+package formats for free from @uref{http://caml.inria.fr/ocaml/distrib.html}.
+
+@quindex What version of ocaml do I need to compile ocamorph?
+
+You will need @command{ocaml} version >=3.08.2 to compile ocamorph.
+@end deffn
+
+@deffn Prerequisite {make} 
+@cindex make
+@cindex OCamlMakefile
+
+Installation is based on @file{OCamlMakefile} (i.e., @code{ocaml-make}) 
+courtesy of Markus Mottl @*
+@uref{http://www.ai.univie.ac.at/~markus/home/ocaml_sources.html#OCamlMakefile}
+@*
+
+@cindex make, GNU
+
+@file{OCamlMakefile} presupposes @samp{GNU make} >= 3.80 but ocamorph
+installation works with earlier versions of GNU make as well. 
+The installation tries to determine the make version automatically and
+uses a workaround Makefile in case you use make <3.80. 
+In case this fails, set the @samp{Makefile} variable @code{OCAMLMAKEFILE} to 
+either @file{OCamlMakefile} (for make >=3.80) or
+@file{make_pre3.80.OCamlMakefile} (for make <3.80).
+
+@end deffn
+
+@deffn Prerequisite {C library}
+@cindex C library
+@quindex What are the prerequisites for the C library version of ocamorph?
+
+If you want to compile and install the C library for ocamorph, you need
+@samp{ar} and @code{ranlib}.
+
+@end deffn
+
+@deffn Prerequisite {Documentation}
+@cindex documentation
+@quindex What are the prerequisites for compiling the documentation of ocamorph?
+
+If you want to compile the documentation for ocamorph, you need 
+the GNU @code{texinfo} software documentation system installed.
+@uref{ftp://ftp.gnu.org/gnu/texinfo/}
+@end deffn
+
+@node Install, Installation in more detail, Prerequisites, Installation
+@section Install
+
+@quindex How to install ocamorph?
+@cindex make, ocamorph installation
+@cindex Makefile, ocamorph installation
+
+ocamorph is installed in the good old way by typing 
+
+@example
+$ make && sudo make install
+@end example 
+
+in the toplevel directory of the unpacked distribution.
+If this works, great! Go ahead to @ref{Bootstrapping}.
+
+@node Installation in more detail, Uninstall and Reinstall, Install, Installation
+@section Advanced Install
+
+The ocamorph distribution is available in a source tarball called @file{ocamorph.tgz}.
+First you have to unpack it by typing  
+
+@example
+$ tar xzvf ocamorph.tgz
+@end example
+
+Then, you enter the toplevel directory of the unpacked distribution with
+@example
+$ cd ocamorph
+@end example
+
+To compile the tools and libraries and documentation, simply type
+
+@example
+$ make
+@end example 
+
+in the toplevel directory of the distribution.
+
+To install it (on what gets installed, @pxref{Installed Files and Directories}), type
+
+@example
+$ make install
+@end example
+
+Well, by default this would want to install things under @file{/usr/local}, so
+you have to have admin permissions. If you are not root but you are in the
+sudoers file with the appropriate rights, you type:
+
+@example 
+$ sudo make install
+@end example
+
+@quindex How can I change the installation target directories?
+
+You can change the location of the installation by changing the install prefix path with 
+
+@example
+$ sudo make @env{INSTALLPREFIX}=@file{/my/favourite/path} install
+@end example
+
+Changing the location of installation for individual install targets
+individually is not recommended but easy-peasy if you have a clue about
+@samp{make} and @file{Makefile}-s. To do this you have to change the relevant
+@file{Makefile}-s in the subdirectories of the distribution.
+@xref{Installed Files and Directories}.
+
+If you have problems, doubleckeck that you have the prerequisites
+(@pxref{Prerequisites}). If you think you followed the instructions
+but still have problems, submit a bug report (@pxref{Submitting a Bug Report}).
+
+If you are upgrading an earlier version of ocamorph, you may want to
+@i{uninstall} the earlier one first (@pxref{Uninstall and Reinstall}).
+
+If you do not want to compile and install the ocamorph C library, then 
+use 
+
+@example
+$ make CLIB= 
+$ make CLIB= install
+@end example
+
+you can also compile any of the ocaml subprojects separately by setting the
+@env{SUBPROJS} variable:
+
+@example
+$ make SUBPROJS="ocamorphlib" CLIB=
+@end example
+
+The subprojects are called: @samp{ocamorph_debug ocamorphlib ocamorph_noassert}
+If you compile subprojects individually than you have to cleanup after
+the projects, cause intermediate targets are incompatible.
+
+@example
+$ make SUBPROJS="ocamorphlib" cleanup
+@end example
+
+
+@node Uninstall and Reinstall, Installed Files and Directories, Installation in more detail, Installation
+@section Uninstall and Reinstall
+
+@quindex How do I uninstall ocamorph?
+@quindex How do I upgrade ocamorph?
+@quindex How do I reinstall ocamorph?
+
+The install prefix is remembered in the source distribution in the file
+@file{install_prefix}. So after you @code{cd} into the toplevel
+directory of the distribution, you can uninstall ocamorph by typing
+
+@fiindex install_prefix
+
+@example
+$ make uninstall
+@end example
+
+You can reinstall ocamorph with
+
+@example
+$ make reinstall 
+@end example
+
+at any time if you make modifications to the code or compile options.
+
+After installation you can delete the whole source and build tree,
+however, in this case the install location will not be remembered so
+uninstall and reinstall are not available.
+
+@c ref to changing keywords, maybe
+
+@quotation
+@strong{Warning:}
+Note that if you fiddle with changing the location of individual install targets, uninstall
+and resinstall will not work correctly.
+@end quotation
+
+
+@node Installed Files and Directories, Documentation  , Uninstall and Reinstall, Installation
+@section Installed Files and Directories
+
+@quindex What files and directories are installed when I install ocamorph?
+
+The following files and directories are installed, paths are relative to
+the @i{install prefix} (@pxref{Install}):
+
+@itemize
+
+@item
+@file{bin/ocamorph_debug}
+@fiindex ocamorph_debug
+
+is the executable which can be run on the command line (@pxref{Command-line
+Control}) and can be used for debugging.
+
+@item
+@file{bin/ocamorph_debug}
+@fiindex ocamorph_noassert
+
+is the executable which can be run on the command line (@pxref{Command-line
+Control}) and cannot be used for debugging. Otherwise it has the same
+functionality as @file{ocamorph_debug}.
+
+@item
+@file{bin/ocamorph}
+@fiindex ocamorph
+
+the symbolic link to @file{ocamorph_noassert} and can be run on the command line (@pxref{Command-line
+Control}).
+
+@item
+@file{lib/ocamorph} 
+@fiindex ocamorph (library directory, @file{lib/ocamorph})
+@cpindex ocamorph, library
+
+is the directrory in which the ocamorph library components are
+installed.
+
+@item
+@file{lib/ocamorph/ocamorph.cmxa} 
+@fiindex ocamorph.cmxa
+@cpindex ocamorph, ocaml native code library
+
+is the ocamorph ocaml native code library.
+
+
+@item
+@file{lib/ocamorph/ocamorph.cmi} 
+@fiindex ocamorph.cmi
+@cpindex ocamorph, ocaml native code include
+
+is the ocamorph ocaml native code library.
+
+
+@item
+@file{lib/ocamorph/libocamorph.a} 
+@fiindex libocamorph.a
+@cpindex ocamorph, static C library
+
+is the ocamorph static C library. See @c @ref{C library}.
+
+@item
+@file{lib/ocamorph/ocamorph.h} 
+@fiindex ocamorph.h
+@cpindex ocamorph, C header
+
+is the C header file for ocamorph C library.
+
+@item
+@file{share/doc/ocamorph/}
+@cpindex documentation 
+@fiindex ocamorph (documentation directory, @file{share/doc/ocamorph})
+
+is a directory containing the ocamorph documentation. 
+Subdirectories indicate the various document formats (see @ref{Documentation})
+most probably including a replica of this document.
+
+@item
+@file{ocamorph.1}
+@cpindex manual, man page
+@fiindex ocamorph.1
+
+is the ocamorph man page, that describes the command-line use of ocamorph (see
+@pxref{Command-line Control}). 
+
+@end itemize
+
+@node Documentation ,  , Installed Files and Directories, Installation
+@section Documentation 
+
+Ocamorph documentation is available in various formats. 
+You can compile and install them from the source distribution by
+changing to the doc directory and typing @code{make}.
+
+Available formats are
+
+@itemize
+@item info 
+texinfo pages
+@item plaintext 
+@item html 
+big bundle of html
+@item bightml
+one big file
+@item dvi 
+@item ps 
+@item pdf 
+compiling a pdf is done with @code{texi2pdf} (which is a prerequisite
+for pdf generation)
+@end itemize
+
+@c Local Variables: 
+@c mode: texinfo
+@c TeX-master: "ocamorph.texinfo"
+@c End: 
