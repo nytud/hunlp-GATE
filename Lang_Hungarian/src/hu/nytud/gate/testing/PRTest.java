@@ -34,6 +34,7 @@ public class PRTest {
 	public static Document createDoc() throws ResourceInstantiationException {
 		// Create a new GATE Document LR with the following text:
 		String sentstr = "A nagy kutya gyorsan fut. Én küldtem árvíztűrő nyélen.";
+		//String sentstr = "The President is in Washington, DC. He is safe.";
 		return Factory.newDocument(sentstr);		
 	}
 	
@@ -256,12 +257,13 @@ public class PRTest {
 	public static void main(String[] args) {
 		System.out.println("Hello, test");
 		PRTest t = new PRTest();
-		//t.testMLTokPOS();
+		//t.testANNIE();
+		t.testMLTokPOS();
 		//t.testFeats();
 		//t.testMLMoraAna();
 		//t.testMLKRMoraAna();
 		//t.testMLTokPOSParse();
-		t.testANNIE();
+
 	}
 	
 }

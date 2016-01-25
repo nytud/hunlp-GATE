@@ -1,10 +1,10 @@
 # GATE installation directory
-export GATE_HOME=/home/$(USER)/GATE_Developer_8.0
+export GATE_HOME=/home/$(USER)/GATE_Developer
 
 # userid on corpus.nytud.hu used for uploading, see target "upload"
 CORPUSUSER=your_user_name
 
-.PHONY: build upload
+.PHONY: build upload local_install runtest
 
 # Build the GATE CREOLE plugin "Lang_Hungarian" in ./Lang_Hungarian/
 build:
@@ -45,6 +45,6 @@ local_install:
 
 
 # Run command-line test
-RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
+RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
 runtest:
 	java -cp $(RTCP) hu.nytud.gate.testing.PRTest

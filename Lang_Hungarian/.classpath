@@ -9,6 +9,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="resources/magyarlanc/magyarlanc-2.0.1.jar"/>
-	<classpathentry kind="lib" path="resources/gate_plugins/Tagger_Framework/TaggerFramework.jar"/>
+	<classpathentry kind="lib" path="resources/gate_plugins/Tagger_Framework/TaggerFramework.jar" sourcepath="resources/gate_plugins/Tagger_Framework/src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
