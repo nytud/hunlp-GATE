@@ -49,9 +49,4 @@ public class HunPosCommandLine extends GenericTagger {
 		super.setTaggerDir(taggerDir);
 	}
 	
-	@CreoleParameter(defaultValue = "../../hu_szeged_kr.model")
-	public void setTaggerFlags(List<String> taggerFlags) {
-	    super.setTaggerFlags(taggerFlags);
-	}	
-	
 }
