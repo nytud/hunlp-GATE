@@ -43,6 +43,10 @@ local_install:
 	echo INSTALLATION SUCCESSFUL
 # TODO: delete (don't copy) all src files under resources
 
+# Create symbolic link to ./Lang_Hungarian in gate user plugin directory
+link_devdir:
+	rm -rf "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian"
+	ln -s `pwd`/Lang_Hungarian $(GATE_USER_PLUGINS_DIR)/Lang_Hungarian
 
 # Run command-line test
 RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
