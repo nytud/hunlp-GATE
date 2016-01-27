@@ -70,7 +70,7 @@ following command:
 make local_install GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
 ```
 
-##Udating the plugin repository
+##Updating the plugin repository
 
 To update the plugin repository  hosted at `http://corpus.nytud.hu/GATE`,
 run `make upload` specifying your user name on `corpus.nytud.hu`:
