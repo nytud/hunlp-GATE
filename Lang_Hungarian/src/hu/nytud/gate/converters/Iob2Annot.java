@@ -13,6 +13,9 @@ import java.util.*;
  *  IOB (inside/outside/begin) code to regular annotation converter.
  *  Takes IOB code which is present on some annot (e.g. Tokens),
  *  and creates new annotations based on the info encoded in IOB codes.
+ *  Handles IOB, IOBE (+end) and IOBE1 (+end/single) code systems.
+ *  Only the first char of the IOB code is taken into account,
+ *  if it is not "I", "B", "E" or "1", it is considered as "O".
  *  @author Bálint Sass
  */ 
 @CreoleResource(
@@ -65,7 +68,8 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
     try {
       // -----
       // convert IOB to regular annot begin
-      // simple functionality: codes can be iCode, oCode or bCode
+      // simple functionality: codes can be
+      // iCode, oCode or bCode (and possibly eCode or sCode)
   
       // Get token annotations in document order
       // If there is no 'inputIobAnnotType' annot no new annot will be created
@@ -103,11 +107,12 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
           iobCode = "";
         }
   
-        if ( iobCode.equals( bCode ) ) {
+        // XXX ez elég hatékony így a 2db startsWith() -del?
+        if ( iobCode.startsWith( bCode ) || iobCode.startsWith( sCode ) ) {
           start = a.getStartNode().getOffset();
           end = a.getEndNode().getOffset();
           neChildIds += a.getId().toString();
-        } else if ( iobCode.equals( iCode ) ) {
+        } else if ( iobCode.startsWith( iCode ) || iobCode.startsWith( eCode ) ) {
           end = a.getEndNode().getOffset();
           neChildIds += "," + a.getId().toString();
         } else { // if oCode or anything else
@@ -145,7 +150,7 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
     String content = doc.getContent( start, end ).toString();
 
     FeatureMap fm = gate.Factory.newFeatureMap();
-    fm.put( "text", "[" + content + "]" );
+    fm.put( "text", content );
     fm.put( "childIds", "[" + neChildIds + "]" );
 
     outputAs.add( start, end, outputAnnotationName, fm);
@@ -244,6 +249,32 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
     return bCode;
   }
   private String bCode;
+
+  @RunTime
+  @CreoleParameter(
+    comment="Possible 'End' code value for IOB code",
+    defaultValue="E"
+  )
+  public void setECode( String s ) {
+    this.eCode = s.trim().length() == 0 ? "E" : s;
+  }
+  public String getECode() {
+    return eCode;
+  }
+  private String eCode;
+
+  @RunTime
+  @CreoleParameter(
+    comment="Possible 'Single' code value for IOB code",
+    defaultValue="1"
+  )
+  public void setSCode( String s ) {
+    this.sCode = s.trim().length() == 0 ? "1" : s;
+  }
+  public String getSCode() {
+    return sCode;
+  }
+  private String sCode;
 
   @RunTime
   @CreoleParameter(
