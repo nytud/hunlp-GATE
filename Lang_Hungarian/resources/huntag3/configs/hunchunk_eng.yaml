@@ -1,0 +1,72 @@
+#!/bin/sh
+# -*- coding: utf-8, vim: expandtab:ts=4 -*-
+# The origin of the idea of 'runable yaml': https://gist.github.com/corvax19/5661251
+python3 -c '
+import yaml
+import sys
+
+try:
+    yaml.load(sys.stdin)
+
+except yaml.YAMLError as exc:
+    if hasattr(exc, "problem_mark"):
+        shifting = 20  # Line no. where "%YAML 1.1" is! (Numbering starts from 0!)
+        exc.problem_mark.line += shifting
+        exc.context_mark.line += shifting
+    print("Syntax error: {0}".format(exc))
+    sys.exit(1)
+
+print("Syntax OK!")
+'<<EOF
+%YAML 1.1
+---
+default:
+ cutoff: 1  #  1 if not set
+ radius: 5  # -1 if not set
+
+features:
+ - # Kr code patterns of a sentence (extended version) EXTENSIONS DISABLED!
+    name: krpatt
+    type: sentence
+    actionName: krPatts
+    fields: 1
+    radius: 0  # rad is not radius!
+    options:
+        rad: 3  # The old config is misleading!
+        minLength: 2
+        maxLength: 99
+        lang: en
+        since_dt: 0
+        CASDiff: 0
+        POSSConnect: 0
+        fullKr: 0
+
+
+ - # Checks for underscore (_) character in token
+    name: form
+    type: token
+    actionName: getForm
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: pos
+    type: token
+    actionName: getForm
+    fields: 1
+
+ - # N-grams of the letters in a token
+    name: ngr
+    type: token
+    actionName: ngrams
+    fields: 0
+    options:
+        n: 3
+
+ - # The first letter of the BNC tag which is roughly the main POS tag (old posStart)
+    name: posstart
+    type: token
+    actionName: firstChar
+    fields: 1
+
+...
+EOF
