@@ -1,0 +1,273 @@
+#!/bin/sh
+# -*- coding: utf-8, vim: expandtab:ts=4 -*-
+# The origin of the idea of 'runable yaml': https://gist.github.com/corvax19/5661251
+python3 -c '
+import yaml
+import sys
+
+try:
+    yaml.load(sys.stdin)
+
+except yaml.YAMLError as exc:
+    if hasattr(exc, "problem_mark"):
+        shifting = 20  # Line no. where "%YAML 1.1" is! (Numbering starts from 0!)
+        exc.problem_mark.line += shifting
+        exc.context_mark.line += shifting
+    print("Syntax error: {0}".format(exc))
+    sys.exit(1)
+
+print("Syntax OK!")
+'<<EOF
+%YAML 1.1
+---
+default:
+ cutoff: 1  #  1 if not set
+ radius: 2  # -1 if not set
+
+features:
+ - # Checks for underscore (_) character in token
+    name: form
+    type: token
+    actionName: getForm
+    fields: 0
+
+ - # N-grams of the letters in a token
+    name: ngr
+    type: token
+    actionName: ngrams
+    fields: 0
+    options:
+        n: 2
+
+ - # The n caracter long prefix ot a token
+    name: prefix
+    type: token
+    actionName: prefix
+    fields: 0
+    options:
+        n: 6
+
+ - # The n caracter long suffix ot a token
+    name: prefix
+    type: token
+    actionName: prefix
+    fields: 0
+    options:
+        n: 4
+
+ - # Does it have capital letter in it anywhere?
+    name: hascap
+    type: token
+    actionName: hasCapOperator
+    fields: 0
+
+ - # Only first letter is capital?
+    name: capitalized
+    type: token
+    actionName: isCapOperator
+    fields: 0
+
+ - # Does it have all letter capital?
+    name: allcaps
+    type: token
+    actionName: isAllcapsOperator
+    fields: 0
+
+ - # Is the token Camel case?
+    name: camel
+    type: token
+    actionName: isCamelOperator
+    fields: 0
+
+ - # Token is three uppercase letters?
+    name: threecaps
+    type: token
+    actionName: threeCaps
+    fields: 0
+
+ - # Token is an uppercase letter followed by a period (from Bikel et al. (1999))
+    name: capperiod
+    type: token
+    actionName: capPeriodOperator
+    fields: 0
+
+ - # Token pattern: lowercase -> 'a', uppercase -> 'A', other -> '_'
+    name: longpatt
+    type: token
+    actionName: longPattern
+    fields: 0
+
+ - # Token pattern: lowercase -> 'a', uppercase -> 'A', other -> '_', merge neighbouring characters if they are same
+    name: shortpatt
+    type: token
+    actionName: shortPattern
+    fields: 0
+
+ - # Token is number
+    name: isdigit
+    type: token
+    actionName: isDigitOperator
+    fields: 0
+
+ - # Token is one digit (from Zhou and Su (2002))
+    name: onedigit
+    type: token
+    actionName: oneDigitNumOperator
+    fields: 0
+    
+ - # Token is two digit (from Bikel et al. (1999))
+    name: twodigit
+    type: token
+    actionName: twoDigitNumOperator
+    fields: 0
+    
+ - # Token is four digit
+    name: fourdigit
+    type: token
+    actionName: fourDigitNumOperator
+    fields: 0
+
+ - # Token starts with number
+    name: startswithnumber
+    type: token
+    actionName: startsWithNumberOperator
+    fields: 0
+
+ - # Token is three uppercase letters?
+    name: digitslash
+    type: token
+    actionName: containsDigitAndSlashOperator
+    fields: 0
+
+ - # Token is three uppercase letters?
+    name: digitdash
+    type: token
+    actionName: containsDigitAndDashOperator
+    fields: 0
+
+ - # Token contains digit and comma (. or ,) (from Bikel et al. (1999))
+    name: digitcomma
+    type: token
+    actionName: containsDigitAndCommaOperator
+    fields: 0
+
+ - # Does the token contain number?
+    name: hasnumber
+    type: token
+    actionName: hasNumberOperator
+    fields: 0
+
+ - # Token contains year decade (from Zhou and Su (2002))
+    name: yeardecade
+    type: token
+    actionName: yearDecadeOperator
+    fields: 0
+
+ - # Does the token contain dash?
+    name: hasdash
+    type: token
+    actionName: hasDashOperator
+    fields: 0
+
+ - # Does the token contain period?
+    name: hasperiod
+    type: token
+    actionName: hasPeriodOperator
+    fields: 0
+
+ - # Token is punctuation
+    name: punct
+    type: token
+    actionName: isPunctuationOperator
+    fields: 0
+
+ - # Get POS from BNC
+    name: pos
+    type: token
+    actionName: chunkTag
+    fields: 1
+
+ - # Description: XXX Fill me
+    name: posstart
+    type: token
+    actionName: firstChar
+    fields: 1
+
+ - # Kr code patterns of a sentence (extended version) EXTENSIONS DISABLED!
+    name: krpatt
+    type: sentence
+    actionName: krPatts
+    fields: 1
+    radius: 0  # rad is not radius!
+    options:
+        rad: 3  # The old config is misleading!
+        minLength: 2
+        maxLength: 99
+        lang: hu
+        since_dt: 0
+        CASDiff: 0
+        POSSConnect: 0
+        fullKr: 0
+
+ - # Is sentence begin?
+    name: sentstart
+    type: sentence
+    actionName: newSentenceStart
+    fields: 0
+
+ - # Is sentence end?
+    name: sentend
+    type: sentence
+    actionName: newSentenceEnd
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: loc
+    type: lex
+    actionName: hunner/freebase_lists/loc/loc.sorted
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: org
+    type: lex
+    actionName: hunner/freebase_lists/org/org.sorted
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: pers
+    type: lex
+    actionName: hunner/freebase_lists/pers/pers.sorted
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: misc
+    type: lex
+    actionName: hunner/freebase_lists/misc/misc.sorted
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: trainloc
+    type: lex
+    actionName: hunner/enwiki/fromTrainLists/loc.fromtrain.list
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: trainorg
+    type: lex
+    actionName: hunner/enwiki/fromTrainLists/org.fromtrain.list
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: trainpers
+    type: lex
+    actionName: hunner/enwiki/fromTrainLists/per.fromtrain.list
+    fields: 0
+
+ - # Description: XXX Fill me!
+    name: trainmisc
+    type: lex
+    actionName: hunner/enwiki/fromTrainLists/misc.fromtrain.list
+    fields: 0
+
+...
+EOF

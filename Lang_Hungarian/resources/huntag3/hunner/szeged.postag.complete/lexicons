@@ -1,0 +1,18 @@
+firstname   = ../lex/keresztesbecenev.szaki.kornai.matav.lex
+country     = ../lex/orszagnev.kornai.lex
+city        = ../lex/telepules.matav.ksh.lex
+street      = ../lex/utcanev.matav.lex
+streetsuff  = ../lex/utcaszuffix.matav.lex
+familyname  = ../lex/vezeteknev.szaki.matav.lex
+multi       = ../lex/multi.szeged.lex
+corp        = ../lex/cegnev.eszter.lex
+corpsuff    = ../lex/cegszuffix.lex
+misc	    = ../lex/market.misc.lex	
+#misc        = ../lex/misc.devel.lex
+#
+# Comment these out these if you don't want
+# to use lexicons built from the trainset:
+#trainorg    = org.fromtraincorpus.lex
+#trainloc    = loc.fromtraincorpus.lex
+#trainper    = per.fromtraincorpus.lex
+#trainmisc   = misc.fromtraincorpus.lex
