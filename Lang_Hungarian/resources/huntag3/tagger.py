@@ -6,7 +6,7 @@ import os
 from sklearn.externals import joblib
 from scipy.sparse import csr_matrix
 
-from tools import sentenceIterator, featurizeSentence
+from tools import sentenceIterator, featurizeSentence, BookKeeper
 
 
 class Tagger:
@@ -15,9 +15,9 @@ class Tagger:
         self._dataSizes = options['dataSizes']
         self._transProbs = transModel
         print('loading observation model...', end='', file=sys.stderr, flush=True)
-        self._model, self._featCounter, self._labelCounter = joblib.load('{0}'.format(options['modelFileName']))
-        self._labelCounter.makeInvertedDict()
-        self._featCounter.makeInvertedDict()
+        self._model = joblib.load('{0}'.format(options['modelFileName']))
+        self._featCounter = BookKeeper(options['featCounterFileName'])
+        self._labelCounter = BookKeeper(options['labelCounterFileName'])
         print('done', file=sys.stderr, flush=True)
 
     def printWeights(self, n=100, outputStream=sys.stdout):

@@ -178,6 +178,14 @@ def parseArgs():
                         help='order of the transition model',
                         metavar='EXT')
 
+    parser.add_argument('--feat-num-ext', dest='featureNumbersExt', default='.featureNumbers.gz',
+                        help='extension of feature numbers file to be read/written',
+                        metavar='EXT')
+
+    parser.add_argument('--label-num-ext', dest='labelNumbersExt', default='.labelNumbers.gz',
+                        help='extension of label numbers file to be read/written',
+                        metavar='EXT')
+
     parser.add_argument('-l', '--language-model-weight', dest='lmw',
                         type=float, default=1,
                         help='set relative weight of the language model to L',
@@ -244,6 +252,8 @@ def main():
         sys.exit(1)
     options.modelFileName = '{0}{1}'.format(options.modelName, options.modelExt)
     options.transModelFileName = '{0}{1}'.format(options.modelName, options.transModelExt)
+    options.featCounterFileName = '{0}{1}'.format(options.modelName, options.featureNumbersExt)
+    options.labelCounterFileName = '{0}{1}'.format(options.modelName, options.labelNumbersExt)
 
     # Data sizes across the program (training and tagging). Check manuals for other sizes
     options.dataSizes = {'rows': 'Q', 'rowsNP': np.uint64,       # Really big...

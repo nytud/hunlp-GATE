@@ -761,6 +761,8 @@ def sentence_krPatts(sen, fields, options):
     """Return KR code patterns
     G. Recski, D. Varga: Magyar főnévi csoportok azonosítása In: Általános Nyelvészeti Tanulmányok 24. 2012.
     http://people.mokk.bme.hu/~recski/pub/huntag_anyt.pdf Page 6
+    G. Recski MA thesis: NP chunking in Hungarian
+    http://people.mokk.bme.hu/~recski/pub/np_thesis.pdf Page 21
 
     Args:
        sen (list): List of tokens in the sentence

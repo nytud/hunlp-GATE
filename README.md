@@ -31,7 +31,11 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 ###Method 2 (using a clone of this repository):
 
 1. Clone this git repository to your machine.
-2. See `Lang_Hungarian/resources/magyarlanc/README.md` for obtaining required binaries for Magyarlanc.
+2. Obtain 3rd party tools not distributed in this repository:
+
+* See `Lang_Hungarian/resources/magyarlanc/README.md` for obtaining required binaries for Magyarlanc.
+* See `Lang_Hungarian/resources/huntag3/models/README.md` for obtaining trained models for Huntag3.
+
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
    If it's not there, check if your user plugin directory is set (see steps 2-4. above).
