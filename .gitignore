@@ -59,3 +59,5 @@ local.properties
 
 # Recommenders used by Eclipse (added by MM)
 .recommenders/
+
+__pycache__
