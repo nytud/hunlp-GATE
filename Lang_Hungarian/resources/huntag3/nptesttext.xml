@@ -1,0 +1,1905 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">created from String</Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes><Node id="0"/>Hogyan<Node id="6"/> <Node id="7"/>kezeljen<Node id="15"/> <Node id="16"/>az<Node id="18"/> <Node id="19"/>Európai<Node id="26"/> <Node id="27"/>Unió<Node id="31"/> <Node id="32"/>egy<Node id="35"/> <Node id="36"/>államot<Node id="43"/>,<Node id="44"/> <Node id="45"/>amelyik<Node id="52"/>,<Node id="53"/> <Node id="54"/>ha<Node id="56"/> <Node id="57"/>geopolitikai<Node id="69"/> <Node id="70"/>érdeke<Node id="76"/> <Node id="77"/>úgy<Node id="80"/> <Node id="81"/>kívánja<Node id="88"/>,<Node id="89"/> <Node id="90"/>bekebelezi<Node id="100"/> <Node id="101"/>más<Node id="104"/> <Node id="105"/>országok<Node id="113"/> <Node id="114"/>területeit<Node id="124"/>,<Node id="125"/> <Node id="126"/>beavatkozik<Node id="137"/> <Node id="138"/>a<Node id="139"/> <Node id="140"/>szíriai<Node id="147"/> <Node id="148"/>háborúba<Node id="156"/> <Node id="157"/>a<Node id="158"/> <Node id="159"/>diktátor<Node id="167"/> <Node id="168"/>oldalán<Node id="175"/>,<Node id="176"/> <Node id="177"/>aki<Node id="180"/> <Node id="181"/>a<Node id="182"/> <Node id="183"/>nyugati<Node id="190"/> <Node id="191"/>világban<Node id="199"/> <Node id="200"/>nem<Node id="203"/> <Node id="204"/>szalonképes<Node id="215"/>,<Node id="216"/> <Node id="217"/>kormányokat<Node id="228"/> <Node id="229"/>zsarol<Node id="235"/> <Node id="236"/>a<Node id="237"/> <Node id="238"/>hatalmas<Node id="246"/> <Node id="247"/>gázkészletével<Node id="261"/>,<Node id="262"/> <Node id="263"/>viszont<Node id="270"/> <Node id="271"/>nélküle<Node id="278"/> <Node id="279"/>lehetetlen<Node id="289"/> <Node id="290"/>megoldani<Node id="299"/>,<Node id="300"/> <Node id="301"/>hogy<Node id="305"/> <Node id="306"/>ne<Node id="308"/> <Node id="309"/>maradjunk<Node id="318"/> <Node id="319"/>energia<Node id="326"/> <Node id="327"/>nélkül<Node id="333"/>?<Node id="334"/>
+
+<Node id="336"/>A<Node id="337"/> <Node id="338"/>Brüsszelben<Node id="349"/> <Node id="350"/>körvonalazódó<Node id="363"/> <Node id="364"/>megoldás<Node id="372"/>:<Node id="373"/> <Node id="374"/>a<Node id="375"/> <Node id="376"/>média<Node id="381"/> <Node id="382"/>nyilvánossága<Node id="395"/> <Node id="396"/>előtt<Node id="401"/> <Node id="402"/>hangzatos<Node id="411"/> <Node id="412"/>kijelentéseket<Node id="426"/> <Node id="427"/>tesznek<Node id="434"/>,<Node id="435"/> <Node id="436"/>hogy<Node id="440"/> <Node id="441"/>az<Node id="443"/> <Node id="444"/>orosz<Node id="449"/> <Node id="450"/>gázipari<Node id="458"/> <Node id="459"/>vállalatnak<Node id="470"/>,<Node id="471"/> <Node id="472"/>a<Node id="473"/> <Node id="474"/>Gazpromnak<Node id="484"/> <Node id="485"/>be<Node id="487"/> <Node id="488"/>kell<Node id="492"/> <Node id="493"/>tartania<Node id="501"/> <Node id="502"/>az<Node id="504"/> <Node id="505"/>európai<Node id="512"/> <Node id="513"/>versenyfeltételeket<Node id="532"/>,<Node id="533"/> <Node id="534"/>az<Node id="536"/> <Node id="537"/>ellen<Node id="542"/> <Node id="543"/>viszont<Node id="550"/> <Node id="551"/>csak<Node id="555"/> <Node id="556"/>dünnyögve<Node id="565"/> <Node id="566"/>tiltakoznak<Node id="577"/>,<Node id="578"/> <Node id="579"/>hogy<Node id="583"/> <Node id="584"/>a<Node id="585"/> <Node id="586"/>háttérben<Node id="595"/> <Node id="596"/>létrejöjjön<Node id="607"/> <Node id="608"/>egy<Node id="611"/> <Node id="612"/>orosz-német-francia-holland-osztrák<Node id="647"/> <Node id="648"/>beruházás<Node id="657"/>,<Node id="658"/> <Node id="659"/>amely<Node id="664"/> <Node id="665"/>Oroszországot<Node id="678"/> <Node id="679"/>bebetonozza<Node id="690"/> <Node id="691"/>a<Node id="692"/> <Node id="693"/>zsíros<Node id="699"/> <Node id="700"/>nyugati<Node id="707"/> <Node id="708"/>gázpiacra<Node id="717"/>.<Node id="718"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+<Annotation Id="31" Type="Sentence" StartNode="0" EndNode="334">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">334</Value>
+</Feature>
+</Annotation>
+<Annotation Id="32" Type="Token" StartNode="0" EndNode="6">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hogyan</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Hogyan</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rq</Value>
+</Feature>
+</Annotation>
+<Annotation Id="33" Type="Token" StartNode="7" EndNode="15">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">kezel</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kezeljen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmmp3s---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="34" Type="Token" StartNode="16" EndNode="18">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="35" Type="Token" StartNode="19" EndNode="26">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">Európai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Európai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="36" Type="Token" StartNode="27" EndNode="31">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">Unió</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Unió</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="37" Type="Token" StartNode="32" EndNode="35">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">egy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">egy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Ti</Value>
+</Feature>
+</Annotation>
+<Annotation Id="38" Type="Token" StartNode="36" EndNode="43">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">állam</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">államot</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sa</Value>
+</Feature>
+</Annotation>
+<Annotation Id="39" Type="Token" StartNode="43" EndNode="44">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="40" Type="Token" StartNode="45" EndNode="52">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">amelyik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">amelyik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pr3-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="41" Type="Token" StartNode="52" EndNode="53">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="42" Type="Token" StartNode="54" EndNode="56">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">ha</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ha</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Cssp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="43" Type="Token" StartNode="57" EndNode="69">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">geopolitikai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">geopolitikai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="44" Type="Token" StartNode="70" EndNode="76">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">érdek</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">érdeke</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn---s3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="45" Type="Token" StartNode="77" EndNode="80">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">úgy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">úgy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rx</Value>
+</Feature>
+</Annotation>
+<Annotation Id="46" Type="Token" StartNode="81" EndNode="88">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">kíván</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kívánja</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---y</Value>
+</Feature>
+</Annotation>
+<Annotation Id="47" Type="Token" StartNode="88" EndNode="89">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="48" Type="Token" StartNode="90" EndNode="100">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">bekebelez</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bekebelezi</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---y</Value>
+</Feature>
+</Annotation>
+<Annotation Id="49" Type="Token" StartNode="101" EndNode="104">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">más</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">más</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pi3-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="50" Type="Token" StartNode="105" EndNode="113">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">ország</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">országok</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-pn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="51" Type="Token" StartNode="114" EndNode="124">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">terület</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">területeit</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-pa---s3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="52" Type="Token" StartNode="124" EndNode="125">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="53" Type="Token" StartNode="126" EndNode="137">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">beavatkozik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">beavatkozik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="54" Type="Token" StartNode="138" EndNode="139">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="55" Type="Token" StartNode="140" EndNode="147">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">szíriai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">szíriai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="56" Type="Token" StartNode="148" EndNode="156">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">háború</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">háborúba</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sx</Value>
+</Feature>
+</Annotation>
+<Annotation Id="57" Type="Token" StartNode="157" EndNode="158">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="58" Type="Token" StartNode="159" EndNode="167">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">diktátor</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">diktátor</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="59" Type="Token" StartNode="168" EndNode="175">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">oldal</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">oldalán</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sp---s3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="60" Type="Token" StartNode="175" EndNode="176">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="61" Type="Token" StartNode="177" EndNode="180">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">aki</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">aki</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pr3-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="62" Type="Token" StartNode="181" EndNode="182">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="63" Type="Token" StartNode="183" EndNode="190">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nyugati</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nyugati</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="64" Type="Token" StartNode="191" EndNode="199">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">világ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">világban</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-s2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="65" Type="Token" StartNode="200" EndNode="203">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nem</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nem</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rm</Value>
+</Feature>
+</Annotation>
+<Annotation Id="66" Type="Token" StartNode="204" EndNode="215">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">szalonképes</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">szalonképes</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="67" Type="Token" StartNode="215" EndNode="216">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="68" Type="Token" StartNode="217" EndNode="228">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">kormány</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kormányokat</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-pa</Value>
+</Feature>
+</Annotation>
+<Annotation Id="69" Type="Token" StartNode="229" EndNode="235">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">zsarol</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">zsarol</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="70" Type="Token" StartNode="236" EndNode="237">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="71" Type="Token" StartNode="238" EndNode="246">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hatalmas</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hatalmas</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="72" Type="Token" StartNode="247" EndNode="261">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">gázkészlet</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">gázkészletével</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nc-si---s3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="73" Type="Token" StartNode="261" EndNode="262">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="74" Type="Token" StartNode="263" EndNode="270">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">viszont</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">viszont</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Ccsp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="75" Type="Token" StartNode="271" EndNode="278">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nélküle</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nélküle</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pe</Value>
+</Feature>
+</Annotation>
+<Annotation Id="76" Type="Token" StartNode="279" EndNode="289">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">lehetetlen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">lehetetlen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="77" Type="Token" StartNode="290" EndNode="299">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">megold</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">megoldani</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="78" Type="Token" StartNode="299" EndNode="300">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="79" Type="Token" StartNode="301" EndNode="305">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Cssp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="80" Type="Token" StartNode="306" EndNode="308">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">ne</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ne</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rm</Value>
+</Feature>
+</Annotation>
+<Annotation Id="81" Type="Token" StartNode="309" EndNode="318">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">marad</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">maradjunk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmmp1p---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="82" Type="Token" StartNode="319" EndNode="326">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">energia</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">energia</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="83" Type="Token" StartNode="327" EndNode="333">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nélkül</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nélkül</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">St</Value>
+</Feature>
+</Annotation>
+<Annotation Id="84" Type="Token" StartNode="333" EndNode="334">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">?</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">?</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">?</Value>
+</Feature>
+</Annotation>
+<Annotation Id="85" Type="Sentence" StartNode="334" EndNode="718">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">384</Value>
+</Feature>
+</Annotation>
+<Annotation Id="86" Type="Token" StartNode="336" EndNode="337">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">A</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="87" Type="Token" StartNode="338" EndNode="349">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">Brüsszel</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Brüsszelben</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-s2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="88" Type="Token" StartNode="350" EndNode="363">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">körvonalazódó</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">körvonalazódó</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">App-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="89" Type="Token" StartNode="364" EndNode="372">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">megoldás</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">megoldás</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="90" Type="Token" StartNode="372" EndNode="373">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+</Annotation>
+<Annotation Id="91" Type="Token" StartNode="374" EndNode="375">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="92" Type="Token" StartNode="376" EndNode="381">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">média</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">média</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="93" Type="Token" StartNode="382" EndNode="395">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nyilvánosság</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nyilvánossága</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn---s3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="94" Type="Token" StartNode="396" EndNode="401">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">előtt</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">előtt</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">St</Value>
+</Feature>
+</Annotation>
+<Annotation Id="95" Type="Token" StartNode="402" EndNode="411">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hangzatos</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hangzatos</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="96" Type="Token" StartNode="412" EndNode="426">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">kijelentés</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kijelentéseket</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-pa</Value>
+</Feature>
+</Annotation>
+<Annotation Id="97" Type="Token" StartNode="427" EndNode="434">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">tesz</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tesznek</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3p---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="98" Type="Token" StartNode="434" EndNode="435">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="99" Type="Token" StartNode="436" EndNode="440">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Cssp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="100" Type="Token" StartNode="441" EndNode="443">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="101" Type="Token" StartNode="444" EndNode="449">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">orosz</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">orosz</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="102" Type="Token" StartNode="450" EndNode="458">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">gázipari</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">gázipari</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="103" Type="Token" StartNode="459" EndNode="470">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">vállalat</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">vállalatnak</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sg</Value>
+</Feature>
+</Annotation>
+<Annotation Id="104" Type="Token" StartNode="470" EndNode="471">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="105" Type="Token" StartNode="472" EndNode="473">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="106" Type="Token" StartNode="474" EndNode="484">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">Gazprom</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Gazpromnak</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sd</Value>
+</Feature>
+</Annotation>
+<Annotation Id="107" Type="Token" StartNode="485" EndNode="487">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">be</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">be</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="108" Type="Token" StartNode="488" EndNode="492">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">kell</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kell</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="109" Type="Token" StartNode="493" EndNode="501">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">tart</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tartania</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmnp3s</Value>
+</Feature>
+</Annotation>
+<Annotation Id="110" Type="Token" StartNode="502" EndNode="504">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="111" Type="Token" StartNode="505" EndNode="512">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">európai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">európai</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="112" Type="Token" StartNode="513" EndNode="532">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">versenyfeltétel</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">versenyfeltételeket</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nc-pa</Value>
+</Feature>
+</Annotation>
+<Annotation Id="113" Type="Token" StartNode="532" EndNode="533">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="114" Type="Token" StartNode="534" EndNode="536">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pd3-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="115" Type="Token" StartNode="537" EndNode="542">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">ellen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ellen</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">St</Value>
+</Feature>
+</Annotation>
+<Annotation Id="116" Type="Token" StartNode="543" EndNode="550">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">viszont</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">viszont</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Ccsp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="117" Type="Token" StartNode="551" EndNode="555">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">csak</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">csak</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rx</Value>
+</Feature>
+</Annotation>
+<Annotation Id="118" Type="Token" StartNode="556" EndNode="565">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">dünnyögve</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">dünnyögve</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Rv</Value>
+</Feature>
+</Annotation>
+<Annotation Id="119" Type="Token" StartNode="566" EndNode="577">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">tiltakozik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tiltakoznak</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3p---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="120" Type="Token" StartNode="577" EndNode="578">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="121" Type="Token" StartNode="579" EndNode="583">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hogy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Cssp</Value>
+</Feature>
+</Annotation>
+<Annotation Id="122" Type="Token" StartNode="584" EndNode="585">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="123" Type="Token" StartNode="586" EndNode="595">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">háttér</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">háttérben</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-s2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="124" Type="Token" StartNode="596" EndNode="607">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">létrejön</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">létrejöjjön</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmmp3s---n</Value>
+</Feature>
+</Annotation>
+<Annotation Id="125" Type="Token" StartNode="608" EndNode="611">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">egy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">egy</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Ti</Value>
+</Feature>
+</Annotation>
+<Annotation Id="126" Type="Token" StartNode="612" EndNode="647">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">35</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">orosz-német-francia-holland-osztrák</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">orosz-német-francia-holland-osztrák</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nc-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="127" Type="Token" StartNode="648" EndNode="657">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">beruházás</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">beruházás</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="128" Type="Token" StartNode="657" EndNode="658">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+</Annotation>
+<Annotation Id="129" Type="Token" StartNode="659" EndNode="664">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">amely</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">amely</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Pr3-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="130" Type="Token" StartNode="665" EndNode="678">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">Oroszország</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Oroszországot</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nn-sa</Value>
+</Feature>
+</Annotation>
+<Annotation Id="131" Type="Token" StartNode="679" EndNode="690">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">bebetonoz</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bebetonozza</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Vmip3s---y</Value>
+</Feature>
+</Annotation>
+<Annotation Id="132" Type="Token" StartNode="691" EndNode="692">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Tf</Value>
+</Feature>
+</Annotation>
+<Annotation Id="133" Type="Token" StartNode="693" EndNode="699">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">zsíros</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">zsíros</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="134" Type="Token" StartNode="700" EndNode="707">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">nyugati</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">nyugati</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Afp-sn</Value>
+</Feature>
+</Annotation>
+<Annotation Id="135" Type="Token" StartNode="708" EndNode="717">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">gázpiac</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">gázpiacra</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">Nc-ss</Value>
+</Feature>
+</Annotation>
+<Annotation Id="136" Type="Token" StartNode="717" EndNode="718">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">lemma</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">msd</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
+</GateDocument>
