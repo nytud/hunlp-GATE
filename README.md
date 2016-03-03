@@ -27,6 +27,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 10. You should now see **Lang_Hungarian** in the list of plugins available to install. Enable the checkbox left to its name in column "Install".
 11. Click on the "Apply All" button to install the plugin. 
 12. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
+13. If you want to use the *Huntag3*-based processing resources (NER, NP chunking) you need to run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies (superuser privileges will be required).
 
 ###Method 2 (using a clone of this repository):
 
@@ -34,7 +35,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 2. Obtain 3rd party tools not included in this repository:
   * If you want to use *Magyarlánc*, see `Lang_Hungarian/resources/magyarlanc/README.md` about obtaining binaries
   * If you want to use *Huntag3* (NP chunking, NER):
-    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies
+    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies (superuser privileges required).
     * See `Lang_Hungarian/resources/huntag3/models/README.md` for obtaining trained models for Huntag3.
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
