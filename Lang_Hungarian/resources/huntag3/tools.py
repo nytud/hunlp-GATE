@@ -51,7 +51,7 @@ class BookKeeper:
     def __init__(self, loadfromfile=None):
         self._counter = Counter()
         # Original source: (1.31) http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
-        self._nameToNo = defaultdict(count(start=-1).__next__)
+        self._nameToNo = defaultdict(count().__next__)
         self.noToName = {}  # This is built only upon reading back from file
         if loadfromfile is not None:
             self._nameToNo.default_factory = count(start=self.load(loadfromfile)).__next__
@@ -68,7 +68,7 @@ class BookKeeper:
         self.noToName = {v: k for k, v in self._nameToNo.items()}
 
     def cutoff(self, cutoff):
-        toDelete = {self._nameToNo.pop(name) for name, count in self._counter.items() if count < cutoff}
+        toDelete = {self._nameToNo.pop(name) for name, counts in self._counter.items() if counts < cutoff}
         del self._counter
         newNameNo = {name: i for i, (name, _) in enumerate(sorted(self._nameToNo.items(), key=itemgetter(1)))}
         del self._nameToNo
@@ -87,7 +87,7 @@ class BookKeeper:
             f.writelines('{}\t{}\n'.format(name, no) for name, no in sorted(self._nameToNo.items(), key=itemgetter(1)))
 
     def load(self, filename):
-        no = -1  # Last no
+        no = 0  # Last no
         with gzip.open(filename, mode='rt', encoding='UTF-8') as f:
             for line in f:
                 l = line.strip().split()

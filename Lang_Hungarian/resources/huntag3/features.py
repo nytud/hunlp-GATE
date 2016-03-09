@@ -16,23 +16,29 @@ bigcase = 'AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ'
 big2small = {}
 for i, _ in enumerate(bigcase):
     big2small[bigcase[i]] = smallcase[i]
-possessor = re.compile(r'--[sp]\d')
+casREKR = re.compile('<CAS')
+casREMSD = re.compile('\[?N')
+possessorMSD = re.compile(r'--[sp]\d')
+objMSD = '\[?N'
+
+possessorKR = re.compile('<POSS')
+objKR = 'NOUN'
 MMOpatt = re.compile('[\[,\]]')
 # GLOBAL DECLARATION END
 
 
 # HELPER FUNCTIONS BEGIN
-def tags_since_pos(sen, tokRange, myPos='DT', strict=True):
-    """Sentence ending token or not
+def tags_since_pos(sen, tokRange, myPos, strict=True):
+    """Gather all tags since POS myPos in the sentence (not used directly as a feature)
 
     Args:
        sen (list): List of tokens in the sentence
        tokRange (int): range of tokens from the start of the sentence
-       myPos (str):
-       strict(bool): ...
+       myPos (str): POS tag to search for
+       strict(bool): full matching or not...
 
     Returns:
-       [[Bool in int format]]: True if Token is at the sentence end
+       [tags joined by '+']: all tags since myPos POS tag
 
     HunTag:
         Type: Sentence
@@ -52,7 +58,19 @@ def tags_since_pos(sen, tokRange, myPos='DT', strict=True):
     return ['+'.join(tags)]
 
 
-def sincePos(krVec, c, tag, featPrefix, featVecElem):
+def sincePos(krVec, c, featVecElem, tag, featPrefix):
+    """Parameter XXX
+
+    Args:
+       krVec (list): List of tokens in the sentence
+       c (int): Range of tokens from the start of the sentence
+       featVecElem (list): Current feature Vector element (to be updated)
+       tag(str): full matching or not...
+       featPrefix(str): prefix to set
+
+    Returns (updates featVecELem):
+       [tags joined by '+']: all tags since myPos POS tag
+    """
     tagst = tags_since_pos(krVec, c, tag)[0]
     if len(tagst) > 0:
         featVecElem.append(featPrefix + tagst)
@@ -62,17 +80,42 @@ def doNothing(*_):
     pass
 
 
-def casDiff(c, krVec, featVecElem):
+def casDiff(krVec, c, featVecElem, casRE, featName):
+    """Test if subsequent nouns is in di'casDiff'fferent grammatical case...
+
+    Args:
+       krVec (list): List of tokens in the sentence
+       c (int): Range of tokens from the start of the sentence
+       featVecElem (list): Current feature Vector element (to be updated)
+       casRE(re.pattern): pattern to match
+       featName(str): Name of the feature to be set
+
+    Returns (updates featVecELem):
+       ['casDiff']: if case is different...
+    """
     lastF = '' if c == 0 else krVec[c - 1]
-    if lastF.startswith('[N') and krVec[c].startswith('[N') and lastF != krVec[c]:
-        featVecElem.append('casDiff')
+    if casRE.search(lastF) and casRE.search(krVec[c]) and lastF != krVec[c]:
+        featVecElem.append(featName)
 
 
-def possConnect(c, krVec, featVecElem):
+def possConnect(krVec, c, featVecElem, possessor, obj, featPrefix):
+    """Connect possessor with posessed object
+
+    Args:
+       krVec (list): List of tokens in the sentence
+       c (int): Range of tokens from the start of the sentence
+       featVecElem (list): Current feature Vector element (to be updated)
+       possessor(re.pattern): Pattern of possessor
+       obj(str): Possessed object string to be compiled into pattern
+       featPrefix(str): prefix to set
+
+    Returns (updates featVecELem):
+       [tags joined by '+']: all tags since obj POS tag
+    """
     if possessor.search(krVec[c]):
-        tagst = tags_since_pos(krVec, c, '^\[?N', False)[0]
+        tagst = tags_since_pos(krVec, c, obj, False)[0]
         if len(tagst) > 0:
-            featVecElem.append('possession_' + tagst)
+            featVecElem.append(featPrefix + tagst)
 # HELPER FUNCTIONS END
 
 
@@ -770,7 +813,7 @@ def sentence_krPatts(sen, fields, options):
        options (dict): available options
 
     Returns:
-       [[Str]]: Pass ???
+       [[Str]]: Pass KR code patterns (see above)
 
     HunTag:
         Type: Sentence
@@ -794,9 +837,9 @@ def sentence_krPatts(sen, fields, options):
     krVec = [tok[f] for tok in sen]
 
     if options['lang'] == 'hu':
-        if not options['fullKr']:
+        if not options['fullKr'] and not options['MSD']:
             krVec = [token_getPosTag(kr)[0] for kr in krVec]
-        else:
+        elif options['MSD']:
             krVec = [tok[f] for tok in sen]
     else:
         krVec = [tok[f][0] for tok in sen]
@@ -805,13 +848,22 @@ def sentence_krPatts(sen, fields, options):
     applyPossConnectFun = doNothing
 
     if options['lang'] == 'hu':
-        tag, featPrefix = '[Tf]', 'dt_'
+        if options['MSD']:
+            tag_dt, featPrefix_dt = '[Tf]', 'dt_'  # "(since) last detrminant" MSD
+            casRE, featName = casREMSD, 'casDiff'  # casDiff
+            possRE, obj, featPrefix_poss = possessorMSD, objMSD, 'possession_'
+        else:
+            tag_dt, featPrefix_dt = 'DT', 'dt_'    # "(since) last detrminant" KR
+            casRE, featName = casREKR, 'casDiff'   # casDiff
+            possRE, obj, featPrefix_poss = possessorKR, objKR, 'possession_'
         if options['CASDiff'] == 1:
             applyCasDiffFun = casDiff
         if options['POSSConnect'] == 1:
             applyPossConnectFun = possConnect
     else:
-        tag, featPrefix = 'DT', 'dt_'
+        tag_dt, featPrefix_dt = 'DT', 'dt_'  # "(since) last detrminant" CoNLL (possConnect and CasDiff not used)
+        casRE, featName = None, None
+        possRE, obj, featPrefix_poss = None, None, None
 
     if options['since_dt'] == 1:
         applySincePosFun = sincePos
@@ -822,9 +874,9 @@ def sentence_krPatts(sen, fields, options):
     krVecLen = len(krVec)
     # For every token in sentence
     for c in range(krVecLen):
-        applySincePosFun(krVec, c, tag, featPrefix, featVec[c])
-        applyCasDiffFun(c, krVec, featVec[c])
-        applyPossConnectFun(c, krVec, featVec[c])
+        applySincePosFun(krVec, c, featVec[c], tag_dt, featPrefix_dt)
+        applyCasDiffFun(krVec, c, featVec[c], casRE, featName)
+        applyPossConnectFun(krVec, c, featVec[c], possRE, obj, featPrefix_poss)
         # Begining in -rad and rad but starts in the list boundaries (lower)
         for k in range(max(-rad, -c), rad):
             # Ending in -rad + 1 and rad + 2  but starts in the list boundaries (upper)
