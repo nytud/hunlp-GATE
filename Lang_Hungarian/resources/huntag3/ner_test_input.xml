@@ -1,0 +1,1844 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">file:/home/mm/Infra2/NER-szeged-KR-model/ner_test.txt</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">MimeType</Name>
+  <Value className="java.lang.String">text/plain</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">docNewLineType</Name>
+  <Value className="java.lang.String"></Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes><Node id="0"/>Hétfőn<Node id="6"/> <Node id="7"/>folytatódik<Node id="18"/> <Node id="19"/>az<Node id="21"/> <Node id="22"/>Investicná<Node id="32"/> <Node id="33"/>a<Node id="34"/> <Node id="35"/>Rozvojová<Node id="44"/> <Node id="45"/>Banka<Node id="50"/> <Node id="51"/>(<Node id="52"/> <Node id="53"/>IRB<Node id="56"/> <Node id="57"/>)<Node id="58"/> <Node id="59"/>auditja<Node id="66"/> <Node id="67"/>,<Node id="68"/> <Node id="69"/>az<Node id="71"/> <Node id="72"/>OTP<Node id="75"/> <Node id="76"/>Bank<Node id="80"/> <Node id="81"/>szakemberei<Node id="92"/> <Node id="93"/>és<Node id="95"/> <Node id="96"/>tanácsadói<Node id="106"/> <Node id="107"/>ismét<Node id="112"/> <Node id="113"/>felkeresik<Node id="123"/> <Node id="124"/>a<Node id="125"/> <Node id="126"/>bank<Node id="130"/> <Node id="131"/>adatszobáját<Node id="143"/> <Node id="144"/>-<Node id="145"/> <Node id="146"/>közölte<Node id="153"/> <Node id="154"/>Wolf<Node id="158"/> <Node id="159"/>László<Node id="165"/> <Node id="166"/>,<Node id="167"/> <Node id="168"/>az<Node id="170"/> <Node id="171"/>OTP<Node id="174"/> <Node id="175"/>Bank<Node id="179"/> <Node id="180"/>vezérigazgató-helyettese<Node id="204"/> <Node id="205"/>az<Node id="207"/> <Node id="208"/>MTI<Node id="211"/> <Node id="212"/>érdeklődésére<Node id="225"/>.<Node id="226"/>
+
+<Node id="228"/>Befejeződött<Node id="240"/> <Node id="241"/>az<Node id="243"/> <Node id="244"/>IRB<Node id="247"/> <Node id="248"/>auditálása<Node id="258"/> <Node id="259"/>-<Node id="260"/> <Node id="261"/>tájékoztatták<Node id="274"/> <Node id="275"/>a<Node id="276"/> <Node id="277"/>pénzintézetnél<Node id="291"/> <Node id="292"/>kedden<Node id="298"/> <Node id="299"/>az<Node id="301"/> <Node id="302"/>MTI-t<Node id="307"/>.<Node id="308"/>
+
+<Node id="310"/>Az<Node id="312"/> <Node id="313"/>Ernst<Node id="318"/> <Node id="319"/>and<Node id="322"/> <Node id="323"/>Young<Node id="328"/> <Node id="329"/>Könyvvizsgáló<Node id="342"/> <Node id="343"/>Kft-t<Node id="348"/> <Node id="349"/>javasolja<Node id="358"/> <Node id="359"/>a<Node id="360"/> <Node id="361"/>Magyar<Node id="367"/> <Node id="368"/>Nemzeti<Node id="375"/> <Node id="376"/>Bank<Node id="380"/> <Node id="381"/>könyvvizsgálójának<Node id="399"/> <Node id="400"/>az<Node id="402"/> <Node id="403"/>Állami<Node id="409"/> <Node id="410"/>Számvevőszék<Node id="422"/> <Node id="423"/>(<Node id="424"/> <Node id="425"/>ÁSZ<Node id="428"/> <Node id="429"/>)<Node id="430"/> <Node id="431"/>elnöke<Node id="437"/> <Node id="438"/>-<Node id="439"/> <Node id="440"/>tájékoztatta<Node id="452"/> <Node id="453"/>az<Node id="455"/> <Node id="456"/>ÁSZ<Node id="459"/> <Node id="460"/>az<Node id="462"/> <Node id="463"/>MTI-t<Node id="468"/> <Node id="469"/>hétfőn<Node id="475"/> <Node id="476"/>közleményben<Node id="488"/>.<Node id="489"/>
+
+<Node id="491"/>Immár<Node id="496"/> <Node id="497"/>negyedik<Node id="505"/> <Node id="506"/>éve<Node id="509"/> <Node id="510"/>a<Node id="511"/> <Node id="512"/>brit<Node id="516"/> <Node id="517"/>Manchester<Node id="527"/> <Node id="528"/>United<Node id="534"/> <Node id="535"/>labdarúgó<Node id="544"/> <Node id="545"/>klub<Node id="549"/> <Node id="550"/>a<Node id="551"/> <Node id="552"/>világ<Node id="557"/> <Node id="558"/>leggazdagabb<Node id="570"/> <Node id="571"/>csapata<Node id="578"/> <Node id="579"/>bevétel<Node id="586"/> <Node id="587"/>szerint<Node id="594"/> <Node id="595"/>-<Node id="596"/> <Node id="597"/>közölte<Node id="604"/> <Node id="605"/>pénteken<Node id="613"/> <Node id="614"/>a<Node id="615"/> <Node id="616"/>Deloitte<Node id="624"/> <Node id="625"/>and<Node id="628"/> <Node id="629"/>Touche<Node id="635"/>.<Node id="636"/>  <Node id="638"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+<Annotation Id="516" Type="Sentence" StartNode="0" EndNode="226">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">226</Value>
+</Feature>
+</Annotation>
+<Annotation Id="517" Type="Token" StartNode="0" EndNode="6">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Hétfőn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">hétfő/NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="518" Type="Token" StartNode="7" EndNode="18">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">folytatódik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">folytatódik/VERB</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB</Value>
+</Feature>
+</Annotation>
+<Annotation Id="519" Type="Token" StartNode="19" EndNode="21">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="520" Type="Token" StartNode="22" EndNode="32">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Investicná</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Investicná/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="521" Type="Token" StartNode="33" EndNode="34">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="522" Type="Token" StartNode="35" EndNode="44">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Rozvojová</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Rozvojová/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="523" Type="Token" StartNode="45" EndNode="50">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Banka</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">banka/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="524" Type="Token" StartNode="51" EndNode="52">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">(</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">(/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="525" Type="Token" StartNode="53" EndNode="56">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">IRB</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">IRB/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="526" Type="Token" StartNode="57" EndNode="58">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">)</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">)/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="527" Type="Token" StartNode="59" EndNode="66">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">auditja</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">audit/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="528" Type="Token" StartNode="67" EndNode="68">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">,/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="529" Type="Token" StartNode="69" EndNode="71">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="530" Type="Token" StartNode="72" EndNode="75">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">OTP</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">OTP/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="531" Type="Token" StartNode="76" EndNode="80">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Bank</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">bank/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="532" Type="Token" StartNode="81" EndNode="92">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">szakemberei</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">szakember/NOUN&lt;PLUR>&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;PLUR>&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="533" Type="Token" StartNode="93" EndNode="95">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">és</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">és/CONJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">CONJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="534" Type="Token" StartNode="96" EndNode="106">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tanácsadói</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">tanácsadó/NOUN&lt;PLUR>&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;PLUR>&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="535" Type="Token" StartNode="107" EndNode="112">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ismét</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">ismét/ADV</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADV</Value>
+</Feature>
+</Annotation>
+<Annotation Id="536" Type="Token" StartNode="113" EndNode="123">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">felkeresik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">felkeres/VERB&lt;PLUR>&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PLUR>&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="537" Type="Token" StartNode="124" EndNode="125">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="538" Type="Token" StartNode="126" EndNode="130">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bank</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">bank/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="539" Type="Token" StartNode="131" EndNode="143">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">adatszobáját</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">adat/NOUN+szoba/NOUN&lt;POSS>&lt;CAS&lt;ACC>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS>&lt;CAS&lt;ACC>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="540" Type="Token" StartNode="144" EndNode="145">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">-</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">-/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="541" Type="Token" StartNode="146" EndNode="153">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">közölte</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">közöl/VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="542" Type="Token" StartNode="154" EndNode="158">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Wolf</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Wolf/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="543" Type="Token" StartNode="159" EndNode="165">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">László</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">László/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="544" Type="Token" StartNode="166" EndNode="167">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">,</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">,/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="545" Type="Token" StartNode="168" EndNode="170">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="546" Type="Token" StartNode="171" EndNode="174">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">OTP</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">OTP/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="547" Type="Token" StartNode="175" EndNode="179">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Bank</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">bank/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="548" Type="Token" StartNode="180" EndNode="204">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">vezérigazgató-helyettese</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">vezérigazgató/NOUN+helyettes/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="549" Type="Token" StartNode="205" EndNode="207">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="550" Type="Token" StartNode="208" EndNode="211">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">MTI</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">MTI/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="551" Type="Token" StartNode="212" EndNode="225">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">érdeklődésére</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">érdeklődés/NOUN&lt;POSS>&lt;CAS&lt;SBL>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS>&lt;CAS&lt;SBL>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="552" Type="Token" StartNode="225" EndNode="226">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">./PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="553" Type="Sentence" StartNode="226" EndNode="308">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">82</Value>
+</Feature>
+</Annotation>
+<Annotation Id="554" Type="Token" StartNode="228" EndNode="240">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Befejeződött</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">befejeződik/VERB&lt;PAST></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PAST></Value>
+</Feature>
+</Annotation>
+<Annotation Id="555" Type="Token" StartNode="241" EndNode="243">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="556" Type="Token" StartNode="244" EndNode="247">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">IRB</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">IRB/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="557" Type="Token" StartNode="248" EndNode="258">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">auditálása</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">auditál/VERB[GERUND]/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="558" Type="Token" StartNode="259" EndNode="260">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">-</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">-/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="559" Type="Token" StartNode="261" EndNode="274">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tájékoztatták</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">tájékoztat/VERB&lt;PAST>&lt;PLUR>&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PAST>&lt;PLUR>&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="560" Type="Token" StartNode="275" EndNode="276">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="561" Type="Token" StartNode="277" EndNode="291">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">pénzintézetnél</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">pénzintézet/NOUN&lt;CAS&lt;ADE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;ADE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="562" Type="Token" StartNode="292" EndNode="298">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">kedden</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">kedd/NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="563" Type="Token" StartNode="299" EndNode="301">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="564" Type="Token" StartNode="302" EndNode="307">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">MTI-t</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">MTI-t/OOV/NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="565" Type="Token" StartNode="307" EndNode="308">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">./PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="566" Type="Sentence" StartNode="308" EndNode="489">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">181</Value>
+</Feature>
+</Annotation>
+<Annotation Id="567" Type="Token" StartNode="310" EndNode="312">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="568" Type="Token" StartNode="313" EndNode="318">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Ernst</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Ernst/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="569" Type="Token" StartNode="319" EndNode="322">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">and</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">and/OOV/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="570" Type="Token" StartNode="323" EndNode="328">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Young</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Young/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="571" Type="Token" StartNode="329" EndNode="342">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Könyvvizsgáló</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">könyvvizsgáló/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="572" Type="Token" StartNode="343" EndNode="348">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Kft-t</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Kft/NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="573" Type="Token" StartNode="349" EndNode="358">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">javasolja</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">javasol/VERB&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="574" Type="Token" StartNode="359" EndNode="360">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="575" Type="Token" StartNode="361" EndNode="367">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Magyar</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">magyar/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="576" Type="Token" StartNode="368" EndNode="375">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Nemzeti</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">nemzeti/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="577" Type="Token" StartNode="376" EndNode="380">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Bank</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">bank/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="578" Type="Token" StartNode="381" EndNode="399">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">könyvvizsgálójának</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">könyvvizsgáló/NOUN&lt;POSS>&lt;CAS&lt;DAT>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS>&lt;CAS&lt;DAT>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="579" Type="Token" StartNode="400" EndNode="402">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="580" Type="Token" StartNode="403" EndNode="409">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Állami</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">állami/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="581" Type="Token" StartNode="410" EndNode="422">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Számvevőszék</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">számvevőszék/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="582" Type="Token" StartNode="423" EndNode="424">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">(</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">(/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="583" Type="Token" StartNode="425" EndNode="428">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ÁSZ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">ász/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="584" Type="Token" StartNode="429" EndNode="430">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">)</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">)/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="585" Type="Token" StartNode="431" EndNode="437">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">elnöke</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">elnök/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="586" Type="Token" StartNode="438" EndNode="439">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">-</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">-/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="587" Type="Token" StartNode="440" EndNode="452">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">tájékoztatta</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">tájékoztat/VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="588" Type="Token" StartNode="453" EndNode="455">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="589" Type="Token" StartNode="456" EndNode="459">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">ÁSZ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">ász/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="590" Type="Token" StartNode="460" EndNode="462">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">az</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="591" Type="Token" StartNode="463" EndNode="468">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">MTI-t</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">MTI-t/OOV/NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;ACC>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="592" Type="Token" StartNode="469" EndNode="475">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hétfőn</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">hétfő/NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="593" Type="Token" StartNode="476" EndNode="488">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">közleményben</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">közlemény/NOUN&lt;CAS&lt;INE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;INE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="594" Type="Token" StartNode="488" EndNode="489">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">./PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="595" Type="Sentence" StartNode="489" EndNode="638">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">149</Value>
+</Feature>
+</Annotation>
+<Annotation Id="596" Type="Token" StartNode="491" EndNode="496">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Immár</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">immár/ADV</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADV</Value>
+</Feature>
+</Annotation>
+<Annotation Id="597" Type="Token" StartNode="497" EndNode="505">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">negyedik</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">négy/NUM[ORD]/NUM</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NUM</Value>
+</Feature>
+</Annotation>
+<Annotation Id="598" Type="Token" StartNode="506" EndNode="509">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">éve</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">év/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="599" Type="Token" StartNode="510" EndNode="511">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="600" Type="Token" StartNode="512" EndNode="516">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">brit</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">brit/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="601" Type="Token" StartNode="517" EndNode="527">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Manchester</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Manchester/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="602" Type="Token" StartNode="528" EndNode="534">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">United</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">United/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="603" Type="Token" StartNode="535" EndNode="544">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">labdarúgó</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">labda/NOUN+rúgó/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="604" Type="Token" StartNode="545" EndNode="549">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">klub</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">klub/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="605" Type="Token" StartNode="550" EndNode="551">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="606" Type="Token" StartNode="552" EndNode="557">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">világ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">világ/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="607" Type="Token" StartNode="558" EndNode="570">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">leggazdagabb</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">gazdag/ADJ[SUPERLAT]/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="608" Type="Token" StartNode="571" EndNode="578">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">csapata</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">csapat/NOUN&lt;POSS></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;POSS></Value>
+</Feature>
+</Annotation>
+<Annotation Id="609" Type="Token" StartNode="579" EndNode="586">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bevétel</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">bevétel/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="610" Type="Token" StartNode="587" EndNode="594">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">szerint</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">szerint/POSTP</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">POSTP</Value>
+</Feature>
+</Annotation>
+<Annotation Id="611" Type="Token" StartNode="595" EndNode="596">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">-</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">-/PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+<Annotation Id="612" Type="Token" StartNode="597" EndNode="604">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">közölte</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">közöl/VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">VERB&lt;PAST>&lt;DEF></Value>
+</Feature>
+</Annotation>
+<Annotation Id="613" Type="Token" StartNode="605" EndNode="613">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">pénteken</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">péntek/NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN&lt;CAS&lt;SUE>></Value>
+</Feature>
+</Annotation>
+<Annotation Id="614" Type="Token" StartNode="614" EndNode="615">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">a/ART</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ART</Value>
+</Feature>
+</Annotation>
+<Annotation Id="615" Type="Token" StartNode="616" EndNode="624">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Deloitte</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Deloitte/OOV/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="616" Type="Token" StartNode="625" EndNode="628">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">and</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">and/OOV/ADJ</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">ADJ</Value>
+</Feature>
+</Annotation>
+<Annotation Id="617" Type="Token" StartNode="629" EndNode="635">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Touche</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">Touche/OOV/NOUN</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">NOUN</Value>
+</Feature>
+</Annotation>
+<Annotation Id="618" Type="Token" StartNode="635" EndNode="636">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">ana</Name>
+  <Value className="java.lang.String">./PUNCT</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">pos</Name>
+  <Value className="java.lang.String">PUNCT</Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Original markups">
+</AnnotationSet>
+
+</GateDocument>
