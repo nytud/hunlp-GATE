@@ -60,7 +60,7 @@ You will also find the following **ready made applications** in GATE Developer (
 
 * Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
 * Magyarlánc Depparse (Morphparse + Depdendency Parser)
-* NP chunking with Huntag3 and Magyarlánc
+* NP chunking with Huntag3 and Magyarlánc MorphParse
 
 Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
 
