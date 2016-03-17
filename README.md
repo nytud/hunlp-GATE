@@ -10,7 +10,8 @@ Developers: Márton Miháltz, Bálint Sass
 
 * Java runtime (JRE or JDK) version 1.8 or later
 * GATE Developer 8.0 or later
-* For best results (safely loading the Magyarlánc Depparse application) you will need a **64-bit** operating system with **64-bit Java** installed. Please use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+* For best results (safely loading the Magyarlánc Depparse application) you will need a **64-bit operating system** with **64-bit Java** installed. Please use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+
 
  ```
  <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
