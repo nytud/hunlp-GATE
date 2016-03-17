@@ -97,6 +97,12 @@ following command:
 make local_install GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
 ```
 
+This will copy the whole directory tree under `Lang_Hungarian/` from this repository to your GATE user plugin directory. Alternatively, you can also make a symbolic link using the following command:
+
+```
+make link_devdir GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
+```
+
 ##Updating the plugin repository
 
 To update the plugin repository  hosted at `http://corpus.nytud.hu/GATE`,
