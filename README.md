@@ -43,6 +43,28 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 
 ##Contents
 
+The plugin contains the following GATE Processing Resources:
+
+* Hunpos Hungarian PoS-tagger (Linux)
+* HunMorph Hungarian morphological analyzer (Linux)
+* Hungarian NP chunking with Huntag3 (Linux)
+* Hungarian NER with Huntag3 (Linux)
+* Magyarlánc Hungarian Sentence Splitter
+* Magyarlánc Hungarian Tokenizer
+* Magyarlánc Hungarian Sentence Splitter and Tokenizer
+* Magyarlánc Hungarian Morphological Analyzer (KR)
+* Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)
+* Magyarlánc Hungarian POS Tagger and Lemmatizer
+* Magyarlánc Hungarian Dependency Parser
+
+You will also find the following ready made applications in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
+
+* Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
+* Magyarlánc Depparse (Morphparse + Depdendency Parser)
+* NP chunking with Huntag3 and Magyarlánc
+
+##Files
+
 * `Lang_Hungarian`: directory tree for the Lang_Hungarian GATE plugin
  * `src`: Java sources of the included Processing Resources. See Javadocs for details.
  * `resources`: non-Java binaries, sources and resources files for the included tools
