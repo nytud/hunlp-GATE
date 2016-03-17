@@ -1,9 +1,8 @@
 # hunlp-GATE
 
-Source files for the [GATE](http://gate.ac.uk/) plugin **Lang_Hungarian** containing Hungarian processing resources, 
-which are wrappers around already existing NLP tools in their original form.
+**Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
 
-Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their status.
+Developers: Márton Miháltz, Sass Bálint
 
 ##Installing under GATE Developer
 
@@ -62,6 +61,8 @@ You will also find the following ready made applications in GATE Developer (to a
 * Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
 * Magyarlánc Depparse (Morphparse + Depdendency Parser)
 * NP chunking with Huntag3 and Magyarlánc
+
+Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
 
 ##Files
 
