@@ -6,8 +6,6 @@ Developers: Márton Miháltz, Bálint Sass
 
 ##Installing under GATE Developer
 
-*Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*
-
 ###Method 1 (only GATE Developer & internet acces required):
 
 Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
@@ -30,6 +28,8 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 
 ###Method 2 (using a clone of this repository):
 
+(*Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*)
+
 1. Clone this git repository to your machine.
 2. Obtain 3rd party tools not included in this repository:
   * If you want to use *Magyarlánc*, see `Lang_Hungarian/resources/magyarlanc/README.md` about obtaining binaries
@@ -42,7 +42,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 
 ##Contents
 
-The plugin contains the following GATE Processing Resources:
+The plugin contains the following GATE **Processing Resources**:
 
 * Hunpos Hungarian PoS-tagger (Linux)
 * HunMorph Hungarian morphological analyzer (Linux)
@@ -56,7 +56,7 @@ The plugin contains the following GATE Processing Resources:
 * Magyarlánc Hungarian POS Tagger and Lemmatizer
 * Magyarlánc Hungarian Dependency Parser
 
-You will also find the following ready made applications in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
+You will also find the following **ready made applications** in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
 
 * Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
 * Magyarlánc Depparse (Morphparse + Depdendency Parser)
