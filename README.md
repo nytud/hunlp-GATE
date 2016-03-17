@@ -2,7 +2,7 @@
 
 **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
 
-Developers: Márton Miháltz, Sass Bálint
+Developers: Márton Miháltz, Bálint Sass
 
 ##Installing under GATE Developer
 
