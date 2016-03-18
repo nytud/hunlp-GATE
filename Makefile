@@ -15,18 +15,19 @@ build:
 # make upload CORPUSUSER=mylogin
 upload:
 	mkdir -p upload_dir/Lang_Hungarian
-	cp -p Lang_Hungarian/hungarian.jar upload_dir/Lang_Hungarian
-	cp -p Lang_Hungarian/creole.xml upload_dir/Lang_Hungarian
-	cp -p Lang_Hungarian/*.gapp upload_dir/Lang_Hungarian
-	mkdir -p upload_dir/Lang_Hungarian/resources/dummyctokenizer
-	cp -p -r Lang_Hungarian/resources/dummyctokenizer upload_dir/Lang_Hungarian/resources/
-	mkdir -p upload_dir/Lang_Hungarian/resources/magyarlanc
-	cp -p -r Lang_Hungarian/resources/magyarlanc upload_dir/Lang_Hungarian/resources/
+	cp -p -l Lang_Hungarian/hungarian.jar upload_dir/Lang_Hungarian
+	cp -p -l Lang_Hungarian/creole.xml upload_dir/Lang_Hungarian
+	cp -p -l Lang_Hungarian/*.gapp upload_dir/Lang_Hungarian
+	mkdir -p upload_dir/Lang_Hungarian/resources
+	cp -p -r -l Lang_Hungarian/resources/gate_plugins upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/hunmorph upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/hunpos upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/huntag3 upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/magyarlanc upload_dir/Lang_Hungarian/resources/
 	cd upload_dir ; zip -r Lang_Hungarian.zip Lang_Hungarian/*
-	cp -p update-site/gate-update-site.xml upload_dir
-	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
-	rm -rf upload_dir
-
+	cp -p -l update-site/gate-update-site.xml upload_dir
+#	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
+#	rm -rf upload_dir
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
 #GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
