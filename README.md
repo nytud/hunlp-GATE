@@ -19,7 +19,8 @@ Developers: Márton Miháltz, Bálint Sass
 
 ###Method 1 (only GATE Developer & internet acces required):
 
-Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
+Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu` (*Note: the plugin requires **600MB** of space 
+and may take a few minutes to download*):
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
