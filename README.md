@@ -1,6 +1,6 @@
 # hunlp-GATE
 
-**Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
+Sources for the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
 
 Developers: Márton Miháltz, Bálint Sass
 
@@ -19,8 +19,7 @@ Developers: Márton Miháltz, Bálint Sass
 
 ###Method 1 (only GATE Developer & internet acces required):
 
-Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu` (*Note: the plugin requires **600MB** of space 
-and may take a few minutes to download*):
+Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu` (*Note: the whole plugin complete with model files requires 600MB of space and may take a couple of minutes to download*):
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
