@@ -26,8 +26,8 @@ upload:
 	cp -p -r -l Lang_Hungarian/resources/magyarlanc upload_dir/Lang_Hungarian/resources/
 	cd upload_dir ; zip -r Lang_Hungarian.zip Lang_Hungarian/*
 	cp -p -l update-site/gate-update-site.xml upload_dir
-#	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
-#	rm -rf upload_dir
+	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
+	rm -rf upload_dir
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
 #GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
