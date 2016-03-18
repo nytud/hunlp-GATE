@@ -49,7 +49,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
     * See `Lang_Hungarian/resources/huntag3/models/README.md` for obtaining trained models for Huntag3.
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
-   If it's not there, check if your user plugin directory is set (see steps 2-4. above).
+   If it's not there, check if your user plugin directory is set (see steps 2-4. in *Method 1.* above).
 
 ##Contents
 
