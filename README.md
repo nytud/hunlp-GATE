@@ -1,17 +1,25 @@
 # hunlp-GATE
 
-Source files for the [GATE](http://gate.ac.uk/) plugin **Lang_Hungarian** containing Hungarian processing resources, 
-which are wrappers around already existing NLP tools in their original form.
+Sources for the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
 
-Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their status.
+Developers: Márton Miháltz, Bálint Sass
 
 ##Installing under GATE Developer
 
-*Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*
+**Requirements:**
+
+* Java runtime (JRE or JDK) version 1.8 or later
+* GATE Developer 8.0 or later
+* For best results (safely loading the Magyarlánc Depparse application) you will need a **64-bit operating system** with **64-bit Java** installed. Please use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+
+
+ ```
+ <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
+ ```
 
 ###Method 1 (only GATE Developer & internet acces required):
 
-Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu`:
+Follow these steps to install the plugin directly in GATE Developer using the online plugin repository hosted at `corpus.nytud.hu` (*Note: the whole plugin complete with model files requires 600MB of space and may take a couple of minutes to download*):
 
 1. Start GATE Developer.
 2. In the menu click: File / Manage CREOLE Plugins...
@@ -31,17 +39,43 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 
 ###Method 2 (using a clone of this repository):
 
+(*Optional: first build the plugin (see __Building the Lang_Hungarian plugin__), or just use the version already included in this repository.*)
+
 1. Clone this git repository to your machine.
 2. Obtain 3rd party tools not included in this repository:
   * If you want to use *Magyarlánc*, see `Lang_Hungarian/resources/magyarlanc/README.md` about obtaining binaries
   * If you want to use *Huntag3* (NP chunking, NER):
-    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies (superuser privileges required).
+    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies for Huntag3 (superuser privileges required).
     * See `Lang_Hungarian/resources/huntag3/models/README.md` for obtaining trained models for Huntag3.
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
-   If it's not there, check if your user plugin directory is set (see steps 2-4. above).
+   If it's not there, check if your user plugin directory is set (see steps 2-4. in *Method 1.* above).
 
 ##Contents
+
+The plugin contains the following GATE **Processing Resources**:
+
+* Hunpos Hungarian PoS-tagger (Linux)
+* HunMorph Hungarian morphological analyzer (Linux)
+* Hungarian NP chunking with Huntag3 (Linux)
+* Hungarian NER with Huntag3 (Linux)
+* Magyarlánc Hungarian Sentence Splitter
+* Magyarlánc Hungarian Tokenizer
+* Magyarlánc Hungarian Sentence Splitter and Tokenizer
+* Magyarlánc Hungarian Morphological Analyzer (KR)
+* Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)
+* Magyarlánc Hungarian POS Tagger and Lemmatizer
+* Magyarlánc Hungarian Dependency Parser
+
+You will also find the following **ready made applications** in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
+
+* Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
+* Magyarlánc Depparse (Morphparse + Depdendency Parser)
+* NP chunking with Huntag3 and Magyarlánc MorphParse
+
+Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
+
+##Files
 
 * `Lang_Hungarian`: directory tree for the Lang_Hungarian GATE plugin
  * `src`: Java sources of the included Processing Resources. See Javadocs for details.
@@ -73,6 +107,12 @@ following command:
 
 ```
 make local_install GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
+```
+
+This will copy the whole directory tree under `Lang_Hungarian/` from this repository to your GATE user plugin directory. Alternatively, you can also make a symbolic link using the following command:
+
+```
+make link_devdir GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
 ```
 
 ##Updating the plugin repository
