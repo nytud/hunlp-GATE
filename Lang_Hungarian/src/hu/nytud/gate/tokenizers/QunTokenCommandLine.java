@@ -316,83 +316,88 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		      
 		      // Read all the contents of tagger's output into a single string.
 		      // There may be more efficient ways to do this.
-		      // Optimal would be to implement a stream line reader function
+		      // Optimal solution would be to implement a stream line reader function
 		      // that keeps the line terminating character(s) at end of each read line.
 		      StringBuilder sb = new StringBuilder();
 		      int nextchar;
 		      while ((nextchar = input.read()) != -1) {
-		    	  sb.append(nextchar);
+		    	  sb.append((char)nextchar);  
 		      }
 		      String fileContents = sb.toString();
+		      String s = new String();
 	
-     	      // if we are debugging then dump the file
+     	      // if we are debugging then dump the file contents
 		      if (debug) System.out.println(fileContents);
 		      
 		      // now parse the file contents
-		      long offs = 0; // current absolute character offset in the text content of the file
-		      long currSentStart = -1; // start offset of current sentence
-		      long currWordStart = -1; // start offset of current word token
-		      long currWSStart   = -1; // start offset of current whitespace token
-		      long currPuncStart = -1; // start offset of current punctuation token
-		      long pos = 0; // current character position in file contents
+		      int offs = 0; // current absolute character offset in the text content of the file
+		      int currSentStart = -1; // start offset of current sentence
+		      int currWordStart = -1; // start offset of current word token
+		      int currWSStart   = -1; // start offset of current whitespace token
+		      int currPuncStart = -1; // start offset of current punctuation token
+		      int pos = 0; // current character position in file contents
 		      while (pos < fileContents.length()) {				        
 					        	
-		        	if (fileContents.substring(pos, fileContents.length()).startsWith("<s>")) {
+		        	if (strAt(fileContents, pos, "<s>")) {
 		        		currSentStart = offs;
 		        		pos += 3;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("<w>")) {
+		        	else if (strAt(fileContents, pos, "<w>")) {
 		        		currWordStart = offs;
 		        		pos += 3;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("<ws>")) {
+		        	else if (strAt(fileContents, pos, "<ws>")) {
 		        		currWSStart = offs;
 		        		pos += 4;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("<c>")) {
+		        	else if (strAt(fileContents, pos, "<c>")) {
 		        		currPuncStart = offs;
 		        		pos += 3;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("</s>")) {
+		        	else if (strAt(fileContents, pos, "</s>")) {
+		        		long start = new Long(currSentStart);
+		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", offs-currSentStart);
-		        		features.put("string", document.getContent().getContent(currSentStart, offs));
-		        		outputAS.add(currSentStart, offs, "Sentence", features);
+		        		features.put("length", end-start);
+		        		features.put("string", document.getContent().getContent(start, end));
+		        		outputAS.add(start, end, "Sentence", features);
 		        		currSentStart = -1;
 		        		pos += 4;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("</w>")) {
-		        		/*
+		        	else if (strAt(fileContents, pos, "</w>")) {
+		        		long start = new Long(currWordStart);
+		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", offs-currSentStart);
-		        		features.put("string", document.getContent().getContent(currSentStart, offs));
-		        		outputAS.add(currSentStart, offs, "Sentence", features);
-		        		*/
+		        		features.put("length", end-start);
+		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("kind", "word");
+		        		outputAS.add(start, end, "Token", features);
 		        		currWordStart = -1;
 		        		pos += 4;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("</ws>")) {
-		        		/*
+		        	else if (strAt(fileContents, pos, "</ws>")) {
+		        		long start = new Long(currWSStart);
+		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", offs-currSentStart);
-		        		features.put("string", document.getContent().getContent(currSentStart, offs));
-		        		outputAS.add(currSentStart, offs, "Sentence", features);
-		        		*/
+		        		features.put("length", end-start);
+		        		features.put("string", document.getContent().getContent(start, end));
+		        		outputAS.add(start, end, "SpaceToken", features);
+		        		// TODO: kind=control|space
 		        		currWSStart = -1;
 		        		pos += 5;
 		        	}
-		        	else if (fileContents.substring(pos, fileContents.length()).startsWith("</c>")) {
-		        		/*
+		        	else if (strAt(fileContents, pos, "</c>")) {
+		        		long start = new Long(currPuncStart);
+		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", offs-currSentStart);
-		        		features.put("string", document.getContent().getContent(currSentStart, offs));
-		        		outputAS.add(currSentStart, offs, "Sentence", features);
-		        		*/
+		        		features.put("length", end-start);
+		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("kind", "punctuation");
+		        		outputAS.add(start, end, "Token", features);
 		        		currPuncStart = -1;
 		        		pos += 4;
 		        	}
 		        	else { // word or punct or whitespace character
-		        		System.err.println("c='" + line.substring(pos, pos+1) + "'");
 		        		pos += 1;
 		        		offs += 1;
 		        	}
@@ -410,6 +415,13 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 	              "Error occurred running tagger").initCause(err);
 	    }
 		
+	}
+	
+	/**
+	 * Return true iff what is found inside str at position index
+	 */
+	static boolean strAt(String str, int index, String what) {
+		return str.substring(index, Math.min(index+what.length(), str.length())).equals(what);
 	}
 
 	public String getOutputASName() {
