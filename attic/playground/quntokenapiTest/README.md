@@ -1,0 +1,1 @@
+Test: a simple cpp file that uses quntoken, linked together with libquntoken.so or libquntoken.a

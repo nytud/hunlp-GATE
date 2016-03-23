@@ -1,4 +1,9 @@
+#include <iostream>
+#include <sstream>
+#include <fstream>
+
 #include "qtoken_api.h"
+
 
 int main(int argc, char** argv)
 {
