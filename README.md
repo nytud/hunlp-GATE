@@ -4,6 +4,31 @@ Sources for the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing 
 
 Developers: Márton Miháltz, Bálint Sass
 
+##Contents
+
+The plugin contains the following GATE **Processing Resources**:
+
+* QunToken Hungarian tokenizer and sentence splitter (Linux)
+* Hunpos Hungarian PoS-tagger (Linux)
+* HunMorph Hungarian morphological analyzer (Linux)
+* Hungarian NP chunking with Huntag3 (Linux)
+* Hungarian NER with Huntag3 (Linux)
+* Magyarlánc Hungarian Sentence Splitter
+* Magyarlánc Hungarian Tokenizer
+* Magyarlánc Hungarian Sentence Splitter and Tokenizer
+* Magyarlánc Hungarian Morphological Analyzer (KR)
+* Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)
+* Magyarlánc Hungarian POS Tagger and Lemmatizer
+* Magyarlánc Hungarian Dependency Parser
+
+You will also find the following **ready made applications** in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
+
+* Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
+* Magyarlánc Depparse (Morphparse + Depdendency Parser)
+* NP chunking with Huntag3 and Magyarlánc MorphParse
+
+Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
+
 ##Installing under GATE Developer
 
 **Requirements:**
@@ -51,31 +76,6 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory.
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
    If it's not there, check if your user plugin directory is set (see steps 2-4. in *Method 1.* above).
-
-##Contents
-
-The plugin contains the following GATE **Processing Resources**:
-
-* QunToken Hungarian tokenizer and sentence splitter (Linux)
-* Hunpos Hungarian PoS-tagger (Linux)
-* HunMorph Hungarian morphological analyzer (Linux)
-* Hungarian NP chunking with Huntag3 (Linux)
-* Hungarian NER with Huntag3 (Linux)
-* Magyarlánc Hungarian Sentence Splitter
-* Magyarlánc Hungarian Tokenizer
-* Magyarlánc Hungarian Sentence Splitter and Tokenizer
-* Magyarlánc Hungarian Morphological Analyzer (KR)
-* Magyarlánc Hungarian Morphological Analyzer And Guesser (MSD)
-* Magyarlánc Hungarian POS Tagger and Lemmatizer
-* Magyarlánc Hungarian Dependency Parser
-
-You will also find the following **ready made applications** in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
-
-* Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
-* Magyarlánc Depparse (Morphparse + Depdendency Parser)
-* NP chunking with Huntag3 and Magyarlánc MorphParse
-
-Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
 
 ##Files
 
