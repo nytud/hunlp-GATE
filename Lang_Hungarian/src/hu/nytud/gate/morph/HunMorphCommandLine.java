@@ -1,11 +1,18 @@
 package hu.nytud.gate.morph;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Locale;
 
 import gate.FeatureMap;
+import gate.Resource;
+import gate.creole.ResourceInstantiationException;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.taggerframework.*;
+
 
 /**
  * This class is inherited from taggerframework.GenericTagger.
@@ -18,25 +25,34 @@ public class HunMorphCommandLine extends GenericTagger {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Override
 	public Resource init() throws ResourceInstantiationException {
 		super.init();
-		// Override tagger binary accorindg to OS
-		String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
-		if (osName.contains("linux")) {
-		    // Just leave default
-		    // setTaggerBinary("resources/hunmorph/runhunmorph.sh");
-		}
-		else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
-		    System.out.println("Mac OS detected, overriding tagger binary name");
-		    setTaggerBinary("resources/hunmorph/runhunmorph_osx.sh");
-		}
-		/*
-		else if (osName.contains("windows")) {
-		    // TODO
-		}
-		*/
-		else {
-		    System.err.println("Warning: hunmorph binary is not supported on your operating system, this plugin will _not_ work");
+		// Override tagger binary according to OS
+		try {
+			// Get the path of this jar file
+			File jarFile = new File(HunMorphCommandLine.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			String jarDir = jarFile.getParentFile().getPath();
+			// Get OS name
+			String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+			if (osName.contains("linux")) {
+			    // Just leave the default value
+			}
+			else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
+			    URL url = new File(jarDir, "resources/hunmorph/runhunmorph_osx.sh").toURI().toURL();
+			    System.out.println("Mac OS detected, overriding hunmorph wrapper script name: " + url.toString());
+				setTaggerBinary(url);
+			}
+			/*
+			else if (osName.contains("windows")) {
+			    // TODO
+			}
+			*/
+			else {
+			    System.err.println("Warning: hunmorph binary is not supported on your operating system!");
+			}
+		} catch (Exception e) {
+			throw new ResourceInstantiationException(e);
 		}
 		return this;
 	}

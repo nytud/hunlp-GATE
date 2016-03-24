@@ -271,9 +271,9 @@ public class PRTest {
 			System.out.println("Quntoken tagged contents:");
 			System.out.println(doc.toString());
 				
-			// Create a new HunPosCommandLine PR, apply it on the document
+			// Create a new HunMorphCommandLine PR, apply it on the document
 			ProcessingResource tagger = (ProcessingResource)Factory.createResource(
-					"hu.nytud.gate.postaggers.HunPosCommandLine");
+					"hu.nytud.gate.morph.HunMorphCommandLine");
 			tagger.setParameterValue("document", doc);
 			tagger.execute();
 								
