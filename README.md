@@ -56,6 +56,7 @@ Follow these steps to install the plugin directly in GATE Developer using the on
 
 The plugin contains the following GATE **Processing Resources**:
 
+* QunToken Hungarian tokenizer and sentence splitter (Linux)
 * Hunpos Hungarian PoS-tagger (Linux)
 * HunMorph Hungarian morphological analyzer (Linux)
 * Hungarian NP chunking with Huntag3 (Linux)
