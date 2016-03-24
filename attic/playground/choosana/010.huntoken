@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Stdin: Hungarian plain-text file, UTF-8
+# Stdout: one token per line, empty lines for sentence boundaries, UTF-8
+
+HUNTDIR=/home/mihaltz/hun-tools
+
+iconv -f UTF-8 -t CP1250//TRANSLIT | $HUNTDIR/huntoken-1.6/bin/huntoken -n | grep -E "(^<w>)|(^<c>)|(^</s>)" | sed -r "s/<[^<>]+>//g" | iconv -f CP1250 -t UTF-8
+
+# huntoken -n | grep -E "(^<w>)|(^<c>)|(^</s>)" | sed -r "s/<[^<>]+>//g"

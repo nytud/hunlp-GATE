@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Stdin: Hung. text, 1 token per line, empty line for end of sentence, UTF-8
+# Stdout: input, tab, PoS-tag, tab, space, number of morph. analyses, space, morph. analyses (stem/tags) (sep. by spaces), end-of-sentence is just " 0", UTF-8 enc.
+
+HUNTDIR=/home/mihaltz/hun-tools
+
+iconv -f UTF-8 -t CP1250//TRANSLIT | $HUNTDIR/hunpos/hunpos-1.0-linux.32/hunpos-tag $HUNTDIR/hunpos/hu_szeged_kr.model | $HUNTDIR/hunmorph/ocamorph/ocamorph --bin $HUNTDIR/hunmorph/morphdb.hu/morphdb_hu.bin --field 1 --tag_preamble "" --tag_sep " " --count_analyses | iconv -f CP1250 -t UTF-8

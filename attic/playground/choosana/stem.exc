@@ -1,0 +1,8 @@
+# Stemming exceptions file for stem2.py
+# Lines starting with '#' are ignored
+# Each meaningful line contains 2 strings separated by tab character: <surface form> TAB <stem>
+# <surface form> can end with the special wildcar character '%' (any charactes zero or more length)
+
+#Jobbikért	Jobbik
+Jobbik%	Jobbik
+Sólyom	Sólyom
