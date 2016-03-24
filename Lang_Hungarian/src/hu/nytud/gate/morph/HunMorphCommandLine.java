@@ -18,6 +18,29 @@ public class HunMorphCommandLine extends GenericTagger {
 
 	private static final long serialVersionUID = 1L;
 	
+	public Resource init() throws ResourceInstantiationException {
+		super.init();
+		// Override tagger binary accorindg to OS
+		String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+		if (osName.contains("linux")) {
+		    // Just leave default
+		    // setTaggerBinary("resources/hunmorph/runhunmorph.sh");
+		}
+		else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
+		    System.out.println("Mac OS detected, overriding tagger binary name");
+		    setTaggerBinary("resources/hunmorph/runhunmorph_osx.sh");
+		}
+		/*
+		else if (osName.contains("windows")) {
+		    // TODO
+		}
+		*/
+		else {
+		    System.err.println("Warning: hunmorph binary is not supported on your operating system, this plugin will _not_ work");
+		}
+		return this;
+	}
+	
 	@CreoleParameter(defaultValue = "ISO-8859-2") 
 	public void setEncoding(String encoding) { 
 	    super.setEncoding(encoding); 
