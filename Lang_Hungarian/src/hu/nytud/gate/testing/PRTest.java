@@ -2,6 +2,7 @@ package hu.nytud.gate.testing;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.apache.log4j.Logger;
@@ -10,12 +11,6 @@ import gate.*;
 import gate.creole.ANNIEConstants;
 import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
-
-/*
- * ACHTUNG
- * Works with gate.jar 8.0, throws exception with 8.1
- */
-
 
 /**
  * Test Lang_Hungarian plugin with GATE Embedded (GATE API)
@@ -33,26 +28,26 @@ public class PRTest {
 	
 	public static Document createDoc() throws ResourceInstantiationException {
 		// Create a new GATE Document LR with the following text:
-		String sentstr = "A nagy kutya gyorsan fut. Én küldtem árvíztűrő nyélen.";
+		String sentstr = "Alma";
+		//String sentstr = "A nagy kutya gyorsan fut. Én küldtem árvíztűrő nyélen.";
 		//String sentstr = "The President is in Washington, DC. He is safe.";
 		return Factory.newDocument(sentstr);		
 	}
 	
-	public void loadLangHungarian(boolean useUserPluginDir) throws MalformedURLException, GateException {
+	public void loadLangHungarian(boolean useUserPluginDir) throws MalformedURLException, GateException, URISyntaxException {
 		// Load the Lang_Hungarian plugin
-		// useUserPluginDir: if true, load it from user plugin dir, otherwise use dir of jar file 
-		String pluginDir;
+		// useUserPluginDir: if true, load it from user plugin dir/Lang_Hungarian, otherwise use dir of current jar file 
+		URL pluginDir;
 		if (useUserPluginDir) {
-			pluginDir = Gate.getUserConfig().getString("gate.user.plugins");
+			pluginDir = new File(Gate.getUserConfig().getString("gate.user.plugins"), "Lang_Hungarian").toURI().toURL();
 		}
-		else
-			pluginDir = "../";
-		System.out.format("mmplugindir=%s\n", pluginDir);
-		//URL hudir = new File(pluginDir, "Lang_Hungarian").toURI().toURL();
-		URL hudir = new File("/home/mm/GATE_plugins/Lang_Hungarian/").toURI().toURL();		
-		System.out.println("huudir=" + hudir);
-		CreoleRegister reg = Gate.getCreoleRegister(); 
-		reg.registerDirectories(hudir);
+		else {
+			File jarFile = new File(PRTest.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			pluginDir = jarFile.getParentFile().toURI().toURL();
+		}
+		System.out.format("plugindir=%s\n", pluginDir.toString());
+		//pluginDir = new File("/home/mm/Infra2/hunlp-GATE/Lang_Hungarian").toURI().toURL();		
+		Gate.getCreoleRegister().registerDirectories(pluginDir);
 	}
 	
 	/**
@@ -253,17 +248,55 @@ public class PRTest {
 		
 	}
 	
+	/**
+	 * Various tests with quntoken
+	 */
+	public void testQuntoken() {
+		
+		try {
+			
+			this.init();
+			
+			Document doc = PRTest.createDoc();
+									
+			loadLangHungarian(true);
+		
+			// Create a new QunTokenCommandLine PR, apply it on the document
+			ProcessingResource qtok = (ProcessingResource)Factory.createResource(
+					"hu.nytud.gate.tokenizers.QunTokenCommandLine");
+			qtok.setParameterValue("document", doc);
+			qtok.execute();
+			
+			// Dump document's annotations to stdout
+			System.out.println("Quntoken tagged contents:");
+			System.out.println(doc.toString());
+				
+			// Create a new HunPosCommandLine PR, apply it on the document
+			ProcessingResource tagger = (ProcessingResource)Factory.createResource(
+					"hu.nytud.gate.postaggers.HunPosCommandLine");
+			tagger.setParameterValue("document", doc);
+			tagger.execute();
+								
+			// Dump document's annotations to stdout
+			System.out.println(doc.toString());
+						 
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}		
 	
 	public static void main(String[] args) {
 		System.out.println("Hello, test");
 		PRTest t = new PRTest();
 		//t.testANNIE();
-		t.testMLTokPOS();
+		//t.testMLTokPOS();
 		//t.testFeats();
 		//t.testMLMoraAna();
 		//t.testMLKRMoraAna();
 		//t.testMLTokPOSParse();
-
+		t.testQuntoken();
 	}
 	
 }

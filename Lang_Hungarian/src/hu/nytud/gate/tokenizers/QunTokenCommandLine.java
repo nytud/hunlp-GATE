@@ -1,26 +1,20 @@
 package hu.nytud.gate.tokenizers;
 
-import gate.Annotation;
 import gate.AnnotationSet;
+import gate.DocumentContent;
 import gate.Factory;
 import gate.FeatureMap;
-import gate.Gate;
-import gate.ProcessingResource;
 import gate.Resource;
-import gate.Utils;
 import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
-import gate.creole.Transducer;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
 import gate.util.BomStrippingInputStreamReader;
 import gate.util.Files;
-import gate.util.OffsetComparator;
 import gate.util.ProcessManager;
-import gate.util.Strings;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,14 +31,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CodingErrorAction;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 /**
@@ -324,10 +311,9 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		    	  sb.append((char)nextchar);  
 		      }
 		      String fileContents = sb.toString();
-		      String s = new String();
 	
      	      // if we are debugging then dump the file contents
-		      if (debug) System.out.println(fileContents);
+		      if (debug) System.out.println("Dumping tagger output file contents:\n" + fileContents);
 		      
 		      // now parse the file contents
 		      int offs = 0; // current absolute character offset in the text content of the file
@@ -336,6 +322,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		      int currWSStart   = -1; // start offset of current whitespace token
 		      int currPuncStart = -1; // start offset of current punctuation token
 		      int pos = 0; // current character position in file contents
+		      DocumentContent docContents = document.getContent(); // shortcut for the GATE doc contents
 		      while (pos < fileContents.length()) {				        
 					        	
 		        	if (strAt(fileContents, pos, "<s>")) {
@@ -359,7 +346,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
 		        		features.put("length", end-start);
-		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("string", docContents.getContent(start, end).toString());
 		        		outputAS.add(start, end, "Sentence", features);
 		        		currSentStart = -1;
 		        		pos += 4;
@@ -369,7 +356,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
 		        		features.put("length", end-start);
-		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("string", docContents.getContent(start, end).toString());
 		        		features.put("kind", "word");
 		        		outputAS.add(start, end, "Token", features);
 		        		currWordStart = -1;
@@ -380,7 +367,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
 		        		features.put("length", end-start);
-		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("string", docContents.getContent(start, end).toString());
 		        		outputAS.add(start, end, "SpaceToken", features);
 		        		// TODO: kind=control|space
 		        		currWSStart = -1;
@@ -391,7 +378,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
 		        		features.put("length", end-start);
-		        		features.put("string", document.getContent().getContent(start, end));
+		        		features.put("string", docContents.getContent(start, end).toString());
 		        		features.put("kind", "punctuation");
 		        		outputAS.add(start, end, "Token", features);
 		        		currPuncStart = -1;

@@ -51,5 +51,5 @@ link_devdir:
 
 # Run command-line test
 RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
-runtest:
+runtest: build
 	java -cp $(RTCP) hu.nytud.gate.testing.PRTest
