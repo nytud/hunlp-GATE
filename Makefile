@@ -1,5 +1,19 @@
+# OS name
+UNAME:=$(shell uname -s)
+
 # GATE installation directory
-export GATE_HOME=/home/$(USER)/GATE_Developer
+GATE_HOME=/home/$(USER)/GATE_Developer
+ifeq ($(UNAME), Darwin)
+GATE_HOME=/Users/$(USER)/GATE_Developer/
+endif
+# TODO set on Windows
+
+# GATE User plugin directory
+#GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
+ifeq ($(UNAME), Darwin)
+GATE_USER_PLUGINS_DIR=/Users/$(USER)/GATE_plugins
+endif
+# TODO set on Windows
 
 # userid on corpus.nytud.hu used for uploading, see target "upload"
 CORPUSUSER=your_user_name
@@ -30,8 +44,6 @@ upload:
 	rm -rf upload_dir
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
-#GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
-GATE_USER_PLUGINS_DIR=/home/$(USER)/GATE_plugins
 local_install:
 	@echo "Your GATE user plugin directory appears to be: $(GATE_USER_PLUGINS_DIR)"
 	rm -rf "$(GATE_USER_PLUGINS_DIR)/Lang_Hungarian"
@@ -51,5 +63,5 @@ link_devdir:
 
 # Run command-line test
 RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
-runtest: build
+runtest:
 	java -cp $(RTCP) hu.nytud.gate.testing.PRTest
