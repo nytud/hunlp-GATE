@@ -10,6 +10,7 @@ endif
 
 # GATE User plugin directory
 #GATE_USER_PLUGINS_DIR=`grep ' gate.user.plugins="' ~/.gate.xml | cut -d "=" -f 2 | sed 's/"//g'`
+GATE_USER_PLUGINS_DIR=/home/$(USER)/GATE_plugins
 ifeq ($(UNAME), Darwin)
 GATE_USER_PLUGINS_DIR=/Users/$(USER)/GATE_plugins
 endif
