@@ -10,7 +10,7 @@ The plugin contains the following GATE **Processing Resources**:
 
 * QunToken Hungarian tokenizer and sentence splitter (Linux)
 * Hunpos Hungarian PoS-tagger (Linux)
-* HunMorph Hungarian morphological analyzer (Linux)
+* HunMorph Hungarian morphological analyzer (Linux, OS X)
 * Hungarian NP chunking with Huntag3 (Linux)
 * Hungarian NER with Huntag3 (Linux)
 * Magyarlánc Hungarian Sentence Splitter
