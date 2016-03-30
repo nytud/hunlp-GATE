@@ -78,9 +78,7 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
   
       DocumentContent doc = document.getContent();
   
-      // XXX igaziból vmi cont-ban kéne gyűjteni és a végén join
-      // XXX de a String.join() miért nem megy vajon?
-      String neChildIds = "";
+      List<String> childIds = new ArrayList<String>();
   
       Long start = 0l; // startOffset
       Long end = 0l; // endOffset
@@ -120,22 +118,22 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
   
         // XXX ez elég hatékony így a 2db startsWith() -del?
         if ( iobCode.startsWith( bCode ) || iobCode.startsWith( sCode ) ) {
-          if ( ! neChildIds.equals("") ) { // XXX nem szép
-            createAnnotation( start, end, doc, neChildIds, outputAs );
-            neChildIds = "";
+          if ( ! childIds.isEmpty() ) {
+            createAnnotation( start, end, doc, childIds, outputAs );
+            childIds = new ArrayList<String>();
             start = 0l;
             end = 0l;
           }
           start = a.getStartNode().getOffset();
           end = a.getEndNode().getOffset();
-          neChildIds += a.getId().toString();
+          childIds.add( a.getId().toString() );
         } else if ( iobCode.startsWith( iCode ) || iobCode.startsWith( eCode ) ) {
           end = a.getEndNode().getOffset();
-          neChildIds += "," + a.getId().toString();
+          childIds.add( a.getId().toString() );
         } else { // if oCode or anything else
-          if ( ! neChildIds.equals("") ) { // XXX nem szép
-            createAnnotation( start, end, doc, neChildIds, outputAs );
-            neChildIds = "";
+          if ( ! childIds.isEmpty() ) {
+            createAnnotation( start, end, doc, childIds, outputAs );
+            childIds = new ArrayList<String>();
             start = 0l;
             end = 0l;
           }
@@ -143,8 +141,8 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
       }
       // handling last NE -- needed if the last code is not oCode
       // XXX ez most így szép külön fgvénybe véve 1000 paraméterrel?? :)
-      if ( ! neChildIds.equals("") ) { // XXX nem szép
-        createAnnotation( start, end, doc, neChildIds, outputAs );
+      if ( ! childIds.isEmpty() ) {
+        createAnnotation( start, end, doc, childIds, outputAs );
       }
 
       // convert IOB to regular annot end
@@ -161,14 +159,14 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
    * Creates one annotation.
    */ 
   public void createAnnotation ( Long start, Long end, DocumentContent doc,
-      String neChildIds, AnnotationSet outputAs )
+      List<String> childIds, AnnotationSet outputAs )
       throws InvalidOffsetException {
 
     String content = doc.getContent( start, end ).toString();
 
     FeatureMap fm = gate.Factory.newFeatureMap();
     fm.put( "text", content );
-    fm.put( "childIds", "[" + neChildIds + "]" );
+    fm.put( "childIds", childIds );
 
     outputAs.add( start, end, outputAnnotationName, fm);
     // XXX ... és ha van már outputAnnotationName (=NE) annot? Lesz még.
