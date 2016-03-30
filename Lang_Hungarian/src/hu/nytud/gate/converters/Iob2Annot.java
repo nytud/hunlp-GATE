@@ -84,11 +84,22 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
   
       Long start = 0l; // startOffset
       Long end = 0l; // endOffset
+
+      //   I O B 1 E
+      // I + . . . + "in"
+      // O . + + + . "out"
+      // B + . . . + "in"
+      // 1 . + + + . "out"
+      // E . + + + . "out"
+      // all transitions are tested on hp3_2bek
+      // by the following ids: 56-63, 72-88, 120-121, 210-215
   
       // go through the tokens
       for ( Annotation a : tokens ) {
   
         // if ( B )
+        //   create annot: annotStartOffset..annotEndOffset,
+        //     contentFromOffsets, tokenIdsAsString   
         //   annotStartOffset = B.begin
         //   annotEndOffset = B.end
         //   ArrayList tokens = B.id
@@ -109,6 +120,12 @@ public class Iob2Annot extends AbstractLanguageAnalyser {
   
         // XXX ez elég hatékony így a 2db startsWith() -del?
         if ( iobCode.startsWith( bCode ) || iobCode.startsWith( sCode ) ) {
+          if ( ! neChildIds.equals("") ) { // XXX nem szép
+            createAnnotation( start, end, doc, neChildIds, outputAs );
+            neChildIds = "";
+            start = 0l;
+            end = 0l;
+          }
           start = a.getStartNode().getOffset();
           end = a.getEndNode().getOffset();
           neChildIds += a.getId().toString();
