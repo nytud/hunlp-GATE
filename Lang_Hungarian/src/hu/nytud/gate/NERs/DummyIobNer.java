@@ -5,7 +5,6 @@ import gate.creole.*;
 import gate.creole.metadata.*; 
 import gate.creole.metadata.Optional;
 import gate.util.*;
-import gate.annotation.*;
 
 import java.util.*;
 

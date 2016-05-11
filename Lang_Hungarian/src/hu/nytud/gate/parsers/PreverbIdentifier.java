@@ -5,7 +5,6 @@ import gate.creole.*;
 import gate.creole.metadata.*; 
 import gate.creole.metadata.Optional;
 import gate.util.*;
-import gate.annotation.*;
 
 import java.util.*;
 import java.util.regex.*;
@@ -59,10 +58,10 @@ public class PreverbIdentifier extends AbstractLanguageAnalyser {
 
     // get the output annotationSet name provided by the user,
     // or otherwise use the default method
-    AnnotationSet outputAs =
-      (outputASName == null || outputASName.trim().length() == 0)
-      ? document.getAnnotations()
-      : document.getAnnotations(outputASName);
+//    AnnotationSet outputAs =
+//      (outputASName == null || outputASName.trim().length() == 0)
+//      ? document.getAnnotations()
+//      : document.getAnnotations(outputASName);
 
     // regex to get the id from dependency annotation
     Pattern idPattern = Pattern.compile("\\d+");

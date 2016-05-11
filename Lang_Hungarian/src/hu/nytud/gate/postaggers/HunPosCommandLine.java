@@ -1,7 +1,6 @@
 package hu.nytud.gate.postaggers;
 
 import java.net.URL;
-import java.util.List;
 
 import gate.FeatureMap;
 import gate.creole.metadata.CreoleParameter;

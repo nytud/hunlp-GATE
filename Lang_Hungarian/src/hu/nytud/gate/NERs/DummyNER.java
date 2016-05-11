@@ -76,7 +76,7 @@ public class DummyNER extends AbstractLanguageAnalyser {
             .getAnnotations(outputASName);
 
     try {
-      String docText = document.getContent().toString();
+      //String docText = document.getContent().toString();
 
       // -----
 
