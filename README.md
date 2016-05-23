@@ -28,7 +28,7 @@ You will also find the following **ready made applications** in GATE Developer (
 * Magyarlánc Depparse (Morphparse + Depdendency Parser)
 * NP chunking with Huntag3 and Magyarlánc MorphParse
 
-Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integraion) for more information on what tools are expected to be integrated and their statuses.
+Plase see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integration) for more information on what tools are expected to be integrated and their statuses.
 
 ##Installing under GATE Developer
 
