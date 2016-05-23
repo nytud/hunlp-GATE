@@ -27,6 +27,7 @@ build:
 
 # Prepare upload_dir for target upload
 prepare_upload:
+	rm -rf upload_dir
 	mkdir -p upload_dir/Lang_Hungarian
 	cp -p -l Lang_Hungarian/hungarian.jar upload_dir/Lang_Hungarian
 	cp -p -l Lang_Hungarian/creole.xml upload_dir/Lang_Hungarian
@@ -37,6 +38,8 @@ prepare_upload:
 	cp -p -r -l Lang_Hungarian/resources/hunpos upload_dir/Lang_Hungarian/resources/
 	cp -p -r -l Lang_Hungarian/resources/huntag3 upload_dir/Lang_Hungarian/resources/
 	cp -p -r -l Lang_Hungarian/resources/magyarlanc upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/quntoken upload_dir/Lang_Hungarian/resources/
+	cp -p -r -l Lang_Hungarian/resources/hfst upload_dir/Lang_Hungarian/resources/
 	cd upload_dir ; zip -r Lang_Hungarian.zip Lang_Hungarian/*
 	cp -p -l update-site/gate-update-site.xml upload_dir
 
@@ -44,8 +47,18 @@ prepare_upload:
 # Invoke with your own username on corpus.nytud.hu:
 # make upload CORPUSUSER=mylogin
 upload:
-	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/
-	rm -rf upload_dir
+	@echo 
+	@echo "wait a minute while rsync is working..."
+	@echo 
+	rsync -vRr upload_dir/./gate-update-site.xml upload_dir/./Lang_Hungarian.zip upload_dir/./Lang_Hungarian/* $(CORPUSUSER)@corpus.nytud.hu:/var/www/GATE/ > rsync.out 2> rsync.err
+	@echo 
+	@echo "see rsync.out and rsync.err whether everything was successful..."
+	@echo "if it was, run 'make clean_upload' finally"
+	@echo 
+
+# Run 'make clean_upload' after 'make upload' step was successful :)
+clean_upload:
+	rm -rf upload_dir rsync.out rsync.err
 
 # Install Lang_Hungarian locally to user's GATE user plugin directory
 local_install:
