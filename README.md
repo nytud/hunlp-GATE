@@ -9,6 +9,7 @@ Developers: Márton Miháltz, Bálint Sass
 The plugin contains the following GATE **Processing Resources**:
 
 * QunToken Hungarian tokenizer and sentence splitter (Linux)
+* HFST morphological analyzer
 * Hunpos Hungarian PoS-tagger (Linux)
 * HunMorph Hungarian morphological analyzer (Linux, OS X)
 * Hungarian NP chunking with Huntag3 (Linux)
