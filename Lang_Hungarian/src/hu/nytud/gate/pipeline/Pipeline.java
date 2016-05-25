@@ -125,14 +125,14 @@ public class Pipeline {
     // Run ML "Depparse" = apply ML tokenizer + (MSD) POS tagger/lemmatizer + dependency parser
     // with additional parser parameters (!)
     //
-    HashMap<String, Object> parser_params = new HashMap<String, Object>();
-    parser_params.put( "addPosTags", true );
-    parser_params.put( "addMorphFeatures", true );
-    t.runPRs( new PRSpec[]{
-      new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-      new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
-      new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser", parser_params )
-    } );
+    //HashMap<String, Object> parser_params = new HashMap<String, Object>();
+    //parser_params.put( "addPosTags", true );
+    //parser_params.put( "addMorphFeatures", true );
+    //t.runPRs( new PRSpec[]{
+    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
+    //  new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
+    //  new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser", parser_params )
+    //} );
 
     // Run quntoken + hunmorph
     //
@@ -141,9 +141,27 @@ public class Pipeline {
     //  new PRSpec( "hu.nytud.gate.morph.HunMorphCommandLine" )
     //} );
 
-    // XXX XXX XXX  _ITT_T
-    // ha ez mind megvan, akkor lehet kezdeni variálni a láncokkal! XXX XXX
-
+    // Run full available Lang_Hungarian pipeline :)
+    //
+    HashMap<String, Object> iob_params = new HashMap<String, Object>();
+      iob_params.put( "inputIobAnnotAttrib", "NP-BIO" );
+      iob_params.put( "outputAnnotationName", "NP" );
+    HashMap<String, Object> qt_params = new HashMap<String, Object>();
+      qt_params.put( "outputASName", "qt_hfst_as" );
+    HashMap<String, Object> hfst_params = new HashMap<String, Object>();
+      hfst_params.put( "inputASName", "qt_hfst_as" );
+      hfst_params.put( "outputASName", "qt_hfst_as" );
+    t.runPRs( new PRSpec[]{
+      new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
+      new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
+      new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser" ),
+      new PRSpec( "hu.nytud.gate.parsers.PreverbIdentifier" ),
+      new PRSpec( "hu.nytud.gate.othertaggers.Huntag3NPChunkerCommandLine" ),
+      new PRSpec( "hu.nytud.gate.converters.Iob2Annot", iob_params ),
+      new PRSpec( "hu.nytud.gate.tokenizers.QunTokenCommandLine", qt_params ),
+      new PRSpec( "hu.nytud.gate.morph.HFSTMorphJava", hfst_params )
+    } );
+ 
   }
 
 }
