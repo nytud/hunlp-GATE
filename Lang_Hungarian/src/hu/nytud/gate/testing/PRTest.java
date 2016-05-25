@@ -18,7 +18,7 @@ import gate.util.GateException;
  * @author Márton Miháltz, Bálint Sass
  *
  */
-public class PRTestImproved {
+public class PRTest {
 
   protected Logger logger = Logger.getLogger(this.getClass().getName());
 
@@ -43,7 +43,7 @@ public class PRTestImproved {
       pluginDir = new File(Gate.getUserConfig().getString("gate.user.plugins"), "Lang_Hungarian").toURI().toURL();
     }
     else {
-      File jarFile = new File(PRTestImproved.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+      File jarFile = new File(PRTest.class.getProtectionDomain().getCodeSource().getLocation().toURI());
       pluginDir = jarFile.getParentFile().toURI().toURL();
     }
     System.err.format("\nplugin dir to use = %s\n\n", pluginDir.toString());
@@ -62,7 +62,7 @@ public class PRTestImproved {
 
       init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       FeatureMap features = Factory.newFeatureMap();
         features.put("anas", new String[] {"alma", "alom"});
@@ -85,7 +85,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -118,7 +118,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -152,7 +152,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -186,7 +186,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -229,7 +229,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -271,7 +271,7 @@ public class PRTestImproved {
 
       this.init();
 
-      Document doc = PRTestImproved.createDoc();
+      Document doc = PRTest.createDoc();
 
       loadLangHungarian(false);
 
@@ -304,7 +304,7 @@ public class PRTestImproved {
 
   public static void main(String[] args) {
     //System.err.println("Hello, test");
-    PRTestImproved t = new PRTestImproved();
+    PRTest t = new PRTest();
     //t.testFeats(); // -- maybe not needed
 
     // Run ML KR morphanalyzer = apply ML tokenizer + KR morphanalyzer
