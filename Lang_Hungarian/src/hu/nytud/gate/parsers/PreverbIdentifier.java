@@ -7,18 +7,17 @@ import gate.creole.metadata.Optional;
 import gate.util.*;
 
 import java.util.*;
-import java.util.regex.*;
 
 /** 
  *  Connects the preverb to the verb.
  *  Uses dependency analysis created by MagyarlancDependencyParser.java,
- *  namely "dependency" features representing a "PREVERB".
+ *  namely "depType" features representing a "PREVERB".
  *  Creates "preverb" and "lemmaWithPreverb" features on verbs.
  *  @author Bálint Sass
  */ 
 @CreoleResource(
   name = "Hungarian Preverb Identifier",
-  comment = "Requires dependency analysis: 'dependency' feature on 'Token's"
+  comment = "Requires dependency analysis: 'depType' and 'depTarget' features on 'Token's"
   // helpURL = "http://corpus.nytud.hu/gate/doc/PreverbIdentifier"
 ) 
 public class PreverbIdentifier extends AbstractLanguageAnalyser { 
@@ -62,9 +61,7 @@ public class PreverbIdentifier extends AbstractLanguageAnalyser {
 //      (outputASName == null || outputASName.trim().length() == 0)
 //      ? document.getAnnotations()
 //      : document.getAnnotations(outputASName);
-
-    // regex to get the id from dependency annotation
-    Pattern idPattern = Pattern.compile("\\d+");
+    // XXX outputAs should be used...
 
     // -----
     // get/set preverb info [begin]
@@ -84,31 +81,24 @@ public class PreverbIdentifier extends AbstractLanguageAnalyser {
       //            lemmaWithPreverb=a.lemma+b.lemma
       // }
 
-      String dep = "";
+      String depType = "";
+      Integer depTarget = 0; // ??? XXX
       try {
-        dep = a.getFeatures().get( inputAnnotFeature ).toString();
-        // getFeatures() returns null if there is no inputAnnotFeature feature
+        depType = a.getFeatures().get( inputAnnotDepTypeFeature ).toString();
+        depTarget = (Integer)a.getFeatures().get( inputAnnotDepTargetFeature );
+        // getFeatures() returns null if there is no inputAnnot.*Feature feature
       } catch( NullPointerException e ) {
-        dep = "";
+        depType = "";
+        depTarget = 0;
       }
 
-      Integer targetId = -1; // XXX hm.. Exception-nel kéne???
-      if ( dep.startsWith( "PREVERB" ) ) {
-        Matcher m = idPattern.matcher( dep );
-        // XXX while-lal szokás nézni, mert elvben lehet több is,
-        //     de feltesszük, hogy mindenképp 1 van
-        if (m.find()) {
-          targetId = Integer.valueOf( m.group() );
-        }
-        // if targetId is not found -> no new fea will be created
-        if ( targetId != -1 ) {
-          String preverbLemma = a.getFeatures().get( "lemma" ).toString();
-          Annotation target = inputAs.get( targetId ); // Integer param -> byId
-          FeatureMap fm = target.getFeatures();
-          String verbLemma = target.getFeatures().get( "lemma" ).toString();
-          fm.put( "preverb", preverbLemma );
-          fm.put( "lemmaWithPreverb", preverbLemma + verbLemma );
-        }
+      if ( depType.equals( "PREVERB" ) ) {
+        String preverbLemma = a.getFeatures().get( "lemma" ).toString();
+        Annotation target = inputAs.get( depTarget ); // Integer param -> byId
+        FeatureMap fm = target.getFeatures();
+        String verbLemma = target.getFeatures().get( "lemma" ).toString();
+        fm.put( "preverb", preverbLemma );
+        fm.put( "lemmaWithPreverb", preverbLemma + verbLemma );
       }
      }
 
@@ -146,7 +136,7 @@ public class PreverbIdentifier extends AbstractLanguageAnalyser {
   private String outputASName;
 
   // XXX hogy lehetne, hogy
-  // XXX a Token/dependency-t csak 1x kelljen leírni alább?
+  // XXX a Token/depType/depTarget-t csak 1x kelljen leírni alább?
   @RunTime
   @CreoleParameter(
     comment="Annotation type which has the dependency annot on it",
@@ -162,16 +152,29 @@ public class PreverbIdentifier extends AbstractLanguageAnalyser {
 
   @RunTime
   @CreoleParameter(
-    comment="Feature of 'inputAnnotType' which contains dependency annot",
-    defaultValue="dependency"
+    comment="Feature of 'inputAnnotType' which contains dependency type",
+    defaultValue="depType"
   )
-  public void setInputAnnotFeature( String s ) {
-    this.inputAnnotFeature = s.trim().length() == 0 ? "dependency" : s;
+  public void setInputAnnotDepTypeFeature( String s ) {
+    this.inputAnnotDepTypeFeature = s.trim().length() == 0 ? "depType" : s;
   }
-  public String getInputAnnotFeature() {
-    return inputAnnotFeature;
+  public String getInputAnnotDepTypeFeature() {
+    return inputAnnotDepTypeFeature;
   }
-  private String inputAnnotFeature;
+  private String inputAnnotDepTypeFeature;
+
+  @RunTime
+  @CreoleParameter(
+    comment="Feature of 'inputAnnotType' which contains dependency target token id",
+    defaultValue="depTarget"
+  )
+  public void setInputAnnotDepTargetFeature( String s ) {
+    this.inputAnnotDepTargetFeature = s.trim().length() == 0 ? "dependency" : s;
+  }
+  public String getInputAnnotDepTargetFeature() {
+    return inputAnnotDepTargetFeature;
+  }
+  private String inputAnnotDepTargetFeature;
 
 }
 

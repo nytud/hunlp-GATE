@@ -15,7 +15,7 @@ import gate.util.InvalidOffsetException;
 import hu.u_szeged.dep.parser.MateParserWrapper;
 import hu.u_szeged.magyarlanc.Magyarlanc;
 import hu.u_szeged.magyarlanc.resource.ResourceHolder;
-import hu.nytud.gate.parsers.DependencyRelation;
+//import hu.nytud.gate.parsers.DependencyRelation;
 
 /** 
  *  Magyarlánc Hungarian Dependency Parser.
@@ -46,7 +46,8 @@ public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {
     }
 	
 	/** Requires token annotations (see inputTokenType), 
-	 *  adds dependency analysis with feature key outputDependencyFeature,
+	 *  adds dependency type with feature key outputDepTypeFeature,
+	 *  adds target Token id with feature key outputDepTargetFeature,
 	 *  (+ main PoS tag and morph features if addPosTags and addMorpFeatures are true.)
 	 */
 	public void execute() throws ExecutionException { 
@@ -163,8 +164,10 @@ public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {
 		if (pdata.length != 8)
 			throw new GateRuntimeException("Internal error: parse data array size == " + pdata.length + " for token " + token.toString());
 		if (governorTokenId != -1) {
-			DependencyRelation deprel = new DependencyRelation(pdata[7], governorTokenId);
-			token.getFeatures().put(outputDependencyFeature, deprel);
+			//DependencyRelation deprel = new DependencyRelation(pdata[7], governorTokenId);
+			//token.getFeatures().put(outputDependencyFeature, deprel);
+			token.getFeatures().put(outputDepTypeFeature, pdata[7]);
+			token.getFeatures().put(outputDepTargetFeature, governorTokenId);
 		}
 		if (addPosTags)
 			token.getFeatures().put(ANNIEConstants.TOKEN_CATEGORY_FEATURE_NAME, pdata[4]);
@@ -243,15 +246,27 @@ public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {
 		  	
 	@RunTime
 	@CreoleParameter(
-			comment = "The name of the feature that will hold the dependency information on token annotation types",
-			defaultValue = "dependency")  
-	public void setOutputDependencyFeature(String x) {
-		outputDependencyFeature = x;
+			comment = "The name of the feature that will hold the dependency type on token annotation types",
+			defaultValue = "depType")  
+	public void setOutputDepTypeFeature(String x) {
+		outputDepTypeFeature = x;
 	}
-	public String getOutputDependencyFeature() {
-	    return outputDependencyFeature;
+	public String getOutputDepTypeFeature() {
+	    return outputDepTypeFeature;
 	}
-	protected String outputDependencyFeature;
+	protected String outputDepTypeFeature;
+
+	@RunTime
+	@CreoleParameter(
+			comment = "The name of the feature that will hold the id of the token which is the target of the dependency relation on token annotation types",
+			defaultValue = "depTarget")  
+	public void setOutputDepTargetFeature(String x) {
+		outputDepTargetFeature = x;
+	}
+	public String getOutputDepTargetFeature() {
+	    return outputDepTargetFeature;
+	}
+	protected String outputDepTargetFeature;
 
 	@RunTime
 	@CreoleParameter(
