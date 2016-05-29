@@ -130,3 +130,12 @@ make upload CORPUSUSER=yourusername
 
 This will upload your local `hungarian.jar`, `creole.xml` and `resources` directory
 to the update server.
+
+##Others
+
+XXX how to get the transducer file for HFST
+
+XXX Pipeline
+
+XXX tsvconverter.py
+
