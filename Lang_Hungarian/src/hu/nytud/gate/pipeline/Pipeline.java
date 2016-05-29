@@ -1,6 +1,10 @@
 package hu.nytud.gate.pipeline;
 
 import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -28,12 +32,39 @@ public class Pipeline {
     Gate.init();
   }
 
-  public static Document createDoc() throws ResourceInstantiationException {
-    // Create a new GATE Document LR with the following text:
-    //String sentstr = "Alma";
-    String sentstr = "A kisfiú egy szép képet rajzol meg.";
-    //String sentstr = "The President is in Washington, DC. He is safe.";
-    return Factory.newDocument(sentstr);
+  /**
+   * Create a new GATE Document LR with a specified String content
+   */
+  public static Document createDocFromString() throws ResourceInstantiationException {
+    String sentstr = "A kisfiú egy szép képet rajzol meg. El fogja kezdeni.";
+    return Factory.newDocument( sentstr );
+  }
+
+  /**
+   * Create a new GATE Document LR from stdin
+   */
+  public static Document createDocFromStdin() throws ResourceInstantiationException {
+    // stdin read -- from http://www.mkyong.com/java/how-to-get-the-standard-input-in-java
+    // StringBuilder -- from http://www.odi.ch/prog/design/newbies.php
+
+    StringBuilder sb = new StringBuilder(10000); // 10000? XXX
+
+    try{
+      BufferedReader stdin = 
+        new BufferedReader( new InputStreamReader( System.in ) );
+
+      String line;
+      
+      while ( ( line = stdin.readLine() ) != null ) {
+        sb.append( line );
+        sb.append( "\n" );
+      }
+      
+    } catch (IOException e) {
+      e.printStackTrace();
+    } 
+
+    return Factory.newDocument( sb.toString() );
   }
 
   public void loadLangHungarian(boolean useUserPluginDir) throws MalformedURLException, GateException, URISyntaxException {
@@ -61,7 +92,7 @@ public class Pipeline {
 
       this.init();
 
-      Document doc = Pipeline.createDoc();
+      Document doc = Pipeline.createDocFromStdin();
 
       loadLangHungarian(false);
 
@@ -152,12 +183,12 @@ public class Pipeline {
       hfst_params.put( "inputASName", "qt_hfst_as" );
       hfst_params.put( "outputASName", "qt_hfst_as" );
     t.runPRs( new PRSpec[]{
-      new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-      new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
-      new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser" ),
-      new PRSpec( "hu.nytud.gate.parsers.PreverbIdentifier" ),
-      new PRSpec( "hu.nytud.gate.othertaggers.Huntag3NPChunkerCommandLine" ),
-      new PRSpec( "hu.nytud.gate.converters.Iob2Annot", iob_params ),
+//      new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
+//      new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
+//      new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser" ),
+//      new PRSpec( "hu.nytud.gate.parsers.PreverbIdentifier" ),
+//      new PRSpec( "hu.nytud.gate.othertaggers.Huntag3NPChunkerCommandLine" ),
+//      new PRSpec( "hu.nytud.gate.converters.Iob2Annot", iob_params ),
       new PRSpec( "hu.nytud.gate.tokenizers.QunTokenCommandLine", qt_params ),
       new PRSpec( "hu.nytud.gate.morph.HFSTMorphJava", hfst_params )
     } );
