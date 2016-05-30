@@ -146,8 +146,8 @@ and also for
 
 ###What is it?
 
-This functionality (implemented in `Pipeline.java`) means
-that any combination of PRs in the Lang_Hungarian plugin can be run
+This functionality which is implemented in `Pipeline.java` means
+that any combination of PRs in the **Lang_Hungarian plugin** can be run
 with arbitrary parameter settings.
 
 ###How to use?
@@ -158,8 +158,8 @@ Just type:
 make GATE_HOME=/your/gate/installation/dir pipeline
 ```
 
-It will use `texts/peldak.txt` as input file,
-it can be changed using the `PIPELINE_INPUT` parameter:
+By default `texts/peldak.txt` is used as input file,
+but it can be changed using the `PIPELINE_INPUT` parameter:
 
 ```
 make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=input_file.txt pipeline
@@ -169,20 +169,20 @@ make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=input_file.txt pipelin
 
 The PRs to be run should be specified in
 `Lang_Hungarian/resources/pipeline/pipeline.config`. 
-Lines of this config file shoulg contain eithor only the name of a PR:
+Lines of this config file should contain either only the name of a PR:
 
 ```
 hu.nytud.gate.parsers.MagyarlancDependencyParser
 ```
 
-... or the name of PR, and some parameters for the PR in question given as
+... or the name of PR together with some parameters for this PR given as
 `parameterName parameterValue` in the following format:
 
 ```
 hu.nytud.gate.parsers.MagyarlancDependencyParser addPosTags true addMorphFeatures true
 ```
 
-There are some ready-made configuration files in the
+There are some ready-made config files in the
 `Lang_Hungarian/resources/pipeline` directory
 for some usage scenarios.
 The config file to use should be linked as `pipeline.config`.
