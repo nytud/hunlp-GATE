@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <CREOLE-DIRECTORY 
   ID="hu.nytud.gate.Lang_Hungarian"
-  VERSION="0.5"
+  VERSION="0.6"
   DESCRIPTION="Hungarian language processing resources"
   HELPURL="http://corpus.nytud.hu/GATE/"
 >
