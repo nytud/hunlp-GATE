@@ -5,11 +5,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.FileSystems;
+
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
 
@@ -27,9 +35,82 @@ public class Pipeline {
 
   protected Logger logger = Logger.getLogger(this.getClass().getName());
 
+  private List<PRSpec> PRsToRun; // PRs which will be run in the pipeline
+
+  private String configFilePath;
+
+  public Pipeline() {
+
+    PRsToRun = new ArrayList<PRSpec>();
+
+    configFilePath =
+      "Lang_Hungarian" + File.separator +
+      "resources" + File.separator +
+      "pipeline"  + File.separator + "pipeline.config"; // XXX best practice?
+
+  }
+
   public void init() throws GateException {
     // Initialize GATE Embedded
     Gate.init();
+  }
+
+  /**
+   * Read PR specifications from config file,
+   * create inner representation as a PRSpec List in variable PRsToRun
+   */
+  public void readConfig() {
+
+    // from http://www.programcreek.com/2011/03/java-read-a-file-line-by-line-code-example
+    try ( BufferedReader reader = Files.newBufferedReader(
+      FileSystems.getDefault().getPath( configFilePath ),
+      Charset.forName("US-ASCII") // XXX enough (?)
+    ) ) {
+
+      String line = null;
+
+      // go through lines in config file
+      while ( ( line = reader.readLine() ) != null ) {
+
+        // skip empty lines and comment lines
+        if ( line.equals( "" ) || line.startsWith( "#" ) ) { continue; }
+
+        // process line = read PRSpec data from line
+        Scanner ls = new Scanner( line );
+
+        // PR name
+        String PRname = ls.next();
+        // PR parameters (if any)
+        // 4 cases are handled currently: boolean, float, int, String
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        while ( ls.hasNext() ) {
+          String n = ls.next();
+          if ( ls.hasNextBoolean() ) {
+            params.put( n, ls.nextBoolean() ); // boolean
+          } else if ( ls.hasNextFloat() ) {
+            params.put( n, ls.nextFloat() ); // float
+          } else if ( ls.hasNextInt() ) {
+            params.put( n, ls.nextInt() ); // int
+          } else {
+            params.put( n, ls.next() ); // String
+          }
+        }
+
+        // add new PRSpec to PRSpec list
+        PRsToRun.add( new PRSpec( PRname, params ) );
+      }
+    } catch (NoSuchElementException e) {
+      // XXX best practice for specifying Exception message? :)
+      System.err.println( "\nError in '" + configFilePath + "'.\n" +
+        "Line format should be: " +
+        "PRname paramName1 paramValue1 paramName2 paramValue2 ...\n" +
+        "PRname is obligatory, params are optional.\n" );
+      e.printStackTrace();
+      System.exit( 1 );
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
   }
 
   /**
@@ -50,19 +131,19 @@ public class Pipeline {
     StringBuilder sb = new StringBuilder(10000); // 10000? XXX
 
     try{
-      BufferedReader stdin = 
+      BufferedReader stdin =
         new BufferedReader( new InputStreamReader( System.in ) );
 
       String line;
-      
+
       while ( ( line = stdin.readLine() ) != null ) {
         sb.append( line );
         sb.append( "\n" );
       }
-      
+
     } catch (IOException e) {
       e.printStackTrace();
-    } 
+    }
 
     return Factory.newDocument( sb.toString() );
   }
@@ -86,7 +167,7 @@ public class Pipeline {
   /**
    * Run any combination of PRs specified as a PRSpec array
    */
-  public void runPRs( PRSpec[] PRSpecs ) {
+  public void runPRs( ) {
 
     try {
 
@@ -96,7 +177,7 @@ public class Pipeline {
 
       loadLangHungarian(false);
 
-      for ( PRSpec sp: PRSpecs ) {
+      for ( PRSpec sp: PRsToRun ) {
         // Create the new PR
         ProcessingResource pr =
           (ProcessingResource)Factory.createResource( sp.getName() );
@@ -122,77 +203,11 @@ public class Pipeline {
   }
 
   public static void main(String[] args) {
-    Pipeline t = new Pipeline();
+    Pipeline pipeline = new Pipeline();
 
-    // Run ML KR morphanalyzer = apply ML tokenizer + KR morphanalyzer
-    //
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-    //  new PRSpec( "hu.nytud.gate.morph.MagyarlancKRMorphAnalyzer" )
-    //} );
+    pipeline.readConfig();
 
-    // Run ML MSD morphanalyzer = apply ML tokenizer + MSD morphanalyzer
-    //
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-    //  new PRSpec( "hu.nytud.gate.morph.MagyarlancMSDMorphAnalyzer" )
-    //} );
-
-    // Run ML "Morphparse" = apply ML tokenizer + (MSD) POS tagger/lemmatizer
-    //
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-    //  new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" )
-    //} );
-
-    // Run ML "Depparse" = apply ML tokenizer + (MSD) POS tagger/lemmatizer + dependency parser
-    //
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-    //  new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
-    //  new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser" )
-    //} );
- 
-    // Run ML "Depparse" = apply ML tokenizer + (MSD) POS tagger/lemmatizer + dependency parser
-    // with additional parser parameters (!)
-    //
-    //HashMap<String, Object> parser_params = new HashMap<String, Object>();
-    //parser_params.put( "addPosTags", true );
-    //parser_params.put( "addMorphFeatures", true );
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-    //  new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
-    //  new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser", parser_params )
-    //} );
-
-    // Run quntoken + hunmorph
-    //
-    //t.runPRs( new PRSpec[]{
-    //  new PRSpec( "hu.nytud.gate.tokenizers.QunTokenCommandLine" ),
-    //  new PRSpec( "hu.nytud.gate.morph.HunMorphCommandLine" )
-    //} );
-
-    // Run full available Lang_Hungarian pipeline :)
-    //
-    HashMap<String, Object> iob_params = new HashMap<String, Object>();
-      iob_params.put( "inputIobAnnotAttrib", "NP-BIO" );
-      iob_params.put( "outputAnnotationName", "NP" );
-    HashMap<String, Object> qt_params = new HashMap<String, Object>();
-      qt_params.put( "outputASName", "qt_hfst_as" );
-    HashMap<String, Object> hfst_params = new HashMap<String, Object>();
-      hfst_params.put( "inputASName", "qt_hfst_as" );
-      hfst_params.put( "outputASName", "qt_hfst_as" );
-    t.runPRs( new PRSpec[]{
-//      new PRSpec( "hu.nytud.gate.tokenizers.MagyarlancSentenceSplitterTokenizer" ),
-//      new PRSpec( "hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer" ),
-//      new PRSpec( "hu.nytud.gate.parsers.MagyarlancDependencyParser" ),
-//      new PRSpec( "hu.nytud.gate.parsers.PreverbIdentifier" ),
-//      new PRSpec( "hu.nytud.gate.othertaggers.Huntag3NPChunkerCommandLine" ),
-//      new PRSpec( "hu.nytud.gate.converters.Iob2Annot", iob_params ),
-      new PRSpec( "hu.nytud.gate.tokenizers.QunTokenCommandLine", qt_params ),
-      new PRSpec( "hu.nytud.gate.morph.HFSTMorphJava", hfst_params )
-    } );
- 
+    pipeline.runPRs();
   }
 
 }
