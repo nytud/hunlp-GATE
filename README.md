@@ -120,7 +120,6 @@ make link_devdir GATE_USER_PLUGINS_DIR=/your/gate/user/plugin/directory
 ```
 
 ##Updating the plugin repository
-
 To update the plugin repository  hosted at `http://corpus.nytud.hu/GATE`,
 run `make upload` specifying your user name on `corpus.nytud.hu`:
 
@@ -131,11 +130,67 @@ make upload CORPUSUSER=yourusername
 This will upload your local `hungarian.jar`, `creole.xml` and `resources` directory
 to the update server.
 
+##Using the Lang_Hungarian plugin from the command line
+
+The **Lang_Hungarian** [GATE](http://gate.ac.uk/) Processing Resources can be run from Linux command line using GATE Embedded technology.
+
+###Preparation
+
+1. A clone of this github repository *and* a working GATE installation is needed.
+
+2. Model/resource files needs to be there for
+[magyarlanc](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/magyarlanc), 
+for
+[HunTag3](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/huntag3/models),
+and also for
+[HFST](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/hfst)
+
+###What is it?
+
+This functionality (implemented in `Pipeline.java`) means
+that any combination of PRs in the Lang_Hungarian plugin can be run
+with arbitrary parameter settings.
+
+###How to use?
+
+Just type:
+
+```
+make GATE_HOME=/your/gate/installation/dir pipeline
+```
+
+It will use `texts/peldak.txt` as input file,
+it can be changed using the `PIPELINE_INPUT` parameter:
+
+```
+make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=input_file.txt pipeline
+```
+
+###Configuration
+
+The PRs to be run should be specified in
+`Lang_Hungarian/resources/pipeline/pipeline.config`. 
+Lines of a config file contain only the name of a PR:
+
+```
+hu.nytud.gate.parsers.MagyarlancDependencyParser
+```
+
+... or the name of PR, and some PRparameters given as
+`parameterName parameterValue` in the following form:
+
+```
+hu.nytud.gate.parsers.MagyarlancDependencyParser addPosTags true addMorphFeatures true
+```
+
+There are some configuration files in the
+`Lang_Hungarian/resources/pipeline` directory
+for some scenarios, the config file to use
+should be linked as `pipeline.config`.
+
 ##Others
 
 XXX how to get the transducer file for HFST
-
-XXX Pipeline
 
 XXX tsvconverter.py
 
