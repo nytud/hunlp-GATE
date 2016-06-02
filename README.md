@@ -159,10 +159,11 @@ make GATE_HOME=/your/gate/installation/dir pipeline
 ```
 
 By default `texts/peldak.txt` is used as input file,
-but it can be changed using the `PIPELINE_INPUT` parameter:
+but it can be changed using the `PIPELINE_INPUT` parameter
+to e.g. the XML version of the default input file:
 
 ```
-make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=input_file.txt pipeline
+make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=texts/peldak.xml pipeline
 ```
 
 ###Configuration
