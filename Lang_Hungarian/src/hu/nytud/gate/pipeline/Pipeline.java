@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
+
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -64,7 +66,7 @@ public class Pipeline {
     // from http://www.programcreek.com/2011/03/java-read-a-file-line-by-line-code-example
     try ( BufferedReader reader = Files.newBufferedReader(
       FileSystems.getDefault().getPath( configFilePath ),
-      Charset.forName("US-ASCII") // XXX enough (?)
+      Charset.forName("UTF-8") // XXX enough (?)
     ) ) {
 
       String line = null;
@@ -132,7 +134,7 @@ public class Pipeline {
 
     try{
       BufferedReader stdin =
-        new BufferedReader( new InputStreamReader( System.in ) );
+        new BufferedReader( new InputStreamReader( System.in, "UTF-8" ) );
 
       String line;
 
@@ -193,8 +195,10 @@ public class Pipeline {
         pr.execute();
       }
 
-      // Dump document's annotations to stdout in GATE XML format
-      System.out.println(doc.toXml());
+		// Dump document's annotations to stdout in GATE XML format		
+		PrintStream stdout = new PrintStream(System.out, true, "UTF-8");		
+		stdout.println(doc.toXml()); // Prints as expected
+		//System.out.println(doc.toXml());
 
     } catch (Exception e) {
       e.printStackTrace();
