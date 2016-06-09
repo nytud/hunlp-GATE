@@ -66,7 +66,7 @@ public class Pipeline {
     // from http://www.programcreek.com/2011/03/java-read-a-file-line-by-line-code-example
     try ( BufferedReader reader = Files.newBufferedReader(
       FileSystems.getDefault().getPath( configFilePath ),
-      Charset.forName("UTF-8") // XXX enough (?)
+      Charset.forName("UTF-8") // US-ASCII may be enough...
     ) ) {
 
       String line = null;
@@ -133,6 +133,7 @@ public class Pipeline {
     StringBuilder sb = new StringBuilder(10000); // 10000? XXX
 
     try{
+      // Read text from stdin (UTF-8!)
       BufferedReader stdin =
         new BufferedReader( new InputStreamReader( System.in, "UTF-8" ) );
 
@@ -195,10 +196,9 @@ public class Pipeline {
         pr.execute();
       }
 
-		// Dump document's annotations to stdout in GATE XML format		
-		PrintStream stdout = new PrintStream(System.out, true, "UTF-8");		
-		stdout.println(doc.toXml()); // Prints as expected
-		//System.out.println(doc.toXml());
+    // Dump document's annotations to stdout in GATE XML format (UTF-8!)
+    PrintStream stdout = new PrintStream(System.out, true, "UTF-8");
+    stdout.println(doc.toXml()); // Prints as expected
 
     } catch (Exception e) {
       e.printStackTrace();
