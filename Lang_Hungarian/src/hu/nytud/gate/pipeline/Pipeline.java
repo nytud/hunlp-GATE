@@ -196,9 +196,9 @@ public class Pipeline {
         pr.execute();
       }
 
-    // Dump document's annotations to stdout in GATE XML format (UTF-8!)
-    PrintStream stdout = new PrintStream(System.out, true, "UTF-8");
-    stdout.println(doc.toXml()); // Prints as expected
+      // Dump document's annotations to stdout in GATE XML format (UTF-8!)
+      PrintStream stdout = new PrintStream(System.out, true, "UTF-8");
+      stdout.println(doc.toXml()); // Prints as expected
 
     } catch (Exception e) {
       e.printStackTrace();
