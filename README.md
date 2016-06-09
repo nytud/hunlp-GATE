@@ -184,8 +184,8 @@ hu.nytud.gate.parsers.MagyarlancDependencyParser addPosTags true addMorphFeature
 
 The default config file is
 `Lang_Hungarian/resources/pipeline/pipeline.config`
-which runs the full `Lang_Hungarian` plugin,
-which can be overridden using the `CONFIG` parameter:
+which runs the full `Lang_Hungarian` plugin
+and can be overridden using the `CONFIG` parameter:
 
 ```
 make GATE_HOME=/your/gate/installation/dir CONFIG=/path/to/config/file pipeline
