@@ -168,8 +168,7 @@ make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=texts/peldak.xml pipel
 
 ###Configuration
 
-The PRs to be run should be specified in
-`Lang_Hungarian/resources/pipeline/pipeline.config`. 
+The PRs to be run should be specified in a config file.
 Lines of this config file should contain either only the name of a PR:
 
 ```
@@ -183,10 +182,18 @@ hu.nytud.gate.parsers.MagyarlancDependencyParser
 hu.nytud.gate.parsers.MagyarlancDependencyParser addPosTags true addMorphFeatures true
 ```
 
+The default config file is
+`Lang_Hungarian/resources/pipeline/pipeline.config`
+which runs the full `Lang_Hungarian` plugin,
+which can be overridden using the `CONFIG` parameter:
+
+```
+make GATE_HOME=/your/gate/installation/dir CONFIG=/path/to/config/file pipeline
+```
+
 There are some ready-made config files in the
 `Lang_Hungarian/resources/pipeline` directory
 for some usage scenarios.
-The config file to use should be linked as `pipeline.config`.
 
 ##Others
 

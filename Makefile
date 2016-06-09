@@ -86,6 +86,7 @@ runtest:
 # Run command-line pipeline
 RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
 PIPELINE_INPUT=texts/peldak.txt
+CONFIG=Lang_Hungarian/resources/pipeline/pipeline.config
 pipeline:
-	@java -cp $(RTCP) hu.nytud.gate.pipeline.Pipeline < $(PIPELINE_INPUT)
+	@java -cp $(RTCP) hu.nytud.gate.pipeline.Pipeline $(CONFIG) < $(PIPELINE_INPUT)
 

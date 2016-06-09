@@ -45,6 +45,7 @@ public class Pipeline {
 
     PRsToRun = new ArrayList<PRSpec>();
 
+    // default config file path
     configFilePath =
       "Lang_Hungarian" + File.separator +
       "resources" + File.separator +
@@ -103,13 +104,16 @@ public class Pipeline {
       }
     } catch (NoSuchElementException e) {
       // XXX best practice for specifying Exception message? :)
-      System.err.println( "\nError in '" + configFilePath + "'.\n" +
-        "Line format should be: " +
+      System.err.println(
+        "\nError in config file '" + configFilePath + "'.\n" +
+        "Line format should be:\n" +
         "PRname paramName1 paramValue1 paramName2 paramValue2 ...\n" +
         "PRname is obligatory, params are optional.\n" );
       e.printStackTrace();
       System.exit( 1 );
     } catch (IOException e) {
+      System.err.println(
+        "\nConfig file '" + configFilePath + "' not found.\n" );
       e.printStackTrace();
     }
 
@@ -207,7 +211,13 @@ public class Pipeline {
   }
 
   public static void main(String[] args) {
+
     Pipeline pipeline = new Pipeline();
+
+    // get path to config file from 1st arg
+    if ( args.length > 0 ) {
+      pipeline.configFilePath = args[0]; // hm.. w/o set...() method
+    }
 
     pipeline.readConfig();
 
