@@ -14,10 +14,9 @@ import gate.creole.*;
 import gate.creole.metadata.*; 
 import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
-
-import hu.u_szeged.magyarlanc.resource.ResourceHolder;
-import hu.u_szeged.magyarlanc.MorAna;
 import hu.u_szeged.magyarlanc.HunLemMor;
+import hu.u_szeged.magyarlanc.MorAna;
+import hu.u_szeged.magyarlanc.resource.ResourceHolder;
 
 /** 
  *  Magyarlánc Hungarian morphological analyzer and guesser.
@@ -26,7 +25,7 @@ import hu.u_szeged.magyarlanc.HunLemMor;
  *  Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlanc Hungarian Morphological Analyzer And Guesser (MSD)", 
+@CreoleResource(name = "2. Morphological Analyzer And Guesser [HU] [magyarlanc 2.0 MSD]", 
 				comment = "Adds MSD code and lemma annotations (not disambiguated) to tokens"
 				) // TODO icon?
 public class MagyarlancMSDMorphAnalyzer extends AbstractLanguageAnalyser {

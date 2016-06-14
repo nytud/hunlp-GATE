@@ -19,7 +19,7 @@ import gate.util.*;
 
 /** 
  */ 
-@CreoleResource(name = "Hungarian Dummy Tokenizer in C (Linux)",
+@CreoleResource(name = "[DEMO] 1. Tokenizer [Native (Linux)]",
 				comment = "Dummy whitespace tokenizer implemented in C, native shared library called via JNI",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyCTokenizer") 

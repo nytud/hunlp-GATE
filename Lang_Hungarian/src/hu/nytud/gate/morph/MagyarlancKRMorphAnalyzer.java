@@ -27,7 +27,7 @@ import rfsa.RFSA;
  *  Tested with Magyarlánc 2.0 (http://rgai.inf.u-szeged.hu/project/nlp/research/magyarlanc/magyarlanc-2.0.jar)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlanc Hungarian Morphological Analyzer (KR)", 
+@CreoleResource(name = "2. Morphological Analyzer [HU] [magyarlanc 2.0 KR]", 
 				comment = "Adds KR code and lemma annotations (not disambiguated) to tokens"
 				) // TODO icon?
 public class MagyarlancKRMorphAnalyzer extends AbstractLanguageAnalyser {

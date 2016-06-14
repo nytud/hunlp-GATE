@@ -18,7 +18,7 @@ import gate.taggerframework.*;
  *  Based on HunMorphCommandLine
  *  @author Peter K
  */ 
-@CreoleResource(name = "HFST Morphological Analyzer (tagger)", 
+@CreoleResource(name = "[DEMO] 2. Morphological Analyzer (HU) [hfst-ol GenericTagger]", 
 				comment = "Expects tokenized text. Outputs lemmas and analyzations. Calls hfst command line via I/O redirection"
 				) // TODO icon?
 public class HFSTMorphTagger extends GenericTagger {

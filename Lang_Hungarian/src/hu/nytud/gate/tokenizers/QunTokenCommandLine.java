@@ -39,7 +39,7 @@ import org.apache.log4j.Logger;
  * using the command-line quntoken binary via a system call.
  * Source code based on taggerframework.GenericTagger (a GATE built-in plugin)
  */
-@CreoleResource(name = "QunToken Hungarian sentence splitter and tokenizer (command-line)", 
+@CreoleResource(name = "1. Sentence Splitter And Tokenizer [HU] [QunToken (Linux)]", 
 				comment = "Creates sentence and token annotations",
 				icon = "tokeniser") 
 public class QunTokenCommandLine extends AbstractLanguageAnalyser {

@@ -13,9 +13,9 @@ import gate.creole.metadata.*;
 import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
 import hu.u_szeged.dep.parser.MateParserWrapper;
-import hu.u_szeged.magyarlanc.Magyarlanc;
 import hu.u_szeged.magyarlanc.resource.ResourceHolder;
 //import hu.nytud.gate.parsers.DependencyRelation;
+import hu.u_szeged.magyarlanc.Magyarlanc;
 
 /** 
  *  Magyarlánc Hungarian Dependency Parser.
@@ -29,7 +29,7 @@ import hu.u_szeged.magyarlanc.resource.ResourceHolder;
  *  Tested with Magyarlánc "2.0.1" (2015-11-04 from J.Zs.)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "Magyarlanc Hungarian Dependency Parser", 
+@CreoleResource(name = "3. Dependency Parser [HU] [magyarlanc 2.0]", 
 				comment = "Requires sentences and tokens with lemma and msd features"
 				)
 public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {

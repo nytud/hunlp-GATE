@@ -40,7 +40,7 @@ import org.apache.log4j.Logger;
  *  Based on MagyarlancKRMorphAnalyzer
  *  @author Peter K
  */ 
-@CreoleResource(name = "HFST Morphological Analyzer (java)", 
+@CreoleResource(name = "2. Morphological Analyzer (HU) [hfst-ol Java]", 
 				comment = "Expects tokenized text. Outputs lemmas and analyzations. Calls hfst-ol for java"
 				) // TODO icon?
 public class HFSTMorphJava extends AbstractLanguageAnalyser {
