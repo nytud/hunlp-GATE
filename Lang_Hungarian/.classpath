@@ -3,12 +3,13 @@
 	<classpathentry kind="src" output="bin" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="resources/dummyctokenizer/lib/dummyctokenizerwrapper.jar" sourcepath="resources/dummyctokenizer/src/java"/>
+	<classpathentry kind="lib" path="resources/gate_plugins/Tagger_Framework/TaggerFramework.jar" sourcepath="resources/gate_plugins/Tagger_Framework/src"/>
 	<classpathentry kind="lib" path="lib/gate.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="https://gate.ac.uk/releases/gate-8.1-build5169-ALL/doc/javadoc/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="resources/magyarlanc/magyarlanc-2.0.1.jar"/>
-	<classpathentry kind="lib" path="resources/gate_plugins/Tagger_Framework/TaggerFramework.jar" sourcepath="resources/gate_plugins/Tagger_Framework/src"/>
+	<classpathentry kind="lib" path="resources/magyarlanc/magyarlanc-3.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
