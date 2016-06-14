@@ -99,6 +99,8 @@ public class Pipeline {
           }
         }
 
+        ls.close();
+        
         // add new PRSpec to PRSpec list
         PRsToRun.add( new PRSpec( PRname, params ) );
       }
