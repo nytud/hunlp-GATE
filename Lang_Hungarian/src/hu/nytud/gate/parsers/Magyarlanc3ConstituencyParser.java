@@ -13,7 +13,7 @@ import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
 import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
-import hu.u_szeged2.dep.parser.MyMateParser;
+import hu.u_szeged.cons.parser.MyBerkeleyParser;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -23,16 +23,16 @@ import org.apache.log4j.Logger;
 //import hu.nytud.gate.parsers.DependencyRelation;
 
 /** 
- *  Magyarlanc Hungarian Dependency Parser.
- *  Requires sentence and token annotations with lemma, pos and morph features on tokens.
- *  Produces dependency features on tokens.
+ *  Magyarlanc Hungarian Constituency Parser.
+ *  Requires sentence and token annotations, and msd and lemma features on tokens.
+ *  Produces constituency string on tokens.
  *  Tested with Magyarlánc "3.0"
  *  @author Peter Kundrath
  */ 
-@CreoleResource(name = "3. Dependency Parser [HU] [magyarlanc 3.0]", 
+@CreoleResource(name = "3. Constituency Parser [HU] [magyarlanc 3.0]", 
 				comment = "Requires sentences and tokens with lemma, pos and morph features"
 				)
-public class Magyarlanc3DependencyParser extends AbstractLanguageAnalyser {
+public class Magyarlanc3ConstituencyParser extends AbstractLanguageAnalyser {
 
 
 	private static final long serialVersionUID = 1L;
@@ -45,8 +45,7 @@ public class Magyarlanc3DependencyParser extends AbstractLanguageAnalyser {
     }
 
 	/** Requires token annotations (see inputTokenType), 
-	 *  adds dependency type with feature key outputDepTypeFeature,
-	 *  adds target Token id with feature key outputDepTargetFeature,
+	 *  adds constituency string to tokens' outputConstFeature,
 	 */
 	public void execute() throws ExecutionException { 
 	    
@@ -77,7 +76,7 @@ public class Magyarlanc3DependencyParser extends AbstractLanguageAnalyser {
 	    		throw new ExecutionException("No sentences to process in document " + document.getName() + "\n" +
 	                                         "Please run a sentence splitter & tokenizer first!");
 	        } else {
-	            Utils.logOnce(logger, Level.INFO, "Magyarlánc Dependency Parser: " +
+	            Utils.logOnce(logger, Level.INFO, "Magyarlánc Constituency Parser: " +
 	            								  "no sentence annotations in input document");
 	            logger.debug("No input sentence annotations in document " + document.getName());	        	
 	        	return;
@@ -118,62 +117,44 @@ public class Magyarlanc3DependencyParser extends AbstractLanguageAnalyser {
         if (tokens.size() == 0)
         	throw new GateRuntimeException("No tokens found in sentence " + nsent);
         
-        // get form, lemma, pos and feat for each token into a String[]
-        String[] form = new String[tokens.size()];
-        String[] lemma = new String[tokens.size()];
-        String[] pos = new String[tokens.size()];
-        String[] feat = new String[tokens.size()];
+        // get form, lemma, pos and feat for each token into a String[][]
+        String[][] tokfeats = new String[tokens.size()][4];
         int i = 0;
         for (Annotation tok: tokens) {
         	try {
-				form[i] = document.getContent().getContent(
+        		tokfeats[i][0] = document.getContent().getContent(
 					tok.getStartNode().getOffset(), 
 					tok.getEndNode().getOffset()
 				).toString();
 			} catch (InvalidOffsetException e) {
 				throw new GateRuntimeException(e);
 			}
-        	lemma[i] = tok.getFeatures().get(inputLemmaFeature).toString();
-        	if (lemma[i] == null)
+        	tokfeats[i][1] = tok.getFeatures().get(inputLemmaFeature).toString();
+        	if (tokfeats[i][1] == null)
         		throw new GateRuntimeException("Error, no '" + inputLemmaFeature + "' feature for token " + i + " in sentence " + nsent); 
-        	pos[i] = tok.getFeatures().get(inputPOSFeature).toString();
-        	if (pos[i] == null)
+        	tokfeats[i][2] = tok.getFeatures().get(inputPOSFeature).toString();
+        	if (tokfeats[i][2] == null)
         		throw new GateRuntimeException("Error, no '" + inputPOSFeature + "' feature for token " + i + " in sentence " + nsent);
-        	feat[i] = tok.getFeatures().get(inputMorphFeature).toString();
-        	if (feat[i] == null)
+        	tokfeats[i][3] = tok.getFeatures().get(inputMorphFeature).toString();
+        	if (tokfeats[i][3] == null)
         		throw new GateRuntimeException("Error, no '" + inputMorphFeature + "' feature for token " + i + " in sentence " + nsent);
         	i++;
         }
                 
-        // call parser
-        String[][] pars = MyMateParser.getInstance().parseSentence(form,lemma,pos,feat);
+        // call parser result: [[token_id, form, lemma, pos, morphfeats, const_type],...]
+        String[][] pars = MyBerkeleyParser.getInstance().parseSentence(tokfeats);
         
         // Annotate tokens
         if (pars.length != tokens.size()) // sanity check
         	throw new GateRuntimeException("Internal error: pars.length != tokens.size() for sentence " + nsent);       
         for (i=0; i<tokens.size(); i++) {
-        	int governorId = Integer.decode(pars[i][5]);
-        	int governorTokenId = (governorId == 0 ? -1 : tokens.get(governorId-1).getId());
-        	addFeatures(tokens.get(i), pars[i], governorTokenId);
+        	if (pars[i].length != 5)
+    			throw new GateRuntimeException("Internal error: parse data array size == " + pars[i].length +  " for token " + tokens.get(i).toString());
+    		tokens.get(i).getFeatures().put(outputConstFeature, pars[i][4]);
         }
     	
 	}
 	
-	/**
-	 * Add dependency relation features to a token annotation.
-	 * @param token: the Annotation unit representing the token to add these features to
-	 * @param pdata: String array of {token_id, form, lemma, pos, morphfeats, governor_id, deprel_type}, as returned by MateParserWrapper.parseSentence() for this token
-	 * @param governorTokenId: annotation id (int) of the governor token in the GATE sentence, or -1 if it has no governor (root, punctuations)
-	 */
-	private void addFeatures(Annotation token, String[] pdata, int governorTokenId) throws GateRuntimeException {
-		if (pdata.length != 7)
-			throw new GateRuntimeException("Internal error: parse data array size == " + pdata.length + " for token " + token.toString());
-		if (governorTokenId != -1) {
-			token.getFeatures().put(outputDepTypeFeature, pdata[6]);
-			token.getFeatures().put(outputDepTargetFeature, governorTokenId);
-		}
-	}
-
     @RunTime
 	@Optional
 	@CreoleParameter(comment="The annotation set to be used as input and output, must contain 'Token' and 'Sentence' annotations")
@@ -248,26 +229,14 @@ public class Magyarlanc3DependencyParser extends AbstractLanguageAnalyser {
 	@RunTime
 	@CreoleParameter(
 			comment = "The name of the feature that will hold the dependency type on token annotation types",
-			defaultValue = "depType")  
-	public void setOutputDepTypeFeature(String x) {
-		outputDepTypeFeature = x;
+			defaultValue = "cons")  
+	public void setOutputConstFeature(String x) {
+		outputConstFeature = x;
 	}
-	public String getOutputDepTypeFeature() {
-	    return outputDepTypeFeature;
+	public String getOutputConstFeature() {
+	    return outputConstFeature;
 	}
-	protected String outputDepTypeFeature;
-
-	@RunTime
-	@CreoleParameter(
-			comment = "The name of the feature that will hold the id of the token which is the target of the dependency relation on token annotation types",
-			defaultValue = "depTarget")  
-	public void setOutputDepTargetFeature(String x) {
-		outputDepTargetFeature = x;
-	}
-	public String getOutputDepTargetFeature() {
-	    return outputDepTargetFeature;
-	}
-	protected String outputDepTargetFeature;	
+	protected String outputConstFeature;
 	
 	@RunTime
 	@Optional
