@@ -39,12 +39,12 @@ public class HFSTMorphTagger extends GenericTagger {
 			    // Just leave the default value
 			}
 			else if (osName.contains("mac os") || osName.contains("macos") || osName.contains("darwin")) {
-			    URL url = new File(jarDir, "resources/hfst/runhfst_osx.sh").toURI().toURL();
+			    URL url = new File(jarDir, "resources/hfst/run_hfst_osx.sh").toURI().toURL();
 			    System.out.println("Mac OS detected, overriding HFST wrapper script name: " + url.toString());
 				setTaggerBinary(url);
 			}
 			else if (osName.contains("windows")) {
-			    URL url = new File(jarDir, "resources/hfst/runhfst.cmd").toURI().toURL();
+			    URL url = new File(jarDir, "resources/hfst/run_hfst.cmd").toURI().toURL();
 			    System.out.println("Windows detected, overriding HFST wrapper script name: " + url.toString());
 				setTaggerBinary(url);
 			}
@@ -77,7 +77,7 @@ public class HFSTMorphTagger extends GenericTagger {
 		super.setRegex(regex);
 	}
 	
-	@CreoleParameter(defaultValue = "resources/hfst/runhfst.sh") 
+	@CreoleParameter(defaultValue = "resources/hfst/run_hfst.sh") 
 	public void setTaggerBinary(URL url) { 
 	    super.setTaggerBinary(url); 
 	}
