@@ -1,11 +1,16 @@
 package hu.nytud.gate.othertaggers;
 
+import java.io.File;
 import java.net.URL;
+import java.util.Locale;
 
 import gate.FeatureMap;
+import gate.Resource;
+import gate.creole.ResourceInstantiationException;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.taggerframework.*;
+import hu.nytud.gate.morph.HFSTMorphPipe;
 
 /**
  * Hungarian NER (Named Entity Recognition) with the huntag3 tagger and the NER-szeged-KR model.
@@ -19,7 +24,26 @@ import gate.taggerframework.*;
 public class Huntag3NERCommandLine extends GenericTagger {
 
 	private static final long serialVersionUID = 1L;
-	
+
+	@Override
+	public Resource init() throws ResourceInstantiationException {
+		try {
+			// Get the path of this jar file
+			File jarFile = new File(HFSTMorphPipe.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			String jarDir = jarFile.getParentFile().getPath();
+			// Get OS name
+			String osName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
+			if (osName.contains("windows")) {
+			    URL url = new File(jarDir, "resources/huntag3/run_huntag_NER-szeged-KR.cmd").toURI().toURL();
+			    System.out.println("Windows detected, overriding HFST wrapper script name: " + url.toString());
+			    setTaggerBinary(url);
+			}
+		} catch (Exception e) {
+			throw new ResourceInstantiationException(e);
+		}
+		return this;
+    }
+
 	@CreoleParameter(defaultValue = "UTF-8") 
 	public void setEncoding(String encoding) { 
 	    super.setEncoding(encoding); 
