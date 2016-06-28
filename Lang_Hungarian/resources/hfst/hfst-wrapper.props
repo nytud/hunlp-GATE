@@ -1,0 +1,50 @@
+#
+# analyzer configuration
+# (command line arguments have to be tab separated)
+
+analyzer.linux  = ../linux/hfst-lookup.sh
+analyzer.win32  = ../win32/hfst-lookup.exe
+analyzer.osx    = ../osx/hfst-lookup
+analyzer.params = --cascade=composition --xfst=print-pairs --xfst=print-space ../hu.hfst
+analyzer.max_count  = 3
+analyzer.timeout_ms = 10000
+
+#
+# stemmer configuration
+
+#
+# ';' separated list of tags
+
+stemmer.STEM = /N;/V;/Adj;/Prev
+
+#stemmer.PREFIX = ?FF
+
+stemmer.COMP_MEMBER = /N;/V;/Adj;
+#?ELO
+
+stemmer.COMP_DELIM = /Prev
+
+stemmer.COMP_MUST_HAVE = /N;/Adj
+
+stemmer.COMP_BEFORE_HYPHEN = Nom;/N;/Adj
+
+stemmer.STEM_IF_COMP =
+
+stemmer.INT_PUNCT = 
+
+# 
+# format is 'A1=B1;A2=B2'
+
+stemmer.convert = _ImpfPtcp/Adj=/Adj
+
+stemmer.replace = 
+
+#
+# regular expressions for exclusion
+#stemmer.exclude1 = 
+#stemmer.exclude2 = 
+
+
+
+# list of characters
+stemmer.copy2surface = *

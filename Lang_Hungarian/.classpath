@@ -11,5 +11,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="resources/magyarlanc/magyarlanc-2.0.1.jar"/>
 	<classpathentry kind="lib" path="resources/magyarlanc/magyarlanc-3.0.0.jar"/>
+	<classpathentry kind="lib" path="resources/hfst/hfst-ol.jar"/>
+	<classpathentry kind="lib" path="resources/hfst/hfst-wrapper.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
