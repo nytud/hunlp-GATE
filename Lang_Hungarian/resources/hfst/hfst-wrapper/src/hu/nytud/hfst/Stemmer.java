@@ -116,7 +116,7 @@ public class Stemmer {
 		
 		tag_convert = new HashMap<>();
 		{
-			String[] tags = props.getProperty("stemmer.CONVERT","").split(";");
+			String[] tags = props.getProperty("stemmer.convert","").split(";");
 			for (String t : tags) {
 				String[] opt = t.split("=",2);
 				if (opt.length < 2) continue;
@@ -126,7 +126,7 @@ public class Stemmer {
 		
 		tag_replace = new HashMap<>();
 		{
-			String[] tags = props.getProperty("stemmer.REPLACE","").split(";");
+			String[] tags = props.getProperty("stemmer.replace","").split(";");
 			for (String t : tags) {
 				String[] opt = t.split("=",2);
 				if (opt.length < 2) continue;
@@ -282,6 +282,7 @@ public class Stemmer {
 					String tagc = tag_convert.get(szCurCod);
 					bDerivative = tagc != null;
 					morph.flags_conv = bDerivative ? tag_config.get(tagc) : null;
+					if (morph.flags_conv == null) morph.flags_conv = new HashSet<>();
 					
 					//tag replacement
 					String r = tag_replace.get(szCurCod);

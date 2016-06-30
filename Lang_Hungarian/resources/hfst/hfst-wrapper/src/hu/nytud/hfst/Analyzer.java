@@ -24,13 +24,12 @@ import java.util.concurrent.TimeoutException;
 public class Analyzer {
 
 	public static class Morpheme {
-		public String lexical, surface;
-		public Set<String> tags;
+		public String lexical, surface, tag;
 		
-		public Morpheme() { lexical = surface = ""; tags = new LinkedHashSet<>(); }
+		public Morpheme() { lexical = surface = tag = ""; }
 		
 		public String toString() {
-			return lexical + "[" + String.join("][", tags) + "]=" + surface;
+			return lexical + "[" + tag + "]" + (!surface.isEmpty() ? "=" + surface : "");
 		}		
 	}
 	
@@ -92,7 +91,6 @@ public class Analyzer {
 				cmdline = hfst.getCanonicalPath() + cmdline;
 			}
 		} catch (Exception e) {
-			System.err.println("Exception in constructor: "+e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -124,7 +122,8 @@ public class Analyzer {
 				Thread.sleep(50);
 	    	}
     	} catch (Exception e) {
-    		System.err.println("Exception in getProcess(): "+e.getMessage());
+    		System.err.println("Exception in getProcess():");
+    		e.printStackTrace();
     	}
 
     	return null;
@@ -161,7 +160,7 @@ public class Analyzer {
 				}
 	    		os.flush();
     		} catch (Exception e) {
-    			System.err.println("Exception in MyProcess.init(): "+e.getMessage());
+    			e.printStackTrace();
     		}
     	}
     	
@@ -199,7 +198,7 @@ public class Analyzer {
 	            process.destroy(); // something went wrong
 	        } catch (InterruptedException e) {
 	        } catch (ExecutionException e) {
-	        	System.err.println("Exception in getResult(): could run task");
+	        	System.err.println("Exception in getResult(): could not run task");
 	        }
             queue.poll();
             return null;
@@ -213,9 +212,11 @@ public class Analyzer {
 	    		String line = is.readLine();
  				if (line == null) {
  					++error_count;
- 					for (String err = es.readLine(); err!=null; err = es.readLine()) {
-    					System.err.println("Error in HFST: " + err);
-	    			}
+ 					try {
+	 					for (String err = es.readLine(); err!=null; err = es.readLine()) {
+	    					System.err.println("Error in HFST: " + err);
+		    			}
+ 					} catch (IOException e) {}
  					throw new Exception("closed stdout");
  				}
  				error_count = 0;
@@ -234,12 +235,12 @@ public class Analyzer {
  					if (l.length > 1 && !l[1].endsWith("+?")) try {
  						anas.add(new Analyzation(l.length > 1 ? l[1] : l[0]));
  					} catch (Exception e) {
- 						System.err.println("Exception in Analyzation: "+e.getMessage());
+ 						System.err.println("Exception in Analyzation: ");
  						e.printStackTrace();
  					}
  				}
     		} catch (Exception e) {
-    			System.err.println("Exception in MyProcess.run(): "+e.getMessage());
+    			System.err.println("Exception in MyProcess.run():");
     			e.printStackTrace();
     			if (error_count > 2) return; // could not repair
     			process.destroy();
@@ -252,8 +253,8 @@ public class Analyzer {
 	List<Morpheme> parse(String input) {
 		List<Morpheme> items = new ArrayList<>();
 		
-		Morpheme item = new Morpheme(); items.add(item);
-		String tagbuf = ""; int state = 0;
+		Morpheme item = new Morpheme();
+		int state = 0;
 		for (char ch : input.toCharArray()) switch (state) {
 			case 0:
 			case 2:
@@ -261,13 +262,13 @@ public class Analyzer {
 					case ':': // switch sides
 						state += 1;
 						break;
-					case ' ': // additional spaces - part of surface
-						item.surface += ch; 
+					case ' ': // spaces are part of the surface
+						item.surface += ch;
 						break;
 					default:
-						if (!item.tags.isEmpty()) { // new part
-							item = new Morpheme();
+						if (!item.tag.isEmpty()) {
 							items.add(item);
+							item = new Morpheme();
 						}
 						item.surface += ch;
 				}
@@ -276,6 +277,10 @@ public class Analyzer {
 				switch (ch) {
 				case '[': // tag opening
 					state = 3;
+					if (!item.tag.isEmpty()) {
+						items.add(item);
+						item = new Morpheme();
+					}
 					break;
 				case ' ': // beginning of next pair
 					state = 0;
@@ -288,18 +293,20 @@ public class Analyzer {
 				switch (ch) {
 				case ']': // tag closing
 					state = 1; 
-					item.tags.add(tagbuf);
-					tagbuf = "";
 					break;
 				case ' ': // beginning of next pair (remember we are inside a tag)
 					state = 2;
 					break;
 				default:
-					tagbuf += ch;
+					item.tag += ch;
 				}
 				break;
 		}
-		
+
+		if (!item.tag.isEmpty() || !item.lexical.isEmpty() || !item.surface.isEmpty()) {
+			items.add(item);
+		}
+
 		return items;
 	}
     

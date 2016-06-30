@@ -31,14 +31,14 @@ stemmer.COMP_MUST_HAVE = /N;/Adj
 
 stemmer.COMP_BEFORE_HYPHEN = Nom;/N;/Adj
 
-stemmer.STEM_IF_COMP =
+stemmer.STEM_IF_COMP = _Ger/N
 
 stemmer.INT_PUNCT = 
 
 # 
 # format is 'A1=B1;A2=B2'
 
-stemmer.convert = _ImpfPtcp/Adj=/Adj
+stemmer.convert = _ImpfPtcp/Adj=/Adj;_Ger/N=/N
 
 stemmer.replace = 
 

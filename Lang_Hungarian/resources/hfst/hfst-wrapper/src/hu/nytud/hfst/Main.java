@@ -75,7 +75,7 @@ public class Main {
 		
 		if (res.isEmpty()) System.out.println("\t <unknown>");
 		for (Result res1: res) {
-			System.out.println("\t" + res1.toString());
+			System.out.println(input + "\t" + res1.toString());
 		}
 	}
 
@@ -93,6 +93,7 @@ public class Main {
 			BufferedReader is = new BufferedReader(new InputStreamReader(System.in,"UTF-8"));
 			while (true) {
 				String line = is.readLine();
+				if (line == null) System.exit(0); // stdin closed
 				m.dump(line);
 			}
 		} catch (IOException e) {}
