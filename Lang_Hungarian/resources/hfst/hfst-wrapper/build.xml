@@ -10,7 +10,7 @@
   <property name="source.dir"     value="src"/>
   <property name="class.dir"      value="bin"/>
   <property name="jar.file"       value="../${ant.project.name}.jar"/>
-  <property name="cfg.file"       value="../${ant.project.name}.props"/>
+  <property name="cfg.file"       value="${ant.project.name}.props"/>
   <property name="main-class"     value="hu.nytud.hfst.Main"/>
   <property name="test-word"      value="alma"/>
 

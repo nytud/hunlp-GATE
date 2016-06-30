@@ -61,7 +61,7 @@ public class Analyzer {
 	private List<MyProcess> myProcesses;
 	private int max_process, timeout;
 	
-	public Analyzer(Properties props) {
+	public Analyzer(File root, Properties props) {
 
 		cmdline = " " + props.getProperty("analyzer.params","");
 		myProcesses = new ArrayList<MyProcess>();
@@ -83,13 +83,7 @@ public class Analyzer {
 		}
 
 		try {
-			File jarFile = new File(Analyzer.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-			hfst = new File(jarFile.getPath(), binary);
-			
-			if (!hfst.exists()) { //workaround to dev env
-				File f = new File(jarFile.getParentFile().getPath(), binary);
-				if (f.exists()) hfst = f;
-			}
+			hfst = new File(root.getPath(), binary);
 			
 			if (!hfst.exists()) {
 				cmdline = "";

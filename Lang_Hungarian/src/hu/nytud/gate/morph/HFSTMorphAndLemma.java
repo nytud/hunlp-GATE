@@ -19,6 +19,7 @@ import hu.nytud.hfst.Analyzer.Analyzation;
 import hu.nytud.hfst.Stemmer;
 import hu.nytud.hfst.Stemmer.Stem;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
 import java.text.NumberFormat;
@@ -54,11 +55,13 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	@Override
 	public Resource init() throws ResourceInstantiationException {
 		try {
+			File jarFile = new File(HFSTMorphAndLemma.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			
 			Properties props = new Properties();
 			FileInputStream is = new FileInputStream(hfstWrapperConf.toURI().getSchemeSpecificPart());
 			props.load(is);
 			
-			analyzer = new Analyzer(props);
+			analyzer = new Analyzer(jarFile.getParentFile(),props);
 			stemmer  = new Stemmer(props);
 		} catch (Exception e) {
 			throw new ResourceInstantiationException(e);

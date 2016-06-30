@@ -1,21 +1,24 @@
 #
-# analyzer configuration
-# (command line arguments have to be tab separated)
+# Analyzer configuration
 
-analyzer.linux  = ../linux/hfst-lookup.sh
-analyzer.win32  = ../win32/hfst-lookup.exe
-analyzer.osx    = ../osx/hfst-lookup
+# OS dependent binaries with relative path to the jar file
+analyzer.linux  = linux/hfst-lookup.sh
+analyzer.win32  = win32/hfst-lookup.exe
+analyzer.osx    = osx/hfst-lookup
+# OS independent configuration parameters for the binary 
 analyzer.params = --cascade=composition --xfst=print-pairs --xfst=print-space ../hu.hfst
+# maximum number of concurrent binaries
 analyzer.max_count  = 3
+# timeout in milliseconds for a query
 analyzer.timeout_ms = 10000
 
 #
-# stemmer configuration
+# Stemmer configuration
 
 #
 # ';' separated list of tags
 
-stemmer.STEM = /N;/V;/Adj;/Prev
+stemmer.STEM = /N;/V;/Adj;/Prev;/Adv
 
 #stemmer.PREFIX = ?FF
 

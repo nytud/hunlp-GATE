@@ -4,6 +4,7 @@ import hu.nytud.hfst.Analyzer.Analyzation;
 import hu.nytud.hfst.Stemmer.Stem;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,18 +26,31 @@ public class Main {
 	}
 	
 	public Main(String config) {
-		Properties props = new Properties();
+		
 		try {
-			FileInputStream is = new FileInputStream(config);
+			File jarFile = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			
+			if ("bin".equals(jarFile.getName())) { // workaround for running without jar
+				jarFile = jarFile.getParentFile();
+			}
+			
+			File root = jarFile.getParentFile();
+
+			FileInputStream is = new FileInputStream(new File(root,config));
+			Properties props = new Properties();
 			props.load(is);
+
+			analyzer = new Analyzer(root, props);
+			stemmer  = new Stemmer(props);
+
 		} catch (FileNotFoundException e) {
-			System.err.println("Error: configuration file not found");
+			System.err.println("Error: configuration file not found - " + config );
 		} catch (IOException e) {
-			System.err.println("Error: could not parse configuration file - "+e.getMessage());
+			System.err.println("Error: could not parse configuration file");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
-		analyzer = new Analyzer(props);
-		stemmer  = new Stemmer(props);
 	}
 	
 	public List<Result> run(String input) {
@@ -67,14 +81,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
-		if (args.length < 1)
-		{
-			System.err.println("Usage: java -jar hfst-wrapper.jar <config> [word]");
-			return;
-		}
-
-		Main m = new Main(args[0]);
+		Main m = new Main(args.length > 0 ? args[0] : "hfst-wrapper.props");
 
 		if (args.length > 1) {
 			m.dump(args[1]);
