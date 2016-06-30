@@ -1,0 +1,31 @@
+
+#
+# Server
+
+host = localhost
+port = 8000
+
+#
+# Gate plugin directories to load
+#
+# plugin1 = ...
+# plugin2 = ...
+# ...
+
+plugin1 = Lang_Hungarian
+
+#
+# Module definitions
+#
+# module<n>.name   = short name (format: [a-z0-9_-]+)
+# module<n>.class  = gate resource class name
+# module<n>.params = parameters to be set for the module in http query format (a=b&c=d...)
+
+module1.name  = ml3_token
+module1.class = com.precognox.kconnect.gate.magyarlanc.HungarianTokenizerSentenceSplitter
+
+module2.name  = hfst
+module2.class = hu.nytud.gate.morph.HFSTMorphAndLemma
+
+module3.name  = ml3_pos
+module3.class = com.precognox.kconnect.gate.magyarlanc.HungarianLemmatizerPosTagger

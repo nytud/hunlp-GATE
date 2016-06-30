@@ -1,0 +1,48 @@
+<project name="gate-server" default="dist" basedir=".">
+  <description>
+    HFST wrapper for Stemming
+  </description>
+
+  <!-- Prevent Ant from warning about includeantruntime not being set -->
+  <property name="build.sysclasspath" value="ignore" />
+
+  <!-- set global properties for this build -->
+  <property name="source.dir"     value="src"/>
+  <property name="class.dir"      value="bin"/>
+  <property name="jar.file"       value="../${ant.project.name}.jar"/>
+  <property name="cfg.file"       value="${ant.project.name}.props"/>
+  <property name="main-class"     value="gate.server.Main"/>
+
+  <path id="classpath">
+    <fileset dir="../lib"> 
+      <include name="*.jar"/>
+    </fileset>  	
+  </path> 
+
+  <target name="clean" description="delete old files">
+    <delete dir="${class.dir}"/>
+    <delete dir="${jar.file}"/>
+  </target>
+
+  <target name="compile" description="build class files" depends="clean">
+    <mkdir dir="${class.dir}"/>
+    <javac srcdir="${source.dir}" destdir="${class.dir}" debug="true" source="1.8" target="1.8">
+      <classpath refid="classpath"/>
+      <compilerarg value="-Xlint:all" />
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile">
+    <jar destfile="${jar.file}" basedir="${class.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+      </manifest>
+    </jar>  
+  </target>
+
+  <target name="test" depends="dist">
+    <java jar="${jar.file}" fork="true">
+      <arg value="${cfg.file}" />
+    </java>
+  </target>
+</project>
