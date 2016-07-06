@@ -13,4 +13,7 @@
   <JAR>resources/magyarlanc/magyarlanc-3.0.0.jar</JAR>
   <JAR>resources/magyarlanc/magyarlanc-2.0.1.jar</JAR>
 
+  <JAR>resources/hfst/hfst-ol.jar</JAR>
+  <JAR>resources/hfst/hfst-wrapper.jar</JAR>
+
 </CREOLE-DIRECTORY>
