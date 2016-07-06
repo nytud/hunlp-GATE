@@ -1,4 +1,4 @@
-Extract (flat):
+Extract here (without paths):
 bin/hfst-lookup
 bin/hfst-optimized-lookup
 lib/*.dylib
