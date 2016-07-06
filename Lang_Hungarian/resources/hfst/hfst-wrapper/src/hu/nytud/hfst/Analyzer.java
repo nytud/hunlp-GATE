@@ -6,11 +6,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutionException;
@@ -107,8 +106,11 @@ public class Analyzer {
     synchronized public MyProcess getProcess(String firstWord) {
     	try {
 	    	for (float t=0; t<timeout && !interrupted; t+=50) {
-		    	for(MyProcess p : myProcesses) {
-		    		if (!p.in_use()) {
+		    	for(Iterator<MyProcess> it = myProcesses.iterator(); it.hasNext(); ) {
+		    		MyProcess p = it.next();
+		    		if (!p.isAlive()) {
+		    			it.remove();
+		    		} else if (!p.in_use()) {
 		    			p.addWord(firstWord);
 		    			return p;
 		    		}
@@ -135,6 +137,8 @@ public class Analyzer {
     	private BufferedReader is, es;
     	private Process process;
     	
+    	private boolean initialized = false;
+    	
     	private ConcurrentLinkedQueue<String> queue;
     	private LinkedBlockingQueue<List<Analyzation>> result;
     	    	
@@ -146,6 +150,7 @@ public class Analyzer {
     	
     	private void init() {
     		process = null;
+    		initialized = false;
     		try {
     			process = Runtime.getRuntime().exec(cmdline,null,hfst.getParentFile());
 	    		os = new OutputStreamWriter(process.getOutputStream(),"UTF-8");
@@ -154,6 +159,7 @@ public class Analyzer {
 	    		
 	    		if (!this.isAlive()) this.start();
 	    		
+		    	os.write(LINE_SEP);
 	    		for (String q : queue) {
 					os.write(q);
 			    	os.write(LINE_SEP);
@@ -192,7 +198,11 @@ public class Analyzer {
 	        Future<List<Analyzation>> future = executor.submit(new Poll());
 
 	        try {
-	            return future.get(timeout, TimeUnit.MILLISECONDS);
+	            for (int t=0; t<1000; ++t) { 
+	            	if (initialized || !isAlive()) break;
+	            	Thread.sleep(60);
+	            }
+	        	return future.get(timeout, TimeUnit.MILLISECONDS);
 	        } catch (TimeoutException e) {
 	            future.cancel(true);
 	            process.destroy(); // something went wrong
@@ -216,21 +226,20 @@ public class Analyzer {
 	 					for (String err = es.readLine(); err!=null; err = es.readLine()) {
 	    					System.err.println("Error in HFST: " + err);
 		    			}
+	 					if (!initialized) break;
  					} catch (IOException e) {}
  					throw new Exception("closed stdout");
  				}
  				error_count = 0;
-				if (line.isEmpty()) {
-					/* if (!anas.isEmpty()) ? */
- 					{			    	
-    		    		if (queue.poll() == null) for (Analyzation ana:anas) {
-    		    			System.err.println("Warning: Unmatched Analyzation: "+ana.formatted);
-    		    		} else {
-    		    			result.add(anas);
-    		    		}
-    		    		anas = new ArrayList<>();
-    	    		}
- 				} else {
+				if (line.isEmpty()) {			    	
+		    		if (!initialized) initialized = true; //first newline after start signals "ready"
+		    		else if (queue.poll() == null) for (Analyzation ana:anas) {
+		    			System.err.println("Warning: Unmatched Analyzation: "+ana.formatted);
+		    		} else {
+		    			result.add(anas);
+		    		}
+		    		anas = new ArrayList<>();
+	    		} else {
  					String[] l = line.split("\t");
  					if (l.length > 1 && !l[1].endsWith("+?")) try {
  						anas.add(new Analyzation(l.length > 1 ? l[1] : l[0]));
@@ -242,10 +251,12 @@ public class Analyzer {
     		} catch (Exception e) {
     			System.err.println("Exception in MyProcess.run():");
     			e.printStackTrace();
-    			if (error_count > 2) return; // could not repair
+    			if (!initialized || error_count > 2) break; // could not repair
     			process.destroy();
     			init();
     		}
+			
+			process.destroy();
     	}
     }
     

@@ -73,7 +73,7 @@ public class Main {
 	public void dump(String input) {
 		List<Result> res = run(input);
 		
-		if (res.isEmpty()) System.out.println("\t <unknown>");
+		if (res.isEmpty()) System.out.println(input + "\t <unknown>");
 		for (Result res1: res) {
 			System.out.println(input + "\t" + res1.toString());
 		}

@@ -10,7 +10,7 @@ analyzer.params = --cascade=composition --xfst=print-pairs --xfst=print-space ..
 # maximum number of concurrent binaries
 analyzer.max_count  = 3
 # timeout in milliseconds for a query
-analyzer.timeout_ms = 10000
+analyzer.timeout_ms = 2000
 
 #
 # Stemmer configuration
