@@ -220,14 +220,13 @@ public class Analyzer {
 			int error_count = 0;
 			while (!isInterrupted()) try { 
 	    		String line = is.readLine();
+	    		while (es.ready()) try {
+ 					String err = es.readLine();
+	    			if (err != null) System.err.println("Error in HFST: " + err);
+	    		} catch (IOException e) {}
  				if (line == null) {
+ 					if (!initialized) break;
  					++error_count;
- 					try {
-	 					for (String err = es.readLine(); err!=null; err = es.readLine()) {
-	    					System.err.println("Error in HFST: " + err);
-		    			}
-	 					if (!initialized) break;
- 					} catch (IOException e) {}
  					throw new Exception("closed stdout");
  				}
  				error_count = 0;
