@@ -84,7 +84,7 @@ runtest:
 	java -cp $(RTCP) hu.nytud.gate.testing.PRTest
 
 # Run command-line pipeline
-RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-3.0.0.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
+RTCP=Lang_Hungarian/hungarian.jar:Lang_Hungarian/resources/hfst/hfst-ol.jar:Lang_Hungarian/resources/hfst/hfst-wrapper.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-2.0.1.jar:Lang_Hungarian/resources/magyarlanc/magyarlanc-3.0.0.jar:Lang_Hungarian/resources/gate_plugins/Tagger_Framework/TaggerFramework.jar:$(GATE_HOME)/bin/gate.jar:$(GATE_HOME)/lib/*
 PIPELINE_INPUT=texts/peldak.txt
 CONFIG=Lang_Hungarian/resources/pipeline/pipeline.config
 pipeline:
