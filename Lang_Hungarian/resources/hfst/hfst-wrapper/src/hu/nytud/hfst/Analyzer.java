@@ -56,13 +56,13 @@ public class Analyzer {
 
 	private File hfst; 
 	private String cmdline;
-	private List<MyProcess> myProcesses;
+	private List<Worker> myProcesses;
 	private int max_process, timeout;
 	
 	public Analyzer(File root, Properties props) {
 
 		cmdline = " " + props.getProperty("analyzer.params","");
-		myProcesses = new ArrayList<MyProcess>();
+		myProcesses = new ArrayList<Worker>();
 		max_process =  Integer.parseInt(props.getProperty("analyzer.max_count","5"));
 		timeout = Integer.parseInt(props.getProperty("analyzer.timeout_ms","60000"));
 
@@ -95,29 +95,33 @@ public class Analyzer {
 	}
 
 	public List<Analyzation> process(String input) {
-		input = input.trim();
-		if (input.isEmpty()) return null;
-		return getProcess(input).getResult();
+		return getWorker().addWord(input).getResult();
+	}
+
+	public Worker process(List<String> input) {
+		Worker w = getWorker();
+		for (String word : input) w.addWord(word);
+		return w;
 	}
 
 	public void interrupt() { interrupted = true; }
 	private boolean interrupted = false;
 		
-    synchronized public MyProcess getProcess(String firstWord) {
+    synchronized protected Worker getWorker() {
     	try {
 	    	for (float t=0; t<timeout && !interrupted; t+=50) {
-		    	for(Iterator<MyProcess> it = myProcesses.iterator(); it.hasNext(); ) {
-		    		MyProcess p = it.next();
+		    	for(Iterator<Worker> it = myProcesses.iterator(); it.hasNext(); ) {
+		    		Worker p = it.next();
 		    		if (!p.isAlive()) {
 		    			it.remove();
 		    		} else if (!p.in_use()) {
-		    			p.addWord(firstWord);
+		    			p.reserve();
 		    			return p;
 		    		}
 		    	}
 		    	if (myProcesses.size() < max_process) { 
-		    		MyProcess p = new MyProcess();
-		    		p.addWord(firstWord);
+		    		Worker p = new Worker();
+		    		p.reserve();
 		    		myProcesses.add(p);
 					return p;
 		    	}
@@ -132,17 +136,18 @@ public class Analyzer {
     }
     
     
-    public class MyProcess extends Thread {
+    public class Worker extends Thread {
     	private OutputStreamWriter os;
     	private BufferedReader is, es;
     	private Process process;
     	
     	private boolean initialized = false;
+    	private boolean reserved = false;
     	
     	private ConcurrentLinkedQueue<String> queue;
     	private LinkedBlockingQueue<List<Analyzation>> result;
     	    	
-    	public MyProcess() {
+    	public Worker() {
     		queue = new ConcurrentLinkedQueue<>();
     		result = new LinkedBlockingQueue<>();
     		init();
@@ -159,8 +164,8 @@ public class Analyzer {
 	    		
 	    		if (!this.isAlive()) this.start();
 	    		
-		    	os.write(LINE_SEP);
-	    		for (String q : queue) {
+	    		os.write(LINE_SEP); // send an "is it ready" query
+		    	for (String q : queue) {
 					os.write(q);
 			    	os.write(LINE_SEP);
 				}
@@ -170,12 +175,18 @@ public class Analyzer {
     		}
     	}
     	
-    	public boolean in_use() {
-    		return !queue.isEmpty();
+    	public void reserve() {
+    		reserved = true;
     	}
     	
-    	public void addWord(String word) {
+    	public boolean in_use() {
+    		return !reserved && !queue.isEmpty();
+    	}
+    	
+    	public Worker addWord(String word) {
+    		word = word.trim();
     		queue.add(word);
+    		reserved = false;
     		try {
 	    		os.write(word);
 		    	os.write(LINE_SEP);
@@ -184,6 +195,7 @@ public class Analyzer {
     			process.destroy();
     			init();
     		}
+    		return this;
     	}
     	
     	protected class Poll implements Callable<List<Analyzation>> {
@@ -211,13 +223,13 @@ public class Analyzer {
 	        	System.err.println("Exception in getResult(): could not run task");
 	        }
             queue.poll();
-            return null;
+            return new ArrayList<>();
     	}
     	
     	@Override
     	public void run() {
     		List<Analyzation> anas = new ArrayList<>();
-			int error_count = 0;
+			int error_count = 0; String last_word = "";
 			while (!isInterrupted()) try { 
 	    		String line = is.readLine();
 	    		while (es.ready()) try {
@@ -230,23 +242,24 @@ public class Analyzer {
  					throw new Exception("closed stdout");
  				}
  				error_count = 0;
-				if (line.isEmpty()) {			    	
-		    		if (!initialized) initialized = true; //first newline after start signals "ready"
-		    		else if (queue.poll() == null) for (Analyzation ana:anas) {
+ 				String[] l = line.split("\t");
+ 				if (line.isEmpty() || !last_word.equals(l[0]) && !anas.isEmpty()) {
+ 					if (!initialized) { // handle the "is it ready" query
+ 	 					initialized = true;
+ 					} else if (queue.poll() == null) for (Analyzation ana:anas) {
 		    			System.err.println("Warning: Unmatched Analyzation: "+ana.formatted);
 		    		} else {
 		    			result.add(anas);
+		    			anas = new ArrayList<>();
 		    		}
-		    		anas = new ArrayList<>();
-	    		} else {
- 					String[] l = line.split("\t");
- 					if (l.length > 1 && !l[1].endsWith("+?")) try {
- 						anas.add(new Analyzation(l.length > 1 ? l[1] : l[0]));
- 					} catch (Exception e) {
- 						System.err.println("Exception in Analyzation: ");
- 						e.printStackTrace();
- 					}
  				}
+				if (l.length > 1 && !l[1].endsWith("+?")) try {
+					last_word = l[0];
+ 					anas.add(new Analyzation(l[1]));
+				} catch (Exception e) {
+					System.err.println("Exception in Analyzation: ");
+					e.printStackTrace();
+				}
     		} catch (Exception e) {
     			System.err.println("Exception in MyProcess.run():");
     			e.printStackTrace();

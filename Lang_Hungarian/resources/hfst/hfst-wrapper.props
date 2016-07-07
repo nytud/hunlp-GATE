@@ -6,7 +6,7 @@ analyzer.linux  = linux/hfst-lookup.sh
 analyzer.win32  = win32/hfst-lookup.exe
 analyzer.osx    = osx/hfst-lookup
 # OS independent configuration parameters for the binary 
-analyzer.params = --cascade=composition --xfst=print-pairs --xfst=print-space ../hu.hfst
+analyzer.params = --cascade=composition --xfst=print-pairs --xfst=print-space --pipe-mode ../hu.hfst
 # maximum number of concurrent binaries
 analyzer.max_count  = 3
 # timeout in milliseconds for a query

@@ -53,30 +53,30 @@ public class Main {
 		
 	}
 	
-	public List<Result> run(String input) {
-		List<Result> res = new ArrayList<>();
-		List<Result> res_bu = new ArrayList<>();
-		
-		List<Analyzation> anas = analyzer.process(input);
-		if (anas != null) for (Analyzation ana: anas) {
-			Result res1 = new Result();
-			res1.anas = ana.formatted;
-			Stem stem = stemmer.process(ana);
-			res1.lemma = stem.szStem;
-			res1.tags  = stem.getTags(false);
-			if (stem.bIncorrectWord) res_bu.add(res1); else res.add(res1);
+	public void run(List<String> input) {
+
+		Analyzer.Worker w = analyzer.process(input);
+
+		for (String word : input) {
+			List<Result> res = new ArrayList<>();
+			List<Result> res_bu = new ArrayList<>();
+			
+			List<Analyzation> anas = w.getResult();
+			for (Analyzation ana: anas) {
+				Result res1 = new Result();
+				res1.anas  = ana.formatted;
+				Stem stem  = stemmer.process(ana);
+				res1.lemma = stem.szStem;
+				res1.tags  = stem.getTags(false);
+				if (stem.bIncorrectWord) res_bu.add(res1); else res.add(res1);
+			}
+			
+			if (res.isEmpty()) System.out.println(word + "\t<unknown>");
+			for (Result res1 : res) {
+				System.out.println(word + "\t" + res1.toString());
+			}			
 		}
-		
-		return res.isEmpty() ? res_bu : res;
-	}
-	
-	public void dump(String input) {
-		List<Result> res = run(input);
-		
-		if (res.isEmpty()) System.out.println(input + "\t <unknown>");
-		for (Result res1: res) {
-			System.out.println(input + "\t" + res1.toString());
-		}
+
 	}
 
 	public static void main(String[] args) {
@@ -84,17 +84,26 @@ public class Main {
 		Main m = new Main(args.length > 0 ? args[0] : "hfst-wrapper.props");
 
 		if (args.length > 1) {
-			m.dump(args[1]);
-			System.exit(0);
-			return;
+			List<String> input = new ArrayList<>();
+			for (int i=1; i < args.length; ++i) {
+				input.add(args[i]);
+			}
+			m.run(input);
+			System.exit(0);			
 		}
-		
+
 		try {
 			BufferedReader is = new BufferedReader(new InputStreamReader(System.in,"UTF-8"));
 			while (true) {
+				List<String> input = new ArrayList<>();
 				String line = is.readLine();
+				while (line != null && is.ready()) {
+					input.add(line);
+					line = is.readLine();
+				}
+				if (line != null) input.add(line);
+				if (!input.isEmpty()) m.run(input);
 				if (line == null) System.exit(0); // stdin closed
-				m.dump(line);
 			}
 		} catch (IOException e) {}
 	}
