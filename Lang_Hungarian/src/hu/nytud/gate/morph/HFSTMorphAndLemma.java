@@ -55,7 +55,7 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	@Override
 	public Resource init() throws ResourceInstantiationException {
 		try {
-			File jarFile = new File(HFSTMorphAndLemma.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			File jarFile = new File(Analyzer.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 			
 			Properties props = new Properties();
 			FileInputStream is = new FileInputStream(hfstWrapperConf.toURI().getSchemeSpecificPart());
@@ -120,34 +120,24 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	    	    
         try {
     	    // initialize process
-        	Analyzer.MyProcess runner = null;
+        	Analyzer.Worker worker = analyzer.getWorker();
 
 	        Iterator<Annotation> tokenIter = tokensAS.iterator();
-	        Annotation prevToken = null;
-	        // create a shift to decrease idle time
-	        if (tokenIter.hasNext()) {
-	        	prevToken = tokenIter.next();
-		    	String tok = document.getContent().getContent(
-	    			prevToken.getStartNode().getOffset(),
-	    			prevToken.getEndNode().getOffset()
-				).toString();
-	        	runner = analyzer.getProcess(tok);
+	        
+	        while (tokenIter.hasNext()) {
+	        	Annotation currentToken = tokenIter.next();
+	        	worker.addWord(document.getContent().getContent(
+	        			currentToken.getStartNode().getOffset(),
+	        			currentToken.getEndNode().getOffset()
+				).toString());
 	        }
 	        
-	        for (int n=0; n < tokenCnt; ++n) {
-	        	Annotation currentToken = null;
-	        	if (tokenIter.hasNext()) {
-			    	currentToken = tokenIter.next();
-			    	String tok = document.getContent().getContent(
-						currentToken.getStartNode().getOffset(),
-						currentToken.getEndNode().getOffset()
-					).toString();
-			    	runner.addWord(tok);
-	        	}
-			    
+	        tokenIter = tokensAS.iterator(); int n=0;
+	        while (tokenIter.hasNext()) {
+	        	Annotation currentToken = tokenIter.next();
 	    		Collection<Map<String,String>> annot = new ArrayList<>();
-	    		List<Analyzation> anas = runner.getResult(); 
-	    		if (anas != null) for (Analyzation ana : anas) {
+	    		List<Analyzation> anas = worker.getResult(); 
+	    		for (Analyzation ana : anas) {
 	    			Stem stem = stemmer.process(ana);
 	    			Map<String,String> res = new TreeMap<>();
 	    			res.put("ana", ana.formatted);
@@ -156,12 +146,8 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	    			if (stem.bIncorrectWord) res.put("incorrect", "1");
 	    			annot.add(res);
 	    		}
-	    		addFeatures(prevToken, annot);
-	
-				fireProgressChanged(++n * 100 / tokenCnt);
-
-				if (isInterrupted()) { logger.info("HFST interrupted"); break; }
-				prevToken = currentToken;
+	    		addFeatures(currentToken, annot);
+	    		fireProgressChanged(++n * 100 / tokenCnt);
 	        }
 	        
 		} catch (Exception e) {

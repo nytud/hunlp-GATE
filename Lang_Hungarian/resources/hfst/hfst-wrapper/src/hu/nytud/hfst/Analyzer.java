@@ -107,7 +107,7 @@ public class Analyzer {
 	public void interrupt() { interrupted = true; }
 	private boolean interrupted = false;
 		
-    synchronized protected Worker getWorker() {
+    synchronized public Worker getWorker() {
     	try {
 	    	for (float t=0; t<timeout && !interrupted; t+=50) {
 		    	for(Iterator<Worker> it = myProcesses.iterator(); it.hasNext(); ) {
