@@ -47,7 +47,8 @@ module6.class   = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParser
 # -----
 
 # infra2 cuccok (pipeline-os infra2.config alapján)
-# >> full infra lánc = QT,HFST,ML3-PosLem,ML3-Dep,huntag3-NP,Preverb,IOB4NP
+# >> full infra lánc = QT,HFST,ML2-PosLem,ML3-PosLem,ML3-Dep,huntag3-NP,Preverb,IOB4NP
+# XXX ML2-PosLem -- csak, hogy a "régi" huntag3-NP működjön
 
 module7.name    = HFST
 module7.class   = hu.nytud.gate.morph.HFSTMorphJava
@@ -76,4 +77,20 @@ module11.class  = hu.nytud.gate.morph.MagyarlancKRMorphAnalyzer
 
 module12.name   = ML2-MSDmorph
 module12.class  = hu.nytud.gate.morph.MagyarlancMSDMorphAnalyzer
+
+# -----
+
+# EZ NEM KELL! :)
+# olyan verzió, ami az 'msd' attrib-ba teszi a pos eredményt
+# csak azért, mert a huntag3 azt olvassa
+# (de persze át lehet írni a huntag3-t is, hogy ne azt olvassa)
+# XXX de ennek a formátma nem megfelelő a "régi" huntag3 modellhez,
+# ahhoz msd-s formátum kell, amit az ML2-PoSLem tud, ld. alább (module14)
+module13.name   = ML3-PosLem-msd
+module13.class  = com.precognox.kconnect.gate.magyarlanc.HungarianLemmatizerPosTagger
+module13.params = outputPOSFeature=msd
+
+# na ez az 'msd'-be írja ki a pos-infót -> ami a "régi" huntag3-NP-nek a jó!
+module14.name   = ML2-PosLem
+module14.class  = hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer
 
