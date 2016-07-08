@@ -29,7 +29,7 @@ import hu.u_szeged.magyarlanc.Magyarlanc;
  *  Tested with Magyarlánc "2.0.1" (2015-11-04 from J.Zs.)
  *  @author Márton Miháltz
  */ 
-@CreoleResource(name = "3. Dependency Parser [HU] [magyarlanc 2.0]", 
+@CreoleResource(name = "4. Dependency Parser [HU] [magyarlanc 2.0]", 
 				comment = "Requires sentences and tokens with lemma and msd features"
 				)
 public class MagyarlancDependencyParser extends AbstractLanguageAnalyser {

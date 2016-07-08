@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 import splitter.archive.StringCleaner;
 
-@CreoleResource(name = "2. POS Tagger and Lemmatizer [HU] [magyarlanc 3.0]",
+@CreoleResource(name = "3. POS Tagger and Lemmatizer [HU] [magyarlanc 3.0]",
                 comment = "Adds MSD code and lemma annotations",
                 icon = "pos-tagger")
 public class HungarianLemmatizerPosTagger extends AbstractLanguageAnalyser {

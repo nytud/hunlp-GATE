@@ -14,7 +14,7 @@ import java.util.*;
  *  based solely on capitalization of Tokens.
  *  @author Bálint Sass
  */ 
-@CreoleResource(name = "Hungarian Dummy IOB NER",
+@CreoleResource(name = "[DEMO] 4. Dummy IOB NER (HU)",
 				comment = "Requires 'Token' annotation"
 				// helpURL = "http://corpus.nytud.hu/gate/doc/DummyIobNer"
         ) 

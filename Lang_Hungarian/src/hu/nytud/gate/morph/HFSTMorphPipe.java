@@ -37,7 +37,7 @@ import org.apache.log4j.Logger;
  *  Based on MagyarlancKRMorphAnalyzer
  *  @author Peter K
  */ 
-@CreoleResource(name = "[DEMO] 2. Morphological Analyzer (HU) [hfstol Native]", 
+@CreoleResource(name = "[DEMO] 2. Morphological Analyzer (HU) [hfst-ol Native]", 
 				comment = "Expects tokenized text. Outputs lemmas and analyzations. Calls hfst command line via I/O redirection"
 				) // TODO icon?
 public class HFSTMorphPipe extends AbstractLanguageAnalyser {

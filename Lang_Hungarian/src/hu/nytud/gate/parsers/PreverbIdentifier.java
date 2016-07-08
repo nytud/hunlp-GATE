@@ -16,7 +16,7 @@ import java.util.*;
  *  @author Bálint Sass
  */ 
 @CreoleResource(
-  name = "Hungarian Preverb Identifier",
+  name = "5. Preverb Identifier (HU)",
   comment = "Requires dependency analysis: 'depType' and 'depTarget' features on 'Token's"
   // helpURL = "http://corpus.nytud.hu/gate/doc/PreverbIdentifier"
 ) 

@@ -18,7 +18,7 @@ import hu.nytud.gate.morph.HFSTMorphPipe;
  * We only override some CREOLE resource parameter default values
  * which are needed to run the huntag3 command line binary correctly. 
  */
-@CreoleResource(name = "Huntag3 Hungarian NP-chunker [msd] (command-line)", 
+@CreoleResource(name = "[DEMO] 4. NP Chunker (HU) [HunTag3 GenericTagger MSD]", 
 				comment = "Expects tokenized, msd-tagged text. Outputs BIOE1-* codes."
 						+ "Calls huntag3 command line binary via TaggerFramework's GenericTagger") 
 public class Huntag3NPChunkerCommandLine extends GenericTagger {
