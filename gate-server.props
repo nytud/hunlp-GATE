@@ -54,7 +54,7 @@ module7.name    = HFST
 module7.class   = hu.nytud.gate.morph.HFSTMorphJava
 
 module8.name    = huntag3-NP
-module8.class   = hu.nytud.gate.othertaggers.Huntag3NPChunkerCommandLine
+module8.class   = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipe
 # XXX ez talán nem működik együtt a ML3-PosLem -mel -- ld. infra2.config
 # XXX talán KR morfo elemző kéne hozzá?
 
