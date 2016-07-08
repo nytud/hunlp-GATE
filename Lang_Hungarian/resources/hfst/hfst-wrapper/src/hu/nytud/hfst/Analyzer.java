@@ -10,15 +10,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Analyzer {
 
@@ -56,15 +50,16 @@ public class Analyzer {
 
 	private File hfst; 
 	private String cmdline;
-	private List<Worker> myProcesses;
-	private int max_process, timeout;
+	private List<WorkerProcess> myWorkers;
+	private int maxProcess, initTimeout, processTimeout;
 	
 	public Analyzer(File root, Properties props) {
 
 		cmdline = " " + props.getProperty("analyzer.params","");
-		myProcesses = new ArrayList<Worker>();
-		max_process =  Integer.parseInt(props.getProperty("analyzer.max_count","5"));
-		timeout = Integer.parseInt(props.getProperty("analyzer.timeout_ms","60000"));
+		myWorkers = new ArrayList<WorkerProcess>();
+		maxProcess =  Integer.parseInt(props.getProperty("analyzer.max_count","5"));
+		initTimeout = Integer.parseInt(props.getProperty("analyzer.init_timeout_ms","60000"));
+		processTimeout = Integer.parseInt(props.getProperty("analyzer.process_timeout_ms","5000"));
 
 		// Get OS name
 		String binary = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
@@ -93,7 +88,7 @@ public class Analyzer {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public List<Analyzation> process(String input) {
 		return getWorker().addWord(input).getResult();
 	}
@@ -104,26 +99,21 @@ public class Analyzer {
 		return w;
 	}
 
-	public void interrupt() { interrupted = true; }
 	private boolean interrupted = false;
 		
     synchronized public Worker getWorker() {
     	try {
-	    	for (float t=0; t<timeout && !interrupted; t+=50) {
-		    	for(Iterator<Worker> it = myProcesses.iterator(); it.hasNext(); ) {
-		    		Worker p = it.next();
-		    		if (!p.isAlive()) {
-		    			it.remove();
-		    		} else if (!p.in_use()) {
-		    			p.reserve();
-		    			return p;
+	    	for (float t=0; t<initTimeout && !interrupted; t+=50) {
+		    	for(Iterator<WorkerProcess> it = myWorkers.iterator(); it.hasNext(); ) {
+		    		WorkerProcess p = it.next();
+		    		if (!p.in_use) {
+		    			return new Worker(p);
 		    		}
 		    	}
-		    	if (myProcesses.size() < max_process) { 
-		    		Worker p = new Worker();
-		    		p.reserve();
-		    		myProcesses.add(p);
-					return p;
+		    	if (myWorkers.size() < maxProcess) { 
+		    		WorkerProcess p = new WorkerProcess();
+		    		myWorkers.add(p);
+		    		return new Worker(p);
 		    	}
 				Thread.sleep(50);
 	    	}
@@ -135,117 +125,121 @@ public class Analyzer {
     	return null;
     }
     
-    
-    public class Worker extends Thread {
-    	private OutputStreamWriter os;
-    	private BufferedReader is, es;
-    	private Process process;
+    private class WorkerProcess {
+    	private OutputStreamWriter stdin;
+    	private BufferedReader stdout, stderr;
+    	public boolean in_use = false;
+    	private Process process = null;
     	
-    	private boolean initialized = false;
-    	private boolean reserved = false;
-    	
-    	private ConcurrentLinkedQueue<String> queue;
-    	private LinkedBlockingQueue<List<Analyzation>> result;
-    	    	
-    	public Worker() {
-    		queue = new ConcurrentLinkedQueue<>();
-    		result = new LinkedBlockingQueue<>();
-    		init();
+    	public WorkerProcess() {
+    		reload();
     	}
     	
-    	private void init() {
-    		process = null;
-    		initialized = false;
+    	public void reload() {
     		try {
+    			if (process != null) process.destroy();
     			process = Runtime.getRuntime().exec(cmdline,null,hfst.getParentFile());
-	    		os = new OutputStreamWriter(process.getOutputStream(),"UTF-8");
-	    		is = new BufferedReader(new InputStreamReader(process.getInputStream(),"UTF-8"));
-	    		es = new BufferedReader(new InputStreamReader(process.getErrorStream(),"UTF-8"));
-	    		
-	    		if (!this.isAlive()) this.start();
-	    		
-	    		os.write(LINE_SEP); // send an "is it ready" query
-		    	for (String q : queue) {
-					os.write(q);
-			    	os.write(LINE_SEP);
-				}
-	    		os.flush();
+    			stdin = new OutputStreamWriter(process.getOutputStream(),"UTF-8");
+    			stdout = new BufferedReader(new InputStreamReader(process.getInputStream(),"UTF-8"));
+    			stderr = new BufferedReader(new InputStreamReader(process.getErrorStream(),"UTF-8"));
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
     	}
     	
-    	public void reserve() {
-    		reserved = true;
+    	public void write(String word) throws IOException {
+    		stdin.write(word);
+    		stdin.write(LINE_SEP);
+    		stdin.flush();
     	}
     	
-    	public boolean in_use() {
-    		return !reserved && !queue.isEmpty();
+    	public String read() throws IOException {
+    		String line = stdout.readLine();
+    		while (stderr.ready()) try {
+					String err = stderr.readLine();
+    			if (err != null) System.err.println("Error in HFST: " + err);
+    		} catch (IOException e) {}
+    		return line;
     	}
+    }
+    
+    
+    public class Worker extends Thread {
     	
+    	private WorkerProcess worker;
+    	private boolean initialized = false;
+    	
+    	private ConcurrentLinkedQueue<String> queue;
+    	private LinkedBlockingQueue<List<Analyzation>> result;
+    	private AtomicInteger skipped;
+    	    	
+    	protected Worker(WorkerProcess worker) {
+    		queue = new ConcurrentLinkedQueue<>();
+    		result = new LinkedBlockingQueue<>();
+    		skipped = new AtomicInteger(0);
+    		worker.in_use = true;
+    		this.worker = worker;
+    		init();
+    	}
+
+    	private void init() {
+    		initialized = false;
+    		try {
+    			worker.write("");
+	    		skipped.set(1);
+		    	for (String q : queue) worker.write(q);
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}
+    	}
+ 
     	public Worker addWord(String word) {
     		word = word.trim();
     		queue.add(word);
-    		reserved = false;
+    		if (!this.isAlive()) this.start();
     		try {
-	    		os.write(word);
-		    	os.write(LINE_SEP);
-		    	os.flush();
+	    		worker.write(word);
     		} catch (IOException e) {
-    			process.destroy();
+    			worker.reload();
     			init();
     		}
     		return this;
     	}
-    	
-    	protected class Poll implements Callable<List<Analyzation>> {
-    		@Override
-    		public List<Analyzation> call() throws Exception {
-    		      return result.take();
-    		}
-    	}
-    	
+    	    	
     	public List<Analyzation> getResult() {
-	    	ExecutorService executor = Executors.newSingleThreadExecutor();
-	        Future<List<Analyzation>> future = executor.submit(new Poll());
-
-	        try {
-	            for (int t=0; t<1000; ++t) { 
+	    	try {
+	            for (int t=initTimeout/60; t>0; --t) { 
 	            	if (initialized || !isAlive()) break;
 	            	Thread.sleep(60);
 	            }
-	        	return future.get(timeout, TimeUnit.MILLISECONDS);
-	        } catch (TimeoutException e) {
-	            future.cancel(true);
-	            process.destroy(); // something went wrong
+	            for (int t=processTimeout/5; t>0; --t) {
+	            	if (result.size() > 0) return result.take();
+	            	Thread.sleep(5);
+	            }
 	        } catch (InterruptedException e) {
-	        } catch (ExecutionException e) {
-	        	System.err.println("Exception in getResult(): could not run task");
 	        }
-            queue.poll();
-            return new ArrayList<>();
+	    	skipped.incrementAndGet();
+	    	queue.poll();
+            return null;
     	}
     	
     	@Override
     	public void run() {
     		List<Analyzation> anas = new ArrayList<>();
 			int error_count = 0; String last_word = "";
-			while (!isInterrupted()) try { 
-	    		String line = is.readLine();
-	    		while (es.ready()) try {
- 					String err = es.readLine();
-	    			if (err != null) System.err.println("Error in HFST: " + err);
-	    		} catch (IOException e) {}
- 				if (line == null) {
- 					if (!initialized) break;
+			while (!isInterrupted() && !queue.isEmpty()) try { 
+	    		String line = worker.read();
+	    		if (line == null) {
+ 					if (!initialized || isInterrupted()) break;
  					++error_count;
  					throw new Exception("closed stdout");
  				}
+	    		initialized = true;
  				error_count = 0;
  				String[] l = line.split("\t");
  				if (line.isEmpty() || !last_word.equals(l[0]) && !anas.isEmpty()) {
- 					if (!initialized) { // handle the "is it ready" query
- 	 					initialized = true;
+ 					if (skipped.get() > 0) { // handle the "is it ready" query
+ 	 					skipped.decrementAndGet();
  					} else if (queue.poll() == null) for (Analyzation ana:anas) {
 		    			System.err.println("Warning: Unmatched Analyzation: "+ana.formatted);
 		    		} else {
@@ -260,15 +254,17 @@ public class Analyzer {
 					System.err.println("Exception in Analyzation: ");
 					e.printStackTrace();
 				}
+			} catch (InterruptedException e) {
+				break;
     		} catch (Exception e) {
     			System.err.println("Exception in MyProcess.run():");
     			e.printStackTrace();
     			if (!initialized || error_count > 2) break; // could not repair
-    			process.destroy();
+    			worker.reload();
     			init();
     		}
 			
-			process.destroy();
+			worker.in_use = false;
     	}
     }
     

@@ -2,8 +2,6 @@ package hu.nytud.gate.morph;
 
 import gate.Annotation;
 import gate.AnnotationSet;
-import gate.Factory;
-import gate.FeatureMap;
 import gate.Resource;
 import gate.Utils;
 import gate.creole.AbstractLanguageAnalyser;
@@ -13,7 +11,6 @@ import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
-import gate.util.GateRuntimeException;
 import hu.nytud.hfst.Analyzer;
 import hu.nytud.hfst.Analyzer.Analyzation;
 import hu.nytud.hfst.Stemmer;
@@ -63,6 +60,7 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 			
 			analyzer = new Analyzer(jarFile.getParentFile(),props);
 			stemmer  = new Stemmer(props);
+
 		} catch (Exception e) {
 			throw new ResourceInstantiationException(e);
 		}
@@ -134,10 +132,13 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	        
 	        tokenIter = tokensAS.iterator(); int n=0;
 	        while (tokenIter.hasNext()) {
-	        	Annotation currentToken = tokenIter.next();
+	        	Annotation tok = tokenIter.next();
 	    		Collection<Map<String,String>> annot = new ArrayList<>();
 	    		List<Analyzation> anas = worker.getResult(); 
-	    		for (Analyzation ana : anas) {
+	    		if (anas==null) logger.error(
+	    				"timeout for word: " + 
+	    				document.getContent().getContent(tok.getStartNode().getOffset(), tok.getEndNode().getOffset()).toString());
+				else for (Analyzation ana: anas) {
 	    			Stem stem = stemmer.process(ana);
 	    			Map<String,String> res = new TreeMap<>();
 	    			res.put("ana", ana.formatted);
@@ -146,7 +147,8 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	    			if (stem.bIncorrectWord) res.put("incorrect", "1");
 	    			annot.add(res);
 	    		}
-	    		addFeatures(currentToken, annot);
+	    		
+	    		tok.getFeatures().put(outputAnasFeatureName, annot);	    		
 	    		fireProgressChanged(++n * 100 / tokenCnt);
 	        }
 	        
@@ -160,65 +162,6 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	    	    NumberFormat.getInstance().format(
 	            (double)(System.currentTimeMillis() - startTime) / 1000) +
 	            " seconds!");
-	}
-	
-	/**
-	 * Add lemma+MSD code pairs to a token annotation.
-	 * Code from gate.creole.POSTagger.addFeatures()
-	 */
-	private void addFeatures(Annotation annot, Collection<Map<String,String>> feats) throws GateRuntimeException {
-		// TODO: assert that anas is of type ArrayList<String>?
-			    
- 	  	String tempIASN = inputASName == null ? "" : inputASName;
-	    String tempOASN = outputASName == null ? "" : outputASName;
-
-	    if(outputAnnotationType.equals(baseTokenAnnotationType) && tempIASN.equals(tempOASN)) {
-	    	annot.getFeatures().put(outputAnasFeatureName, feats);
-	        return;
-	    } else {
-	    	int start = annot.getStartNode().getOffset().intValue();
-	        int end = annot.getEndNode().getOffset().intValue();
-	        // get the annotations of type outputAnnotationType
-	        AnnotationSet outputAS = (outputASName == null) ?
-	        		document.getAnnotations() :
-	                document.getAnnotations(outputASName);
-	        AnnotationSet annotations = outputAS.get(outputAnnotationType);
-	        if(annotations == null || annotations.size() == 0) {
-	        	// add new annotation
-	            FeatureMap features = Factory.newFeatureMap();
-	            features.put(outputAnasFeatureName, feats);
-	            try {
-	            	outputAS.add(new Long(start), new Long(end), outputAnnotationType, features);
-	            } catch(Exception e) {
-	                throw new GateRuntimeException("Invalid Offsets");
-	            }
-	        } else {
-	        	// search for the annotation if there is one with the same start and end offsets
-	            List<Annotation> tempList = new ArrayList<Annotation>(annotations.get());
-	            boolean found = false;
-	            for (int i=0; i<tempList.size(); i++) {
-	            	Annotation annotation = tempList.get(i);
-	                if (annotation.getStartNode().getOffset().intValue() == start 
-	                    && annotation.getEndNode().getOffset().intValue() == end) {
-	                	// this is the one
-	        	        annot.getFeatures().put(outputAnasFeatureName, feats);
-                        found = true;
-	                    break;
-	                }
-	            }
-	            if(!found) {
-	            	// add new annotation
-	                FeatureMap features = Factory.newFeatureMap();
-		            features.put(outputAnasFeatureName, feats);
-	                try {
-	                	outputAS.add(new Long(start), new Long(end), outputAnnotationType, features);
-	                } catch(Exception e) {
-	                    throw new GateRuntimeException("Invalid Offsets");
-	                }
-	            }
-	        }
-	    }
-	    
 	}
 	
 	@CreoleParameter(

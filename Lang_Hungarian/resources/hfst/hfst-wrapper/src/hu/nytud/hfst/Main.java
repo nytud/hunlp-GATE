@@ -62,7 +62,8 @@ public class Main {
 			List<Result> res_bu = new ArrayList<>();
 			
 			List<Analyzation> anas = w.getResult();
-			for (Analyzation ana: anas) {
+			if (anas==null) System.err.println("timeout for word: "+ word);
+			else for (Analyzation ana: anas) {
 				Result res1 = new Result();
 				res1.anas  = ana.formatted;
 				Stem stem  = stemmer.process(ana);
@@ -74,7 +75,8 @@ public class Main {
 			if (res.isEmpty()) System.out.println(word + "\t<unknown>");
 			for (Result res1 : res) {
 				System.out.println(word + "\t" + res1.toString());
-			}			
+			}
+			System.out.println("");
 		}
 
 	}
@@ -89,7 +91,7 @@ public class Main {
 				input.add(args[i]);
 			}
 			m.run(input);
-			System.exit(0);			
+			return;
 		}
 
 		try {
@@ -103,7 +105,9 @@ public class Main {
 				}
 				if (line != null) input.add(line);
 				if (!input.isEmpty()) m.run(input);
-				if (line == null) System.exit(0); // stdin closed
+				if (line == null) { // stdin closed
+					return;
+				}
 			}
 		} catch (IOException e) {}
 	}
