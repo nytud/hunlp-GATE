@@ -78,6 +78,7 @@ def writeSentence(sen, out=sys.stdout, comment=None):
         out.write('{0}\n'.format(comment))
     out.writelines('{0}\n'.format('\t'.join(tok)) for tok in sen)
     out.write('\n')
+    out.flush()
 
 
 def loadYaml(cfgFile):
