@@ -138,6 +138,7 @@ public class Huntag3NERPipe extends AbstractLanguageAnalyser {
 	    	if (huntag == null || !huntag.isAlive()) {
 	    		ProcessBuilder pb = new ProcessBuilder(bin.getCanonicalPath(),"NER");
 	    		pb.directory(bin.getParentFile());
+	    		if (huntag != null) huntag.destroy();
 	    		huntag = pb.start();
 
 		        ht_os = new OutputStreamWriter(huntag.getOutputStream(),"UTF-8");
