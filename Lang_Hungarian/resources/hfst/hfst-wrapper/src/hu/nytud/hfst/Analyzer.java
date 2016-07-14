@@ -12,7 +12,6 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Analyzer {
 
@@ -127,159 +126,152 @@ public class Analyzer {
     
     private class WorkerProcess implements Runnable {
     	private OutputStreamWriter stdin;
-    	private ConcurrentLinkedQueue<String> wQueue;
+    	private ConcurrentLinkedQueue<String> iQueue, wQueue;
     	private BufferedReader stdout, stderr;
     	public boolean in_use = false;
+    	private boolean initialized = false;
+    	private int error_count = 0;
     	private Process process = null;
     	
     	public WorkerProcess() {
+    		iQueue = new ConcurrentLinkedQueue<>();
     		wQueue = new ConcurrentLinkedQueue<>();
     		reload();
     	}
     	
-    	public void reload() {
+    	synchronized public void reload() {
     		try {
+	    		initialized = false;
+    			wQueue.clear();
     			if (process != null) process.destroy();
     			process = Runtime.getRuntime().exec(cmdline,null,hfst.getParentFile());
     			stdin = new OutputStreamWriter(process.getOutputStream(),"UTF-8");
     			stdout = new BufferedReader(new InputStreamReader(process.getInputStream(),"UTF-8"));
     			stderr = new BufferedReader(new InputStreamReader(process.getErrorStream(),"UTF-8"));
+    			write("");
+	    		wQueue.addAll(iQueue);
+	    		for (int t=initTimeout/60; t>0; --t) { 
+	            	if (stdout.ready() || stderr.ready()) {
+	            		read();
+	            		initialized = true;
+	            		break;
+	            	}
+	            	Thread.sleep(60);
+	            }
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
     	}
     	
-    	public void write(String word) throws IOException {
+    	public void add(String word) {
+    		iQueue.add(word);
     		wQueue.add(word);
     	}    	
     	
-    	public String read() throws IOException {
-    		String line = stdout.readLine();
-    		while (stderr.ready()) try {
-					String err = stderr.readLine();
-    			if (err != null) System.err.println("Error in HFST: " + err);
-    		} catch (IOException e) {}
-    		return line;
+    	public String[] read() {
+    		String line = null;
+    		try {
+    			line = stdout.readLine();
+        		while (stderr.ready()) try {
+    					String err = stderr.readLine();
+        			if (err != null) System.err.println("Error in HFST: " + err);
+        		} catch (IOException e) {}
+    		} catch (IOException e) {
+    			System.err.println("IO Exception");
+    		}
+    		if (line != null) {
+    			String[] l = line.split("\t");
+    			return l.length > 1 ? l : new String[]{l[0],""};
+    		}
+    		if (!initialized || ++error_count > 2) return null;
+			reload();
+			return read();
+    	}
+    	
+    	public String next() {
+    		return iQueue.poll();
     	}
 
+    	public boolean hasNext() {
+    		return !iQueue.isEmpty();
+    	}
+    	
     	@Override
     	public void run() {
     		while (this.in_use) {
     			try {
     				if (wQueue.isEmpty()) { Thread.sleep(1); continue; }
-    				stdin.write(wQueue.poll());
-    	    		stdin.write(LINE_SEP);
-    	    		stdin.flush();
+    				write(wQueue.poll());
     			} catch (Exception e) {
     				e.printStackTrace();
     				reload();
     			}
     		}
     	}
+    	
+    	private void write(String word) throws IOException {
+	    	stdin.write(word);
+			stdin.write(LINE_SEP);
+			stdin.flush();
+    	}
     }
         
     public class Worker extends Thread {
     	
     	private WorkerProcess worker;
-    	private boolean initialized = false;
     	
-    	private ConcurrentLinkedQueue<String> queue;
     	private LinkedBlockingQueue<List<Analyzation>> result;
-    	private AtomicInteger skipped;
     	    	
     	protected Worker(WorkerProcess worker) {
-    		queue = new ConcurrentLinkedQueue<>();
     		result = new LinkedBlockingQueue<>();
-    		skipped = new AtomicInteger(0);
     		worker.in_use = true;
     		this.worker = worker;
-    		init();
     	}
 
-    	private void init() {
-    		initialized = false;
-    		try {
-    			worker.write("");
-	    		skipped.set(1);
-		    	for (String q : queue) worker.write(q);
-    		} catch (Exception e) {
-    			e.printStackTrace();
-    		}
-    	}
- 
     	public Worker addWord(String word) {
-    		word = word.trim();
-    		queue.add(word);
     		if (!this.isAlive()) this.start();
-    		try {
-    			worker.write(word);
-    		} catch (IOException e) {
-    			worker.reload();
-    			init();
-    		}
+    		worker.add(word.trim());
     		return this;
     	}
     	    	
     	public List<Analyzation> getResult() {
 	    	try {
-	            for (int t=initTimeout/60; t>0; --t) { 
-	            	if (initialized || !isAlive()) break;
-	            	Thread.sleep(60);
-	            }
 	            for (int t=processTimeout/5; t>0; --t) {
 	            	if (result.size() > 0) return result.take();
 	            	Thread.sleep(5);
 	            }
 	        } catch (InterruptedException e) {
 	        }
-	    	skipped.incrementAndGet();
-	    	queue.poll();
+	    	worker.next();
+	    	worker.reload();
             return null;
     	}
     	
     	@Override
     	public void run() {
     		List<Analyzation> anas = new ArrayList<>();
-			int error_count = 0; String last_word = "";
+			String last_word = "";
 			
 			Thread feeder = new Thread(worker);
 			feeder.start();
-			while (!isInterrupted() && !queue.isEmpty()) try { 
-	    		String line = worker.read();
-	    		if (line == null) {
- 					if (!initialized || isInterrupted()) break;
- 					++error_count;
- 					throw new Exception("closed stdout");
- 				}
-	    		initialized = true;
- 				error_count = 0;
- 				String[] l = line.split("\t");
- 				if (line.isEmpty() || !last_word.equals(l[0]) && !anas.isEmpty()) {
- 					if (skipped.get() > 0) { // handle the "is it ready" query
- 	 					skipped.decrementAndGet();
- 					} else if (queue.poll() == null) for (Analyzation ana:anas) {
+			while (!isInterrupted() && worker.hasNext()) {
+	    		String[] line = worker.read();
+	    		if (line == null || (line[0].isEmpty() || !last_word.equals(line[0])) && (!anas.isEmpty() || line[1].endsWith("+?"))) {
+ 					if (worker.next() == null) for (Analyzation ana:anas) {
 		    			System.err.println("Warning: Unmatched Analyzation: "+ana.formatted);
 		    		} else {
 		    			result.add(anas);
 		    			anas = new ArrayList<>();
 		    		}
  				}
-				if (l.length > 1 && !l[1].endsWith("+?")) try {
-					last_word = l[0];
- 					anas.add(new Analyzation(l[1]));
+				if (line != null && !"".equals(line[0]) && !line[1].endsWith("+?")) try {
+					last_word = line[0];
+ 					anas.add(new Analyzation(line[1]));
 				} catch (Exception e) {
 					System.err.println("Exception in Analyzation: ");
 					e.printStackTrace();
 				}
-			} catch (InterruptedException e) {
-				break;
-    		} catch (Exception e) {
-    			System.err.println("Exception in MyProcess.run():");
-    			e.printStackTrace();
-    			if (!initialized || error_count > 2) break; // could not repair
-    			worker.reload();
-    			init();
-    		}
+			}
 			
 			worker.in_use = false;
     	}
