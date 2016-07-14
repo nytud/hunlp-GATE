@@ -1,3 +1,3 @@
 #!/bin/sh
 
-. run_huntag.sh < $1
+./run_huntag.sh NP < $1
