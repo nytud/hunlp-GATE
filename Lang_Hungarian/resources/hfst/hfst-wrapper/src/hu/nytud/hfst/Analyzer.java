@@ -125,13 +125,15 @@ public class Analyzer {
     	return null;
     }
     
-    private class WorkerProcess {
+    private class WorkerProcess implements Runnable {
     	private OutputStreamWriter stdin;
+    	private ConcurrentLinkedQueue<String> wQueue;
     	private BufferedReader stdout, stderr;
     	public boolean in_use = false;
     	private Process process = null;
     	
     	public WorkerProcess() {
+    		wQueue = new ConcurrentLinkedQueue<>();
     		reload();
     	}
     	
@@ -148,10 +150,8 @@ public class Analyzer {
     	}
     	
     	public void write(String word) throws IOException {
-    		stdin.write(word);
-    		stdin.write(LINE_SEP);
-    		stdin.flush();
-    	}
+    		wQueue.add(word);
+    	}    	
     	
     	public String read() throws IOException {
     		String line = stdout.readLine();
@@ -161,9 +161,23 @@ public class Analyzer {
     		} catch (IOException e) {}
     		return line;
     	}
+
+    	@Override
+    	public void run() {
+    		while (this.in_use) {
+    			try {
+    				if (wQueue.isEmpty()) { Thread.sleep(1); continue; }
+    				stdin.write(wQueue.poll());
+    	    		stdin.write(LINE_SEP);
+    	    		stdin.flush();
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    				reload();
+    			}
+    		}
+    	}
     }
-    
-    
+        
     public class Worker extends Thread {
     	
     	private WorkerProcess worker;
@@ -198,7 +212,7 @@ public class Analyzer {
     		queue.add(word);
     		if (!this.isAlive()) this.start();
     		try {
-	    		worker.write(word);
+    			worker.write(word);
     		} catch (IOException e) {
     			worker.reload();
     			init();
@@ -227,6 +241,9 @@ public class Analyzer {
     	public void run() {
     		List<Analyzation> anas = new ArrayList<>();
 			int error_count = 0; String last_word = "";
+			
+			Thread feeder = new Thread(worker);
+			feeder.start();
 			while (!isInterrupted() && !queue.isEmpty()) try { 
 	    		String line = worker.read();
 	    		if (line == null) {

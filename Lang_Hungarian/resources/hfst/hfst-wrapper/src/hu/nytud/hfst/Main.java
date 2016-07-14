@@ -54,7 +54,6 @@ public class Main {
 	}
 	
 	public void run(List<String> input) {
-
 		Analyzer.Worker w = analyzer.process(input);
 
 		for (String word : input) {
