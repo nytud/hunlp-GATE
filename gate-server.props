@@ -100,3 +100,15 @@ module15.name   = huntag3-NP-pipe
 module15.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipe
 # ez az új pipe-os változat a serverhez!
 
+# -----
+
+module16.name   = ML2-PosLem-pos
+module16.class  = hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer
+module16.params = outputMSDFeatureName=pos
+#
+module17.name   = ML2-PosLem-feature
+module17.class  = hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer
+module17.params = outputMSDFeatureName=feature
+# csak azért, hogy legyen "értelmes" bemenet az új huntag3-pipe részére,
+# ami a 'pos'/'features' attrib-ból akarná olvasni az inputot
+
