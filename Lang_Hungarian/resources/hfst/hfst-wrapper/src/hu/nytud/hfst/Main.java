@@ -36,7 +36,7 @@ public class Main {
 			
 			File root = jarFile.getParentFile();
 
-			FileInputStream is = new FileInputStream(new File(root,config));
+			InputStreamReader is = new InputStreamReader(new FileInputStream(new File(root,config)), "UTF-8");
 			Properties props = new Properties();
 			props.load(is);
 
