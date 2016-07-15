@@ -49,13 +49,12 @@ public class Analyzer {
 
 	private File hfst; 
 	private String cmdline;
-	private List<WorkerProcess> myWorkers;
+	private static List<WorkerProcess> myWorkers = new ArrayList<>();
 	private int maxProcess, initTimeout, processTimeout;
 	
 	public Analyzer(File root, Properties props) {
 
 		cmdline = " " + props.getProperty("analyzer.params","");
-		myWorkers = new ArrayList<WorkerProcess>();
 		maxProcess =  Integer.parseInt(props.getProperty("analyzer.max_count","5"));
 		initTimeout = Integer.parseInt(props.getProperty("analyzer.init_timeout_ms","60000"));
 		processTimeout = Integer.parseInt(props.getProperty("analyzer.process_timeout_ms","5000"));
@@ -100,22 +99,24 @@ public class Analyzer {
 
 	private boolean interrupted = false;
 		
-    synchronized public Worker getWorker() {
+    public Worker getWorker() {
     	try {
-	    	for (float t=0; t<initTimeout && !interrupted; t+=50) {
-		    	for(Iterator<WorkerProcess> it = myWorkers.iterator(); it.hasNext(); ) {
-		    		WorkerProcess p = it.next();
-		    		if (!p.in_use) {
-		    			return new Worker(p);
-		    		}
-		    	}
-		    	if (myWorkers.size() < maxProcess) { 
-		    		WorkerProcess p = new WorkerProcess();
-		    		myWorkers.add(p);
-		    		return new Worker(p);
-		    	}
-				Thread.sleep(50);
-	    	}
+    		synchronized (myWorkers) {
+		    	for (float t=0; t<initTimeout && !interrupted; t+=50) {
+			    	for(Iterator<WorkerProcess> it = myWorkers.iterator(); it.hasNext(); ) {
+			    		WorkerProcess p = it.next();
+			    		if (!p.in_use) {
+			    			return new Worker(p);
+			    		}
+			    	}
+			    	if (myWorkers.size() < maxProcess) { 
+			    		WorkerProcess p = new WorkerProcess();
+			    		myWorkers.add(p);
+			    		return new Worker(p);
+			    	}
+					Thread.sleep(50);
+		    	}			
+			}
     	} catch (Exception e) {
     		System.err.println("Exception in getProcess():");
     		e.printStackTrace();

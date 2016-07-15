@@ -10,7 +10,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 public class Main {
@@ -36,7 +39,7 @@ public class Main {
 			
 			File root = jarFile.getParentFile();
 
-			FileInputStream is = new FileInputStream(new File(root,config));
+			InputStreamReader is = new InputStreamReader(new FileInputStream(new File(root,config)), "UTF-8");
 			Properties props = new Properties();
 			props.load(is);
 
@@ -53,7 +56,15 @@ public class Main {
 		
 	}
 	
-	public void run(List<String> input) {
+	public void run(List<String> input, String mode) {
+		if ("stem".equals(mode)) {
+			for (String anas : input) {
+				Stem stem  = stemmer.process(anas);
+				System.out.println(anas + "\t" + stem.szStem + "\t" + stem.getTags(false));
+			}
+			return;
+		}
+
 		Analyzer.Worker w = analyzer.process(input);
 
 		for (String word : input) {
@@ -65,7 +76,7 @@ public class Main {
 			else for (Analyzation ana: anas) {
 				Result res1 = new Result();
 				res1.anas  = ana.formatted;
-				Stem stem  = stemmer.process(ana);
+				Stem stem  = stemmer.process(ana.formatted);
 				res1.lemma = stem.szStem;
 				res1.tags  = stem.getTags(false);
 				if (stem.bIncorrectWord) res_bu.add(res1); else res.add(res1);
@@ -82,28 +93,36 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Main m = new Main(args.length > 0 ? args[0] : "hfst-wrapper.props");
-
-		if (args.length > 1) {
-			List<String> input = new ArrayList<>();
-			for (int i=1; i < args.length; ++i) {
+		Map<String,String> params = new HashMap<>();
+		
+		List<String> input = new ArrayList<>();
+		for (int i=0; i < args.length; ++i) {
+			if (args[i].startsWith("--")) {
+				String[] p = args[i].substring(2).split("="); 
+				params.put(p[0], p.length > 1 ? p[1] : "");
+			} else {
 				input.add(args[i]);
 			}
-			m.run(input);
+		}
+		
+		Main m = new Main(params.containsKey("config") ? params.get("config") : "hfst-wrapper.props");
+		
+		if (!input.isEmpty()) {
+			m.run(input, params.get("mode"));
 			return;
 		}
 
 		try {
 			BufferedReader is = new BufferedReader(new InputStreamReader(System.in,"UTF-8"));
 			while (true) {
-				List<String> input = new ArrayList<>();
+				input = new ArrayList<>();
 				String line = is.readLine();
 				while (line != null && is.ready()) {
 					input.add(line);
 					line = is.readLine();
 				}
 				if (line != null) input.add(line);
-				if (!input.isEmpty()) m.run(input);
+				if (!input.isEmpty()) m.run(input, params.get("mode"));
 				if (line == null) { // stdin closed
 					return;
 				}

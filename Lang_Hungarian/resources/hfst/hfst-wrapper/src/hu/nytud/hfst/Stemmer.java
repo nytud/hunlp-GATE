@@ -1,7 +1,5 @@
 package hu.nytud.hfst;
 
-import hu.nytud.hfst.Analyzer.Analyzation;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -145,11 +143,11 @@ public class Stemmer {
 	}
 	
 	// rough port from c++
-	public Stem process(Analyzation input) {
+	public Stem process(String input) {
 		Stem stem = new Stem();
 
 		for (Pattern p : unwanted_patterns) {
-			Matcher m = p.matcher(input.formatted);
+			Matcher m = p.matcher(input);
 			if (m.find()) return null;
 		}
 		
@@ -245,7 +243,7 @@ public class Stemmer {
 		
 		MorphemeInfo morph = new MorphemeInfo();
 
-		for(char c :  input.formatted.toCharArray())
+		for(char c :  input.toCharArray())
 		{					
 			switch( iState ) 
 			{
