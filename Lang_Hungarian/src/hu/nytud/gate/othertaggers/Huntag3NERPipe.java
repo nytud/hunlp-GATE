@@ -39,10 +39,10 @@ public class Huntag3NERPipe extends AbstractLanguageAnalyser {
 
 	protected Logger logger = Logger.getLogger(this.getClass().getName());
 	
-	protected Process huntag = null;
-	protected OutputStreamWriter ht_os = null;
-	protected BufferedReader ht_is = null, ht_es = null;
-	protected Object lock = new Object();
+	protected static Process huntag = null;
+	protected static OutputStreamWriter ht_os = null;
+	protected static BufferedReader ht_is = null, ht_es = null;
+	protected static Object lock = new Object();
 
 
 	@Override
@@ -122,7 +122,7 @@ public class Huntag3NERPipe extends AbstractLanguageAnalyser {
 	            " seconds!");
 	}
 	    
-	synchronized private void parseSentence(AnnotationSet annotationSet, Annotation sentence, int nsent) throws GateRuntimeException {
+	private void parseSentence(AnnotationSet annotationSet, Annotation sentence, int nsent) throws GateRuntimeException {
 	    	
 		long sentenceStartOffset = sentence.getStartNode().getOffset();
         long sentenceEndOffset   = sentence.getEndNode().getOffset();
@@ -131,78 +131,78 @@ public class Huntag3NERPipe extends AbstractLanguageAnalyser {
         	throw new GateRuntimeException("No tokens found in sentence " + nsent);
 
         try {
-        	// initialize process
-        	File bin = new File(huntagBinary.toURI());
-    	    if (!bin.exists()) throw new ExecutionException("Missing HunTag binary!");
-	    
-	    	if (huntag == null || !huntag.isAlive()) {
-	    		ProcessBuilder pb = new ProcessBuilder(bin.getCanonicalPath(),"NER");
-	    		pb.directory(bin.getParentFile());
-	    		if (huntag != null) huntag.destroy();
-	    		huntag = pb.start();
-
-		        ht_os = new OutputStreamWriter(huntag.getOutputStream(),"UTF-8");
-		        ht_is = new BufferedReader(new InputStreamReader(huntag.getInputStream(),"UTF-8"));
-		        ht_es = new BufferedReader(new InputStreamReader(huntag.getErrorStream(),"UTF-8"));
-	    	}
-    	    	
-	    	for (Annotation tok : tokens) {
-	    		FeatureMap feats = tok.getFeatures();
-    	    	
-	        	String input = document.getContent().getContent(
-	        		tok.getStartNode().getOffset(),
-	        		tok.getEndNode().getOffset()
-				).toString();
-		        	
-	        	{
-	        		Object tmp = feats.get("pos");
-	        		input += "\t" + (tmp == null ? "" : tmp.toString());
-	        	}
-	        	
-	        	{
-	        		Object tmp = feats.get("feature");
-	        		input += "\t[" + (tmp == null ? "" : tmp.toString()) + "]";
-	        	}
-
-	        	ht_os.write(input);
-		    	ht_os.write(System.getProperty("line.separator"));
-	        }
-	        ht_os.write(System.getProperty("line.separator"));
-	        ht_os.flush();
-
-	        for (Annotation tok : tokens) {
-		        try {
-			    	for (int t=0; t<60000; ++t) {
-		    			while (ht_es.ready()) try {
-							String err = ht_es.readLine();
-							if (err != null) logger.error("Error in HunTag3: " + err);
-						} catch (IOException e) {}
-			    		if (!huntag.isAlive()) {
-			    			logger.error("Error in HunTag3: closed");
-			    			return;
-			    		}
-			    		if (ht_is.ready()) {
-			    			String output = ht_is.readLine();
-			    			if (output == null) {
-			    				logger.error("Error in HunTag3: closed stdout");
-			    				return;
-			    			}
-			    			String[] data = output.split("\t");
-				    		if (data.length > 3) tok.getFeatures().put(outputAnnotationType, data[3]);
-				    		break;
-						}
-						Thread.sleep(1);
-				    }
-			    	
-		    	} catch (IOException e) {
-		            logger.info("Error in HunTag3: IO exception");
+        	synchronized (lock) { 
+	        	// initialize process	    
+		    	if (huntag == null || !huntag.isAlive()) {
+		        	File bin = new File(huntagBinary.toURI());
+		    	    if (!bin.exists()) throw new ExecutionException("Missing HunTag binary!");
+		    	    ProcessBuilder pb = new ProcessBuilder(bin.getCanonicalPath(),"NER");
+		    		pb.directory(bin.getParentFile());
+		    		if (huntag != null) huntag.destroy();
+		    		huntag = pb.start();
+	
+			        ht_os = new OutputStreamWriter(huntag.getOutputStream(),"UTF-8");
+			        ht_is = new BufferedReader(new InputStreamReader(huntag.getInputStream(),"UTF-8"));
+			        ht_es = new BufferedReader(new InputStreamReader(huntag.getErrorStream(),"UTF-8"));
 		    	}
-	        }
-	        for (int t=0; t<2000; ++t) {
-	    		if (ht_is.ready()) { ht_is.readLine(); break; } // read closing line
-	    		Thread.sleep(1);
-	        }
-
+	    	    	
+		    	for (Annotation tok : tokens) {
+		    		FeatureMap feats = tok.getFeatures();
+	    	    	
+		        	String input = document.getContent().getContent(
+		        		tok.getStartNode().getOffset(),
+		        		tok.getEndNode().getOffset()
+					).toString();
+			        	
+		        	{
+		        		Object tmp = feats.get("pos");
+		        		input += "\t" + (tmp == null ? "" : tmp.toString());
+		        	}
+		        	
+		        	{
+		        		Object tmp = feats.get("feature");
+		        		input += "\t[" + (tmp == null ? "" : tmp.toString()) + "]";
+		        	}
+	
+		        	ht_os.write(input);
+			    	ht_os.write(System.getProperty("line.separator"));
+		        }
+		        ht_os.write(System.getProperty("line.separator"));
+		        ht_os.flush();
+	
+		        for (Annotation tok : tokens) {
+			        try {
+				    	for (int t=0; t<60000; ++t) {
+			    			while (ht_es.ready()) try {
+								String err = ht_es.readLine();
+								if (err != null) logger.error("Error in HunTag3: " + err);
+							} catch (IOException e) {}
+				    		if (!huntag.isAlive()) {
+				    			logger.error("Error in HunTag3: closed");
+				    			return;
+				    		}
+				    		if (ht_is.ready()) {
+				    			String output = ht_is.readLine();
+				    			if (output == null) {
+				    				logger.error("Error in HunTag3: closed stdout");
+				    				return;
+				    			}
+				    			String[] data = output.split("\t");
+					    		if (data.length > 3) tok.getFeatures().put(outputAnnotationType, data[3]);
+					    		break;
+							}
+							Thread.sleep(1);
+					    }
+				    	
+			    	} catch (IOException e) {
+			            logger.info("Error in HunTag3: IO exception");
+			    	}
+		        }
+		        for (int t=0; t<2000; ++t) {
+		    		if (ht_is.ready()) { ht_is.readLine(); break; } // read closing line
+		    		Thread.sleep(1);
+		        }
+        	}
 	    } catch (Exception e) {
 		   	e.printStackTrace();
 		   	throw new GateRuntimeException("HunTag3: something went terribly wrong");

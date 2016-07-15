@@ -126,6 +126,7 @@ public class RequestHandler implements HttpHandler{
 				res.setParameterValues(m.config);
 				res.setParameterValue("document", doc);
 				res.execute();
+				Factory.deleteResource(res);
 			}
 			
 			sendXML(request, doc.toXml());
