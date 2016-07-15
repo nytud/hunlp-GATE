@@ -10,7 +10,6 @@
   <property name="source.dir"     value="src"/>
   <property name="class.dir"      value="bin"/>
   <property name="jar.file"       value="../${ant.project.name}.jar"/>
-  <property name="cfg.file"       value="${ant.project.name}.props"/>
   <property name="main-class"     value="hu.nytud.hfst.Main"/>
   <property name="test-word1"      value="alma"/>
   <property name="test-word2"      value="asdf"/>
@@ -41,7 +40,6 @@
 
   <target name="test" depends="dist">
     <java jar="${jar.file}" fork="true">
-      <arg value="${cfg.file}" />
       <arg value="${test-word1}" />
       <arg value="${test-word2}" />
     </java>

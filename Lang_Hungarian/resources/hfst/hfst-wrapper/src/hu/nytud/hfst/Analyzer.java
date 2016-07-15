@@ -49,7 +49,7 @@ public class Analyzer {
 
 	private File hfst; 
 	private String cmdline;
-	private static List<WorkerProcess> myWorkers = new ArrayList<WorkerProcess>();
+	private static List<WorkerProcess> myWorkers = new ArrayList<>();
 	private int maxProcess, initTimeout, processTimeout;
 	
 	public Analyzer(File root, Properties props) {
