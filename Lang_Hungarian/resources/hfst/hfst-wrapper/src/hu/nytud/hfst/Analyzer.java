@@ -29,7 +29,7 @@ public class Analyzer {
 		public List<Morpheme> morphs;
 		public String formatted;
 		
-		protected Analyzation(String pairs) { 
+		public Analyzation(String pairs) { 
 			morphs = parse(pairs);
 			formatted = format();
 		}

@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +56,22 @@ public class Main {
 	}
 	
 	public void run(List<String> input, String mode) {
+		if ("hfst".equals(mode)) {
+			for (String pairs : input) {
+				String[] p = pairs.split("\t");
+				if (p.length < 2) { 
+					System.out.println(pairs);
+				} else if (p[1].endsWith("+?")) {
+					System.out.println(p[0] + "\t<unknown>");
+				} else {
+					Analyzation ana = analyzer.new Analyzation(p[1]);
+					Stem stem  = stemmer.process(ana.formatted);
+					System.out.println(p[0] + "\t" + ana.formatted + "\t" + stem.szStem + "\t" + stem.getTags(false));
+				}
+			}
+			return;
+		}
+
 		if ("stem".equals(mode)) {
 			for (String anas : input) {
 				Stem stem  = stemmer.process(anas);
