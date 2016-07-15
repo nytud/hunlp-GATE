@@ -139,7 +139,7 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	    				"timeout for word: " + 
 	    				document.getContent().getContent(tok.getStartNode().getOffset(), tok.getEndNode().getOffset()).toString());
 				else for (Analyzation ana: anas) {
-	    			Stem stem = stemmer.process(ana);
+	    			Stem stem = stemmer.process(ana.formatted);
 	    			Map<String,String> res = new TreeMap<>();
 	    			res.put("ana", ana.formatted);
 	    			res.put("lemma", stem.szStem);
