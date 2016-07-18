@@ -4,5 +4,9 @@ cp -rp corpus.nytud.hu/gate-resources/Lang_Hungarian/resources/* Lang_Hungarian/
 # ez hekkparádé, mert a wget nem őrzi meg a permission-öket
 chmod +x Lang_Hungarian/resources/hfst/linux/x64/hfst-lookup
 chmod +x Lang_Hungarian/resources/hfst/linux/x64/hfst-optimized-lookup
+chmod +x Lang_Hungarian/resources/hfst/linux/x86/hfst-lookup
+chmod +x Lang_Hungarian/resources/hfst/linux/x86/hfst-optimized-lookup
+chmod +x Lang_Hungarian/resources/hfst/osx/hfst-lookup
+chmod +x Lang_Hungarian/resources/hfst/osx/hfst-optimized-lookup
 
 rm -rf corpus.nytud.hu
