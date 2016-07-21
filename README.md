@@ -145,14 +145,18 @@ make upload CORPUSUSER=yourusername
 This will upload your local `hungarian.jar`, `creole.xml` and `resources` directory to the update server.
 This enables users to use __Method 1__ for installation.
 
-##Using the Lang_Hungarian plugin from the command line (for power users)
+##Using or embedding the Lang_Hungarian plugin as a client-server system (for power users)
 
 The **Lang_Hungarian** [GATE](http://gate.ac.uk/) Processing Resources can be run not just from the GATE GUI (called GATE Developer) but from Linux command line using GATE Embedded technology.
-There are two options: first is using the
+
+It is recommended to use the so called 
 [gate-server](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/gate-server)
 which is an optimized solution for running GATE
-Processing Resources,
-second is this simple method described here. 
+Processing Resources.
+
+##Using the Lang_Hungarian plugin from the command line (for power users)
+
+The secondary option to use the **Lang_Hungarian** [GATE](http://gate.ac.uk/) Processing Resources from Linux command line is the simple method described here.
 
 ###Preparation
 
