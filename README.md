@@ -15,8 +15,8 @@ Firstly, the **Lang_Hungarian** toolchain:
 * Magyarlánc Hungarian Dependency Parser
 * Magyarlánc Hungarian Constituency Parser
 * Preverb Identifier Tool
-* Hungarian NP chunking with Huntag3 (Linux)
-* Hungarian NER with Huntag3 (Linux)
+* Hungarian NP chunking with Huntag3 (Linux, Windows)
+* Hungarian NER with Huntag3 (Linux, Windows)
 * IOB2Annotation Converter Tool
 
 Some older tools are also integrated:
