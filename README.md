@@ -149,10 +149,16 @@ This enables users to use __Method 1__ for installation.
 
 The **Lang_Hungarian** [GATE](http://gate.ac.uk/) Processing Resources can be run not just from the GATE GUI (called GATE Developer) but from Linux command line using GATE Embedded technology.
 
-It is recommended to use the so called 
-[gate-server](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/gate-server)
-which is an optimized solution for running GATE
+The recommended method is to use the so called 
+_gate-server_ which is an optimized solution for running GATE
 Processing Resources.
+
+###Preparation
+
+1. A working GATE installation *and* a clone of this github repository is needed.
+2. Obtain all necessary resources not included in this repository (see step 2. in __Method 2__ above).
+
+[Usage is described here.](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/gate-server)
 
 ##Using the Lang_Hungarian plugin from the command line (for power users)
 
