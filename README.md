@@ -2,7 +2,7 @@
 
 Sources for the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
 
-Developers: Márton Miháltz, Péter Kundráth, Bálint Sass, Mátyás Gerőcs
+Developers: Péter Kundráth, Márton Miháltz, Bálint Sass, Mátyás Gerőcs
 
 ##Contents
 
@@ -22,7 +22,7 @@ Firstly, the **Lang_Hungarian** toolchain:
 Some older tools are also integrated:
 
 * Hunpos Hungarian PoS-tagger (Linux)
-* HunMorph Hungarian morphological analyzer (Linux, OSX)
+* HunMorph Hungarian morphological analyzer (Linux, OS X)
 * Magyarlánc Hungarian Sentence Splitter and Tokenizer
 * Magyarlánc Hungarian Morphological Analyzer [KR code]
 * Magyarlánc Hungarian Morphological Analyzer And Guesser [MSD code]
@@ -39,14 +39,20 @@ XXX Please see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hu
 
 **Requirements:**
 
-* Java runtime (JRE or JDK) version 1.8 or later
-* GATE Developer 8.0 or later
-* For best results (safely loading the Magyarlánc Depparse application) you will need a **64-bit operating system** with **64-bit Java** installed. Please use the following command to launch GATE Developer with request to 2GB of heap space (Linux, OS X):
+* 64-bit operating system
+* 16GB RAM (8GB maybe enough)
+* 64-bit Java runtime (JRE or JDK) version 1.8 or later
+* [GATE Developer 8.0](https://gate.ac.uk/download) or later
+
+* When launching GATE Developer request for 4GB of heap space.  
+  On Linux or OS X, please use the following command:
 
 
  ```
- <your_GATE_Developer_path>\bin\gate.sh -Xmx2G
+ <your_gate_installation_directory>/bin/gate.sh -Xmx4g -Xms2g
  ```
+
+  On windows, please set the `_JAVA_OPTIONS` environment variable to `-Xmx4g -Xms2g`, restart the computer, and then launch GATE Developer.
 
 ###Method 1 (for users):
 
@@ -72,7 +78,7 @@ Follow these steps to install the plugin directly into GATE Developer using the 
 12. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
 13. Enable the "Load Now" checkbox for **Lang_Hungarian** and click "Apply All" to load the plugin. Several new PRs become available right clicking "Processing Resources" on the left hand side panel and selecting "New".
 14. Now, open a terminal and issue the `sh xperm.sh` command in `Lang_Hungarian` directory under you GATE User Plugin Directory to add necessary execute permissions.
-15. If you want to use the *Huntag3*-based processing resources (NER, NP chunking) you need to run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (Ubuntu, Debian Linux) to install required dependencies (superuser privileges will be required).
+15. In order to use the *Huntag3*-based processing resources (NER, NP chunking) install the required python environment. On Linux (Debian or Ubuntu) run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (with superuser privileges). On Windows see `Lang_Hungarian/resources/huntag3/setup_windows.cmd`.
 
 ###Method 2 (for developers):
 
@@ -111,7 +117,7 @@ A working GATE installation is necessary.
 The GATE installation directory should be given to `make` as `GATE_HOME`:
 
 ```
-make build GATE_HOME=/your/gate/installation/dir
+make build GATE_HOME=/your/gate/installation/directory
 ```
 
 This will create `hungarian.jar` in the directory `Lang_Hungarian`.
@@ -180,7 +186,7 @@ with arbitrary parameter settings.
 Just type:
 
 ```
-make GATE_HOME=/your/gate/installation/dir pipeline
+make GATE_HOME=/your/gate/installation/directory pipeline
 ```
 
 By default `texts/peldak.txt` is used as input file,
@@ -188,7 +194,7 @@ but it can be changed using the `PIPELINE_INPUT` parameter
 to e.g. the XML version of the default input file:
 
 ```
-make GATE_HOME=/your/gate/installation/dir PIPELINE_INPUT=texts/peldak.xml pipeline
+make GATE_HOME=/your/gate/installation/directory PIPELINE_INPUT=texts/peldak.xml pipeline
 ```
 
 ###Configuration
@@ -213,7 +219,7 @@ which runs the full `Lang_Hungarian` plugin
 and can be overridden using the `CONFIG` parameter:
 
 ```
-make GATE_HOME=/your/gate/installation/dir CONFIG=/path/to/config/file pipeline
+make GATE_HOME=/your/gate/installation/directory CONFIG=/path/to/config/file pipeline
 ```
 
 There are some ready-made config files in the
