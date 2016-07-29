@@ -28,7 +28,7 @@ module2.name    = HFSTLemm
 module2.class   = hu.nytud.gate.morph.HFSTMorphAndLemma
 
 module3.name    = ML3-PosLem
-module3.class   = com.precognox.kconnect.gate.magyarlanc.HungarianLemmatizerPosTagger
+module3.class   = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
 
 module4.name    = QT
 module4.class   = hu.nytud.gate.tokenizers.QunTokenCommandLine
