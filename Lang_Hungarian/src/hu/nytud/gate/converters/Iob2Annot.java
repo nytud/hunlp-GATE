@@ -18,8 +18,8 @@ import java.util.*;
  *  @author Bálint Sass
  */ 
 @CreoleResource(
-  name = "5. IOB 2 Annotation Converter",
-  comment = "Requires 'Token' annotation with IOB codes in 'ne_iob' attrib"
+  name = "Hungarian IOB 2 Annot",
+  comment = "Requires 'Token' annotation with IOB codes in ne_iob attrib"
   // helpURL = "http://corpus.nytud.hu/gate/doc/Iob2Annot"
 ) 
 public class Iob2Annot extends AbstractLanguageAnalyser { 

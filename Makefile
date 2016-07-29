@@ -32,7 +32,6 @@ prepare_upload:
 	cp -p -l Lang_Hungarian/hungarian.jar upload_dir/Lang_Hungarian
 	cp -p -l Lang_Hungarian/creole.xml upload_dir/Lang_Hungarian
 	cp -p -l Lang_Hungarian/*.gapp upload_dir/Lang_Hungarian
-	cp -p -l Lang_Hungarian/xperm.sh upload_dir/Lang_Hungarian
 	mkdir -p upload_dir/Lang_Hungarian/resources
 	cp -p -r -l Lang_Hungarian/resources/gate_plugins upload_dir/Lang_Hungarian/resources/
 	cp -p -r -l Lang_Hungarian/resources/hunmorph upload_dir/Lang_Hungarian/resources/
