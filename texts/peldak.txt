@@ -19,3 +19,9 @@ Tanuld már meg a leckét, légyszi.
 Meg sem szeretnénk csinálni ezt.
 #004
 Megfejeli ezt a megházalandó vizezett járókát.
+#005
+Ez nem írandó rá erre.
+#006
+Ha föléegerészel, akkor megnarancssárgásodik.
+#007
+A kutya nem ugat, hanem el is alszik a szép ágyban.

@@ -66,8 +66,6 @@ module10.name   = IOB4NP
 module10.class  = hu.nytud.gate.converters.Iob2Annot
 module10.params = inputIobAnnotAttrib=NP-BIO&outputAnnotationName=NP
 
-# XXX jöhet még hozzá persze a ML3-Const, csak az eddig nem volt benne! :)
-
 # -----
 
 # egyéb (régiek...)
@@ -111,4 +109,15 @@ module17.class  = hu.nytud.gate.postaggers.MagyarlancPOSTaggerLemmatizer
 module17.params = outputMSDFeatureName=feature
 # csak azért, hogy legyen "értelmes" bemenet az új huntag3-pipe részére,
 # ami a 'pos'/'features' attrib-ból akarná olvasni az inputot
+
+# -----
+
+module18.name   = huntag3-NER-pipe
+module18.class  = hu.nytud.gate.othertaggers.Huntag3NERPipe
+# ez az új pipe-os változat a serverhez!
+
+# IOB4NER
+module19.name   = IOB4NER
+module19.class  = hu.nytud.gate.converters.Iob2Annot
+module19.params = inputIobAnnotAttrib=NER-BIO1&outputAnnotationName=NE
 
