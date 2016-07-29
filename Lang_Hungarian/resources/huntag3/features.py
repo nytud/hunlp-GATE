@@ -690,6 +690,50 @@ def token_krPieces(krAnal, _=None):
 
     return [feat for feat in feats if feat]
 
+# XXX Return is not bool
+def token_univPieces(univAnal, _=None):
+    """Split Univmorf feature-value pairs to pieces
+
+    Args:
+       univAnal (str): Univmorf feature-value pairs
+       _: Unused
+
+    Returns:
+       [Str]: Pass univmorf feature-value pairs
+
+    HunTag:
+        Type: Token
+        Field: Token
+        Example: 'Case=Nom|Number=Sing' --> ['Case=Nom', 'Number=Sing']
+        Use case: Chunk
+
+    """
+    pieces = univAnal.split('|')
+    return [piece for piece in pieces if piece]
+
+
+# XXX Return is not bool
+def token_hfstPieces(hfstAnal, _=None):
+    """Split the morphological codes of the HFST-based eM-morph morphological analyser to pieces
+
+    Args:
+       hfstAnal (str): eM-morph morphological codes
+       _: Unused
+
+    Returns:
+       [Str]: Pass eM-morph morphological code pieces
+
+    HunTag:
+        Type: Token
+        Field: Token
+        Example: '[Pl.Poss.3Sg][Nom]' --> ['Pl.Poss.3Sg', 'Nom']
+        Use case: Chunk
+
+    """
+    pieces = hfstAnal.split('[')
+    for piece in pieces:
+        piece = piece.strip('[]')
+        return [piece for piece in pieces if piece]
 
 # XXX Return is not bool
 def token_fullKrPieces(krAnal, _=None):
@@ -742,6 +786,13 @@ def sentence_isBetweenSameCases(sen, fields, options=None):
     for c, kr in enumerate(krVec):
         if 'CAS' in kr:
             cases = re.findall(r'CAS<...>', kr)
+            if not cases:
+                nounCases[c] = ['NO_CASE']
+            else:
+                case = cases[0][-4:-1]
+                nounCases[c] = [case]
+        elif 'Case=' in kr:
+            cases = re.findall(r'Case=[A-Z][a-z][a-z]', kr)
             if not cases:
                 nounCases[c] = ['NO_CASE']
             else:
@@ -905,6 +956,45 @@ def token_krPlural(krAnal, _=None):
         Use case: NER, Chunk
     """
     return [int('NOUN<PLUR' in krAnal)]
+
+
+def token_univPlural(univAnal, _=None):
+    """Detect plural form in univmorf feature-value pairs
+
+    Args:
+       univAnal (str): univmorf code analysis
+       _: Unused
+
+    Returns:
+       [Bool in int format]: True if univmorf code contains plural
+
+    HunTag:
+        Type: Token
+        Field: Analysis
+        Example: 'teendők' Case=Nom|Number=Plur --> univPlural = 1
+        Use case: NER, Chunk
+    """
+    return [int('Number=Plural' in univAnal)]
+
+
+# XXX Return is not bool
+def token_hfstPlural(hfstAnal, _=None):
+    """Detect plural form in the new formalism of HFST-based Hungarian morphological analyser (aka eM-morph)
+
+    Args:
+       hfstAnal (str): hfstmorf code analysis
+       _: Unused
+
+    Returns:
+       [Bool in int format]: True if hfst code contains plural
+
+    HunTag:
+        Type: Token
+        Field: Analysis
+        Example: 'teendők' [Pl][Nom] --> hfstPlural = 1
+        Use case: NER
+    """
+    return [int('[Pl]' in hfstAnal)]
 
 
 # XXX Return is not bool
