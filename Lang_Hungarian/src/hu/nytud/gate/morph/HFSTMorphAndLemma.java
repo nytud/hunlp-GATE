@@ -235,18 +235,6 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	protected String outputAnasFeatureName;
 
 	@RunTime
-	@CreoleParameter(
-			comment = "The name of the feature that will hold the morphological analysis strings on output annotation types (tokens)",
-			defaultValue = "lemma")  
-	public void setOutputLemmaFeatureName(String newOutputLemmaFeatureName) {
-		outputLemmaFeatureName = newOutputLemmaFeatureName;
-	}
-	public String getOutputLemmaFeatureName() {
-	    return outputLemmaFeatureName;
-	}
-	protected String outputLemmaFeatureName;
-
-	@RunTime
 	@Optional
 	@CreoleParameter(
 			comment = "Throw an exception when there are none of the required input annotations",
