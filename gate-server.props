@@ -28,7 +28,7 @@ module2.name    = HFSTLemm
 module2.class   = hu.nytud.gate.morph.HFSTMorphAndLemma
 
 module3.name    = ML3-PosLem
-module3.class   = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
+module3.class   = com.precognox.kconnect.gate.magyarlanc.HungarianLemmatizerPosTagger
 
 module4.name    = QT
 module4.class   = hu.nytud.gate.tokenizers.QunTokenCommandLine
@@ -120,4 +120,10 @@ module18.class  = hu.nytud.gate.othertaggers.Huntag3NERPipe
 module19.name   = IOB4NER
 module19.class  = hu.nytud.gate.converters.Iob2Annot
 module19.params = inputIobAnnotAttrib=NER-BIO1&outputAnnotationName=NE
+
+# -----
+
+# újkódos PurePOS
+module21.name   = ML3-PosLem-hfstcode
+module21.class  = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
 
