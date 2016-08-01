@@ -124,6 +124,6 @@ module19.params = inputIobAnnotAttrib=NER-BIO1&outputAnnotationName=NE
 # -----
 
 # újkódos PurePOS
-module21.name   = ML3-PosLem-hfstcode
-module21.class  = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
+module20.name   = ML3-PosLem-hfstcode
+module20.class  = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
 
