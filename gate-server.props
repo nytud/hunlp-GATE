@@ -127,3 +127,17 @@ module19.params = inputIobAnnotAttrib=NER-BIO1&outputAnnotationName=NE
 module20.name   = ML3-PosLem-hfstcode
 module20.class  = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
 
+# újkódos NER
+module21.name   = huntag3-NER-pipe-hfstcode
+module21.class  = hu.nytud.gate.othertaggers.Huntag3NERPipeHFSTCode
+
+# újkódos maxNP
+module22.name   = huntag3-NP-pipe-hfstcode
+module22.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipeHFSTCode
+
+# újkódos Dep
+module23.name   = ML3-Dep-hfstcode
+module23.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParser
+module23.params = inputPOSFeature=feature&inputMorphFeature=feature
+# XXX paraméter-kísérlet az újkódos modell beillesztéséhez
+

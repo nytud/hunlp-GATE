@@ -25,3 +25,6 @@ Ez nem írandó rá erre.
 Ha föléegerészel, akkor megnarancssárgásodik.
 #007
 A kutya nem ugat, hanem el is alszik a szép ágyban.
+#008
+Kovács István gyerekei felébredtek.
+Orbán Viktor miniszterelnök szeptember 20-ai hatállyal Dr. Sélleiné Márki Máriát, nevezte ki az Országos Egészségbiztosítási Pénztár főigazgatójává, majd leutazott a Balatonra.
