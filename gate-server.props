@@ -137,7 +137,9 @@ module22.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipeHFSTCode
 
 # újkódos Dep
 module23.name   = ML3-Dep-hfstcode
-module23.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParser
-module23.params = inputPOSFeature=feature&inputMorphFeature=feature
-# XXX paraméter-kísérlet az újkódos modell beillesztéséhez
+module23.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParserHFSTCode
+
+# újkódos Const
+module24.name   = ML3-Const-hfstcode
+module24.class  = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParserHFSTCode
 
