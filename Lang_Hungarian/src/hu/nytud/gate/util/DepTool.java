@@ -288,7 +288,7 @@ public class DepTool {
    * @param featMap
    * @return
    */
-  private static String getFeatures(String infra, Map<String, String> defMap, Map<String, List<ConllPair>> featMap) {
+  public static String getFeatures(String infra, Map<String, String> defMap, Map<String, List<ConllPair>> featMap) {
     Map<String, String> features = new LinkedHashMap<>(defMap);
 
     for (String infraFeat : featMap.keySet()) {
@@ -337,7 +337,7 @@ public class DepTool {
         return getFeatures(infra, INJ_DEF_MAP, INJ_INFRA_FEATURE_MAP);
     }
 
-    return null;
+    return "_"; // XXX null volt, de az mire volt jó?
   }
 
   /**
@@ -393,12 +393,12 @@ public class DepTool {
     return pos;
   }
 
-  private static String getLemma(String infra, String form) {
+  public static String getLemma(String infra, String form) {
     String infraLemma = infra.contains("[") ? infra.substring(0, infra.indexOf("[")) : form;
     return infraLemma;
   }
 
-  private static String getLemmaPosFeatures(String infra, String form) {
+  public static String getLemmaPosFeatures(String infra, String form) {
     return getLemma(infra, form) + "\t" +
            getPos(infra, form) + "\t" +
            getFeatures(infra, form);

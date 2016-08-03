@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  *  Tested with Magyarlánc "3.0"
  *  @author Peter Kundrath, Balint Sass
  */ 
-@CreoleResource(name = "4. Constituency Parser [HU] [magyarlanc 3.0, hfst]", 
+@CreoleResource(name = "[DEMO] 4. Constituency Parser [HU] [magyarlanc 3.0, hfst]", 
 				comment = "Requires sentences and tokens with lemma, pos and morph features"
 				)
 public class Magyarlanc3ConstituencyParserHFSTCode extends AbstractLanguageAnalyser {
@@ -151,8 +151,9 @@ public class Magyarlanc3ConstituencyParserHFSTCode extends AbstractLanguageAnaly
           /* XXX feat-ban a "." helyett "|" kell? -- ez nem befolyásolta */
           //__feat = __feat.replace(".", "|");
 
-          System.out.println( "POS  = " + __pos );
-          System.out.println( "feat = " + __feat );
+          System.out.println( "annot = " + annot );
+          System.out.println( "POS   = " + __pos );
+          System.out.println( "feat  = " + __feat );
           System.out.println();
 
         	tokfeats[i][2] = __pos;

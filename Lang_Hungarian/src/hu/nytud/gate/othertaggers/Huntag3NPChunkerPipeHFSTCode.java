@@ -164,9 +164,9 @@ public class Huntag3NPChunkerPipeHFSTCode extends AbstractLanguageAnalyser {
                 input += "\t" + (tmp == null ? placeHolder : tmp.toString());
               }
 
-              // 3. pos + 4. feat (<- from feature)
+              // 3. pos + 4. feat (<- from hfstana)
               {
-                Object tmp = feats.get("feature");
+                Object tmp = feats.get("hfstana");
                 String tmpAnnot = tmp == null ? placeHolder : tmp.toString();
 
                 String[] parts = tmpAnnot.split( "\\]", 2 ); // split into two parts

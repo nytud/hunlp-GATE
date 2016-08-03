@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  *  Tested with Magyarlánc "3.0"
  *  @author Peter Kundrath
  */ 
-@CreoleResource(name = "4. Constituency Parser [HU] [magyarlanc 3.0]", 
+@CreoleResource(name = "4. Constituency Parser [HU] [magyarlanc 3.0, hfst]", 
 				comment = "Requires sentences and tokens with lemma, pos and morph features"
 				)
 public class Magyarlanc3ConstituencyParser extends AbstractLanguageAnalyser {

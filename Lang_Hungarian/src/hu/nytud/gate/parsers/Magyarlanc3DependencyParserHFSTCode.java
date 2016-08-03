@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  *  Tested with Magyarlánc "3.0"
  *  @author Peter Kundrath, Balint Sass
  */ 
-@CreoleResource(name = "4. Dependency Parser [HU] [magyarlanc 3.0, hfst]", 
+@CreoleResource(name = "[DEMO] 4. Dependency Parser [HU] [magyarlanc 3.0, hfst]", 
 				comment = "Requires sentences and tokens with lemma, pos and morph features"
 				)
 public class Magyarlanc3DependencyParserHFSTCode extends AbstractLanguageAnalyser {
@@ -130,12 +130,14 @@ public class Magyarlanc3DependencyParserHFSTCode extends AbstractLanguageAnalyse
 					tok.getStartNode().getOffset(), 
 					tok.getEndNode().getOffset()
 				).toString();
+          System.out.println( "form = " + form[i] );
 			} catch (InvalidOffsetException e) {
 				throw new GateRuntimeException(e);
 			}
         	lemma[i] = tok.getFeatures().get(inputLemmaFeature).toString();
         	if (lemma[i] == null)
         		throw new GateRuntimeException("Error, no '" + inputLemmaFeature + "' feature for token " + i + " in sentence " + nsent); 
+          System.out.println( "lemma = " + lemma[i] );
 
           /* XXX kiszedjük a 'feature'-ból, ami POS+feat
              a POS-t és a feat-ok külön-külön... */
@@ -155,8 +157,9 @@ public class Magyarlanc3DependencyParserHFSTCode extends AbstractLanguageAnalyse
           /* XXX feat-ban a "." helyett "|" kell? -- ez nem befolyásolta */
           //__feat = __feat.replace(".", "|");
 
-          System.out.println( "POS  = " + __pos );
-          System.out.println( "feat = " + __feat );
+          System.out.println( "annot = " + annot );
+          System.out.println( "POS   = " + __pos );
+          System.out.println( "feat  = " + __feat );
           System.out.println();
 
         	pos[i] = __pos;

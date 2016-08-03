@@ -135,11 +135,14 @@ module21.class  = hu.nytud.gate.othertaggers.Huntag3NERPipeHFSTCode
 module22.name   = huntag3-NP-pipe-hfstcode
 module22.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipeHFSTCode
 
-# újkódos Dep
-module23.name   = ML3-Dep-hfstcode
-module23.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParserHFSTCode
+# -----
 
-# újkódos Const
-module24.name   = ML3-Const-hfstcode
-module24.class  = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParserHFSTCode
+# alábbiak nem kellenek, mert a sima '-hfstcode' nélküliek mennek! :)
+## újkódos Dep
+#module??.name   = ML3-Dep-hfstcode
+#module??.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParserHFSTCode
+#
+## újkódos Cons
+#module??.name   = ML3-Cons-hfstcode
+#module??.class  = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParserHFSTCode
 

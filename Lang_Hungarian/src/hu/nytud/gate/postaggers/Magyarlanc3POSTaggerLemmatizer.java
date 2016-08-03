@@ -22,6 +22,8 @@ import hu.ppke.itk.nlpg.purepos.morphology.NullAnalyzer;
 import hu.u_szeged2.config.Config;
 import hu.u_szeged2.pos.purepos.MySerilalizer;
 
+import hu.nytud.gate.util.DepTool;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -104,8 +106,22 @@ public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {
                 
                 for (int i = 0; i < tagged.size(); ++i) {
                     FeatureMap featureMap = tokens.get(i).getFeatures();
-                    featureMap.put(outputLemmaFeature, tagged.get(i).getStem());
-                    featureMap.put(outputMorphFeature, tagged.get(i).getTag());                	
+
+                    String stem = tagged.get(i).getStem(); // lemma
+                    String tag = tagged.get(i).getTag(); // hfstcode analysis tag
+
+                    // felébred[/V][Prs.NDef.2Pl]
+                    String hfstlemmaana = stem + tag; // XXX egyben nem hozzáférhető vhogy? :)
+
+                    // felébredtek
+                    Object oform = featureMap.get("string");
+                    String form = oform == null ? "" : oform.toString();
+
+                    featureMap.put(outputLemmaAnnotName, stem);
+                    featureMap.put("hfstana", tag); // -> for huntag3-based tools!
+                    //featureMap.put("hfstlemmaana", hfstlemmaana);
+                    featureMap.put(outputPosAnnotName, DepTool.getPos( hfstlemmaana, form ) ); 
+                    featureMap.put(outputFeatureAnnotName, DepTool.getFeatures( hfstlemmaana, form ) ); 
                 }                
             }
         } catch (Exception ex) {
@@ -115,27 +131,39 @@ public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {
 
 	@RunTime
 	@CreoleParameter(
-			comment="The name of the lemma feature on output 'Token' annotations",
+			comment="The name of the lemma annot on output 'Token' annotations",
 			defaultValue="lemma")
-	public void setOutputLemmaFeature(String f) {
-		this.outputLemmaFeature = f;
+	public void setOutputLemmaAnnotName(String f) {
+		this.outputLemmaAnnotName = f;
 	}
-	public String getOutputLemmaFeature() {
-		return this.outputLemmaFeature;
+	public String getOutputLemmaAnnotName() {
+		return this.outputLemmaAnnotName;
 	}
-	private String outputLemmaFeature;
+	private String outputLemmaAnnotName;
 
 	@RunTime
 	@CreoleParameter(
-			comment="The name of the morph feature on output 'Token' annotations",
+			comment="The name of the POS annot on output 'Token' annotations",
+			defaultValue="pos")
+	public void setOutputPosAnnotName(String f) {
+		this.outputPosAnnotName = f;
+	}
+	public String getOutputPosAnnotName() {
+		return this.outputPosAnnotName;
+	}
+	private String outputPosAnnotName;
+
+	@RunTime
+	@CreoleParameter(
+			comment="The name of the morphfeature annot on output 'Token' annotations",
 			defaultValue="feature")
-	public void setOutputMorphFeature(String f) {
-		this.outputMorphFeature = f;
+	public void setOutputFeatureAnnotName(String f) {
+		this.outputFeatureAnnotName = f;
 	}
-	public String getOutputMorphFeature() {
-		return this.outputMorphFeature;
+	public String getOutputFeatureAnnotName() {
+		return this.outputFeatureAnnotName;
 	}
-	private String outputMorphFeature;
+	private String outputFeatureAnnotName;
 
 	@RunTime
 	@CreoleParameter(
@@ -148,5 +176,6 @@ public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {
 	    return inputAnasFeatureName;
 	}
 	protected String inputAnasFeatureName;
+  // XXX ez zavaros: most input vagy output??? (input, nem?)
 
 }
