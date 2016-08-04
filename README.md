@@ -7,25 +7,27 @@ Developers: Péter Kundráth, Márton Miháltz, Bálint Sass, Mátyás Gerőcs
 ##Contents
 
 The plugin contains the following GATE **Processing Resources**.
-Firstly, the **Lang_Hungarian** toolchain:
 
-* QunToken Hungarian tokenizer and sentence splitter (Linux)
-* HFST morphological analyzer and lemmatizer
-* Magyarlánc Hungarian POS Tagger and Lemmatizer
-* Magyarlánc Hungarian Dependency Parser
-* Magyarlánc Hungarian Constituency Parser
+Firstly, the **Lang_Hungarian** plugin contains
+the [e-magyar.hu](http://www.e-magyar.hu) toolchain:
+
+* _emToken_ Hungarian Sentence Splitter and Tokenizer (QunToken)
+* _emMorph+emLem_ Hungarian Morphological Analyzer and Lemmatizer (HFST)
+* _emTag_ Hungarian POS Tagger and Lemmatizer (PurePOS in magyarlanc3.0)
+* _emDep_ Hungarian Dependency Parser (magyarlanc3.0)
+* _emCons_ Hungarian Constituency Parser (magyarlanc3.0)
 * Preverb Identifier Tool
-* Hungarian NP chunking with Huntag3 (Linux, Windows)
-* Hungarian NER with Huntag3 (Linux, Windows)
+* _emChunk_ Hungarian NP Chunker (HunTag3)
+* _emNer_ Hungarian Named Entity Recognizer (HunTag3)
 * IOB2Annotation Converter Tool
 
 Some older tools are also integrated:
 
-* Hunpos Hungarian PoS-tagger (Linux)
-* HunMorph Hungarian morphological analyzer (Linux, OS X)
-* Magyarlánc Hungarian Sentence Splitter and Tokenizer
-* Magyarlánc Hungarian Morphological Analyzer [KR code]
-* Magyarlánc Hungarian Morphological Analyzer And Guesser [MSD code]
+* HunPos Hungarian POS Tagger (Linux)
+* HunMorph Hungarian Morphological Analyzer (Linux, OS X)
+* magyarlanc3.0 Hungarian Sentence Splitter and Tokenizer
+* magyarlanc2.0 Hungarian Morphological Analyzer [KR code]
+* magyarlanc2.0 Hungarian Morphological Analyzer And Guesser [MSD code]
 
 XXX You will also find the following **ready made applications** in GATE Developer (to access, in the menu click *File -> Ready Made Applications -> Hungarian*, or right-click *Applications* in the GATE Resources tree):
 
