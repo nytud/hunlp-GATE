@@ -14,22 +14,27 @@ port = 8000
 
 plugin1 = Lang_Hungarian
 
-#
+# The full e-magyar.hu toolchain is the following:
+# QT,HFSTLemm,ML3-PosLem-hfstcode,ML3-Dep,Preverb,ML3-Cons,huntag3-NP-pipe-hfstcode,IOB4NP,huntag3-NER-pipe-hfstcode,IOB4NER
+
 # Module definitions
 #
 # module<n>.name   = short name (format: [a-z0-9_-]+)
 # module<n>.class  = gate resource class name
 # module<n>.params = parameters to be set for the module in http query format (a=b&c=d...)
 
+# "emToken" (Windows)
 module1.name    = ML3-SSTok
 module1.class   = com.precognox.kconnect.gate.magyarlanc.HungarianTokenizerSentenceSplitter
 
+# "emMorph+emLem"
 module2.name    = HFSTLemm
 module2.class   = hu.nytud.gate.morph.HFSTMorphAndLemma
 
 module3.name    = ML3-PosLem
 module3.class   = com.precognox.kconnect.gate.magyarlanc.HungarianLemmatizerPosTagger
 
+# "emToken" (Linux)
 module4.name    = QT
 module4.class   = hu.nytud.gate.tokenizers.QunTokenCommandLine
 
@@ -38,9 +43,11 @@ module4.class   = hu.nytud.gate.tokenizers.QunTokenCommandLine
 # ML3.0 cuccok
 # >> ML3.0 lánc = ML3-SSTok,ML3-PosLem,ML3-Dep,ML3-Cons
 
+# "emDep"
 module5.name    = ML3-Dep
 module5.class   = hu.nytud.gate.parsers.Magyarlanc3DependencyParser
 
+# "emCons"
 module6.name    = ML3-Cons
 module6.class   = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParser
 
@@ -123,26 +130,15 @@ module19.params = inputIobAnnotAttrib=NER-BIO1&outputAnnotationName=NE
 
 # -----
 
-# újkódos PurePOS
+# "emTag" újkódos PurePOS
 module20.name   = ML3-PosLem-hfstcode
 module20.class  = hu.nytud.gate.postaggers.Magyarlanc3POSTaggerLemmatizer
 
-# újkódos NER
+# "emNer" újkódos NER
 module21.name   = huntag3-NER-pipe-hfstcode
 module21.class  = hu.nytud.gate.othertaggers.Huntag3NERPipeHFSTCode
 
-# újkódos maxNP
+# "emChunk" újkódos maxNP
 module22.name   = huntag3-NP-pipe-hfstcode
 module22.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipeHFSTCode
-
-# -----
-
-# alábbiak nem kellenek, mert a sima '-hfstcode' nélküliek mennek! :)
-## újkódos Dep
-#module??.name   = ML3-Dep-hfstcode
-#module??.class  = hu.nytud.gate.parsers.Magyarlanc3DependencyParserHFSTCode
-#
-## újkódos Cons
-#module??.name   = ML3-Cons-hfstcode
-#module??.class  = hu.nytud.gate.parsers.Magyarlanc3ConstituencyParserHFSTCode
 
