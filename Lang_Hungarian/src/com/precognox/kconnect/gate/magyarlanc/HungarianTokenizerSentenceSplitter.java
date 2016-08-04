@@ -19,7 +19,7 @@ import splitter.archive.StringCleaner;
 import splitter.ling.sentencesplitter.DefaultSentenceSplitter;
 import splitter.ling.tokenizer.DefaultWordTokenizer;
 
-@CreoleResource(name = "1. Sentence Splitter And Tokenizer [HU] [magyarlanc 3.0]",
+@CreoleResource(name = "HU 1. \"emToken\" Sentence Splitter and Tokenizer (magyarlanc3.0) [Windows]",
                 comment = "Tokenizer and Sentence Splitter for Hungarian language base on Magyarlanc",
                 icon = "tokeniser")
 public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser {

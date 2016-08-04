@@ -16,7 +16,7 @@ import hu.u_szeged.splitter.HunSplitter;
  * Note: the sentence splitter seems to leave whitespace at the beginning of sentences, I left it as it was.
  * Author: Márton Miháltz
  */ 
-@CreoleResource(name = "1. Sentence Splitter And Tokenizer [HU] [magyarlanc 2.0]",
+@CreoleResource(name = "HU [OBS] 1. Sentence Splitter and Tokenizer (magyarlanc2.0)",
 				comment = "Creates sentence and token annotations",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/MagyarlancSplitterTokenizer") 

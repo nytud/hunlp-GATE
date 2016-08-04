@@ -1,0 +1,99 @@
+hu/nytud/gate/tokenizers/QunTokenCommandLine.java
+HU 1. \"emToken\" Sentence Splitter and Tokenizer (QunToken, native) [Linux]
+
+hu/nytud/gate/tokenizers/MagyarlancSentenceSplitterTokenizer.java
+HU [OBS] 1. Sentence Splitter and Tokenizer (magyarlanc2.0)
+
+com/precognox/kconnect/gate/magyarlanc/HungarianTokenizerSentenceSplitter.java
+HU 1. \"emToken\" Sentence Splitter and Tokenizer (magyarlanc3.0) [Windows]
+
+hu/nytud/gate/morph/MagyarlancMSDMorphAnalyzer.java
+HU [OBS] 2. Morphological Analyzer and Guesser (magyarlanc2.0, MSD)
+
+hu/nytud/gate/morph/MagyarlancKRMorphAnalyzer.java
+HU [OBS] 2. Morphological Analyzer (magyarlanc2.0, KR)
+
+hu/nytud/gate/morph/HunMorphCommandLine.java
+HU [OLD] 2. Morphological Analyzer (HunMorph, KR?, GenericTagger) [Linux]
+
+hu/nytud/gate/morph/HFSTMorphAndLemma.java
+HU 2. \"emMorph+emLem\" Morphological Analyzer and Lemmatizer (HFST, hfst, native+java)
+
+hu/nytud/gate/postaggers/MagyarlancPOSTaggerLemmatizer.java
+HU [OBS] 3. POS Tagger and Lemmatizer (magyarlanc2.0, MSD?)
+
+hu/nytud/gate/postaggers/Magyarlanc3POSTaggerLemmatizer.java
+HU 3. \"emTag\" POS Tagger and Lemmatizer (PurePOS in magyarlanc3.0, hfst)
+
+hu/nytud/gate/parsers/Magyarlanc3ConstituencyParser.java
+HU 4. \"emCons\" Consituency Parser (magyarlanc3.0, hfst)
+
+hu/nytud/gate/parsers/MagyarlancDependencyParser.java
+HU [OBS] 4. Dependency Parser (magyarlanc2.0, MSD?)
+
+hu/nytud/gate/parsers/Magyarlanc3DependencyParser.java
+HU 4. \"emDep\" Dependency Parser (magyarlanc3.0, hfst)
+
+hu/nytud/gate/othertaggers/Huntag3NPChunkerPipe.java
+HU [OBS] 4. NP Chunker (HunTag3, MSD, native)
+
+hu/nytud/gate/othertaggers/Huntag3NPChunkerPipeHFSTCode.java
+HU 4. \"emChunk\" NP Chunker (HunTag3, hfst, native)
+
+hu/nytud/gate/othertaggers/Huntag3NERPipe.java
+HU [OLD] 4. Named Entity Recognizer (HunTag3, KR, native)
+
+hu/nytud/gate/othertaggers/Huntag3NERPipeHFSTCode.java
+HU 4. \"emNer\" Named Entity Recognizer (HunTag3, hfst, native)
+
+hu/nytud/gate/converters/Iob2Annot.java
+HU 5. IOB2Annotation Converter
+
+hu/nytud/gate/parsers/PreverbIdentifier.java
+HU 5. Preverb Identifier
+
+hu/nytud/gate/sentencesplitters/MagyarlancSentenceSplitter.java
+HU [OBS] 1. Sentence Splitter (magyarlanc2.0)
+
+hu/nytud/gate/tokenizers/MagyarlancTokenizer.java
+HU [OBS] 1. Tokenizer (magyarlanc2.0)
+
+hu/nytud/gate/tokenizers/DummyCTokenizer.java
+HU [OBS] 1. Tokenizer (native) [Linux]
+
+hu/nytud/gate/tokenizers/DummyTokenizer.java
+HU [DEMO] 1. Tokenizer (whitespace)
+
+hu/nytud/gate/morph/HFSTMorphTagger.java
+HU [OBS] 2. Morphological Analyzer (HFST, hfst, GenericTagger) [Linux?]
+
+hu/nytud/gate/morph/HFSTMorphJava.java
+HU [OBS] 2. Morphological Analyzer (HFST, hfst)
+
+hu/nytud/gate/morph/HFSTMorphPipe.java
+HU [OBS] 2. Morphological Analyzer (HFST, hfst, native)
+
+hu/nytud/gate/postaggers/HunPosCommandLine.java
+HU [OLD] 3. POS Tagger (HunPos, KR?, GenericTagger) [Linux]
+
+com/precognox/kconnect/gate/magyarlanc/HungarianLemmatizerPosTagger.java
+HU [OBS] 3. POS Tagger and Lemmatizer (PurePOS in magyarlanc3.0, MSD?)
+
+hu/nytud/gate/parsers/Magyarlanc3ConstituencyParserHFSTCode.java
+HU [OBS] 4. Consituency Parser (magyarlanc3.0, hfst)
+
+hu/nytud/gate/parsers/Magyarlanc3DependencyParserHFSTCode.java
+HU [OBS] 4. Dependency Parser (magyarlanc3.0, hfst)
+
+hu/nytud/gate/NERs/DummyIobNer.java
+HU [DEMO] 4. Named Entity Recognizer (dummy IOB)
+
+hu/nytud/gate/NERs/DummyNER.java
+HU [DEMO] 4. Named Entity Recognizer (dummy)
+
+hu/nytud/gate/othertaggers/Huntag3NPChunkerCommandLine.java
+HU [OBS] 4. NP Chunker (HunTag3, MSD, GenericTagger) [Linux?]
+
+hu/nytud/gate/othertaggers/Huntag3NERCommandLine.java
+HU [OLD] 4. Named Entity Recognizer (HunTag3, KR, GenericTagger) [Linux?]
+

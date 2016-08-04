@@ -16,10 +16,11 @@ import gate.creole.*;
 import gate.creole.metadata.*; 
 import gate.util.*;
 
-
 /** 
+ *  Tokeniser implemented in C user by JNI.
+ *  @author Marton Mihaltz
  */ 
-@CreoleResource(name = "[DEMO] 1. Tokenizer [Native (Linux)]",
+@CreoleResource(name = "HU [OBS] 1. Tokenizer (native) [Linux]",
 				comment = "Dummy whitespace tokenizer implemented in C, native shared library called via JNI",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyCTokenizer") 

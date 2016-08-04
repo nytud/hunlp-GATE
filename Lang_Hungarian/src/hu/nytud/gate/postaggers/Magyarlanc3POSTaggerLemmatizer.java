@@ -33,7 +33,7 @@ import java.util.Map;
  *  Based on precognox's HungarianLemmatizerPosTagger + MyPurePos class
  *  @author Peter K
  */ 
-@CreoleResource(name = "3. POS Tagger and Lemmatizer [HU] [magyarlanc 3.0]",
+@CreoleResource(name = "HU 3. \"emTag\" POS Tagger and Lemmatizer (PurePOS in magyarlanc3.0, hfst)",
                 comment = "Adds feature and lemma annotations",
                 icon = "pos-tagger")
 public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {

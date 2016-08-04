@@ -18,7 +18,7 @@ import hu.nytud.gate.morph.HFSTMorphPipe;
  * We only override some CREOLE resource parameter default values
  * which are needed to run the huntag3 command line binary correctly.
  */
-@CreoleResource(name = "[DEMO] 4. Named Entity Recognition (HU) [HunTag3 GenericTagger KR]", 
+@CreoleResource(name = "HU [OLD] 4. Named Entity Recognizer (HunTag3, KR, GenericTagger) [Linux?]", 
 				comment = "Expects tokenized text with KR pos tags and morphanalyzes with lemmas. Outputs BIOE1-* codes."
 						+ "Calls huntag3 command line binary via TaggerFramework's GenericTagger") 
 public class Huntag3NERCommandLine extends GenericTagger {

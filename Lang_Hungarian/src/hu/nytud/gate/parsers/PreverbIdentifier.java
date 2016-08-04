@@ -15,8 +15,7 @@ import java.util.*;
  *  Creates "preverb" and "lemmaWithPreverb" features on verbs.
  *  @author Bálint Sass
  */ 
-@CreoleResource(
-  name = "5. Preverb Identifier (HU)",
+@CreoleResource(name = "HU 5. Preverb Identifier",
   comment = "Requires dependency analysis: 'depType' and 'depTarget' features on 'Token's"
   // helpURL = "http://corpus.nytud.hu/gate/doc/PreverbIdentifier"
 ) 

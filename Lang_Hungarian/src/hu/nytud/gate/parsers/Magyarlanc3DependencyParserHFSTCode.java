@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  *  Tested with Magyarlánc "3.0"
  *  @author Peter Kundrath, Balint Sass
  */ 
-@CreoleResource(name = "[DEMO] 4. Dependency Parser [HU] [magyarlanc 3.0, hfst]", 
+@CreoleResource(name = "HU [OBS] 4. Dependency Parser (magyarlanc3.0, hfst)", 
 				comment = "Requires sentences and tokens with lemma, pos and morph features"
 				)
 public class Magyarlanc3DependencyParserHFSTCode extends AbstractLanguageAnalyser {

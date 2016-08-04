@@ -9,11 +9,11 @@ import gate.util.*;
 import java.util.*;
 
 /** 
- * Processing Resource.  The @CreoleResource annotation marks this 
- *  class as a GATE Resource, and gives the information GATE needs 
- *  to configure the resource appropriately. 
+ *  Dummy Tokenizer.
+ *  Based solely on whitespace.
+ *  @author Bálint Sass
  */ 
-@CreoleResource(name = "[DEMO] 1. Tokenizer [whitespace]",
+@CreoleResource(name = "HU [DEMO] 1. Tokenizer (dummy)",
 				comment = "Dummy whitespace tokenizer, just for testing",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyTokenizer") 

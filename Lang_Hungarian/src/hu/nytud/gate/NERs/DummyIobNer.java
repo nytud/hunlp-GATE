@@ -14,7 +14,7 @@ import java.util.*;
  *  based solely on capitalization of Tokens.
  *  @author Bálint Sass
  */ 
-@CreoleResource(name = "[DEMO] 4. Dummy IOB NER (HU)",
+@CreoleResource(name = "HU [DEMO] 4. Named Entity Recognizer (dummy IOB)",
 				comment = "Requires 'Token' annotation"
 				// helpURL = "http://corpus.nytud.hu/gate/doc/DummyIobNer"
         ) 

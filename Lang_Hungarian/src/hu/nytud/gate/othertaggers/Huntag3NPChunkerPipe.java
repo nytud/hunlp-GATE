@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
 /**
  * NP chunking with the huntag3 tagger.
  */
-@CreoleResource(name = "4. NP Chunker (HU) [HunTag3 Native MSD]", 
+@CreoleResource(name = "HU [OBS] 4. NP Chunker (HunTag3, MSD, native)", 
 				comment = "Expects tokenized, msd-tagged text. Outputs BIOE1-* codes."
 						+ "Calls huntag3 command line through Process with pipes") 
 public class Huntag3NPChunkerPipe extends AbstractLanguageAnalyser {

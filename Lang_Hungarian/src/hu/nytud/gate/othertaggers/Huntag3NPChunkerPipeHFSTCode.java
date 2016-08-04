@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
 /**
  * Hungarian maxNP chunking with the huntag3 tagger and the maxNP-szeged-hfst model.
  */
-@CreoleResource(name = "4. NP Chunker (HU) [HunTag3 Native hfst]", 
+@CreoleResource(name = "HU 4. \"emChunk\" NP Chunker (HunTag3, hfst, native)", 
 				comment = "Expects tokenized text with hfst pos tags and morphanalyzes with lemmas. Outputs BIOE1-* codes."
 						+ "Calls huntag3 command line through Process with pipes") 
 public class Huntag3NPChunkerPipeHFSTCode extends AbstractLanguageAnalyser {

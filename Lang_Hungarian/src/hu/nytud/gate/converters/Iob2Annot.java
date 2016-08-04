@@ -17,8 +17,7 @@ import java.util.*;
  *  if it is not "I", "B", "E" or "1", it is considered as "O".
  *  @author Bálint Sass
  */ 
-@CreoleResource(
-  name = "5. IOB 2 Annotation Converter",
+@CreoleResource(name = "HU 5. IOB2Annotation Converter",
   comment = "Requires 'Token' annotation with IOB codes in 'ne_iob' attrib"
   // helpURL = "http://corpus.nytud.hu/gate/doc/Iob2Annot"
 ) 

@@ -17,7 +17,7 @@ import gate.taggerframework.*;
  * We only override some CREOLE resource parameter default values
  * which are needed to run the hunmorph command line binary correctly. 
  */
-@CreoleResource(name = "2. Morphological Analyzer [HU] [ocamorph]", 
+@CreoleResource(name = "HU [OLD] 2. Morphological Analyzer (HunMorph, KR?, GenericTagger) [Linux]", 
 				comment = "Expects tokenized text. Outputs lemmas and KR codes. Calls hunmorph command line binary via TaggerFramework's GenericTagger") 
 public class HunMorphCommandLine extends GenericTagger {
 

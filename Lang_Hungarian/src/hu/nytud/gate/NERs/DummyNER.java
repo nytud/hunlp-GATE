@@ -10,11 +10,11 @@ import gate.annotation.*;
 import java.util.*;
 
 /** 
- * Processing Resource.  The @CreoleResource annotation marks this 
- *  class as a GATE Resource, and gives the information GATE needs 
- *  to configure the resource appropriately. 
+ *  Dummy Named Entity Recognizer.
+ *  Based solely on capitalization of Tokens.
+ *  @author Bálint Sass
  */ 
-@CreoleResource(name = "[DEMO] 4. Dummy NER (HU)",
+@CreoleResource(name = "HU [DEMO] 4. Named Entity Recognizer (dummy)",
 				comment = "Dummy NER = 2 adjacent uppercase words :)",
 				icon = "tokeniser",
 				helpURL = "http://corpus.nytud.hu/gate/doc/DummyNER") 

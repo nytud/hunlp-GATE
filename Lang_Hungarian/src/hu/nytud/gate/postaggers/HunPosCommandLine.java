@@ -12,7 +12,7 @@ import gate.taggerframework.*;
  * We only override some CREOLE resource parameter default values
  * which are needed to run the hunpos command line binary correctly. 
  */
-@CreoleResource(name = "[DEMO] 3. POS Tagger [HU] [HunPos]", 
+@CreoleResource(name = "HU [OLD] 3. POS Tagger (HunPos, KR?, GenericTagger) [Linux]", 
 				comment = "Expects tokenized text. Outputs KR codes. Calls hunpos command line binary via TaggerFramework's GenericTagger",
 				icon = "pos-tagger") 
 public class HunPosCommandLine extends GenericTagger {

@@ -30,7 +30,7 @@ import org.apache.log4j.Logger;
 /**
  * Hungarian NER (Named Entity Recognition) with the huntag3 tagger and the NER-szeged-hfst model.
  */
-@CreoleResource(name = "4. Named Entity Recognition (HU) [HunTag3 Native hfst]", 
+@CreoleResource(name = "HU 4. \"emNer\" Named Entity Recognizer (HunTag3, hfst, native)", 
 				comment = "Expects tokenized text with hfst pos tags and morphanalyzes with lemmas. Outputs BIOE1-* codes."
 						+ "Calls huntag3 command line through Process with pipes") 
 public class Huntag3NERPipeHFSTCode extends AbstractLanguageAnalyser {
