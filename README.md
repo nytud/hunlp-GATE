@@ -230,7 +230,5 @@ for some usage scenarios.
 
 ##Others
 
-XXX how to get the transducer file for HFST
-
 XXX tsvconverter.py
 
