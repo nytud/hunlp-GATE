@@ -142,3 +142,9 @@ module21.class  = hu.nytud.gate.othertaggers.Huntag3NERPipeHFSTCode
 module22.name   = huntag3-NP-pipe-hfstcode
 module22.class  = hu.nytud.gate.othertaggers.Huntag3NPChunkerPipeHFSTCode
 
+# -----
+
+# readable morpho analysis
+module23.name   = huntag3-NP-pipe-hfstcode
+module23.class  = hu.nytud.gate.converters.ReadableMorphoAnalysis
+
