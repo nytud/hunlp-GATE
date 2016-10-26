@@ -348,6 +348,13 @@ public class DepTool {
    */
   public static String getPos(String infraAna, String form) {
 
+    // ha a token maga a '['
+    if (form.equals("[")) {
+      return "["; // ti. jelenleg punct => pos == form XXX -- vö: [GSZ]
+    }
+
+    // ha nincs elemzés (gondolom ezt nézzük itt) = nincs benne '['
+    // de ez fut le 'OTHER' esetén is XXX
     if (!infraAna.contains("[")) {
       return form;
     }
@@ -369,6 +376,8 @@ public class DepTool {
     if (pos.contains("Supl")) {
       infraAna = infraAna.replace("[/Supl]", "");
       getPos(infraAna, form);
+      // return getPos(infraAna, form);
+      // kell a return, kul ez elvesz! :) -- ld. [GSP]
     }
 
     return pos;
@@ -394,6 +403,14 @@ public class DepTool {
   }
 
   public static String getLemma(String infra, String form) {
+
+    // ha a token maga a '['
+    if (form.equals("[")) {
+      return "["; // punct => lemma == form
+    }
+
+    // ha nincs elemzés (gondolom ezt nézzük itt) = nincs benne '['
+    // de ez fut le 'OTHER' esetén is XXX
     String infraLemma = infra.contains("[") ? infra.substring(0, infra.indexOf("[")) : form;
     return infraLemma;
   }
@@ -431,7 +448,15 @@ public class DepTool {
 
       // gyerek  N SubPOS=c|Num=s|Cas=n|NumP=none|PerP=none|NumPd=none
       // XXX [Pl.Poss.2Sg] nincs kezelve -- miért???
-      {"gyerek[/N][Pl.Poss.2Sg][Nom]", "Gyerekeid"}
+      {"gyerek[/N][Pl.Poss.2Sg][Nom]", "Gyerekeid"},
+
+      // leg[/Supl]=leg+jó[/Adj]=jo+bb[_Comp/Adj]=bb+[Nom]
+      {"legjobb[/Supl][/Adj][_Comp/Adj][Nom]", "legjobb"},
+
+      // a nyitó '[' gondot okoz
+      // XXX valóban '[OTHER' most a lemma+tag,
+      //     de ez nem tuti, hogy jó így véglegesnek
+      {"[OTHER", "["}
 
     };
 

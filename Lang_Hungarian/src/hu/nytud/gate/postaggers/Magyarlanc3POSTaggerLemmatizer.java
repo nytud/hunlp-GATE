@@ -120,8 +120,10 @@ public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {
                     featureMap.put(outputLemmaAnnotName, stem);
                     featureMap.put("hfstana", tag); // -> for huntag3-based tools!
                     //featureMap.put("hfstlemmaana", hfstlemmaana);
-                    featureMap.put(outputPosAnnotName, DepTool.getPos( hfstlemmaana, form ) ); 
-                    featureMap.put(outputFeatureAnnotName, DepTool.getFeatures( hfstlemmaana, form ) ); 
+                    String pos = DepTool.getPos( hfstlemmaana, form ); 
+                    String features = DepTool.getFeatures( hfstlemmaana, form ); 
+                    featureMap.put(outputPosAnnotName, pos ); 
+                    featureMap.put(outputFeatureAnnotName, features ); 
                 }                
             }
         } catch (Exception ex) {
