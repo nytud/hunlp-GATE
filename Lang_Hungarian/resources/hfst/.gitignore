@@ -1,0 +1,6 @@
+# hungarian morpho transducer -- a resource outside of git
+hu.hfstol
+
+# older versions
+hu.hfstol_*
+

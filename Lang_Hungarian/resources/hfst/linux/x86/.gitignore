@@ -1,0 +1,4 @@
+# only README.md is needed -- all files are outside of git
+*
+!.gitignore
+!README.md

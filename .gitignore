@@ -1,4 +1,15 @@
+# === specific for Lang_Hungarian GATE plugin
+
+# resources outside of git
 Lang_Hungarian/resources/magyarlanc/szeged.dep.model
+
+# older versions of some files
+Lang_Hungarian/hungarian.jar_*
+
+# test outputs (using texts/*)
+output
+
+# -----
 
 *.class
 
