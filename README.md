@@ -33,7 +33,7 @@ XXX You will also find the following **ready made applications** in GATE Develop
 
 * Magyarlánc Morphparse (Sentence Splitter and Tokenizer + Pos Tagger and Lemmatizer)
 * Magyarlánc Depparse (Morphparse + Depdendency Parser)
-* NP chunking with Huntag3 and Magyarlánc MorphParse
+* NP chunking with HunTag3 and Magyarlánc MorphParse
 
 XXX Please see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hungarian-NLP-Tools-GATE-Integration) for more information on what tools are expected to be integrated and their statuses.
 
@@ -79,8 +79,8 @@ Follow these steps to install the plugin directly into GATE Developer using the 
 11. Click on the "Apply All" button to install the plugin. 
 12. You should now see **Lang_Hungarian** in the list of installed plugins on the "Installed Plugins" tab.
 13. Enable the "Load Now" checkbox for **Lang_Hungarian** and click "Apply All" to load the plugin. Several new PRs become available right clicking "Processing Resources" on the left hand side panel and selecting "New".
-14. Now, open a terminal and issue the `sh xperm.sh` command in `Lang_Hungarian` directory under you GATE User Plugin Directory to add necessary execute permissions.
-15. In order to use the *Huntag3*-based processing resources (NER, NP chunking) install the required python environment. On Linux (Debian or Ubuntu) run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (with superuser privileges). On Windows see `Lang_Hungarian/resources/huntag3/setup_windows.cmd`.
+14. (skip this step on Windows) Open a terminal and issue the `sh xperm.sh` command in `Lang_Hungarian` directory under your GATE User Plugin Directory to add necessary execute permissions.
+15. In order to use the *HunTag3*-based processing resources (_emChunk_, _emNer_) install the required python environment. On Linux (Debian or Ubuntu) run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (with superuser privileges). On Windows see `Lang_Hungarian/resources/huntag3/setup_windows.cmd`.
 
 ###Method 2 (for developers):
 
@@ -93,9 +93,9 @@ it uses a clone of this github repository.
 by running `complete.sh` (on Linux) *or* obtain these resources one by one:
   * to use *HFST* morphological analyser, see the corresponding [README.md](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/hfst) about obtaining binaries
   * to use *Magyarlánc*, see the corresponding [README.md](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/magyarlanc) about obtaining binaries
-  * to use *Huntag3* (NP chunking, NER):
-    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (on Ubuntu or Debian Linux) to install required dependencies for Huntag3 (superuser privileges required).
-    * See the [README.md](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/huntag3/models) for obtaining trained models for Huntag3.  
+  * to use *HunTag3* (_emChunk_, _emNer_):
+    * Run `Lang_Hungarian/resources/huntag3/setup_linux.sh` (on Ubuntu or Debian Linux) to install required dependencies for HunTag3 (superuser privileges required).
+    * See the [README.md](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/huntag3/models) for obtaining trained models for HunTag3.  
 3. Copy the whole directory `Lang_Hungarian` into your GATE user plugin directory (see __Plugin command-line installation__).
 4. Restart GATE Developer. You should now see **Lang_Hungarian** in the list of installed plugins.
    If it's not there, check if your user plugin directory is set (see steps 2-4. in __Method 1__ above).
