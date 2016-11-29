@@ -9,16 +9,16 @@ Developers: Péter Kundráth, Márton Miháltz, Bálint Sass, Mátyás Gerőcs
 The plugin contains the following GATE **Processing Resources**.
 
 Firstly, the **Lang_Hungarian** plugin contains
-the [e-magyar.hu](http://www.e-magyar.hu) toolchain:
+the [e-magyar](http://www.e-magyar.hu) toolchain:
 
-* _emToken_ Hungarian Sentence Splitter and Tokenizer (QunToken)
-* _emMorph+emLem_ Hungarian Morphological Analyzer and Lemmatizer (HFST)
-* _emTag_ Hungarian POS Tagger and Lemmatizer (PurePOS in magyarlanc3.0)
-* _emDep_ Hungarian Dependency Parser (magyarlanc3.0)
-* _emCons_ Hungarian Constituency Parser (magyarlanc3.0)
+* _[emToken](https://github.com/dlt-rilmta/quntoken)_ Hungarian Sentence Splitter and Tokenizer (QunToken)
+* _[emMorph](https://github.com/dlt-rilmta/emMorph)+[emLem](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/Lang_Hungarian/resources/hfst/hfst-wrapper)_ Hungarian Morphological Analyzer and Lemmatizer (HFST)
+* _emTag_ Hungarian POS Tagger and Lemmatizer ([PurePOS](https://github.com/ppke-nlpg/purepos) in [magyarlanc3.0](http://rgai.inf.u-szeged.hu/magyarlanc))
+* _emDep_ Hungarian Dependency Parser ([magyarlanc3.0](http://rgai.inf.u-szeged.hu/magyarlanc))
+* _emCons_ Hungarian Constituency Parser ([magyarlanc3.0](http://rgai.inf.u-szeged.hu/magyarlanc))
 * Preverb Identifier Tool
-* _emChunk_ Hungarian NP Chunker (HunTag3)
-* _emNer_ Hungarian Named Entity Recognizer (HunTag3)
+* _emChunk_ Hungarian NP Chunker ([HunTag3](https://github.com/ppke-nlpg/HunTag3))
+* _emNer_ Hungarian Named Entity Recognizer ([HunTag3](https://github.com/ppke-nlpg/HunTag3))
 * IOB2Annotation Converter Tool
 
 Some older tools are also integrated:
