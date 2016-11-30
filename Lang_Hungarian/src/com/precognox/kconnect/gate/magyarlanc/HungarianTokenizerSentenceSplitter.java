@@ -12,6 +12,7 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.Map.Entry;
 import splitter.MySplitter;
 import splitter.archive.StringCleaner;
@@ -23,7 +24,10 @@ import splitter.ling.tokenizer.DefaultWordTokenizer;
                 icon = "tokeniser")
 public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+
+    private static final Pattern wsP = Pattern.compile("\\p{javaWhitespace}");
+    private static final Pattern punctP = Pattern.compile("\\p{Punct}+");
 
     private DefaultSentenceSplitter splitter;
     private DefaultWordTokenizer tokenizer;
@@ -76,8 +80,16 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
     private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
         FeatureMap tokenFeatures = Factory.newFeatureMap();
         tokenFeatures.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
-        String cleanedCoveredText = stringCleaner.cleanString(getDocument().getContent().getContent(start, end).toString().replaceAll("\\p{javaWhitespace}", ""));
+        String cleanedCoveredText = wsP.matcher(stringCleaner.cleanString(
+                getDocument().getContent().getContent(start, end).toString())).replaceAll("");
+        //String cleanedCoveredText = stringCleaner.cleanString(getDocument().getContent().getContent(start, end).toString().replaceAll("\\p{javaWhitespace}", ""));
         tokenFeatures.put(TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
+        if (annotationType == TOKEN_ANNOTATION_TYPE)
+            if (punctP.matcher(cleanedCoveredText).matches()) {
+                tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "punctuation");
+            } else {
+                tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "word");
+            }
         getDocument().getAnnotations().add(start, end, annotationType, tokenFeatures);
     }
 
