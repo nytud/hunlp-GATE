@@ -71,6 +71,9 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
                     addTokenAnnotation(tokenStart, tokenEnd, TOKEN_ANNOTATION_TYPE);
                     previousTokenEnd = tokenEnd;
                 }
+                if (previousTokenEnd != se) {
+                    addTokenAnnotation(previousTokenEnd, se, SPACE_TOKEN_ANNOTATION_TYPE);
+                }
 
                 addSentenceAnnotation(ss, se, sentence);
             }
