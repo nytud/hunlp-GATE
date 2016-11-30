@@ -88,16 +88,23 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
     private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
         FeatureMap tokenFeatures = Factory.newFeatureMap();
         tokenFeatures.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
-        String cleanedCoveredText = wsP.matcher(stringCleaner.cleanString(
-                getDocument().getContent().getContent(start, end).toString())).replaceAll("");
-        //String cleanedCoveredText = stringCleaner.cleanString(getDocument().getContent().getContent(start, end).toString().replaceAll("\\p{javaWhitespace}", ""));
-        tokenFeatures.put(TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
-        if (annotationType == TOKEN_ANNOTATION_TYPE)
+
+        String cleanedCoveredText = stringCleaner.cleanString(
+                getDocument().getContent().getContent(start, end).toString());
+        if (annotationType == TOKEN_ANNOTATION_TYPE) {
+            /*
+             * Delete whitespaces from word characters; probably I should get
+             * rid of this, see #9.
+             */
+            cleanedCoveredText = wsP.matcher(cleanedCoveredText).replaceAll("");
             if (punctP.matcher(cleanedCoveredText).matches()) {
                 tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "punctuation");
             } else {
                 tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "word");
             }
+        }
+        tokenFeatures.put(TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
+
         getDocument().getAnnotations().add(start, end, annotationType, tokenFeatures);
     }
 
