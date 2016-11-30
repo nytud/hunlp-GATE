@@ -3,7 +3,6 @@ package com.precognox.kconnect.gate.magyarlanc;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.Resource;
-import gate.creole.ANNIEConstants;
 import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
@@ -76,9 +75,9 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
 
     private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
         FeatureMap tokenFeatures = Factory.newFeatureMap();
-        tokenFeatures.put(ANNIEConstants.TOKEN_LENGTH_FEATURE_NAME, end - start);
+        tokenFeatures.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
         String cleanedCoveredText = stringCleaner.cleanString(getDocument().getContent().getContent(start, end).toString().replaceAll("\\p{javaWhitespace}", ""));
-        tokenFeatures.put(ANNIEConstants.TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
+        tokenFeatures.put(TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
         getDocument().getAnnotations().add(start, end, annotationType, tokenFeatures);
     }
 
