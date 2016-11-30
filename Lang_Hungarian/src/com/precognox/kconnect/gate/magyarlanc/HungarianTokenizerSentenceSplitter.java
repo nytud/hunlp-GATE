@@ -54,11 +54,12 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
             long previousTokenEnd = 0;
             int[] sentenceOffsets = splitter.findSentenceOffsets(text, mySplitter.split(text));
             for (Entry<Integer, Integer> sentenceOffset : trimOffsets(text, sentenceOffsets)) {
-                Integer ss = sentenceOffset.getKey();
-                Integer se = sentenceOffset.getValue();
-                getDocument().getAnnotations().add(ss.longValue(), se.longValue(), SENTENCE_ANNOTATION_TYPE, Factory.newFeatureMap());
-
+                int ss = sentenceOffset.getKey().intValue();
+                int se = sentenceOffset.getValue().intValue();
                 String sentence = text.substring(ss, se);
+                addSentenceAnnotation(ss, se, sentence);
+                //getDocument().getAnnotations().add(ss, se, SENTENCE_ANNOTATION_TYPE, Factory.newFeatureMap());
+
                 Iterator<Entry<Integer, Integer>> tokenIter = trimOffsets(sentence, tokenizer.findWordOffsets(sentence, mySplitter.tokenize(sentence))).iterator();
                 while (tokenIter.hasNext()) {
                     Entry<Integer, Integer> token = tokenIter.next();
@@ -75,6 +76,13 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
         } catch (Exception ex) {
             throw new ExecutionException(ex);
         }
+    }
+
+    private void addSentenceAnnotation(long start, long end, String sentence) throws InvalidOffsetException {
+        FeatureMap features = Factory.newFeatureMap();
+        features.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
+        features.put(TOKEN_STRING_FEATURE_NAME, sentence);
+        getDocument().getAnnotations().add(start, end, SENTENCE_ANNOTATION_TYPE, features);
     }
 
     private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
