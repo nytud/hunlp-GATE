@@ -124,10 +124,8 @@ public class HFSTMorphAndLemma extends AbstractLanguageAnalyser {
 	        
 	        while (tokenIter.hasNext()) {
 	        	Annotation currentToken = tokenIter.next();
-	        	worker.addWord(document.getContent().getContent(
-	        			currentToken.getStartNode().getOffset(),
-	        			currentToken.getEndNode().getOffset()
-				).toString());
+                String token = (String)currentToken.getFeatures().get(TOKEN_STRING_FEATURE_NAME);
+	        	worker.addWord(token);
 	        }
 	        
 	        tokenIter = tokensAS.iterator(); int n=0;
