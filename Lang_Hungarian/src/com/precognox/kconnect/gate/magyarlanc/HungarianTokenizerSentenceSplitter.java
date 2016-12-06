@@ -3,7 +3,6 @@ package com.precognox.kconnect.gate.magyarlanc;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.Resource;
-import gate.creole.ANNIEConstants;
 import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
@@ -13,6 +12,7 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.Map.Entry;
 import splitter.MySplitter;
 import splitter.archive.StringCleaner;
@@ -24,7 +24,10 @@ import splitter.ling.tokenizer.DefaultWordTokenizer;
                 icon = "tokeniser")
 public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+
+    private static final Pattern wsP = Pattern.compile("\\p{javaWhitespace}");
+    private static final Pattern punctP = Pattern.compile("\\p{Punct}+");
 
     private DefaultSentenceSplitter splitter;
     private DefaultWordTokenizer tokenizer;
@@ -51,34 +54,60 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
             long previousTokenEnd = 0;
             int[] sentenceOffsets = splitter.findSentenceOffsets(text, mySplitter.split(text));
             for (Entry<Integer, Integer> sentenceOffset : trimOffsets(text, sentenceOffsets)) {
-                Integer ss = sentenceOffset.getKey();
-                Integer se = sentenceOffset.getValue();
-                getDocument().getAnnotations().add(ss.longValue(), se.longValue(), SENTENCE_ANNOTATION_TYPE, Factory.newFeatureMap());
-
+                int ss = sentenceOffset.getKey().intValue();
+                int se = sentenceOffset.getValue().intValue();
                 String sentence = text.substring(ss, se);
+
                 Iterator<Entry<Integer, Integer>> tokenIter = trimOffsets(sentence, tokenizer.findWordOffsets(sentence, mySplitter.tokenize(sentence))).iterator();
                 while (tokenIter.hasNext()) {
                     Entry<Integer, Integer> token = tokenIter.next();
                     long tokenStart = token.getKey().longValue() + ss;
                     long tokenEnd = token.getValue().longValue() + ss;
 
-                    addTokenAnnotation(tokenStart, tokenEnd, TOKEN_ANNOTATION_TYPE);
                     if (previousTokenEnd != tokenStart) {
                         addTokenAnnotation(previousTokenEnd, tokenStart, SPACE_TOKEN_ANNOTATION_TYPE);
                     }
+                    addTokenAnnotation(tokenStart, tokenEnd, TOKEN_ANNOTATION_TYPE);
                     previousTokenEnd = tokenEnd;
                 }
+                if (previousTokenEnd != se) {
+                    addTokenAnnotation(previousTokenEnd, se, SPACE_TOKEN_ANNOTATION_TYPE);
+                }
+
+                addSentenceAnnotation(ss, se, sentence);
             }
         } catch (Exception ex) {
             throw new ExecutionException(ex);
         }
     }
 
+    private void addSentenceAnnotation(long start, long end, String sentence) throws InvalidOffsetException {
+        FeatureMap features = Factory.newFeatureMap();
+        features.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
+        features.put(TOKEN_STRING_FEATURE_NAME, sentence);
+        getDocument().getAnnotations().add(start, end, SENTENCE_ANNOTATION_TYPE, features);
+    }
+
     private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
         FeatureMap tokenFeatures = Factory.newFeatureMap();
-        tokenFeatures.put(ANNIEConstants.TOKEN_LENGTH_FEATURE_NAME, end - start);
-        String cleanedCoveredText = stringCleaner.cleanString(getDocument().getContent().getContent(start, end).toString().replaceAll("\\p{javaWhitespace}", ""));
-        tokenFeatures.put(ANNIEConstants.TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
+        tokenFeatures.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
+
+        String cleanedCoveredText = stringCleaner.cleanString(
+                getDocument().getContent().getContent(start, end).toString());
+        if (annotationType == TOKEN_ANNOTATION_TYPE) {
+            /*
+             * Delete whitespaces from word characters; probably I should get
+             * rid of this, see #9.
+             */
+            cleanedCoveredText = wsP.matcher(cleanedCoveredText).replaceAll("");
+            if (punctP.matcher(cleanedCoveredText).matches()) {
+                tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "punctuation");
+            } else {
+                tokenFeatures.put(TOKEN_KIND_FEATURE_NAME, "word");
+            }
+        }
+        tokenFeatures.put(TOKEN_STRING_FEATURE_NAME, cleanedCoveredText);
+
         getDocument().getAnnotations().add(start, end, annotationType, tokenFeatures);
     }
 

@@ -345,9 +345,9 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long start = new Long(currSentStart);
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", end-start);
-		        		features.put("string", docContents.getContent(start, end).toString());
-		        		outputAS.add(start, end, "Sentence", features);
+		        		features.put(TOKEN_LENGTH_FEATURE_NAME, end-start);
+		        		features.put(TOKEN_STRING_FEATURE_NAME, docContents.getContent(start, end).toString());
+		        		outputAS.add(start, end, SENTENCE_ANNOTATION_TYPE, features);
 		        		currSentStart = -1;
 		        		pos += 4;
 		        	}
@@ -355,10 +355,10 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long start = new Long(currWordStart);
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", end-start);
-		        		features.put("string", docContents.getContent(start, end).toString());
-		        		features.put("kind", "word");
-		        		outputAS.add(start, end, "Token", features);
+		        		features.put(TOKEN_LENGTH_FEATURE_NAME, end-start);
+		        		features.put(TOKEN_STRING_FEATURE_NAME, docContents.getContent(start, end).toString());
+		        		features.put(TOKEN_KIND_FEATURE_NAME, "word");
+		        		outputAS.add(start, end, TOKEN_ANNOTATION_TYPE, features);
 		        		currWordStart = -1;
 		        		pos += 4;
 		        	}
@@ -366,9 +366,9 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long start = new Long(currWSStart);
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", end-start);
-		        		features.put("string", docContents.getContent(start, end).toString());
-		        		outputAS.add(start, end, "SpaceToken", features);
+		        		features.put(TOKEN_LENGTH_FEATURE_NAME, end-start);
+		        		features.put(TOKEN_STRING_FEATURE_NAME, docContents.getContent(start, end).toString());
+		        		outputAS.add(start, end, SPACE_TOKEN_ANNOTATION_TYPE, features);
 		        		// TODO: kind=control|space
 		        		currWSStart = -1;
 		        		pos += 5;
@@ -377,10 +377,10 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 		        		long start = new Long(currPuncStart);
 		        		long end = new Long(offs);
 		        		FeatureMap features = Factory.newFeatureMap();
-		        		features.put("length", end-start);
-		        		features.put("string", docContents.getContent(start, end).toString());
-		        		features.put("kind", "punctuation");
-		        		outputAS.add(start, end, "Token", features);
+		        		features.put(TOKEN_LENGTH_FEATURE_NAME, end-start);
+		        		features.put(TOKEN_STRING_FEATURE_NAME, docContents.getContent(start, end).toString());
+		        		features.put(TOKEN_KIND_FEATURE_NAME, "punctuation");
+		        		outputAS.add(start, end, TOKEN_ANNOTATION_TYPE, features);
 		        		currPuncStart = -1;
 		        		pos += 4;
 		        	}
