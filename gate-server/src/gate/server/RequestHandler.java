@@ -130,8 +130,10 @@ public class RequestHandler implements HttpHandler{
 			}
 			
 			sendXML(request, doc.toXml());
+			doc.cleanup();
+			
 			return true;
-		}		
+		}
 		
 		return false;
 	}
