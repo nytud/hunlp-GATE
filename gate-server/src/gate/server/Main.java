@@ -10,19 +10,22 @@ public class Main {
 
 	private RequestHandler handler;
 	private WebServer server;
-	
+
 	public Main(String config) {
-		
+
 		try {
 			File jarFile = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-			
+
 			if ("bin".equals(jarFile.getName())) { // workaround for running without jar
 				jarFile = jarFile.getParentFile();
 			}
-			
-			File root = jarFile.getParentFile();
 
-			FileInputStream is = new FileInputStream(new File(root,config));
+			File configFile = new File(config);
+			if (!configFile.isAbsolute()) {
+				configFile = new File(jarFile.getParentFile(), config);
+			}
+
+			FileInputStream is = new FileInputStream(configFile);
 			Properties props = new Properties();
 			props.load(is);
 
@@ -38,11 +41,11 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public static void main(String[] args) {
-		new Main(args.length > 0 ? args[0] : "gate-server.props");		
+		new Main(args.length > 0 ? args[0] : "gate-server.props");
 	}
 
 }

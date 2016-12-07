@@ -22,28 +22,28 @@ import com.sun.net.httpserver.HttpHandler;
 
 
 public class RequestHandler implements HttpHandler{
-	
+
 	private static class Module {
 		String classname; FeatureMap config;
-		public Module(String classname, FeatureMap config) { 
+		public Module(String classname, FeatureMap config) {
 			this.classname = classname; this.config = config;
 		}
 	}
-	
-	protected Map<String,Module> mModules;  
+
+	protected Map<String,Module> mModules;
 
 	public RequestHandler(Properties config) throws Exception {
 		Gate.init();
 
 		File jarFile = new File(RequestHandler.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-		
+
 		for (int n=1; ; ++n) {
 			String plugin = config.getProperty("plugin"+n);
 			if (plugin == null) break;
-			Gate.getCreoleRegister().registerDirectories(new File(jarFile.getParentFile(),plugin).toURI().toURL());			
+			Gate.getCreoleRegister().registerDirectories(new File(jarFile.getParentFile(),plugin).toURI().toURL());
 			System.out.println("Loaded plugin: "+plugin);
 		}
-		 
+
 		mModules = new HashMap<>();
 		for (int n=1; ; ++n) {
 			String name = config.getProperty("module"+n+".name");
@@ -62,33 +62,33 @@ public class RequestHandler implements HttpHandler{
 				} else if (v.matches("^[+-]?[0-9]+.[0-9]?$")) {
 					fm.put(p1.getKey(), Float.parseFloat(v));
 				} else {
-					fm.put(p1.getKey(), v);					
+					fm.put(p1.getKey(), v);
 				}
 			}
 
 			Module m = new Module(config.getProperty("module"+n+".class"), fm);
 			if (m.classname == null) break;
-			
+
 			mModules.put(name, m);
-			System.out.println("Loaded module: "+name+" - "+m.classname);			
+			System.out.println("Loaded module: "+name+" - "+m.classname);
 		}
 	}
-		
+
 	@Override
 	public void handle(HttpExchange request) throws IOException {
 		String path = request.getRequestURI().getPath().replaceAll("\\\\", "/").replaceAll("\\.\\./", "");
-				
+
 		try {
 			if (process(path, request)) return;
 		} catch (Exception e) {
 			e.printStackTrace();
 			sendError(request, 500, "500 Internal Server Error");
 		}
-		
+
 		// Return 404
 		sendError(request, 404, "404 '"+path+"' Not Found");
 	}
-	
+
 	protected boolean process(String path, HttpExchange request) throws Exception {
 		// Shutdown handling
 		if (path.equals("/exit")) {
@@ -96,14 +96,14 @@ public class RequestHandler implements HttpHandler{
 			System.exit(0);
 			return true;
 		}
-		
+
 		if (path.equals("/process")) {
-			
+
 			Map<String,String> params = getParameters(request.getRequestURI().getRawQuery());
-	        
+
 			String run = params.getOrDefault("run","");
 			String text = params.getOrDefault("text","");
-			
+
 			if (text.isEmpty()) {
 				sendError(request, 400, "400 Missing parameter 'text'");
 				return true;
@@ -112,32 +112,32 @@ public class RequestHandler implements HttpHandler{
 				sendError(request, 400, "400 Missing parameter 'run'");
 				return true;
 			}
-			
+
 			Document doc =  Factory.newDocument(text);
-			
+
 			for (String r : run.split(",")) {
 				Module m = mModules.get(r);
 				if (m == null) {
 					sendError(request, 400, "400 Invalid module name: "+r);
 					return true;
 				}
-				
+
 				ProcessingResource res = (ProcessingResource) Factory.createResource( m.classname );
 				res.setParameterValues(m.config);
 				res.setParameterValue("document", doc);
 				res.execute();
 				Factory.deleteResource(res);
 			}
-			
+
 			sendXML(request, doc.toXml());
 			doc.cleanup();
-			
+
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	protected void sendError(HttpExchange request, int errorCode, String text) {
 		Headers h = request.getResponseHeaders();
 		h.add("Content-Type", "text/plain;charset=utf-8");
@@ -163,7 +163,7 @@ public class RequestHandler implements HttpHandler{
 			System.err.println("Connection closed before finished");
 		}
 	}
-	
+
 	protected Map<String,String> getParameters(String query) {
 		Map<String, String> result = new HashMap<String, String>();
 	    if (query == null) return result;
