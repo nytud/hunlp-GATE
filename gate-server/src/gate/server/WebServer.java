@@ -55,5 +55,5 @@ public class WebServer {
 	    public void run() {
 	        WebServer.this.stop();
 	    }
-	}	
+	}
 }
