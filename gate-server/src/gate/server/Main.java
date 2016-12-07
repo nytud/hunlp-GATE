@@ -20,9 +20,12 @@ public class Main {
 				jarFile = jarFile.getParentFile();
 			}
 			
-			File root = jarFile.getParentFile();
+            File configFile = new File(config);
+            if (!configFile.isAbsolute()) {
+                configFile = new File(jarFile.getParentFile(), config);
+            }
 
-			FileInputStream is = new FileInputStream(new File(root,config));
+			FileInputStream is = new FileInputStream(configFile);
 			Properties props = new Properties();
 			props.load(is);
 
