@@ -49,7 +49,7 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
     public void execute() throws ExecutionException {
         try {
             MySplitter mySplitter = MySplitter.getInstance();
-            String text = stringCleaner.cleanString(document.getContent().toString().trim());
+            String text = stringCleaner.cleanString(document.getContent().toString());
 
             long previousTokenEnd = 0;
             int[] sentenceOffsets = splitter.findSentenceOffsets(text, mySplitter.split(text));
