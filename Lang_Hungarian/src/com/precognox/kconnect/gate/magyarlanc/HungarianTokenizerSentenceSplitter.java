@@ -49,7 +49,7 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
     public void execute() throws ExecutionException {
         try {
             MySplitter mySplitter = MySplitter.getInstance();
-            String text = stringCleaner.cleanString(document.getContent().toString().trim());
+            String text = stringCleaner.cleanString(document.getContent().toString());
 
             long previousTokenEnd = 0;
             int[] sentenceOffsets = splitter.findSentenceOffsets(text, mySplitter.split(text));
@@ -65,13 +65,13 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
                     long tokenEnd = token.getValue().longValue() + ss;
 
                     if (previousTokenEnd != tokenStart) {
-                        addTokenAnnotation(text, previousTokenEnd, tokenStart, SPACE_TOKEN_ANNOTATION_TYPE);
+                        addTokenAnnotation(previousTokenEnd, tokenStart, SPACE_TOKEN_ANNOTATION_TYPE);
                     }
-                    addTokenAnnotation(text, tokenStart, tokenEnd, TOKEN_ANNOTATION_TYPE);
+                    addTokenAnnotation(tokenStart, tokenEnd, TOKEN_ANNOTATION_TYPE);
                     previousTokenEnd = tokenEnd;
                 }
                 if (previousTokenEnd != se) {
-                    addTokenAnnotation(text, previousTokenEnd, se, SPACE_TOKEN_ANNOTATION_TYPE);
+                    addTokenAnnotation(previousTokenEnd, se, SPACE_TOKEN_ANNOTATION_TYPE);
                 }
 
                 addSentenceAnnotation(ss, se, sentence);
@@ -88,13 +88,12 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
         getDocument().getAnnotations().add(start, end, SENTENCE_ANNOTATION_TYPE, features);
     }
 
-    private void addTokenAnnotation(String text, long start, long end, String annotationType) throws InvalidOffsetException {
+    private void addTokenAnnotation(long start, long end, String annotationType) throws InvalidOffsetException {
         FeatureMap tokenFeatures = Factory.newFeatureMap();
         tokenFeatures.put(TOKEN_LENGTH_FEATURE_NAME, end - start);
 
-        // String cleanedCoveredText = stringCleaner.cleanString(
-        //         getDocument().getContent().getContent(start, end).toString());
-        String cleanedCoveredText = text.substring((int)start, (int)end);
+        String cleanedCoveredText = stringCleaner.cleanString(
+                getDocument().getContent().getContent(start, end).toString());
         if (annotationType == TOKEN_ANNOTATION_TYPE) {
             /*
              * Delete whitespaces from word characters; probably I should get
@@ -117,16 +116,12 @@ public class HungarianTokenizerSentenceSplitter extends AbstractLanguageAnalyser
         for (int i = 1; i < offsets.length; ++i) {
             int start = offsets[i - 1];
             int end = offsets[i];
-            System.out.printf("BEFORE Start: %d, end: %d = '%s'%n", start, end,
-                              text.substring(start, end));
             while (start < end && text.charAt(start) <= ' ') {
                 start++;
             }
             while (start < end && text.charAt(end - 1) <= ' ') {
                 end--;
             }
-            System.out.printf("AFTER Start: %d, end: %d = '%s'%n", start, end,
-                              text.substring(start, end));
             offsetList.add(new SimpleEntry<Integer, Integer>(start, end));
         }
         return offsetList;
