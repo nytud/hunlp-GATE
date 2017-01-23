@@ -77,9 +77,10 @@ public class Magyarlanc3POSTaggerLemmatizer extends AbstractLanguageAnalyser {
                 List<String> input = new ArrayList<>();
                 for (Annotation token : tokens) {
                 	Object anas_obj = token.getFeatures().get(inputAnasFeatureName);
-            		String text = document.getContent().getContent(
-                			token.getStartNode().getOffset(), token.getEndNode().getOffset()
-        				).toString();
+					String text = (String)token.getFeatures().get(TOKEN_STRING_FEATURE_NAME);
+            		// String text = document.getContent().getContent(
+                	// 		token.getStartNode().getOffset(), token.getEndNode().getOffset()
+        			// 	).toString();
                 	if (!(anas_obj instanceof List<?>)) {
                 		input.add(text);
                 		System.err.println("Invalid format for "+inputAnasFeatureName+" in "+text);
