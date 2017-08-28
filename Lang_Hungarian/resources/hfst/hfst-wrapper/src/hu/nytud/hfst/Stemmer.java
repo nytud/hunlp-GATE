@@ -99,9 +99,12 @@ public class Stemmer {
 
 	public Stemmer(Properties props) {
 		
+		String item_sep  = props.getProperty("stemmer.item_sep",";");
+		String value_sep = props.getProperty("stemmer.value_sep","=");
+		
 		tag_config = new HashMap<>();
 		for (Flags f : Flags.values()) {
-			String[] tags = props.getProperty("stemmer."+f.name(),"").split(";");
+			String[] tags = props.getProperty("stemmer."+f.name(),"").split(item_sep);
 			for (String t : tags) {
 				Set<Flags> flags = tag_config.get(t);
 				if (flags == null) {
@@ -114,9 +117,9 @@ public class Stemmer {
 		
 		tag_convert = new HashMap<>();
 		{
-			String[] tags = props.getProperty("stemmer.convert","").split(";");
+			String[] tags = props.getProperty("stemmer.convert","").split(item_sep);
 			for (String t : tags) {
-				String[] opt = t.split("=",2);
+				String[] opt = t.split(value_sep,2);
 				if (opt.length < 2) continue;
 				tag_convert.put(opt[0],opt[1]);
 			}
@@ -124,9 +127,9 @@ public class Stemmer {
 		
 		tag_replace = new HashMap<>();
 		{
-			String[] tags = props.getProperty("stemmer.replace","").split(";");
+			String[] tags = props.getProperty("stemmer.replace","").split(item_sep);
 			for (String t : tags) {
-				String[] opt = t.split("=",2);
+				String[] opt = t.split(value_sep,2);
 				if (opt.length < 2) continue;
 				tag_replace.put(opt[0],opt[1]);
 			}

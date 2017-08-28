@@ -12,6 +12,10 @@ analyzer.max_count  = 5
 # timeout in milliseconds for a query
 analyzer.timeout_ms = 2000
 
+
+stemmer.item_sep = ;
+stemmer.value_sep = =
+
 #
 # Stemmer configuration
 
