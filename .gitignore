@@ -72,3 +72,9 @@ local.properties
 .recommenders/
 
 __pycache__
+/Lang_Hungarian/build/
+/Lang_Hungarian/nbproject/private/
+/gate-server/build/
+/gate-server/nbproject/private
+/Lang_Hungarian/resources/hfst/hfst-wrapper/build/
+/Lang_Hungarian/resources/hfst/hfst-wrapper/nbproject/private/
