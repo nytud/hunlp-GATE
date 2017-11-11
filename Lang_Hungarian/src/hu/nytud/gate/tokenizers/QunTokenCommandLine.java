@@ -60,7 +60,7 @@ public class QunTokenCommandLine extends AbstractLanguageAnalyser {
 	private Boolean debug;
 	
     //a util class for dealing with external processes, i.e. the tagger
-	private ProcessManager processManager = new ProcessManager();
+	private static ProcessManager processManager = new ProcessManager();
 	  
 	protected Logger logger = Logger.getLogger(this.getClass().getName());
 	
