@@ -1,0 +1,62 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          gate-server
+# Required-Start:    $remote_fs
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: GATE Server
+# Description:       Application written in Java to wrap
+#                    GATE application with a simple REST API
+### END INIT INFO
+
+
+URL=http://localhost:8000
+
+SELF=`realpath $0`
+
+case "$1" in
+  start-bin)
+    export GATE_HOME=/opt/GATE
+    cd /opt/hunlp-GATE
+    ./gate-server.sh &>./gate-server.log
+    ;;
+  test-fast)
+    RESP=`wget -O- "$URL/process?run=QT,HFSTLemm&text=A%20kutya%20ugat"`
+    if [ `echo $RESP | grep -c "kutya+\[Nom\]"` -gt 0 ]; then
+      echo "Success"
+    else
+      echo "$RESP"
+    fi
+    ;;
+  test-full)
+    RESP=`wget -O- "$URL/process?run=QT,HFSTLemm,ML3-PosLem-hfstcode,ML3-Dep,Preverb,ML3-Cons,huntag3-NP-pipe-hfstcode,IOB4NP,huntag3-NER-pipe-hfstcode,IOB4NER&text=A%20kutya%20ugat"`
+    if [ `echo $RESP | grep -c "kutya+\[Nom\]"` -gt 0 ]; then
+      echo "Success"
+    else
+      echo "$RESP"
+    fi
+    ;;
+  init)
+    sleep 3
+    $SELF test-full
+    ;;
+  start)
+    echo -n "Starting GATE Server..."
+    start-stop-daemon --start --quiet --background --exec $SELF -- start-bin
+    echo " Done"
+    $SELF init &
+    ;;
+  stop)
+    echo -n "Stopping GATE Server..."
+    wget -qO- $URL/exit - &>/dev/null
+    echo " Done"
+    ;;
+  restart)
+    $SELF stop
+    $SELF start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}" >&2
+    exit 1
+esac
