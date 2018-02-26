@@ -44,7 +44,7 @@ XXX Please see [this Wiki page](https://github.com/dlt-rilmta/hunlp-GATE/wiki/Hu
 * 64-bit operating system
 * 16GB RAM (8GB maybe enough)
 * 64-bit Java runtime (JRE or JDK) version 1.8 or later
-* [GATE Developer 8.0](https://gate.ac.uk/download) or later
+* [GATE Developer 8.0](https://gate.ac.uk/download) or later. Note: **do not use GATE 8.4**. It is buggy: see #24. Get version 8.2 instead.
 
 * When launching GATE Developer request for 4GB of heap space.  
   On Linux or OS X, please use the following command:
