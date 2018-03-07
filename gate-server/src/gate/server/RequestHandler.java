@@ -1,12 +1,16 @@
 package gate.server;
 
+import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
 import gate.Document;
 import gate.Factory;
 import gate.FeatureMap;
 import gate.Gate;
 import gate.ProcessingResource;
+import gate.TextualDocument;
+import gate.corpora.DocumentXmlUtils;
 import gate.util.SimpleFeatureMapImpl;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -16,14 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import com.sun.net.httpserver.Headers;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-
 
 public class RequestHandler implements HttpHandler{
 
-	private static class Module {
+	protected static class Module {
 		String classname; FeatureMap config;
 		public Module(String classname, FeatureMap config) {
 			this.classname = classname; this.config = config;
@@ -81,7 +81,7 @@ public class RequestHandler implements HttpHandler{
 		try {
 			if (process(path, request)) return;
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
 			sendError(request, 500, "500 Internal Server Error");
 		}
 
@@ -129,7 +129,11 @@ public class RequestHandler implements HttpHandler{
 				Factory.deleteResource(res);
 			}
 
-			sendXML(request, doc.toXml());
+			// By default doc.toXml() is this, but this takes twice as long initially
+			// and increases gradually, so not usable now (8.4.1) -> falling back to previous behaviour
+			// String xml = DocumentStaxUtils.toXml(doc);
+			String xml = DocumentXmlUtils.toXml((TextualDocument)doc);
+			sendXML(request, xml);
 			doc.cleanup();
 
 			return true;
@@ -143,9 +147,9 @@ public class RequestHandler implements HttpHandler{
 		h.add("Content-Type", "text/plain;charset=utf-8");
 		try {
 			request.sendResponseHeaders(errorCode, text.length());
-			OutputStream os = request.getResponseBody();
-			os.write(text.getBytes());
-			os.close();
+			try (OutputStream os = request.getResponseBody()) {
+				os.write(text.getBytes());
+			}
 		} catch (IOException e) {
 			System.err.println("Connection closed before finished");
 		}
@@ -156,16 +160,16 @@ public class RequestHandler implements HttpHandler{
 		h.add("Content-Type", "text/xml;charset=utf-8");
 		try {
 			request.sendResponseHeaders(200, 0);
-			OutputStream os = request.getResponseBody();
-			os.write(text.getBytes("UTF-8"));
-			os.close();
+			try (OutputStream os = request.getResponseBody()) {
+				os.write(text.getBytes("UTF-8"));
+			}
 		} catch (IOException e) {
 			System.err.println("Connection closed before finished");
 		}
 	}
 
-	protected Map<String,String> getParameters(String query) {
-		Map<String, String> result = new HashMap<String, String>();
+	protected static Map<String,String> getParameters(String query) {
+		Map<String, String> result = new HashMap<>();
 	    if (query == null) return result;
 		try {
 			for (String param : query.split("&")) {
@@ -173,7 +177,7 @@ public class RequestHandler implements HttpHandler{
 		        result.put(URLDecoder.decode(pair[0],"UTF-8"), pair.length>1 ? URLDecoder.decode(pair[1],"UTF-8") : "");
 		    }
 	    } catch (UnsupportedEncodingException e) {
-	    	e.printStackTrace();
+	    	e.printStackTrace(System.err);
 	    }
 	    return result;
 	}
