@@ -731,9 +731,7 @@ def token_hfstPieces(hfstAnal, _=None):
 
     """
     pieces = hfstAnal.split('[')
-    for piece in pieces:
-        piece = piece.strip('[]')
-        return [piece for piece in pieces if piece]
+    return [piece.strip('[]') for piece in pieces if piece]
 
 # XXX Return is not bool
 def token_fullKrPieces(krAnal, _=None):
