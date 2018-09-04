@@ -1,8 +1,8 @@
-#gate-server
+# gate-server
 
 This sub-project creates a wrapper around the GATE library to use as a web-service and avoid re-initialization.
 
-##Usage
+## Usage
 
 `java -cp "<GATE_HOME>/bin/gate.jar;<GATE_HOME>/lib/*;gate-server.jar" gate.server.Main [config]`
 
@@ -18,7 +18,7 @@ Example start scripts can be found in the parent directory:
 
 The program logs to stdout.
 
-##API
+## API
 
 Process a document:
 
@@ -34,3 +34,14 @@ Exit the server:
 
 `http://<host>:<port>/exit`
 
+Use `emw.sh` to analyze short texts (<8KB) with gate-server which already running.
+
+Example:
+
+```sh
+cat *.txt | emw.sh
+# or
+emw.sh *.txt
+```
+
+See `emw.sh -h` for details.
