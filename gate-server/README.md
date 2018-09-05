@@ -34,7 +34,7 @@ Exit the server:
 
 `http://<host>:<port>/exit`
 
-Use `emw.sh` to analyze short texts (<8KB) with gate-server which already running.
+Use `emw.sh` to analyze short texts having gate-server already running.
 
 Example:
 
