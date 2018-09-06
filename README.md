@@ -230,5 +230,5 @@ for some usage scenarios.
 
 ## Others
 
-XXX tsvconverter.py
+For converting GATE-XML coming from e-magyar to TSV [use `emconv.py`](https://github.com/dlt-rilmta/hunlp-GATE/tree/master/utils).
 
