@@ -16,10 +16,3 @@ Older models:
 _All_ models can be obtained running `complete.sh` (on Linux)
 (see [step 2 of __Method 2__ here](https://github.com/dlt-rilmta/hunlp-GATE#method-2-for-developers)).
 
-Some of the (older) models can also be obtained from
-their own separate repository:
-
-* `NER-szeged-KR`: https://github.com/dlt-rilmta/NER-szeged-KR-model
-
-* `NP-szeged-msd`: https://github.com/dlt-rilmta/NP-szeged-msd-model
-
