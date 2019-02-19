@@ -1,3 +1,15 @@
+
+_This repository will not be maintained in the future,
+it will remain as it is.
+As a replacement, please use the new version of the e-magyar toolchain:
+https://github.com/dlt-rilmta/emtsv.
+This new version does not support GATE directly,
+but has efficient inter-module communication via simple tsv
+providing a much more convenient command-line support,
+and also a REST API._
+
+
+
 # hunlp-GATE
 
 Sources for the **Lang_Hungarian** [GATE](http://gate.ac.uk/) plugin containing Hungarian processing resources (wrappers around already existing Hungarian NLP tools) developed by the [Department of Language Technology](http://www.nytud.hu/oszt/nyte/index.html) at [RIL-MTA](http://www.nytud.hu/).
